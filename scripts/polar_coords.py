@@ -1,27 +1,124 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.7
 
 from math import sin, cos, pi, radians
 from tkinter import Canvas
+from typing import Iterable, List, Tuple
 
 # Types:
-class GeoType(Enum):
-    LINE   = 1
-    ARC    = 2
-    CIRCLE = 3
-
 class Drawable(object):
     def draw(self, canvas: Canvas):
         pass
 
-class Geo(object, Drawable):
+class AsEagle(object):
+    def as_eagle(self, name: str) -> str:
+        pass
+
+Point = Tuple[float, float]
+
+class AsPoints(object):
+    @staticmethod
+    def repeat(num: int, *points: Point) -> Iterable[float]:
+        for p in points:
+            for n in range(num):
+                yield p[0]
+                yield p[1]
+
+    @staticmethod
+    def format_point(point: Point) -> str:
+        return f"({point[0]} {point[1]})"
+
+    p = lambda point: format_point(p)
+
+    def as_points(self) -> Iterable[float]:
+        pass
+
+class Geo(object, AsPoints, AsEagle):
     """A Geometric Primitive. For example, a line."""
 
+class Polygon(object, AsEagle, Drawable):
+    """A bundle of geometric primitives."""
+
+    name: str = ""
+    geos: List[Geo] = []
+
+    def __init__(self, name: str, *geos: Geo):
+        name = name
+        points = list(geos)
+
+    def draw(self, canvas: Canvas):
+        canvas.create_polygon(
+            [point for geo in geos for point in geo.as_points()],
+            fill = "red",
+            outline = "grey",
+            width = 2
+        )
+
+    def as_eagle(self, name: str) -> str:
+        first = geos[0].as_points()
+        first = (next(first), next(first))
+
+        out = '\n'.join(cmd for geo in geos for cmd in geo.as_eagle(name))
+
+        return out + f"\npolygonize '{name}' {p(first)};\n"
+
+    def as_list(self) -> List[Geo]:
+        return geos
+
+    def add_geos(self, *geos: Geos):
+        self.geos += geos
+
 class Line(Geo):
+    p1: Point, p2: Point = (0, 0), (0, 0)
 
-    def __init__(self, )
+    def __init__(self, x1, y1, x2, y2):
+        p1, p2 = (x1, y1), (x2, y2)
 
+    def as_points(self) -> Iterable[float]:
+        return self.repeat(2, p1, p2)
 
-polar = lambda rad, ang: (cos(radians(ang)) * rad, sin(radians(ang)) * rad)
+    def as_eagle(self, name: str) -> str:
+        return f"line '{name}' {p(p1)} {p(p2)};"
+
+class Arc(Geo):
+    """Represents an arc as a center, a radius, and starting/ending angles.
+
+    Note: the Arc represented will go clockwise from the starting angle to the
+    ending angle. 0 degrees is on the positive side of the x axis.
+    """
+
+    center: Point, radius: int, starting: float, ending: float = (0, 0), 0, 0, 0
+
+    def __init__(self, x: float, y: float, rad: float, starting: float,
+            ending: float):
+        center, radius = (x, y), rad
+        self.starting, self.ending = starting % 360, ending % 360
+
+    @classmethod
+    def from_polar(cls, center: Point, radius: float, starting_angle: float,
+            ending_angle: float):
+        return cls(*center, radius, starting_angle, ending_angle)
+
+    @classmethod
+    def from_points(cls, )
+
+    p2c = lambda rad, ang: (cos(radians(ang)) * rad, sin(radians(ang)) * rad)
+
+    def as_points(self) -> Iterable[float]:
+        return self.repeat(1, p1, p2)
+
+    def to_eagle(self, name: str) -> str:
+        # [cw/ccw] (start) ('diameter') (end)
+        # diameter is really the point exactly 180 degrees from start
+        begin = p2c()
+        end   = 
+        return f"arc '{name}' cw;"
+
+preamble = """
+GRID mm;
+CHANGE WIDTH 2;
+LAYER 1;
+
+"""
 
 def channel(angle, width, outer_rad, inner_rad, bands):
     # <= 4mm on the outer ring:
