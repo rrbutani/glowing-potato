@@ -1,0 +1,87 @@
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+# LaTeX Build Files:
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+**/tex/*.log
+**/tex/*.pdf
+
+### C ###
+*.o
+*.out
+*.axf
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+
+# Misc + Keil
+*.d
+*.crf
+*.dep
+*.bak
+*.bin
+*.axf
+*.htm
+*.crf
+*.o
+*.d
+*.lnp
+*.map
+*.uvgui.*
+*.lst
+*.swp
+*.scvd
+*.plg
+*.tra
+.~lock*
+
+# Eagle
+*.s#*
+*.b#*
+*.l#*
