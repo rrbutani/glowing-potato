@@ -1,21 +1,78 @@
 #!/usr/bin/env python3.7
 
-from math import sin, cos, pi, radians
-from tkinter import Canvas
+# Imports:
+from __future__ import annotations
+from math import sin, cos, atan2, pi, radians, degrees, hypot
+from tkinter import Canvas, Frame, Scrollbar, Tk, N, E, S, W
 from typing import Iterable, List, Tuple
 
+import tkinter as tk
+
+# Constants:
+SCALE = 5
+
 # Types:
-class Drawable(object):
-    def draw(self, canvas: Canvas):
+class Drawable:
+    def draw(self, canvas: Canvas, scale: float):
         pass
 
-class AsEagle(object):
+class AsEagle:
     def as_eagle(self, name: str) -> str:
         pass
 
-Point = Tuple[float, float]
+class Point(object):
+    """A simple 2D Point. All angles are in radians."""
 
-class AsPoints(object):
+    x: float = 0
+    y: float = 0
+
+    def __init__(self, x: float, y: float):
+        self.x, self.y = x, y
+
+    @classmethod
+    def from_tuple(cls, t: Tuple[float, float]):
+        return cls(*t)
+
+    @classmethod
+    def from_polar(cls, radius: float, angle: float):
+        return cls(cos(angle) * radius, sin(angle) * radius)
+
+    def as_tuple(self) -> Tuple[float, float]:
+        return (self.x, self.y)
+
+    def as_tk(self, scale: float) -> Tuple[float, float]:
+        return (self.x * scale, -self.y * scale)
+
+    def magnitude(self) -> float:
+        return hypot(self.x, self.y)
+
+    def relative_angle(self, other: Point) -> float:
+        return atan2((other.y - self.y), (other.x - self.x)) % (2 * pi)
+
+    def __str__(self) -> str:
+        return f"({self.x} {self.y})"
+
+    def __add__(self, other: Point) -> Point:
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __sub__(self, other: Point) -> Point:
+        return Point(self.x - other.x, self.y - other.y)
+
+    def __mul__(self, other: float) -> Point:
+        return Point(self.x * other, self.y * other)
+
+    def __truediv__(self, other: float) -> Point:
+        return Point(self.x / other, self.y / other)
+
+    def __getitem__(self, idx) -> float:
+        if idx == 0:
+            return self.x
+        elif idx == 1:
+            return self.y
+        else:
+            raise IndexError(f"Invalid index for Point: {idx}")
+
+class AsCoords:
     @staticmethod
     def repeat(num: int, *points: Point) -> Iterable[float]:
         for p in points:
@@ -23,111 +80,171 @@ class AsPoints(object):
                 yield p[0]
                 yield p[1]
 
-    @staticmethod
-    def format_point(point: Point) -> str:
-        return f"({point[0]} {point[1]})"
-
-    p = lambda point: format_point(p)
-
-    def as_points(self) -> Iterable[float]:
+    def as_coords(self) -> Iterable[float]:
         pass
 
-class Geo(object, AsPoints, AsEagle):
+class Geo(AsCoords, AsEagle, Drawable, object):
     """A Geometric Primitive. For example, a line."""
 
-class Polygon(object, AsEagle, Drawable):
+class Polygon(AsEagle, Drawable, object):
     """A bundle of geometric primitives."""
 
     name: str = ""
     geos: List[Geo] = []
 
     def __init__(self, name: str, *geos: Geo):
-        name = name
-        points = list(geos)
+        self.name = name
+        self.geos = list(geos)
 
-    def draw(self, canvas: Canvas):
-        canvas.create_polygon(
-            [point for geo in geos for point in geo.as_points()],
-            fill = "red",
-            outline = "grey",
-            width = 2
-        )
+    @classmethod
+    def from_points(cls, name: str, *pts: Tuple[float, float]):
+        return cls(name, *[Line(*p1, *p2) for (p1, p2) in zip(pts, pts[1:])])
+
+    def draw(self, canvas: Canvas, scale: float):
+        # canvas.create_polygon(
+        #     [scale * coord for geo in self.geos for coord in geo.as_coords()],
+        #     fill = "red",
+        #     outline = "grey",
+        #     width = 2,
+        #     smooth = True
+        # )
+
+        for geo in self.geos:
+            geo.draw(canvas, scale)
+
+    def to_eagle(self) -> str:
+        return self.as_eagle(self.name)
 
     def as_eagle(self, name: str) -> str:
-        first = geos[0].as_points()
-        first = (next(first), next(first))
+        first = self.geos[0].as_coords()
+        first = Point(next(first), next(first))
 
-        out = '\n'.join(cmd for geo in geos for cmd in geo.as_eagle(name))
+        out = '\n'.join(geo.as_eagle(name) for geo in self.geos)
 
-        return out + f"\npolygonize '{name}' {p(first)};\n"
+        return out + f"\npolygonize {first};"
 
     def as_list(self) -> List[Geo]:
-        return geos
+        return self.geos
 
-    def add_geos(self, *geos: Geos):
+    def add_geos(self, *geos: Geo):
         self.geos += geos
 
 class Line(Geo):
-    p1: Point, p2: Point = (0, 0), (0, 0)
+    p1: Point = (0, 0)
+    p2: Point = (0, 0)
 
     def __init__(self, x1, y1, x2, y2):
-        p1, p2 = (x1, y1), (x2, y2)
+        self.p1, self.p2 = Point(x1, y1), Point(x2, y2)
 
-    def as_points(self) -> Iterable[float]:
-        return self.repeat(2, p1, p2)
+    def draw(self, canvas: Canvas, scale: float):
+        canvas.create_line(
+            *self.p1.as_tk(scale),
+            *self.p2.as_tk(scale),
+            fill = "red",
+            width = 2,
+        )
+
+    def as_coords(self) -> Iterable[float]:
+        return self.repeat(2, self.p1, self.p2)
 
     def as_eagle(self, name: str) -> str:
-        return f"line '{name}' {p(p1)} {p(p2)};"
+        return f"line '{name}' {self.p1} {self.p2};"
+
+    def __str__(self) -> str:
+        return f"Line {{ {self.p1} -> {self.p2} }}"
 
 class Arc(Geo):
     """Represents an arc as a center, a radius, and starting/ending angles.
 
-    Note: the Arc represented will go clockwise from the starting angle to the
-    ending angle. 0 degrees is on the positive side of the x axis.
+    Note: the Arc represented will go counterclockwise from the starting angle
+    to the ending angle. 0 degrees is on the positive side of the x axis.
+
+    Note: angles are in *radians*.
     """
 
-    center: Point, radius: int, starting: float, ending: float = (0, 0), 0, 0, 0
+    center: Point = (0, 0)
+    radius: float = 0
+    starting: float = 0
+    ending: float = 0
 
-    def __init__(self, x: float, y: float, rad: float, starting: float,
+    def __init__(self, x: float, y: float, radius: float, starting: float,
             ending: float):
-        center, radius = (x, y), rad
-        self.starting, self.ending = starting % 360, ending % 360
+        self.center, self.radius = Point(x, y), radius
+        self.starting, self.ending = starting % (2 * pi), ending % (2 * pi)
+
+        print(self.center, self.radius, degrees(self.starting), degrees(self.ending))
 
     @classmethod
     def from_polar(cls, center: Point, radius: float, starting_angle: float,
             ending_angle: float):
-        return cls(*center, radius, starting_angle, ending_angle)
+        return cls(*center.as_tuple(), radius, radians(starting_angle),
+                radians(ending_angle))
 
     @classmethod
-    def from_points(cls, )
+    def new(cls, center: Tuple[float, float], radius, starting_angle: float,
+            degrees: float):
+        return cls(*center, radius, radians(starting_angle),
+                radians((starting_angle + degrees) % 360))
 
-    p2c = lambda rad, ang: (cos(radians(ang)) * rad, sin(radians(ang)) * rad)
+    @classmethod
+    def from_points(cls, begin: Point, diam: Point, end: Point):
+        mid = ((diam - begin) / 2)
 
-    def as_points(self) -> Iterable[float]:
-        return self.repeat(1, p1, p2)
+        center = begin + mid
+        radius = mid.magnitude()
+        starting = center.relative_angle(begin)
+        ending   = center.relative_angle(end)
 
-    def to_eagle(self, name: str) -> str:
+        return cls(*center.as_tuple(), radius, starting, ending)
+
+    def draw(self, canvas: Canvas, scale: float):
+        # create_oval starts at `start` and goes CCW `extent` degrees:
+        # takes top left/bottom right coordinates of the corresponding circle
+
+        r = Point(self.radius, self.radius)
+
+        canvas.create_arc(
+            *(self.center - r).as_tk(scale),
+            *(self.center + r).as_tk(scale),
+            start = degrees(self.starting),
+            extent = degrees(((self.ending + 2*pi) - self.starting) % (2*pi)),
+            fill = "red",
+            outline = "grey",
+            width = 2,
+            style = tk.ARC,
+            # style = tk.PIESLICE,
+        )
+
+    def as_coords(self) -> Iterable[float]:
+        return self.repeat(1,
+                self.center + Point.from_polar(self.radius, self.starting),
+                self.center + Point.from_polar(self.radius, self.ending))
+
+    def as_eagle(self, name: str) -> str:
         # [cw/ccw] (start) ('diameter') (end)
         # diameter is really the point exactly 180 degrees from start
-        begin = p2c()
-        end   = 
-        return f"arc '{name}' cw;"
+        begin = self.center + Point.from_polar(self.radius, self.starting)
+        diam  = self.center - Point.from_polar(self.radius, self.starting)
+        end   = self.center + Point.from_polar(self.radius, self.ending)
+        return f"arc '{name}' ccw {begin} {diam} {end};"
 
-preamble = """
+preamble = """# Creates some wheels.
+#
+# Warning: This was auto-generated.
 GRID mm;
-CHANGE WIDTH 2;
+CHANGE WIDTH 0.5;
 LAYER 1;
-
 """
 
+"""
 def channel(angle, width, outer_rad, inner_rad, bands):
     # <= 4mm on the outer ring:
     sep_angle = (3.5 / (outer_rad)) / 2
 
     # 5 to 1 ratio for starting tendril width to ending tendril width:
-    # We'll have `bands` tendrils, each separated by the ending tendril width (so
-    # that tendrils can be interlaced). This means `bands` * (starting tendril
-    # width + ending tendril width) = (outer_rad - inner_rad).
+    # We'll have `bands` tendrils, each separated by the ending tendril width
+    # (so that tendrils can be interlaced). This means `bands` * (starting
+    # tendril width + ending tendril width) = (outer_rad - inner_rad).
     band_width = (outer_rad - inner_rad) / bands
     tendril_starting = (5 / 6) * band_width
     tendril_ending   = (1 / 6) * band_width
@@ -180,19 +297,20 @@ def draw_wheel(canvas):
 
     canvas.create_oval(*sc(*base[0]), fill = "grey")
     canvas.create_oval(*sc(*base[1]), outline = "red")
-
+"""
 def printcoords(event):
     (x, y) = (event.x, event.y)
-    print (x // SCALE, y // SCALE)
+    print (x / SCALE, y / SCALE)
+    print(event)
 
 if __name__ == "__main__":
     root = Tk()
 
     #setting up a tkinter canvas with scrollbars
-    frame = Frame(root, bd=2, relief=SUNKEN)
+    frame = Frame(root, bd=2, relief=tk.SUNKEN)
     frame.grid_rowconfigure(0, weight=1)
     frame.grid_columnconfigure(0, weight=1)
-    xscroll = Scrollbar(frame, orient=HORIZONTAL)
+    xscroll = Scrollbar(frame, orient=tk.HORIZONTAL)
     xscroll.grid(row=1, column=0, sticky=E+W)
     yscroll = Scrollbar(frame)
     yscroll.grid(row=0, column=1, sticky=N+S)
@@ -200,13 +318,29 @@ if __name__ == "__main__":
     canvas.grid(row=0, column=0, sticky=N+S+E+W)
     xscroll.config(command=canvas.xview)
     yscroll.config(command=canvas.yview)
-    frame.pack(fill=BOTH,expand=1)
+    frame.pack(fill=tk.BOTH,expand=1)
 
-    canvas.create_image(0,0,anchor="nw")
+    canvas.create_image(0,0,anchor="sw")
 
-    draw_wheel(canvas)
+    # draw_wheel(canvas)
+    p = Polygon("ch0", Line(0, 0, 0, 5),
+            Arc.new((100, 100), 50, 0, 120),
+            Arc.new((100, 100), 49, 0, 135),
+            Arc.new((100, 100), 48, 0, 150),
+            Arc.new((100, 100), 47, 0, 165),
+            Arc.new((100, 100), 46, 0, 180),
+            # Arc.from_points(Point(146, 100), Point(54, 100), Point(55, 100)),
+            # Arc.new((100, 100), 45, 120, 120),
+            # Arc.new((100, 100), 40, 240, 120)
+    )
+    # p = Polygon.from_points("yo", (0, 0), (100.7, 0), (100.7, 100.7), (0, 100.7), (0, 0))
+    p.draw(canvas, SCALE)
 
-    canvas.config(scrollregion=canvas.bbox(ALL))
+    print(preamble)
+    print(p.to_eagle())
+    print("ratsnest;")
+
+    canvas.config(scrollregion=canvas.bbox(tk.ALL))
     canvas.bind("<Button 1>", printcoords)
 
     root.mainloop()
