@@ -12,11 +12,19 @@ import tkinter as tk
 SCALE = 5
 
 # Types:
+Radians = float
+Degrees = float
+
 class Drawable:
     def draw(self, canvas: Canvas, scale: float):
         pass
 
 class AsEagle:
+    name: str = ""
+
+    def to_eagle(self) -> str:
+        return self.as_eagle(self.name)
+
     def as_eagle(self, name: str) -> str:
         pass
 
@@ -34,7 +42,7 @@ class Point(object):
         return cls(*t)
 
     @classmethod
-    def from_polar(cls, radius: float, angle: float):
+    def from_polar(cls, radius: float, angle: Radians):
         return cls(cos(angle) * radius, sin(angle) * radius)
 
     def as_tuple(self) -> Tuple[float, float]:
@@ -89,7 +97,6 @@ class Geo(AsCoords, AsEagle, Drawable, object):
 class Polygon(AsEagle, Drawable, object):
     """A bundle of geometric primitives."""
 
-    name: str = ""
     geos: List[Geo] = []
 
     def __init__(self, name: str, *geos: Geo):
@@ -111,9 +118,6 @@ class Polygon(AsEagle, Drawable, object):
 
         for geo in self.geos:
             geo.draw(canvas, scale)
-
-    def to_eagle(self) -> str:
-        return self.as_eagle(self.name)
 
     def as_eagle(self, name: str) -> str:
         first = self.geos[0].as_coords()
@@ -167,22 +171,22 @@ class Arc(Geo):
     starting: float = 0
     ending: float = 0
 
-    def __init__(self, x: float, y: float, radius: float, starting: float,
-            ending: float):
+    def __init__(self, x: float, y: float, radius: float, starting: Radians,
+            ending: Radians):
         self.center, self.radius = Point(x, y), radius
         self.starting, self.ending = starting % (2 * pi), ending % (2 * pi)
 
         print(self.center, self.radius, degrees(self.starting), degrees(self.ending))
 
     @classmethod
-    def from_polar(cls, center: Point, radius: float, starting_angle: float,
-            ending_angle: float):
+    def from_polar(cls, center: Point, radius: float, starting_angle: Degrees,
+            ending_angle: Degrees):
         return cls(*center.as_tuple(), radius, radians(starting_angle),
                 radians(ending_angle))
 
     @classmethod
-    def new(cls, center: Tuple[float, float], radius, starting_angle: float,
-            degrees: float):
+    def new(cls, center: Tuple[float, float], radius: float,
+            starting_angle: Degrees, degrees: Degrees):
         return cls(*center, radius, radians(starting_angle),
                 radians((starting_angle + degrees) % 360))
 
@@ -236,21 +240,21 @@ CHANGE WIDTH 0.5;
 LAYER 1;
 """
 
-"""
-def channel(angle, width, outer_rad, inner_rad, bands):
+def channel(angle: Radians, width: Radians, outer_rad: float, inner_rad: float,
+        bands: int) -> Polygon:
     # <= 4mm on the outer ring:
     sep_angle = (3.5 / (outer_rad)) / 2
 
-    # 5 to 1 ratio for starting tendril width to ending tendril width:
-    # We'll have `bands` tendrils, each separated by the ending tendril width
-    # (so that tendrils can be interlaced). This means `bands` * (starting
-    # tendril width + ending tendril width) = (outer_rad - inner_rad).
+    # 5 to 1 ratio for starting frill width to ending frill width:
+    # We'll have `bands` frills, each separated by the ending frill width
+    # (so that frills can be interlaced). This means `bands` * (starting
+    # frill width + ending frill width) = (outer_rad - inner_rad).
     band_width = (outer_rad - inner_rad) / bands
-    tendril_starting = (5 / 6) * band_width
-    tendril_ending   = (1 / 6) * band_width
-    tendril_length = width - sep_angle
+    frill_starting = (5 / 6) * band_width
+    frill_ending   = (1 / 6) * band_width
+    frill_length = width - sep_angle
 
-    if tendril_starting > 4:
+    if frill_starting > 4:
         print("Add more bands!!")
 
     # First left (halved):
@@ -264,14 +268,14 @@ def channel(angle, width, outer_rad, inner_rad, bands):
 
         # Right (CW):
 
-    print(tendril_starting, tendril_ending)
+    print(frill_starting, frill_ending)
 
 
 # Assumes 3 channels and outer_rad/inner_rad in mm
 def wheel_coords(outer_rad, inner_rad, bands):
     sep_angle = (3.5 / (outer_rad))
 
-    # 5 to 1 ratio for starting tendril width to ending tendril width:
+    # 5 to 1 ratio for starting frill width to ending frill width:
 
     outer_circle = (-outer_rad, -outer_rad, outer_rad, outer_rad)
     inner_circle = (-inner_rad, -inner_rad, inner_rad, inner_rad)
@@ -287,9 +291,6 @@ BANDS = 8
 
 SCALE = 7
 
-def sc(*args):
-    return [ SCALE * i for i in args]
-
 def draw_wheel(canvas):
     coords = wheel_coords(OUTER_RAD, INNER_RAD, BANDS)
 
@@ -297,11 +298,11 @@ def draw_wheel(canvas):
 
     canvas.create_oval(*sc(*base[0]), fill = "grey")
     canvas.create_oval(*sc(*base[1]), outline = "red")
+
 """
 def printcoords(event):
     (x, y) = (event.x, event.y)
     print (x / SCALE, y / SCALE)
-    print(event)
 
 if __name__ == "__main__":
     root = Tk()
@@ -322,23 +323,7 @@ if __name__ == "__main__":
 
     canvas.create_image(0,0,anchor="sw")
 
-    # draw_wheel(canvas)
-    p = Polygon("ch0", Line(0, 0, 0, 5),
-            Arc.new((100, 100), 50, 0, 120),
-            Arc.new((100, 100), 49, 0, 135),
-            Arc.new((100, 100), 48, 0, 150),
-            Arc.new((100, 100), 47, 0, 165),
-            Arc.new((100, 100), 46, 0, 180),
-            # Arc.from_points(Point(146, 100), Point(54, 100), Point(55, 100)),
-            # Arc.new((100, 100), 45, 120, 120),
-            # Arc.new((100, 100), 40, 240, 120)
-    )
-    # p = Polygon.from_points("yo", (0, 0), (100.7, 0), (100.7, 100.7), (0, 100.7), (0, 0))
-    p.draw(canvas, SCALE)
-
-    print(preamble)
-    print(p.to_eagle())
-    print("ratsnest;")
+    draw_wheel(canvas)
 
     canvas.config(scrollregion=canvas.bbox(tk.ALL))
     canvas.bind("<Button 1>", printcoords)
