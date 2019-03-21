@@ -334,41 +334,47 @@ def calculate_frill_positions(inner_rad: float, outer_rad: float) -> Bands:
 
     return (inner_rad, outer_rad, radii)
 
+Circle = Tuple[float, float, float, float]
+Coords = Tuple[Tuple[Circle, Circle], List[Polygon]]
 
 # Assumes 3 channels and outer_rad/inner_rad in mm
-def wheel_coords(inner_rad, outer_rad, center_x, center_y, num):
+def wheel_coords(inner_rad, outer_rad, center_x, center_y, channels) -> Coords:
     i, o, x, y = inner_rad, outer_rad, center_x, center_y
-    outer_circle = (x - o, y - o, x + o, y + o)
-    inner_circle = (x - i, y - i, x + i, y + i)
+    outer_circle: Circle = (x - o, y - o, x + o, y + o)
+    inner_circle: Circle = (x - i, y - i, x + i, y + i)
 
     frills = calculate_frill_positions(inner_rad, outer_rad)
-
     center = Point(center_x, center_y)
 
-    ch = lambda num, angle: channel(f"CH{num}", center, radians(angle), radians(240), frills)
+    width = (360 * 2) / channels
+    ch = lambda num, a: channel(f"CH{num}", center, radians(a), width, frills)
 
-    # return ([ inner_circle, outer_circle ], ch(0, 0), ch(1, 120), ch(2, 240))
-    return ([ inner_circle, outer_circle ], ch(0, 90), ch(1, 210), ch(2, 330))
+    # We want to start at the top so start with 90:
+    offset = 90
+    polys = [ ch(i, offset + (i * (width / 2))) for i in range(channels) ]
+
+    return ((inner_circle, outer_circle), polys)
 
 
 OUTER_RAD = 50
 INNER_RAD = 15
+CHANNELS  = 3
 
 def scale(scale: float, *args: float) -> Generator[float, None, None]:
     for i in args:
         yield scale * i
 
 def draw_wheel(canvas):
-    coords = wheel_coords(INNER_RAD, OUTER_RAD, 0, 0)
+    coords = wheel_coords(INNER_RAD, OUTER_RAD, 0, 0, 10)
 
-    base = coords[0]
+    base, polys = coords
 
     sc = lambda *a: scale(SCALE, *a)
 
     canvas.create_oval(*sc(*base[0]), fill = "grey")
     canvas.create_oval(*sc(*base[1]), outline = "red")
 
-    for p in coords[1:]:
+    for p in polys:
         p.draw(canvas, SCALE)
 
 
