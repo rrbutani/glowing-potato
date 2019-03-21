@@ -125,7 +125,7 @@ class Polygon(AsEagle, Drawable, object):
 
         out = '\n'.join(geo.as_eagle(name) for geo in self.geos)
 
-        return out + f"\npolygonize {first};"
+        return out + f"\npolygonize {first};\n"
 
     def as_list(self) -> List[Geo]:
         return self.geos
@@ -374,8 +374,14 @@ def draw_wheel(canvas):
     canvas.create_oval(*sc(*base[0]), fill = "grey")
     canvas.create_oval(*sc(*base[1]), outline = "red")
 
-    for p in polys:
-        p.draw(canvas, SCALE)
+    with open("wheel.scr", "w") as f:
+        f.write(preamble + "\n")
+
+        for p in polys:
+            p.draw(canvas, SCALE)
+            f.write(p.to_eagle() + "\n")
+
+        f.write("ratsnest;\n")
 
 
 def printcoords(event):
