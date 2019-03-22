@@ -350,8 +350,8 @@ def wheel_coords(inner_rad, outer_rad, center_x, center_y, channels) -> Coords:
     ch = lambda num, a: channel(f"CH{num}", center, radians(a), width, frills)
 
     # We want to start at the top so start with 90:
-    offset = 90
-    polys = [ ch(i, offset + (i * (width / 2))) for i in range(channels) ]
+    offset, chs = 90, channels
+    polys = [ ch(chs - i - 1, offset + (i * (width / 2))) for i in range(chs) ]
 
     return ((inner_circle, outer_circle), polys)
 
