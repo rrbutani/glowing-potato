@@ -54,8 +54,11 @@ class Point(object):
     def magnitude(self) -> float:
         return hypot(self.x, self.y)
 
-    def relative_angle(self, other: Point) -> float:
+    def relative_angle(self, other: Point) -> Radians:
         return atan2((other.y - self.y), (other.x - self.x)) % (2 * pi)
+
+    def relative_polar(self, other: Point) -> Tuple[float, Radians]:
+        return ((other - self).magnitude(), self.relative_angle(other))
 
     def __str__(self) -> str:
         return f"({self.x} {self.y})"
@@ -255,7 +258,7 @@ LAYER 1;
 # the spine) and an ending width (the thickness of it's pointy end). The sum of
 # these two widths we'll call the _band width_. The idea is that we can divide
 # the area of the wheel into bands each of which will be thick enough for one
-# frill (since the arcs that comprise a frill aren't cocentric with the wheel,
+# frill (since the arcs that comprise a frill aren't co-centric with the wheel,
 # this isn't really true but it's a useful abstraction, I think).
 
 # We're told that we should have a band width of 4 mm or less, so let's try 3.5
@@ -265,6 +268,8 @@ BAND_WIDTH = 3.5
 # We're also told that the edges of frills should be 4 mm or less apart. Let's
 # try 3.5 mm for this as well:
 FRILL_SEP = 3.5
+
+# Note that we're assuming the spine has the same width as FRILL_SEP.
 
 Frills = Tuple[float, float, List[float]]
 
@@ -284,10 +289,152 @@ def channel(name: str, center: Point, angle: Radians, width: Radians, frills: Fr
     w = FRILL_SEP / outer_rad
     p.add_geos(Arc.from_polar_radians(center, outer_rad, angle - w, angle + w))
 
+    # Band spec:
+    # |  +++++++++  --|
+    # + : starting frill
+    # - : ending frill
+    #   : gap
+    # total    : 14.3 :: 16
+    # starting : 11.6 :: 13
+    # ending   : 0.95 ::  1+
+    # gap 1    : 0.9  ::  1
+    # gap 2    : 0.9  ::  1
+    #
+    # Each radius corresponds to a point in the middle of the starting side of
+    # the frill.
+    BAND_TOTAL = 16
+    BAND_START = 13
+    BAND_END   =  1
+    BAND_GAP   =  1
+
+    # We have 4 different centers. One for the top of the frill and one for the
+    # bottom with separate centers for clockwise and counter clockwise frills.
+    #
+    # Really all the centers are on a circle centered at the actual center; top
+    # and bottom centers should be directly across from each other (180 degrees
+    # between them) on this circle. Additionally, our clockwise frill centers
+    # should be identical to the counterclockwise frill centers for the channel
+    # that's clockwise adjacent to us.
+    #
+    # Since these centers are on a circle, it makes sense to use polar form to
+    # find them. The angle of each center is a function of this channel's
+    # angle. The radius of the circle is determined by the bandwidth.
+    #
+    # NOTE: I haven't done the math for scaling the radius of this circle.
+    # Experimentally, for band widths of about 4 the radius of the circle
+    # appeared to be about 1, hence the scale factor of 4:
+    # center_circle_point:
+    ccp = lambda a: Point.from_polar(BAND_WIDTH / 4, angle + a) + center
+
+    # Appears to be +25 degrees for bottom and +205 degrees for top (180 + 25):
+    cw_ccp_offset = 25
+    cw_btm_center = ccp(radians(cw_ccp_offset))
+    cw_top_center = ccp(radians(cw_ccp_offset + 180))
+
+    # Appears to be +150 degrees for bottom and +330 degrees for top:
+    ccw_ccp_offset = 150
+    ccw_btm_center = ccp(radians(ccw_ccp_offset))
+    ccw_top_center = ccp(radians(ccw_ccp_offset + 180))
+
+    # Radii alternate between CW and CCW; we start with CCW:
+    cw: bool = False
+    for rad in radii:
+        center_top = cw_top_center if cw else ccw_top_center
+        center_btm = cw_btm_center if cw else ccw_btm_center
+
+        # Given the middle of the starting frill, we can calculate the radii of
+        # the top/bottom:
+        starting_top = rad + ((BAND_START / BAND_TOTAL) / 2) * BAND_WIDTH
+        starting_btm = rad - ((BAND_START / BAND_TOTAL) / 2) * BAND_WIDTH
+
+        # And also the ending top/bottom:
+        ending_top = rad - (BAND_WIDTH / 2) +
+            (((BAND_START / 2) + BAND_GAP + BAND_END) / BAND_TOTAL) * BAND_WIDTH
+        ending_btm = rad - (BAND_WIDTH / 2) +
+            (((BAND_START / 2) + BAND_GAP) / BAND_TOTAL) * BAND_WIDTH
+
+        # The first and last radii are potentially special cases since they can
+        # begin or end on the inner/outer circle. Rather than handle those
+        # outside of the loop we'll just do a quick check here:
+        if starting_top >= outer_rad or ending_top >= outer_rad:
+            starting_top = outer_rad
+
+            if ending_top >= outer_rad:
+                # We might have to do this regardless since we're swapping the
+                # center..
+                ending_top = outer_rad
+
+                # Note: this shouldn't really happen and likely won't work
+                if ending_btm >= outer_rad:
+                    ending_btm = outer_rad
+                    center_btm = center
+                    print("Warning: zero width frill end")
+
+            # Note: this also shouldn't really happen and likely won't work
+            if starting_btm >= outer_rad:
+                starting_btm = outer_rad
+                center_btm = center
+                print("Warning: zero width frill start (not good!)")
+
+            center_top = center
+
+        # Checking that we don't go into the inner circle is a bit easier since
+        # we can assume that the starting top and ending top aren't problematic:
+        if starting_btm <= inner_rad or ending_btm <= inner_rad:
+            # I'm making a simplifying assumption here: if we swap the starting
+            # bottom we're going to want to swap the ending bottom too.
+            # It _is_ possible to have the starting bottom go into the inner
+            # circle while the ending bottom doesn't but this _should_ never
+            # happen with the current setup.
+
+            starting_btm = inner_rad
+            ending_btm = inner_rad
+
+            center_btm = center
+
+        # Armed with what I sincerely hope are correct radii, we can now
+        # calculate positions for our points.
+        # Our starting positions should be half of FRILL_SEP away from this
+        # channel's angle and our ending positions should be FRILL_SEP / 2 +
+        # BAND_GAP away from the end of this channel (angle + width / 2).
+        #
+        # If we're cw we want to subtract; otherwise add.
+        war = width_at_radius = lambda l, r: (l / r) * (-1 if cw else 1)
+        swar = spine_width_at_radius = lambda r: war((FRILL_SEP / 2), r)
+        ewar = end_width_at_radius = lambda r: war(FRILL_SEP / 2 + BAND_GAP, r)
+        w = (width / 2) * (-1 if cw else 1)
+
+        starting_top: Point =
+            center + Point.from_polar(starting_top, angle + swar(starting_top))
+        starting_btm: Point =
+            center + Point.from_polar(starting_btm, angle + swar(starting_btm))
+
+        ending_top: Point =
+            center + Point.from_polar(ending_top, angle + w - ewar(ending_top))
+        ending_btm: Point =
+            center + Point.from_polar(ending_btm, angle + w - ewar(ending_btm))
+
+        # From these points we should be able to construct our arcs and lines:
+        st_rad: float, st_ang: Radians = center_top.relative_polar(starting_top)
+        sb_rad: float, sb_ang: Radians = center_btm.relative_polar(starting_btm)
+
+        ending_top_polar: Tuple[float, Radians] =
+            center_top.relative_polar(ending_top)
+        ending_btm_polar: Tuple[float, Radians] =
+            center_btm.relative_polar(ending_btm)
+
+        d = st_rad - et_rad
+        if abs(d) > 0.1:
+            print(f"Arc coordinates don't match the circle!! (diff of {d})")
+        bottom_arc = Arc.from_polar_radians(center_top, st_rad, )
+
+        cw = not cw
+
     # 4 to 1 ratio for starting frill width to ending frill width:
-    # 
+    band_width_end   = (1 / 5) * BAND_WIDTH
+    band_wdith_start = (4 / 5) * BAND_WIDTH
     ccw: bool = True # Start on the CCW side
-    # for rad in radii:
+    for rad in radii:
 
     #     # CW 
 
@@ -325,7 +472,7 @@ def calculate_frill_positions(inner_rad: float, outer_rad: float) -> Bands:
     radii = []
 
     # The first frill should start at 0. We're going to assume that left and
-    # right frills are staggered by half the wdith of a band:
+    # right frills are staggered by half the width of a band.
     radius = inner_rad
     while radius < outer_rad:
         radii.append(radius)
