@@ -9,15 +9,29 @@ from typing import Iterable, List, Tuple, Generator
 import tkinter as tk
 
 # Constants:
-SCALE = 5
+SCALE = 14
 
 # Types:
 Radians = float
 Degrees = float
 
 class Drawable:
+
+    fill: str = "red"
+    outline: str = "blue"
+
     def draw(self, canvas: Canvas, scale: float):
         pass
+
+    def set_fill(self, color: str):
+        self.fill = color
+
+        return self
+
+    def set_outline(self, color: str):
+        self.outline = color
+
+        return self
 
 class AsEagle:
     name: str = ""
@@ -143,11 +157,15 @@ class Line(Geo):
     def __init__(self, x1, y1, x2, y2):
         self.p1, self.p2 = Point(x1, y1), Point(x2, y2)
 
+    @classmethod
+    def from_points(cls, p1: Point, p2: Point):
+        return cls(*p1.as_tuple(), *p2.as_tuple())
+
     def draw(self, canvas: Canvas, scale: float):
         canvas.create_line(
             *self.p1.as_tk(scale),
             *self.p2.as_tk(scale),
-            fill = "red",
+            fill = self.fill,
             width = 2,
         )
 
@@ -218,8 +236,8 @@ class Arc(Geo):
             *(self.center + r).as_tk(scale),
             start = degrees(self.starting),
             extent = degrees(((self.ending + 2*pi) - self.starting) % (2*pi)),
-            fill = "red",
-            outline = "blue",
+            fill = self.fill,
+            outline = self.outline,
             width = 2,
             style = tk.ARC,
             # style = tk.PIESLICE,
@@ -242,7 +260,7 @@ preamble = """# Creates some wheels.
 #
 # Warning: This was auto-generated.
 GRID mm;
-CHANGE WIDTH 0.5;
+CHANGE WIDTH 0.02;
 LAYER 1;
 """
 
@@ -273,7 +291,7 @@ FRILL_SEP = 3.5
 
 Frills = Tuple[float, float, List[float]]
 
-def channel(name: str, center: Point, angle: Radians, width: Radians, frills: Frills) -> Polygon:
+def channel(name: str, center: Point, angle: Radians, width: Radians, frills: Frills, color: str) -> Polygon:
 
     inner_rad, outer_rad, radii = frills
     p = Polygon(name)
@@ -281,13 +299,13 @@ def channel(name: str, center: Point, angle: Radians, width: Radians, frills: Fr
     # Let's start with the bottom of the spine:
     # We want its arc length to be exactly FRILL_SEP, meaning half of that on
     # either side of `angle`.
-    w = FRILL_SEP / inner_rad
-    p.add_geos(Arc.from_polar_radians(center, inner_rad, angle - w, angle + w))
+    w = FRILL_SEP / inner_rad / 2
+    p.add_geos(Arc.from_polar_radians(center, inner_rad, angle - w, angle + w).set_outline("purple"))
 
     # While we're at it let's do the top of the spine too:
     # Same deal except with outer_rad.
-    w = FRILL_SEP / outer_rad
-    p.add_geos(Arc.from_polar_radians(center, outer_rad, angle - w, angle + w))
+    w = FRILL_SEP / outer_rad / 2
+    p.add_geos(Arc.from_polar_radians(center, outer_rad, angle - w, angle + w).set_outline("purple"))
 
     # Band spec:
     # |  +++++++++  --|
@@ -324,10 +342,10 @@ def channel(name: str, center: Point, angle: Radians, width: Radians, frills: Fr
     # Experimentally, for band widths of about 4 the radius of the circle
     # appeared to be about 1, hence the scale factor of 4:
     # center_circle_point:
-    ccp = lambda a: Point.from_polar(BAND_WIDTH / 4, angle + a) + center
+    ccp = lambda a: Point.from_polar(BAND_WIDTH / 4.3, angle + a) + center
 
     # Appears to be +25 degrees for bottom and +205 degrees for top (180 + 25):
-    cw_ccp_offset = 25
+    cw_ccp_offset = 210
     cw_btm_center = ccp(radians(cw_ccp_offset))
     cw_top_center = ccp(radians(cw_ccp_offset + 180))
 
@@ -348,9 +366,9 @@ def channel(name: str, center: Point, angle: Radians, width: Radians, frills: Fr
         starting_btm = rad - ((BAND_START / BAND_TOTAL) / 2) * BAND_WIDTH
 
         # And also the ending top/bottom:
-        ending_top = rad - (BAND_WIDTH / 2) +
+        ending_top = rad - (BAND_WIDTH / 2) + \
             (((BAND_START / 2) + BAND_GAP + BAND_END) / BAND_TOTAL) * BAND_WIDTH
-        ending_btm = rad - (BAND_WIDTH / 2) +
+        ending_btm = rad - (BAND_WIDTH / 2) + \
             (((BAND_START / 2) + BAND_GAP) / BAND_TOTAL) * BAND_WIDTH
 
         # The first and last radii are potentially special cases since they can
@@ -404,66 +422,54 @@ def channel(name: str, center: Point, angle: Radians, width: Radians, frills: Fr
         ewar = end_width_at_radius = lambda r: war(FRILL_SEP / 2 + BAND_GAP, r)
         w = (width / 2) * (-1 if cw else 1)
 
-        starting_top: Point =
+        starting_top: Point = \
             center + Point.from_polar(starting_top, angle + swar(starting_top))
-        starting_btm: Point =
+        starting_btm: Point = \
             center + Point.from_polar(starting_btm, angle + swar(starting_btm))
 
-        ending_top: Point =
+        ending_top: Point = \
             center + Point.from_polar(ending_top, angle + w - ewar(ending_top))
-        ending_btm: Point =
+        ending_btm: Point = \
             center + Point.from_polar(ending_btm, angle + w - ewar(ending_btm))
 
         # From these points we should be able to construct our arcs and lines:
-        st_rad: float, st_ang: Radians = center_top.relative_polar(starting_top)
-        sb_rad: float, sb_ang: Radians = center_btm.relative_polar(starting_btm)
+        st_rad, st_ang = center_top.relative_polar(starting_top)
+        sb_rad, sb_ang = center_btm.relative_polar(starting_btm)
 
-        ending_top_polar: Tuple[float, Radians] =
-            center_top.relative_polar(ending_top)
-        ending_btm_polar: Tuple[float, Radians] =
-            center_btm.relative_polar(ending_btm)
+        et_rad, et_ang = center_top.relative_polar(ending_top)
+        eb_rad, eb_ang = center_btm.relative_polar(ending_btm)
 
-        d = st_rad - et_rad
-        if abs(d) > 0.1:
-            print(f"Arc coordinates don't match the circle!! (diff of {d})")
-        bottom_arc = Arc.from_polar_radians(center_top, st_rad, )
+        # Takes starting, ending; flips correctly (CCW):
+        ao = angle_order = lambda s, e: (e, s) if cw else (s, e)
+
+        def check(a, b):
+            d = a - b
+            if abs(d) > 0.1:
+                print(f"Arc coordinates don't match the circle!! (diff of {d})")
+
+        check(sb_rad, eb_rad)
+        bottom_arc = Arc.from_polar_radians(center_btm, sb_rad, *ao(sb_ang, eb_ang))
+
+        check(st_rad, et_rad)
+        top_arc = Arc.from_polar_radians(center_top, st_rad, *ao(st_ang, et_ang))
+
+        p.add_geos(
+            Arc.from_polar_radians(center_btm, sb_rad, *ao(sb_ang, eb_ang))
+                .set_outline(color),
+            # Line.from_points(ending_top, ending_btm)
+            #     .set_fill(color),
+            Line.from_points(center_btm + Point.from_polar(sb_rad, eb_ang),
+                center_top + Point.from_polar(st_rad, et_ang))
+                    .set_fill(color),
+            # Line.from_points(center_btm + Point.from_polar(sb_rad, sb_ang),
+            #     center_top + Point.from_polar(st_rad, st_ang))
+            #         .set_fill(color),
+            Arc.from_polar_radians(center_top, st_rad, *ao(st_ang, et_ang))
+                .set_outline(color),
+        )
 
         cw = not cw
 
-    # 4 to 1 ratio for starting frill width to ending frill width:
-    band_width_end   = (1 / 5) * BAND_WIDTH
-    band_wdith_start = (4 / 5) * BAND_WIDTH
-    ccw: bool = True # Start on the CCW side
-    for rad in radii:
-
-    #     # CW 
-
-
-    #     ccw = not ccw
-
-    # # We'll have `bands` number of frills, each separated by the ending frill width
-    # # (so that frills can be interlaced). This means `bands` * (starting
-    # # frill width + ending frill width) = (outer_rad - inner_rad).
-    # band_width = (outer_rad - inner_rad) / bands
-    # frill_starting = (5 / 6) * band_width
-    # frill_ending   = (1 / 6) * band_width
-
-    # # <= 4mm on the outer ring:
-    # sep_angle = (3.5 / (outer_rad)) / 2
-    # frill_length = width - sep_angle
-
-    # if frill_starting > 4:
-    #     print("Add more bands!!")
-
-    # # First left (halved):
-    # yield []
-
-    # for rad in radii:
-    #     # Left (CCW):
-
-    #     # Right (CW):
-
-    # print(frill_starting, frill_ending)
     return p
 
 def calculate_frill_positions(inner_rad: float, outer_rad: float) -> Bands:
@@ -484,6 +490,8 @@ def calculate_frill_positions(inner_rad: float, outer_rad: float) -> Bands:
 Circle = Tuple[float, float, float, float]
 Coords = Tuple[Tuple[Circle, Circle], List[Polygon]]
 
+colors = ["red", "blue", "green", "yellow", "orange", "pink"]
+
 # Assumes 3 channels and outer_rad/inner_rad in mm
 def wheel_coords(inner_rad, outer_rad, center_x, center_y, channels) -> Coords:
     i, o, x, y = inner_rad, outer_rad, center_x, center_y
@@ -494,16 +502,16 @@ def wheel_coords(inner_rad, outer_rad, center_x, center_y, channels) -> Coords:
     center = Point(center_x, center_y)
 
     width = (360 * 2) / channels
-    ch = lambda num, a: channel(f"CH{num}", center, radians(a), width, frills)
+    ch = lambda num, a, c: channel(f"CH{num}", center, radians(a), radians(width), frills, c)
 
     # We want to start at the top so start with 90:
     offset, chs = 90, channels
-    polys = [ ch(chs - i - 1, offset + (i * (width / 2))) for i in range(chs) ]
+    polys = [ ch(chs - i - 1, offset + (i * (width / 2)), colors[i]) for i in range(3) ]
 
     return ((inner_circle, outer_circle), polys)
 
 
-OUTER_RAD = 50
+OUTER_RAD = 35
 INNER_RAD = 15
 CHANNELS  = 3
 
@@ -512,7 +520,7 @@ def scale(scale: float, *args: float) -> Generator[float, None, None]:
         yield scale * i
 
 def draw_wheel(canvas):
-    coords = wheel_coords(INNER_RAD, OUTER_RAD, 0, 0, 10)
+    coords = wheel_coords(INNER_RAD, OUTER_RAD, 0, 0, CHANNELS)
 
     base, polys = coords
 
