@@ -75,7 +75,7 @@ class Point(object):
         return ((other - self).magnitude(), self.relative_angle(other))
 
     def __str__(self) -> str:
-        return f"({self.x} {self.y})"
+        return f"({round(self.x, 5)} {round(self.y, 5)})"
 
     def __add__(self, other: Point) -> Point:
         return Point(self.x + other.x, self.y + other.y)
@@ -259,8 +259,9 @@ class Arc(Geo):
 preamble = """# Creates some wheels.
 #
 # Warning: This was auto-generated.
-GRID mm;
+GRID mm 1 1 dots on alt mm 1 mm;
 CHANGE WIDTH 0.02;
+SET wire_bend 2;
 LAYER 1;
 """
 
@@ -302,10 +303,16 @@ def channel(name: str, center: Point, angle: Radians, width: Radians, frills: Fr
     w = FRILL_SEP / inner_rad / 2
     p.add_geos(Arc.from_polar_radians(center, inner_rad, angle - w, angle + w).set_outline("purple"))
 
-    # While we're at it let's do the top of the spine too:
-    # Same deal except with outer_rad.
-    w = FRILL_SEP / outer_rad / 2
-    p.add_geos(Arc.from_polar_radians(center, outer_rad, angle - w, angle + w).set_outline("purple"))
+    # We're going to draw the lines on the sides of the spine by keeping track
+    # of the last point for the left/right and drawing a straight lint from
+    # there to our current position.
+    #
+    # Since we start with the bottom of the spine, let's use that for the
+    # initial values:
+    last_spine_points: List[Point] = [
+        center + Point.from_polar(inner_rad, angle + w), # CCW
+        center + Point.from_polar(inner_rad, angle - w), # CW
+    ]
 
     # Band spec:
     # |  +++++++++  --|
@@ -448,27 +455,43 @@ def channel(name: str, center: Point, angle: Radians, width: Radians, frills: Fr
                 print(f"Arc coordinates don't match the circle!! (diff of {d})")
 
         check(sb_rad, eb_rad)
-        bottom_arc = Arc.from_polar_radians(center_btm, sb_rad, *ao(sb_ang, eb_ang))
-
         check(st_rad, et_rad)
-        top_arc = Arc.from_polar_radians(center_top, st_rad, *ao(st_ang, et_ang))
 
         p.add_geos(
+            Line.from_points(last_spine_points[cw], starting_btm)
+                .set_fill(color),
             Arc.from_polar_radians(center_btm, sb_rad, *ao(sb_ang, eb_ang))
                 .set_outline(color),
+            # This is the right one:
             # Line.from_points(ending_top, ending_btm)
             #     .set_fill(color),
+            #
+            # But, since the points on the arcs don't actually match, let's use
+            # the points on the arcs to make the line:
             Line.from_points(center_btm + Point.from_polar(sb_rad, eb_ang),
                 center_top + Point.from_polar(st_rad, et_ang))
                     .set_fill(color),
-            # Line.from_points(center_btm + Point.from_polar(sb_rad, sb_ang),
-            #     center_top + Point.from_polar(st_rad, st_ang))
-            #         .set_fill(color),
             Arc.from_polar_radians(center_top, st_rad, *ao(st_ang, et_ang))
                 .set_outline(color),
         )
 
+        last_spine_points[cw] = starting_top
+
         cw = not cw
+
+    # Finally, let's do the top of the spine:
+    w = FRILL_SEP / outer_rad / 2
+    p.add_geos(Arc.from_polar_radians(center, outer_rad, angle - w, angle + w).set_outline("purple"))
+
+    # Now all that's left is to connect this to the last spine points:
+    p.add_geos(
+        Line.from_points(last_spine_points[0],
+            center + Point.from_polar(outer_rad, angle + w))
+                .set_fill(color),
+        Line.from_points(last_spine_points[1],
+            center + Point.from_polar(outer_rad, angle - w))
+                .set_fill(color),
+    )
 
     return p
 
@@ -506,13 +529,13 @@ def wheel_coords(inner_rad, outer_rad, center_x, center_y, channels) -> Coords:
 
     # We want to start at the top so start with 90:
     offset, chs = 90, channels
-    polys = [ ch(chs - i - 1, offset + (i * (width / 2)), colors[i]) for i in range(3) ]
+    polys = [ ch(chs - i - 1, offset + (i * (width / 2)), colors[i]) for i in range(chs) ]
 
     return ((inner_circle, outer_circle), polys)
 
 
-OUTER_RAD = 35
-INNER_RAD = 15
+OUTER_RAD = 30
+INNER_RAD = 20
 CHANNELS  = 3
 
 def scale(scale: float, *args: float) -> Generator[float, None, None]:
