@@ -3407,43 +3407,6 @@ Used for things that can directly connect to a USB port, say USB key</descriptio
 </deviceset>
 </devicesets>
 </library>
-<library name="Mini-Motor">
-<packages>
-<package name="MINI-MOTOR">
-<circle x="0" y="0" radius="5" width="0.127" layer="21"/>
-<pad name="GND" x="-4" y="0" drill="0.6" shape="square"/>
-<pad name="VCC" x="4" y="0" drill="0.6" shape="square"/>
-</package>
-</packages>
-<symbols>
-<symbol name="MINI-MOTOR">
-<pin name="GND" x="-5.08" y="0" length="middle"/>
-<pin name="VCC" x="22.86" y="0" length="middle" rot="R180"/>
-<wire x1="0" y1="2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="0" y1="-2.54" x2="17.78" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="17.78" y1="-2.54" x2="17.78" y2="2.54" width="0.254" layer="94"/>
-<wire x1="17.78" y1="2.54" x2="0" y2="2.54" width="0.254" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="MINI-MOTOR" prefix="MOT">
-<gates>
-<gate name="G$1" symbol="MINI-MOTOR" x="-10.16" y="2.54"/>
-</gates>
-<devices>
-<device name="" package="MINI-MOTOR">
-<connects>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="VCC" pad="VCC"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="AdafruitST7735R_18">
 <packages>
 <package name="ADAFRUITST7735R_18">
@@ -20662,6 +20625,122 @@ type 0309, grid 2.5 mm</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="JST-S3B-XH-SM4-TB">
+<description>Upverter Parts Library
+
+Created by Upverter.com</description>
+<packages>
+<package name="JST_S3B-XH-SM4-TB_0">
+<description>2.5mm pitch/ Disconnectable Crimp style connectors</description>
+<wire x1="-6.25" y1="-3.5" x2="-6.25" y2="3.5" width="0.152" layer="51"/>
+<wire x1="-6.25" y1="3.5" x2="6.25" y2="3.5" width="0.152" layer="51"/>
+<wire x1="6.25" y1="3.5" x2="6.25" y2="-3.5" width="0.152" layer="51"/>
+<wire x1="6.25" y1="-3.5" x2="-6.25" y2="-3.5" width="0.152" layer="51"/>
+<wire x1="-6.7" y1="-3.8" x2="-6.7" y2="7.4" width="0.1" layer="39"/>
+<wire x1="-6.7" y1="7.4" x2="6.7" y2="7.4" width="0.1" layer="39"/>
+<wire x1="6.7" y1="7.4" x2="6.7" y2="-3.8" width="0.1" layer="39"/>
+<wire x1="6.7" y1="-3.8" x2="-6.7" y2="-3.8" width="0.1" layer="39"/>
+<wire x1="-6.25" y1="3.5" x2="-3.65" y2="3.5" width="0.15" layer="21"/>
+<wire x1="-6.25" y1="3.5" x2="-6.25" y2="0.7" width="0.15" layer="21"/>
+<wire x1="3.65" y1="3.5" x2="6.25" y2="3.5" width="0.15" layer="21"/>
+<wire x1="6.25" y1="3.5" x2="6.25" y2="0.7" width="0.15" layer="21"/>
+<wire x1="-4.4" y1="-3.5" x2="4.4" y2="-3.5" width="0.15" layer="21"/>
+<text x="-6.55" y="7.525" size="1" layer="25">&gt;NAME</text>
+<circle x="-3.725" y="5.05" radius="0.25" width="0" layer="21"/>
+<smd name="1" x="-2.5" y="5.05" dx="1.3" dy="4.5" layer="1"/>
+<smd name="2" x="0" y="5.05" dx="1.3" dy="4.5" layer="1"/>
+<smd name="3" x="2.5" y="5.05" dx="1.3" dy="4.5" layer="1"/>
+<smd name="5" x="5.7" y="-1.75" dx="1.8" dy="3.9" layer="1"/>
+<smd name="4" x="-5.7" y="-1.75" dx="1.8" dy="3.9" layer="1"/>
+</package>
+</packages>
+<symbols>
+<symbol name="JST_S3B-XH-SM4-TB_0_0">
+<description>2.5mm pitch/ Disconnectable Crimp style connectors</description>
+<wire x1="2.54" y1="-35.56" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-5.08" x2="15.24" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-5.08" x2="15.24" y2="-35.56" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-35.56" x2="2.54" y2="-35.56" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-10.668" x2="7.62" y2="-9.652" width="1.016" layer="94"/>
+<wire x1="7.62" y1="-9.652" x2="11.938" y2="-9.652" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-9.652" x2="11.938" y2="-10.668" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-10.668" x2="7.62" y2="-10.668" width="1.016" layer="94"/>
+<wire x1="9.652" y1="-10.16" x2="15.24" y2="-10.16" width="0.508" layer="94"/>
+<wire x1="7.62" y1="-15.748" x2="7.62" y2="-14.732" width="1.016" layer="94"/>
+<wire x1="7.62" y1="-14.732" x2="11.938" y2="-14.732" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-14.732" x2="11.938" y2="-15.748" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-15.748" x2="7.62" y2="-15.748" width="1.016" layer="94"/>
+<wire x1="9.652" y1="-15.24" x2="15.24" y2="-15.24" width="0.508" layer="94"/>
+<wire x1="7.62" y1="-20.828" x2="7.62" y2="-19.812" width="1.016" layer="94"/>
+<wire x1="7.62" y1="-19.812" x2="11.938" y2="-19.812" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-19.812" x2="11.938" y2="-20.828" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-20.828" x2="7.62" y2="-20.828" width="1.016" layer="94"/>
+<wire x1="9.652" y1="-20.32" x2="15.24" y2="-20.32" width="0.508" layer="94"/>
+<wire x1="7.62" y1="-25.908" x2="7.62" y2="-24.892" width="1.016" layer="94"/>
+<wire x1="7.62" y1="-24.892" x2="11.938" y2="-24.892" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-24.892" x2="11.938" y2="-25.908" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-25.908" x2="7.62" y2="-25.908" width="1.016" layer="94"/>
+<wire x1="9.652" y1="-25.4" x2="15.24" y2="-25.4" width="0.508" layer="94"/>
+<wire x1="7.62" y1="-30.988" x2="7.62" y2="-29.972" width="1.016" layer="94"/>
+<wire x1="7.62" y1="-29.972" x2="11.938" y2="-29.972" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-29.972" x2="11.938" y2="-30.988" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-30.988" x2="7.62" y2="-30.988" width="1.016" layer="94"/>
+<wire x1="9.652" y1="-30.48" x2="15.24" y2="-30.48" width="0.508" layer="94"/>
+<wire x1="15.24" y1="-10.16" x2="15.24" y2="-10.16" width="0.15" layer="94"/>
+<wire x1="15.24" y1="-15.24" x2="15.24" y2="-15.24" width="0.15" layer="94"/>
+<wire x1="15.24" y1="-20.32" x2="15.24" y2="-20.32" width="0.15" layer="94"/>
+<wire x1="15.24" y1="-25.4" x2="15.24" y2="-25.4" width="0.15" layer="94"/>
+<wire x1="15.24" y1="-30.48" x2="15.24" y2="-30.48" width="0.15" layer="94"/>
+<text x="2.54" y="-2.54" size="2.54" layer="95" align="top-left">&gt;NAME</text>
+<text x="0" y="-38.1" size="2.54" layer="95" align="top-left">S3B-XH-SM4-TB</text>
+<pin name="1" x="20.32" y="-10.16" visible="pad" length="middle" rot="R180"/>
+<pin name="2" x="20.32" y="-15.24" visible="pad" length="middle" rot="R180"/>
+<pin name="3" x="20.32" y="-20.32" visible="pad" length="middle" rot="R180"/>
+<pin name="MNT_1" x="20.32" y="-25.4" visible="pad" length="middle" rot="R180"/>
+<pin name="MNT_2" x="20.32" y="-30.48" visible="pad" length="middle" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="JST_S3B-XH-SM4-TB" prefix="J">
+<description>2.5mm pitch/ Disconnectable Crimp style connectors</description>
+<gates>
+<gate name="G$0" symbol="JST_S3B-XH-SM4-TB_0_0" x="0" y="0"/>
+</gates>
+<devices>
+<device name="JST_S3B-XH-SM4-TB_0_0" package="JST_S3B-XH-SM4-TB_0">
+<connects>
+<connect gate="G$0" pin="1" pad="1"/>
+<connect gate="G$0" pin="2" pad="2"/>
+<connect gate="G$0" pin="3" pad="3"/>
+<connect gate="G$0" pin="MNT_1" pad="4"/>
+<connect gate="G$0" pin="MNT_2" pad="5"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CENTROID_NOT_SPECIFIED" value="No"/>
+<attribute name="CURRENT" value="3.0A"/>
+<attribute name="DATASHEET" value="https://upverter.com/datasheet/d0ef474b08262649b2e88d8de799d1feabfec59e.pdf"/>
+<attribute name="DIGIKEY_DESCRIPTION" value="CONN HEADER XH SMD 3POS 2.5MM"/>
+<attribute name="DIGIKEY_PART_NUMBER" value="455-2263-1-ND"/>
+<attribute name="IMPORTED_FROM" value="octopart"/>
+<attribute name="LEAD_FREE" value="yes"/>
+<attribute name="MF" value="JST"/>
+<attribute name="MPN" value="S3B-XH-SM4-TB"/>
+<attribute name="NUM_PINS" value="3"/>
+<attribute name="OCTOPART_PART_NUMBER" value="a0e069d6672e7f27"/>
+<attribute name="PACKAGE" value="HDR3"/>
+<attribute name="PREFIX" value="J"/>
+<attribute name="ROHS" value="yes"/>
+<attribute name="TEMPERATURE_RANGE_HIGH" value="+85°C"/>
+<attribute name="TEMPERATURE_RANGE_LOW" value="-25°C"/>
+<attribute name="VOLTAGE" value="250V"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -20674,7 +20753,6 @@ type 0309, grid 2.5 mm</description>
 <parts>
 <part name="U$1" library="ESP32" deviceset="ESP32-PICO" device="-D4"/>
 <part name="C1" library="adafruit" deviceset="C-US" device="025-024X044" value="0.1 uF"/>
-<part name="MOT1" library="Mini-Motor" deviceset="MINI-MOTOR" device=""/>
 <part name="U$6" library="AT42QT2120" deviceset="COMMS-AT42QT2120" device="XU" package3d_urn="urn:adsk.eagle:package:4349/2" value="COMMS-AT42QT2120XU"/>
 <part name="GND19" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="WHEEL_C" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X3" device="/90" package3d_urn="urn:adsk.eagle:package:22459/2"/>
@@ -20720,6 +20798,7 @@ type 0309, grid 2.5 mm</description>
 <part name="Q1" library="ON Semi - MMBT5551LT1G" deviceset="ON_SEMI_MMBT5551LT1G" device="ON_SEMI_MMBT5551LT1G_0_0"/>
 <part name="D2" library="ON Semi - 1N914BWS" deviceset="ON_SEMI_1N914BWS" device="ON_SEMI_1N914BWS_0_0"/>
 <part name="R1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:6240565/1" value="1.5K"/>
+<part name="J1" library="JST-S3B-XH-SM4-TB" deviceset="JST_S3B-XH-SM4-TB" device="JST_S3B-XH-SM4-TB_0_0"/>
 </parts>
 <sheets>
 <sheet>
@@ -21589,14 +21668,12 @@ type 0309, grid 2.5 mm</description>
 <sheet>
 <description>Vibration Motor</description>
 <plain>
-<text x="-17.78" y="40.64" size="1.778" layer="104" rot="R90">Motor</text>
 </plain>
 <instances>
 <instance part="C1" gate="G$1" x="-5.08" y="43.18" smashed="yes">
 <attribute name="NAME" x="-4.064" y="43.815" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-4.064" y="38.989" size="1.778" layer="96"/>
 </instance>
-<instance part="MOT1" gate="G$1" x="-15.24" y="35.56" smashed="yes" rot="R90"/>
 <instance part="GND20" gate="1" x="-15.24" y="22.86" smashed="yes">
 <attribute name="VALUE" x="-17.78" y="20.32" size="1.778" layer="96"/>
 </instance>
@@ -21612,6 +21689,9 @@ type 0309, grid 2.5 mm</description>
 <instance part="R1" gate="G$1" x="-2.54" y="15.24" smashed="yes" rot="R90">
 <attribute name="NAME" x="-4.0386" y="11.43" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="0.762" y="11.43" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="J1" gate="G$0" x="-43.18" y="66.04" smashed="yes">
+<attribute name="NAME" x="-40.64" y="63.5" size="2.54" layer="95" align="top-left"/>
 </instance>
 </instances>
 <busses>
@@ -21630,17 +21710,19 @@ type 0309, grid 2.5 mm</description>
 <pinref part="C1" gate="G$1" pin="2"/>
 <wire x1="-5.08" y1="35.56" x2="-5.08" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="-5.08" y1="35.56" x2="12.7" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="MOT1" gate="G$1" pin="GND"/>
 <wire x1="-15.24" y1="30.48" x2="-5.08" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="-5.08" y1="30.48" x2="-5.08" y2="35.56" width="0.1524" layer="91"/>
 <junction x="-5.08" y="35.56"/>
 <pinref part="GND20" gate="1" pin="GND"/>
 <wire x1="-15.24" y1="30.48" x2="-15.24" y2="25.4" width="0.1524" layer="91"/>
-<junction x="-15.24" y="30.48"/>
 <pinref part="Q1" gate="G$0" pin="COLLECTOR"/>
 <wire x1="12.7" y1="35.56" x2="12.7" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="D2" gate="G$0" pin="ANODE"/>
 <junction x="12.7" y="35.56"/>
+<pinref part="J1" gate="G$0" pin="2"/>
+<wire x1="-22.86" y1="50.8" x2="-15.24" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="50.8" x2="-15.24" y2="30.48" width="0.1524" layer="91"/>
+<junction x="-15.24" y="30.48"/>
 </segment>
 <segment>
 <pinref part="GND21" gate="1" pin="GND"/>
@@ -21664,13 +21746,14 @@ type 0309, grid 2.5 mm</description>
 <wire x1="-5.08" y1="50.8" x2="-5.08" y2="60.96" width="0.1524" layer="91"/>
 <junction x="-5.08" y="50.8"/>
 <wire x1="-5.08" y1="60.96" x2="-15.24" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="MOT1" gate="G$1" pin="VCC"/>
-<wire x1="-15.24" y1="60.96" x2="-15.24" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="-5.08" y1="60.96" x2="-5.08" y2="66.04" width="0.1524" layer="91"/>
 <junction x="-5.08" y="60.96"/>
 <wire x1="-5.08" y1="66.04" x2="0" y2="66.04" width="0.1524" layer="91"/>
 <label x="2.54" y="66.04" size="1.778" layer="95"/>
 <pinref part="D2" gate="G$0" pin="CATHODE"/>
+<pinref part="J1" gate="G$0" pin="1"/>
+<wire x1="-22.86" y1="55.88" x2="-15.24" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="55.88" x2="-15.24" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
