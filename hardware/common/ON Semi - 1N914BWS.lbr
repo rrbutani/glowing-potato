@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle>
+    <drawing>
+        <grid unitdist="mm" unit="mm"/>
+        <layers>
+            <layer name="Top" color="4" number="1" visible="yes" active="yes" fill="1"/>
+            <layer name="Bottom" color="4" number="16" visible="yes" active="yes" fill="1"/>
+            <layer name="tPlace" color="7" number="21" visible="yes" active="yes" fill="1"/>
+            <layer name="bPlace" color="7" number="22" visible="yes" active="yes" fill="1"/>
+            <layer name="tNames" color="7" number="25" visible="yes" active="yes" fill="1"/>
+            <layer name="bNames" color="7" number="26" visible="yes" active="yes" fill="1"/>
+            <layer name="tValues" color="7" number="27" visible="yes" active="yes" fill="1"/>
+            <layer name="bValues" color="7" number="28" visible="yes" active="yes" fill="1"/>
+            <layer name="tStop" color="7" number="29" visible="yes" active="yes" fill="1"/>
+            <layer name="bStop" color="7" number="30" visible="yes" active="yes" fill="1"/>
+            <layer name="tCream" color="7" number="31" visible="yes" active="yes" fill="1"/>
+            <layer name="bCream" color="7" number="32" visible="yes" active="yes" fill="1"/>
+            <layer name="tKeepout" color="4" number="39" visible="yes" active="yes" fill="1"/>
+            <layer name="bKeepout" color="4" number="40" visible="yes" active="yes" fill="1"/>
+            <layer name="tRestrict" color="0" number="41" visible="yes" active="yes" fill="1"/>
+            <layer name="bRestrict" color="0" number="42" visible="yes" active="yes" fill="1"/>
+            <layer name="tDocu" color="7" number="51" visible="yes" active="yes" fill="1"/>
+            <layer name="bDocu" color="7" number="52" visible="yes" active="yes" fill="1"/>
+            <layer name="Nets" color="2" number="91" visible="yes" active="yes" fill="1"/>
+            <layer name="Busses" color="1" number="92" visible="yes" active="yes" fill="1"/>
+            <layer name="Pins" color="2" number="93" visible="yes" active="yes" fill="1"/>
+            <layer name="Symbols" color="4" number="94" visible="yes" active="yes" fill="1"/>
+            <layer name="Names" color="7" number="95" visible="yes" active="yes" fill="1"/>
+            <layer name="Values" color="7" number="96" visible="yes" active="yes" fill="1"/>
+            <layer name="Info" color="7" number="97" visible="yes" active="yes" fill="1"/>
+            <layer name="Guide" color="6" number="98" visible="yes" active="yes" fill="1"/>
+        </layers>
+        <library name="Upverter Library">
+            <description>Upverter Parts Library
+
+Created by Upverter.com</description>
+            <packages>
+                <package name="ON_SEMI_1N914BWS_0">
+                    <description>Diode Standard 75V 150mA Surface Mount SOD-323F</description>
+                    <wire layer="51" y2="0.625" width="0.15" x2="-0.85" y1="-0.625" x1="-0.85"/>
+                    <wire layer="51" y2="0.625" width="0.15" x2="0.85" y1="0.625" x1="-0.85"/>
+                    <wire layer="51" y2="-0.625" width="0.15" x2="0.85" y1="0.625" x1="0.85"/>
+                    <wire layer="51" y2="-0.625" width="0.15" x2="-0.85" y1="-0.625" x1="0.85"/>
+                    <wire layer="39" y2="0.775" width="0.1" x2="-2.025" y1="-0.775" x1="-2.025"/>
+                    <wire layer="39" y2="0.775" width="0.1" x2="2.025" y1="0.775" x1="-2.025"/>
+                    <wire layer="39" y2="-0.775" width="0.1" x2="2.025" y1="0.775" x1="2.025"/>
+                    <wire layer="39" y2="-0.775" width="0.1" x2="-2.025" y1="-0.775" x1="2.025"/>
+                    <wire layer="21" y2="0.65" width="0.15" x2="0.85" y1="0.65" x1="-0.85"/>
+                    <wire layer="21" y2="-0.65" width="0.15" x2="0.85" y1="-0.65" x1="-0.85"/>
+                    <wire layer="21" y2="-0.55" width="0.3" x2="-0.35" y1="0.55" x1="-0.35"/>
+                    <text layer="25" align="bottom-left" y="-0.375" x="2.35" rot="R0" size="1.0">&gt;NAME</text>
+                    <circle y="0.0" x="-2.475" layer="21" radius="0.25" width="0.0"/>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="1.05" dy="0.55" y="0.0" x="-1.4" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="0" dx="1.05" dy="0.55" y="0.0" x="1.4" rot="R0" cream="yes"/>
+                </package>
+            </packages>
+            <symbols>
+                <symbol name="ON_SEMI_1N914BWS_0_0">
+                    <description>Diode Standard 75V 150mA Surface Mount SOD-323F</description>
+                    <wire layer="94" y2="-7.62" width="0.508" x2="2.54" y1="-2.54" x1="2.54"/>
+                    <wire layer="94" y2="-7.62" width="0.508" x2="7.62" y1="-2.54" x1="7.62"/>
+                    <wire layer="94" y2="-5.08" width="0.508" x2="7.62" y1="-2.54" x1="2.54"/>
+                    <wire layer="94" y2="-5.08" width="0.508" x2="7.62" y1="-7.62" x1="2.54"/>
+                    <wire layer="94" y2="-5.08" width="0.15" x2="2.54" y1="-5.08" x1="2.54"/>
+                    <wire layer="94" y2="-5.08" width="0.15" x2="7.62" y1="-5.08" x1="7.62"/>
+                    <text layer="95" align="top-left" y="0.508" x="1.016" rot="R0" size="2.54">&gt;NAME</text>
+                    <text layer="95" align="top-left" y="-8.636" x="1.27" rot="R0" size="2.54">1N914BWS</text>
+                    <pin name="ANODE" visible="pad" length="middle" y="-5.08" x="-2.54"/>
+                    <pin name="CATHODE" visible="pad" length="middle" y="-5.08" x="12.7" rot="R180"/>
+                </symbol>
+            </symbols>
+            <devicesets>
+                <deviceset prefix="D" name="ON_SEMI_1N914BWS">
+                    <description>Diode Standard 75V 150mA Surface Mount SOD-323F</description>
+                    <gates>
+                        <gate name="G$0" symbol="ON_SEMI_1N914BWS_0_0" x="0"/>
+                    </gates>
+                    <devices>
+                        <device name="ON_SEMI_1N914BWS_0_0" package="ON_SEMI_1N914BWS_0">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="CATHODE"/>
+                                <connect gate="G$0" pad="2" pin="ANODE"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="MPN" value="1N914BWS"/>
+                                    <attribute name="mouser_part_number" value="512-1N914BWS"/>
+                                    <attribute name="digikey_description" value="Diode Standard 75V 150mA Surface Mount SOD-323F"/>
+                                    <attribute name="centroid_not_specified" value="No"/>
+                                    <attribute name="digikey_part_number" value="1N914BWSCT-ND"/>
+                                    <attribute name="lead_free" value="yes"/>
+                                    <attribute name="Voltage_-_DC_Reverse_(Vr)_(Max)" value="75V"/>
+                                    <attribute name="prefix" value="D"/>
+                                    <attribute name="MF" value="ON Semi"/>
+                                    <attribute name="Current_-_Average_Rectified_(Io)" value="150mA"/>
+                                    <attribute name="package" value="SOD-323F2L"/>
+                                    <attribute name="rohs" value="yes"/>
+                                    <attribute name="datasheet" value="https://www.fairchildsemi.com/datasheets/1N/1N914BWS.pdf"/>
+                                    <attribute name="temperature_range_high" value="+150°C"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                    </devices>
+                </deviceset>
+            </devicesets>
+        </library>
+    </drawing>
+</eagle>

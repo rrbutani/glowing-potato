@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle>
+    <drawing>
+        <grid unitdist="mm" unit="mm"/>
+        <layers>
+            <layer name="Top" color="4" number="1" visible="yes" active="yes" fill="1"/>
+            <layer name="Bottom" color="4" number="16" visible="yes" active="yes" fill="1"/>
+            <layer name="tPlace" color="7" number="21" visible="yes" active="yes" fill="1"/>
+            <layer name="bPlace" color="7" number="22" visible="yes" active="yes" fill="1"/>
+            <layer name="tNames" color="7" number="25" visible="yes" active="yes" fill="1"/>
+            <layer name="bNames" color="7" number="26" visible="yes" active="yes" fill="1"/>
+            <layer name="tValues" color="7" number="27" visible="yes" active="yes" fill="1"/>
+            <layer name="bValues" color="7" number="28" visible="yes" active="yes" fill="1"/>
+            <layer name="tStop" color="7" number="29" visible="yes" active="yes" fill="1"/>
+            <layer name="bStop" color="7" number="30" visible="yes" active="yes" fill="1"/>
+            <layer name="tCream" color="7" number="31" visible="yes" active="yes" fill="1"/>
+            <layer name="bCream" color="7" number="32" visible="yes" active="yes" fill="1"/>
+            <layer name="tKeepout" color="4" number="39" visible="yes" active="yes" fill="1"/>
+            <layer name="bKeepout" color="4" number="40" visible="yes" active="yes" fill="1"/>
+            <layer name="tRestrict" color="0" number="41" visible="yes" active="yes" fill="1"/>
+            <layer name="bRestrict" color="0" number="42" visible="yes" active="yes" fill="1"/>
+            <layer name="tDocu" color="7" number="51" visible="yes" active="yes" fill="1"/>
+            <layer name="bDocu" color="7" number="52" visible="yes" active="yes" fill="1"/>
+            <layer name="Nets" color="2" number="91" visible="yes" active="yes" fill="1"/>
+            <layer name="Busses" color="1" number="92" visible="yes" active="yes" fill="1"/>
+            <layer name="Pins" color="2" number="93" visible="yes" active="yes" fill="1"/>
+            <layer name="Symbols" color="4" number="94" visible="yes" active="yes" fill="1"/>
+            <layer name="Names" color="7" number="95" visible="yes" active="yes" fill="1"/>
+            <layer name="Values" color="7" number="96" visible="yes" active="yes" fill="1"/>
+            <layer name="Info" color="7" number="97" visible="yes" active="yes" fill="1"/>
+            <layer name="Guide" color="6" number="98" visible="yes" active="yes" fill="1"/>
+        </layers>
+        <library name="Upverter Library">
+            <description>Upverter Parts Library
+
+Created by Upverter.com</description>
+            <packages>
+                <package name="ON_SEMI_MMBT5551LT1G_0">
+                    <description>Trans GP BJT NPN 160V 0.06A Automotive 3-Pin SOT-23 T/R</description>
+                    <wire layer="51" y2="1.52" width="0.15" x2="-0.7" y1="-1.52" x1="-0.7"/>
+                    <wire layer="51" y2="1.52" width="0.15" x2="0.7" y1="1.52" x1="-0.7"/>
+                    <wire layer="51" y2="-1.52" width="0.15" x2="0.7" y1="1.52" x1="0.7"/>
+                    <wire layer="51" y2="-1.52" width="0.15" x2="-0.7" y1="-1.52" x1="0.7"/>
+                    <wire layer="21" y2="1.52" width="0.15" x2="0.7" y1="1.52" x1="-0.175"/>
+                    <wire layer="21" y2="-0.775" width="0.15" x2="0.7" y1="-1.52" x1="0.7"/>
+                    <wire layer="21" y2="1.52" width="0.15" x2="0.7" y1="0.775" x1="0.7"/>
+                    <wire layer="21" y2="-1.52" width="0.15" x2="0.7" y1="-1.52" x1="-0.175"/>
+                    <wire layer="39" y2="1.62" width="0.1" x2="-1.55" y1="-1.62" x1="-1.55"/>
+                    <wire layer="39" y2="1.62" width="0.1" x2="1.55" y1="1.62" x1="-1.55"/>
+                    <wire layer="39" y2="-1.62" width="0.1" x2="1.55" y1="1.62" x1="1.55"/>
+                    <wire layer="39" y2="-1.62" width="0.1" x2="-1.55" y1="-1.62" x1="1.55"/>
+                    <text layer="25" align="bottom-left" y="1.995" x="-1.175" rot="R0" size="1.0">&gt;NAME</text>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="0.9" dy="0.8" y="0.95" x="-1.0" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="0" dx="0.9" dy="0.8" y="-0.95" x="-1.0" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="0" dx="0.9" dy="0.8" y="0.0" x="1.0" rot="R0" cream="yes"/>
+                </package>
+                <package name="ON_SEMI_MMBT5551LT1G_1">
+                    <description>Trans GP BJT NPN 160V 0.06A Automotive 3-Pin SOT-23 T/R</description>
+                    <wire layer="51" y2="1.45" width="0.15" x2="-0.65" y1="-1.45" x1="-0.65"/>
+                    <wire layer="51" y2="1.45" width="0.15" x2="0.65" y1="1.45" x1="-0.65"/>
+                    <wire layer="51" y2="-1.45" width="0.15" x2="0.65" y1="1.45" x1="0.65"/>
+                    <wire layer="51" y2="-1.45" width="0.15" x2="-0.65" y1="-1.45" x1="0.65"/>
+                    <wire layer="39" y2="1.95" width="0.1" x2="-2.372" y1="-1.95" x1="-2.372"/>
+                    <wire layer="39" y2="1.95" width="0.1" x2="2.372" y1="1.95" x1="-2.372"/>
+                    <wire layer="39" y2="-1.95" width="0.1" x2="2.372" y1="1.95" x1="2.372"/>
+                    <wire layer="39" y2="-1.95" width="0.1" x2="-2.372" y1="-1.95" x1="2.372"/>
+                    <wire layer="21" y2="1.45" width="0.15" x2="0.65" y1="1.45" x1="0.327"/>
+                    <wire layer="21" y2="-0.684" width="0.15" x2="0.65" y1="-1.45" x1="0.65"/>
+                    <wire layer="21" y2="1.45" width="0.15" x2="0.65" y1="0.684" x1="0.65"/>
+                    <wire layer="21" y2="-1.45" width="0.15" x2="0.65" y1="-1.45" x1="0.327"/>
+                    <text layer="25" align="bottom-left" y="2.65" x="-2.872" rot="R0" size="1.0">&gt;NAME</text>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="1.824" dy="0.618" y="0.95" x="-0.96" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="100" dx="1.824" dy="0.618" y="-0.95" x="-0.96" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="100" dx="1.824" dy="0.618" y="0.0" x="0.96" rot="R0" cream="yes"/>
+                </package>
+                <package name="ON_SEMI_MMBT5551LT1G_2">
+                    <description>Trans GP BJT NPN 160V 0.06A Automotive 3-Pin SOT-23 T/R</description>
+                    <wire layer="51" y2="1.45" width="0.15" x2="-0.65" y1="-1.45" x1="-0.65"/>
+                    <wire layer="51" y2="1.45" width="0.15" x2="0.65" y1="1.45" x1="-0.65"/>
+                    <wire layer="51" y2="-1.45" width="0.15" x2="0.65" y1="1.45" x1="0.65"/>
+                    <wire layer="51" y2="-1.45" width="0.15" x2="-0.65" y1="-1.45" x1="0.65"/>
+                    <wire layer="39" y2="1.7" width="0.1" x2="-1.922" y1="-1.7" x1="-1.922"/>
+                    <wire layer="39" y2="1.7" width="0.1" x2="1.922" y1="1.7" x1="-1.922"/>
+                    <wire layer="39" y2="-1.7" width="0.1" x2="1.922" y1="1.7" x1="1.922"/>
+                    <wire layer="39" y2="-1.7" width="0.1" x2="-1.922" y1="-1.7" x1="1.922"/>
+                    <wire layer="21" y2="1.45" width="0.15" x2="0.65" y1="1.45" x1="0.227"/>
+                    <wire layer="21" y2="-0.664" width="0.15" x2="0.65" y1="-1.45" x1="0.65"/>
+                    <wire layer="21" y2="1.45" width="0.15" x2="0.65" y1="0.664" x1="0.65"/>
+                    <wire layer="21" y2="-1.45" width="0.15" x2="0.65" y1="-1.45" x1="0.227"/>
+                    <text layer="25" align="bottom-left" y="2.1" x="-1.872" rot="R0" size="1.0">&gt;NAME</text>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="1.524" dy="0.578" y="0.95" x="-0.91" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="100" dx="1.524" dy="0.578" y="-0.95" x="-0.91" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="100" dx="1.524" dy="0.578" y="0.0" x="0.91" rot="R0" cream="yes"/>
+                </package>
+                <package name="ON_SEMI_MMBT5551LT1G_3">
+                    <description>Trans GP BJT NPN 160V 0.06A Automotive 3-Pin SOT-23 T/R</description>
+                    <wire layer="51" y2="1.45" width="0.15" x2="-0.65" y1="-1.45" x1="-0.65"/>
+                    <wire layer="51" y2="1.45" width="0.15" x2="0.65" y1="1.45" x1="-0.65"/>
+                    <wire layer="51" y2="-1.45" width="0.15" x2="0.65" y1="1.45" x1="0.65"/>
+                    <wire layer="51" y2="-1.45" width="0.15" x2="-0.65" y1="-1.45" x1="0.65"/>
+                    <wire layer="39" y2="1.55" width="0.1" x2="-1.572" y1="-1.55" x1="-1.572"/>
+                    <wire layer="39" y2="1.55" width="0.1" x2="1.572" y1="1.55" x1="-1.572"/>
+                    <wire layer="39" y2="-1.55" width="0.1" x2="1.572" y1="1.55" x1="1.572"/>
+                    <wire layer="39" y2="-1.55" width="0.1" x2="-1.572" y1="-1.55" x1="1.572"/>
+                    <wire layer="21" y2="1.45" width="0.15" x2="0.65" y1="1.45" x1="0.127"/>
+                    <wire layer="21" y2="-0.644" width="0.15" x2="0.65" y1="-1.45" x1="0.65"/>
+                    <wire layer="21" y2="1.45" width="0.15" x2="0.65" y1="0.644" x1="0.65"/>
+                    <wire layer="21" y2="-1.45" width="0.15" x2="0.65" y1="-1.45" x1="0.127"/>
+                    <text layer="25" align="bottom-left" y="2.025" x="-1.397" rot="R0" size="1.0">&gt;NAME</text>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="1.224" dy="0.538" y="0.95" x="-0.86" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="100" dx="1.224" dy="0.538" y="-0.95" x="-0.86" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="100" dx="1.224" dy="0.538" y="0.0" x="0.86" rot="R0" cream="yes"/>
+                </package>
+            </packages>
+            <symbols>
+                <symbol name="ON_SEMI_MMBT5551LT1G_0_0">
+                    <description>Trans GP BJT NPN 160V 0.06A Automotive 3-Pin SOT-23 T/R</description>
+                    <wire layer="94" y2="-10.16" width="0.508" x2="2.54" y1="-5.08" x1="2.54"/>
+                    <wire layer="94" y2="-10.16" width="0.508" x2="5.08" y1="-9.906" x1="3.556"/>
+                    <wire layer="94" y2="-10.16" width="0.508" x2="5.08" y1="-9.144" x1="4.064"/>
+                    <wire layer="94" y2="-9.144" width="0.508" x2="4.064" y1="-9.906" x1="3.556"/>
+                    <wire layer="94" y2="-5.08" width="0.508" x2="5.08" y1="-6.35" x1="2.54"/>
+                    <wire layer="94" y2="-10.16" width="0.508" x2="5.08" y1="-8.89" x1="2.54"/>
+                    <wire layer="94" y2="-7.62" width="0.15" x2="2.54" y1="-7.62" x1="2.54"/>
+                    <wire layer="94" y2="-5.08" width="0.15" x2="5.08" y1="-5.08" x1="5.08"/>
+                    <wire layer="94" y2="-10.16" width="0.15" x2="5.08" y1="-10.16" x1="5.08"/>
+                    <text layer="95" align="top-left" y="-5.08" x="7.62" rot="R0" size="2.54">&gt;NAME</text>
+                    <text layer="95" align="top-left" y="-7.62" x="7.62" rot="R0" size="2.54">MMBT5551LT1G</text>
+                    <pin direction="pas" name="BASE" visible="pad" length="middle" y="-7.62" x="-2.54"/>
+                    <pin direction="pas" name="COLLECTOR" visible="pad" length="middle" y="0.0" x="5.08" rot="R270"/>
+                    <pin direction="pas" name="EMITTER" visible="pad" length="middle" y="-15.24" x="5.08" rot="R90"/>
+                </symbol>
+            </symbols>
+            <devicesets>
+                <deviceset prefix="Q" name="ON_SEMI_MMBT5551LT1G">
+                    <description>Trans GP BJT NPN 160V 0.06A Automotive 3-Pin SOT-23 T/R</description>
+                    <gates>
+                        <gate name="G$0" symbol="ON_SEMI_MMBT5551LT1G_0_0" x="0"/>
+                    </gates>
+                    <devices>
+                        <device name="ON_SEMI_MMBT5551LT1G_0_0" package="ON_SEMI_MMBT5551LT1G_0">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="BASE"/>
+                                <connect gate="G$0" pad="2" pin="EMITTER"/>
+                                <connect gate="G$0" pad="3" pin="COLLECTOR"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="mouser_part_number" value="863-MMBT5551LT1G"/>
+                                    <attribute name="mfg_package_ident_rev" value="AS"/>
+                                    <attribute name="footprint_parameters_1" value='{"fp_type":"SOT23","params":{"N":{"default":"3","long name":"Number of leads","type":"multichoice","short name":"N"},"A":{"nom":1000000,"long name":"Height","min":890000,"max":1110000,"short name":"A","type":"measurement"},"A1":{"nom":60000,"long name":"Package clearance","min":10000,"max":100000,"short name":"A1","type":"measurement"},"A2":{"nom":940000,"long name":"Package height","min":880000,"max":1010000,"short name":"A2","type":"measurement"},"D":{"nom":2900000,"long name":"Package length","min":2800000,"max":3040000,"short name":"D","type":"measurement"},"E":{"nom":2400000,"long name":"Width /w leads","min":2100000,"max":2640000,"short name":"E","type":"measurement"},"E1":{"nom":1300000,"long name":"Package width","min":1200000,"max":1400000,"short name":"E1","type":"measurement"},"B":{"nom":440000,"long name":"Lead width","min":370000,"max":500000,"short name":"B","type":"measurement"},"C":{"nom":140000,"long name":"Lead thickness","min":80000,"max":200000,"short name":"C","type":"measurement"},"L":{"nom":430000,"long name":"Lead foot length","min":300000,"max":550000,"short name":"L","type":"measurement"},"e":{"nom":950000,"long name":"Lead pitch","min":null,"max":null,"short name":"e","type":"measurement"},"PHI":{"nom":false,"long name":"Lead angle","min":0,"max":10000000,"short name":"PHI","type":"measurement"},"offset x":{"nom":0,"long name":"X Center offset","min":null,"max":null,"short name":"offset x","type":"measurement"},"offset y":{"nom":0,"long name":"Y Center offset","min":null,"max":null,"short name":"offset y","type":"measurement"},"LS":{"default":"Rounded rectangle","long name":"Land shape","type":"multichoice","short name":"LS"},"LS1":{"default":"Rectangle","long name":"Land shape (Pin 1)","type":"multichoice","short name":"LS1"},"solder toe":{"nom":550000,"long name":"Solder fillet (toe)","min":null,"max":null,"short name":"solder toe","type":"fixedmeasurement"},"solder heel":{"nom":450000,"long name":"Solder fillet (heel)","min":null,"max":null,"short name":"solder heel","type":"fixedmeasurement"},"solder side":{"nom":50000,"long name":"Solder fillet (side)","min":null,"max":null,"short name":"solder side","type":"fixedmeasurement"},"courtyard":{"nom":500000,"long name":"Courtyard","min":null,"max":null,"short name":"courtyard","type":"fixedmeasurement"},"SF":{"default":"A","long name":"Packing level","type":"multichoiceparent","short name":"SF","help":"http://support.upverter.com/customer/portal/articles/978783-what-is-a-footprint-packing-level","children":["solder toe","solder heel","solder side","courtyard"]}}}'/>
+                                    <attribute name="max_junction_temp" value="+150°C"/>
+                                    <attribute name="footprint_parameters_3" value='{"fp_type":"SOT23","params":{"N":{"default":"3","long name":"Number of leads","type":"multichoice","short name":"N"},"A":{"nom":1000000,"long name":"Height","min":890000,"max":1110000,"short name":"A","type":"measurement"},"A1":{"nom":60000,"long name":"Package clearance","min":10000,"max":100000,"short name":"A1","type":"measurement"},"A2":{"nom":940000,"long name":"Package height","min":880000,"max":1010000,"short name":"A2","type":"measurement"},"D":{"nom":2900000,"long name":"Package length","min":2800000,"max":3040000,"short name":"D","type":"measurement"},"E":{"nom":2400000,"long name":"Width /w leads","min":2100000,"max":2640000,"short name":"E","type":"measurement"},"E1":{"nom":1300000,"long name":"Package width","min":1200000,"max":1400000,"short name":"E1","type":"measurement"},"B":{"nom":440000,"long name":"Lead width","min":370000,"max":500000,"short name":"B","type":"measurement"},"C":{"nom":140000,"long name":"Lead thickness","min":80000,"max":200000,"short name":"C","type":"measurement"},"L":{"nom":430000,"long name":"Lead foot length","min":300000,"max":550000,"short name":"L","type":"measurement"},"e":{"nom":950000,"long name":"Lead pitch","min":null,"max":null,"short name":"e","type":"measurement"},"PHI":{"nom":false,"long name":"Lead angle","min":0,"max":10000000,"short name":"PHI","type":"measurement"},"offset x":{"nom":0,"long name":"X Center offset","min":null,"max":null,"short name":"offset x","type":"measurement"},"offset y":{"nom":0,"long name":"Y Center offset","min":null,"max":null,"short name":"offset y","type":"measurement"},"LS":{"default":"Rounded rectangle","long name":"Land shape","type":"multichoice","short name":"LS"},"LS1":{"default":"Rectangle","long name":"Land shape (Pin 1)","type":"multichoice","short name":"LS1"},"solder toe":{"nom":150000,"long name":"Solder fillet (toe)","min":null,"max":null,"short name":"solder toe","type":"fixedmeasurement"},"solder heel":{"nom":250000,"long name":"Solder fillet (heel)","min":null,"max":null,"short name":"solder heel","type":"fixedmeasurement"},"solder side":{"nom":10000,"long name":"Solder fillet (side)","min":null,"max":null,"short name":"solder side","type":"fixedmeasurement"},"courtyard":{"nom":100000,"long name":"Courtyard","min":null,"max":null,"short name":"courtyard","type":"fixedmeasurement"},"SF":{"default":"C","long name":"Packing level","type":"multichoiceparent","short name":"SF","help":"http://support.upverter.com/customer/portal/articles/978783-what-is-a-footprint-packing-level","children":["solder toe","solder heel","solder side","courtyard"]}}}'/>
+                                    <attribute name="footprint_parameters_2" value='{"fp_type":"SOT23","params":{"N":{"default":"3","long name":"Number of leads","type":"multichoice","short name":"N"},"A":{"nom":1000000,"long name":"Height","min":890000,"max":1110000,"short name":"A","type":"measurement"},"A1":{"nom":60000,"long name":"Package clearance","min":10000,"max":100000,"short name":"A1","type":"measurement"},"A2":{"nom":940000,"long name":"Package height","min":880000,"max":1010000,"short name":"A2","type":"measurement"},"D":{"nom":2900000,"long name":"Package length","min":2800000,"max":3040000,"short name":"D","type":"measurement"},"E":{"nom":2400000,"long name":"Width /w leads","min":2100000,"max":2640000,"short name":"E","type":"measurement"},"E1":{"nom":1300000,"long name":"Package width","min":1200000,"max":1400000,"short name":"E1","type":"measurement"},"B":{"nom":440000,"long name":"Lead width","min":370000,"max":500000,"short name":"B","type":"measurement"},"C":{"nom":140000,"long name":"Lead thickness","min":80000,"max":200000,"short name":"C","type":"measurement"},"L":{"nom":430000,"long name":"Lead foot length","min":300000,"max":550000,"short name":"L","type":"measurement"},"e":{"nom":950000,"long name":"Lead pitch","min":null,"max":null,"short name":"e","type":"measurement"},"PHI":{"nom":false,"long name":"Lead angle","min":0,"max":10000000,"short name":"PHI","type":"measurement"},"offset x":{"nom":0,"long name":"X Center offset","min":null,"max":null,"short name":"offset x","type":"measurement"},"offset y":{"nom":0,"long name":"Y Center offset","min":null,"max":null,"short name":"offset y","type":"measurement"},"LS":{"default":"Rounded rectangle","long name":"Land shape","type":"multichoice","short name":"LS"},"LS1":{"default":"Rectangle","long name":"Land shape (Pin 1)","type":"multichoice","short name":"LS1"},"solder toe":{"nom":350000,"long name":"Solder fillet (toe)","min":null,"max":null,"short name":"solder toe","type":"fixedmeasurement"},"solder heel":{"nom":350000,"long name":"Solder fillet (heel)","min":null,"max":null,"short name":"solder heel","type":"fixedmeasurement"},"solder side":{"nom":30000,"long name":"Solder fillet (side)","min":null,"max":null,"short name":"solder side","type":"fixedmeasurement"},"courtyard":{"nom":250000,"long name":"Courtyard","min":null,"max":null,"short name":"courtyard","type":"fixedmeasurement"},"SF":{"default":"B","long name":"Packing level","type":"multichoiceparent","short name":"SF","help":"http://support.upverter.com/customer/portal/articles/978783-what-is-a-footprint-packing-level","children":["solder toe","solder heel","solder side","courtyard"]}}}'/>
+                                    <attribute name="temperature_range_high" value="+150°C"/>
+                                    <attribute name="MPN" value="MMBT5551LT1G"/>
+                                    <attribute name="digikey_description" value="TRANS NPN 160V 0.6A SOT23"/>
+                                    <attribute name="device_class_L1" value="Discrete Semiconductors"/>
+                                    <attribute name="digikey_part_number" value="MMBT5551LT1GOSCT-ND"/>
+                                    <attribute name="collector_emitter_saturation_voltage" value="0.2V"/>
+                                    <attribute name="prefix" value="Q"/>
+                                    <attribute name="footprint_variant_name_3" value="IPC_C"/>
+                                    <attribute name="collector_base_voltage" value="180V"/>
+                                    <attribute name="verification_version" value="0.0.0.1"/>
+                                    <attribute name="package" value="SOT-23 (TO-236)"/>
+                                    <attribute name="datasheet" value="http://www.onsemi.com/pub/Collateral/MMBT5550LT1-D.PDF"/>
+                                    <attribute name="max_collector_current" value="600mA"/>
+                                    <attribute name="power_dissipation" value="225mW"/>
+                                    <attribute name="footprint_url" value="http://www.onsemi.com/pub/Collateral/318-08.PDF"/>
+                                    <attribute name="3DS_Part_Number" value="452-00001"/>
+                                    <attribute name="collector_emitter_breakdown_voltage" value="160V"/>
+                                    <attribute name="height" value="1.11mm"/>
+                                    <attribute name="mfg_package_ident" value="318-08"/>
+                                    <attribute name="footprint_variant_name_0" value="Recommended_Land_Pattern"/>
+                                    <attribute name="footprint_variant_name_1" value="IPC_A"/>
+                                    <attribute name="footprint_variant_name_2" value="IPC_B"/>
+                                    <attribute name="emitter_base_voltage" value="6V"/>
+                                    <attribute name="lead_free" value="yes"/>
+                                    <attribute name="number_of_elements" value="1"/>
+                                    <attribute name="temperature_range_low" value="-55°C"/>
+                                    <attribute name="hFE_min" value="80"/>
+                                    <attribute name="rohs" value="yes"/>
+                                    <attribute name="centroid_not_specified" value="No"/>
+                                    <attribute name="device_class_L3" value="BJTs"/>
+                                    <attribute name="standoff_height" value="0.01mm"/>
+                                    <attribute name="mfg_package_ident_date" value="01/2018"/>
+                                    <attribute name="ipc_land_pattern_name" value="SOT95P240X100-3"/>
+                                    <attribute name="number_of_NPN" value="1"/>
+                                    <attribute name="MF" value="ON Semi"/>
+                                    <attribute name="collector_emitter_voltage" value="160V"/>
+                                    <attribute name="number_of_PNP" value="0"/>
+                                    <attribute name="device_class_L2" value="Transistors"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                        <device name="ON_SEMI_MMBT5551LT1G_0_1" package="ON_SEMI_MMBT5551LT1G_1">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="BASE"/>
+                                <connect gate="G$0" pad="2" pin="EMITTER"/>
+                                <connect gate="G$0" pad="3" pin="COLLECTOR"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="mouser_part_number" value="863-MMBT5551LT1G"/>
+                                    <attribute name="mfg_package_ident_rev" value="AS"/>
+                                    <attribute name="footprint_parameters_1" value='{"fp_type":"SOT23","params":{"N":{"default":"3","long name":"Number of leads","type":"multichoice","short name":"N"},"A":{"nom":1000000,"long name":"Height","min":890000,"max":1110000,"short name":"A","type":"measurement"},"A1":{"nom":60000,"long name":"Package clearance","min":10000,"max":100000,"short name":"A1","type":"measurement"},"A2":{"nom":940000,"long name":"Package height","min":880000,"max":1010000,"short name":"A2","type":"measurement"},"D":{"nom":2900000,"long name":"Package length","min":2800000,"max":3040000,"short name":"D","type":"measurement"},"E":{"nom":2400000,"long name":"Width /w leads","min":2100000,"max":2640000,"short name":"E","type":"measurement"},"E1":{"nom":1300000,"long name":"Package width","min":1200000,"max":1400000,"short name":"E1","type":"measurement"},"B":{"nom":440000,"long name":"Lead width","min":370000,"max":500000,"short name":"B","type":"measurement"},"C":{"nom":140000,"long name":"Lead thickness","min":80000,"max":200000,"short name":"C","type":"measurement"},"L":{"nom":430000,"long name":"Lead foot length","min":300000,"max":550000,"short name":"L","type":"measurement"},"e":{"nom":950000,"long name":"Lead pitch","min":null,"max":null,"short name":"e","type":"measurement"},"PHI":{"nom":false,"long name":"Lead angle","min":0,"max":10000000,"short name":"PHI","type":"measurement"},"offset x":{"nom":0,"long name":"X Center offset","min":null,"max":null,"short name":"offset x","type":"measurement"},"offset y":{"nom":0,"long name":"Y Center offset","min":null,"max":null,"short name":"offset y","type":"measurement"},"LS":{"default":"Rounded rectangle","long name":"Land shape","type":"multichoice","short name":"LS"},"LS1":{"default":"Rectangle","long name":"Land shape (Pin 1)","type":"multichoice","short name":"LS1"},"solder toe":{"nom":550000,"long name":"Solder fillet (toe)","min":null,"max":null,"short name":"solder toe","type":"fixedmeasurement"},"solder heel":{"nom":450000,"long name":"Solder fillet (heel)","min":null,"max":null,"short name":"solder heel","type":"fixedmeasurement"},"solder side":{"nom":50000,"long name":"Solder fillet (side)","min":null,"max":null,"short name":"solder side","type":"fixedmeasurement"},"courtyard":{"nom":500000,"long name":"Courtyard","min":null,"max":null,"short name":"courtyard","type":"fixedmeasurement"},"SF":{"default":"A","long name":"Packing level","type":"multichoiceparent","short name":"SF","help":"http://support.upverter.com/customer/portal/articles/978783-what-is-a-footprint-packing-level","children":["solder toe","solder heel","solder side","courtyard"]}}}'/>
+                                    <attribute name="max_junction_temp" value="+150°C"/>
+                                    <attribute name="footprint_parameters_3" value='{"fp_type":"SOT23","params":{"N":{"default":"3","long name":"Number of leads","type":"multichoice","short name":"N"},"A":{"nom":1000000,"long name":"Height","min":890000,"max":1110000,"short name":"A","type":"measurement"},"A1":{"nom":60000,"long name":"Package clearance","min":10000,"max":100000,"short name":"A1","type":"measurement"},"A2":{"nom":940000,"long name":"Package height","min":880000,"max":1010000,"short name":"A2","type":"measurement"},"D":{"nom":2900000,"long name":"Package length","min":2800000,"max":3040000,"short name":"D","type":"measurement"},"E":{"nom":2400000,"long name":"Width /w leads","min":2100000,"max":2640000,"short name":"E","type":"measurement"},"E1":{"nom":1300000,"long name":"Package width","min":1200000,"max":1400000,"short name":"E1","type":"measurement"},"B":{"nom":440000,"long name":"Lead width","min":370000,"max":500000,"short name":"B","type":"measurement"},"C":{"nom":140000,"long name":"Lead thickness","min":80000,"max":200000,"short name":"C","type":"measurement"},"L":{"nom":430000,"long name":"Lead foot length","min":300000,"max":550000,"short name":"L","type":"measurement"},"e":{"nom":950000,"long name":"Lead pitch","min":null,"max":null,"short name":"e","type":"measurement"},"PHI":{"nom":false,"long name":"Lead angle","min":0,"max":10000000,"short name":"PHI","type":"measurement"},"offset x":{"nom":0,"long name":"X Center offset","min":null,"max":null,"short name":"offset x","type":"measurement"},"offset y":{"nom":0,"long name":"Y Center offset","min":null,"max":null,"short name":"offset y","type":"measurement"},"LS":{"default":"Rounded rectangle","long name":"Land shape","type":"multichoice","short name":"LS"},"LS1":{"default":"Rectangle","long name":"Land shape (Pin 1)","type":"multichoice","short name":"LS1"},"solder toe":{"nom":150000,"long name":"Solder fillet (toe)","min":null,"max":null,"short name":"solder toe","type":"fixedmeasurement"},"solder heel":{"nom":250000,"long name":"Solder fillet (heel)","min":null,"max":null,"short name":"solder heel","type":"fixedmeasurement"},"solder side":{"nom":10000,"long name":"Solder fillet (side)","min":null,"max":null,"short name":"solder side","type":"fixedmeasurement"},"courtyard":{"nom":100000,"long name":"Courtyard","min":null,"max":null,"short name":"courtyard","type":"fixedmeasurement"},"SF":{"default":"C","long name":"Packing level","type":"multichoiceparent","short name":"SF","help":"http://support.upverter.com/customer/portal/articles/978783-what-is-a-footprint-packing-level","children":["solder toe","solder heel","solder side","courtyard"]}}}'/>
+                                    <attribute name="footprint_parameters_2" value='{"fp_type":"SOT23","params":{"N":{"default":"3","long name":"Number of leads","type":"multichoice","short name":"N"},"A":{"nom":1000000,"long name":"Height","min":890000,"max":1110000,"short name":"A","type":"measurement"},"A1":{"nom":60000,"long name":"Package clearance","min":10000,"max":100000,"short name":"A1","type":"measurement"},"A2":{"nom":940000,"long name":"Package height","min":880000,"max":1010000,"short name":"A2","type":"measurement"},"D":{"nom":2900000,"long name":"Package length","min":2800000,"max":3040000,"short name":"D","type":"measurement"},"E":{"nom":2400000,"long name":"Width /w leads","min":2100000,"max":2640000,"short name":"E","type":"measurement"},"E1":{"nom":1300000,"long name":"Package width","min":1200000,"max":1400000,"short name":"E1","type":"measurement"},"B":{"nom":440000,"long name":"Lead width","min":370000,"max":500000,"short name":"B","type":"measurement"},"C":{"nom":140000,"long name":"Lead thickness","min":80000,"max":200000,"short name":"C","type":"measurement"},"L":{"nom":430000,"long name":"Lead foot length","min":300000,"max":550000,"short name":"L","type":"measurement"},"e":{"nom":950000,"long name":"Lead pitch","min":null,"max":null,"short name":"e","type":"measurement"},"PHI":{"nom":false,"long name":"Lead angle","min":0,"max":10000000,"short name":"PHI","type":"measurement"},"offset x":{"nom":0,"long name":"X Center offset","min":null,"max":null,"short name":"offset x","type":"measurement"},"offset y":{"nom":0,"long name":"Y Center offset","min":null,"max":null,"short name":"offset y","type":"measurement"},"LS":{"default":"Rounded rectangle","long name":"Land shape","type":"multichoice","short name":"LS"},"LS1":{"default":"Rectangle","long name":"Land shape (Pin 1)","type":"multichoice","short name":"LS1"},"solder toe":{"nom":350000,"long name":"Solder fillet (toe)","min":null,"max":null,"short name":"solder toe","type":"fixedmeasurement"},"solder heel":{"nom":350000,"long name":"Solder fillet (heel)","min":null,"max":null,"short name":"solder heel","type":"fixedmeasurement"},"solder side":{"nom":30000,"long name":"Solder fillet (side)","min":null,"max":null,"short name":"solder side","type":"fixedmeasurement"},"courtyard":{"nom":250000,"long name":"Courtyard","min":null,"max":null,"short name":"courtyard","type":"fixedmeasurement"},"SF":{"default":"B","long name":"Packing level","type":"multichoiceparent","short name":"SF","help":"http://support.upverter.com/customer/portal/articles/978783-what-is-a-footprint-packing-level","children":["solder toe","solder heel","solder side","courtyard"]}}}'/>
+                                    <attribute name="temperature_range_high" value="+150°C"/>
+                                    <attribute name="MPN" value="MMBT5551LT1G"/>
+                                    <attribute name="digikey_description" value="TRANS NPN 160V 0.6A SOT23"/>
+                                    <attribute name="device_class_L1" value="Discrete Semiconductors"/>
+                                    <attribute name="digikey_part_number" value="MMBT5551LT1GOSCT-ND"/>
+                                    <attribute name="collector_emitter_saturation_voltage" value="0.2V"/>
+                                    <attribute name="prefix" value="Q"/>
+                                    <attribute name="footprint_variant_name_3" value="IPC_C"/>
+                                    <attribute name="collector_base_voltage" value="180V"/>
+                                    <attribute name="verification_version" value="0.0.0.1"/>
+                                    <attribute name="package" value="SOT-23 (TO-236)"/>
+                                    <attribute name="datasheet" value="http://www.onsemi.com/pub/Collateral/MMBT5550LT1-D.PDF"/>
+                                    <attribute name="max_collector_current" value="600mA"/>
+                                    <attribute name="power_dissipation" value="225mW"/>
+                                    <attribute name="footprint_url" value="http://www.onsemi.com/pub/Collateral/318-08.PDF"/>
+                                    <attribute name="3DS_Part_Number" value="452-00001"/>
+                                    <attribute name="collector_emitter_breakdown_voltage" value="160V"/>
+                                    <attribute name="height" value="1.11mm"/>
+                                    <attribute name="mfg_package_ident" value="318-08"/>
+                                    <attribute name="footprint_variant_name_0" value="Recommended_Land_Pattern"/>
+                                    <attribute name="footprint_variant_name_1" value="IPC_A"/>
+                                    <attribute name="footprint_variant_name_2" value="IPC_B"/>
+                                    <attribute name="emitter_base_voltage" value="6V"/>
+                                    <attribute name="lead_free" value="yes"/>
+                                    <attribute name="number_of_elements" value="1"/>
+                                    <attribute name="temperature_range_low" value="-55°C"/>
+                                    <attribute name="hFE_min" value="80"/>
+                                    <attribute name="rohs" value="yes"/>
+                                    <attribute name="centroid_not_specified" value="No"/>
+                                    <attribute name="device_class_L3" value="BJTs"/>
+                                    <attribute name="standoff_height" value="0.01mm"/>
+                                    <attribute name="mfg_package_ident_date" value="01/2018"/>
+                                    <attribute name="ipc_land_pattern_name" value="SOT95P240X100-3"/>
+                                    <attribute name="number_of_NPN" value="1"/>
+                                    <attribute name="MF" value="ON Semi"/>
+                                    <attribute name="collector_emitter_voltage" value="160V"/>
+                                    <attribute name="number_of_PNP" value="0"/>
+                                    <attribute name="device_class_L2" value="Transistors"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                        <device name="ON_SEMI_MMBT5551LT1G_0_2" package="ON_SEMI_MMBT5551LT1G_2">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="BASE"/>
+                                <connect gate="G$0" pad="2" pin="EMITTER"/>
+                                <connect gate="G$0" pad="3" pin="COLLECTOR"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="mouser_part_number" value="863-MMBT5551LT1G"/>
+                                    <attribute name="mfg_package_ident_rev" value="AS"/>
+                                    <attribute name="footprint_parameters_1" value='{"fp_type":"SOT23","params":{"N":{"default":"3","long name":"Number of leads","type":"multichoice","short name":"N"},"A":{"nom":1000000,"long name":"Height","min":890000,"max":1110000,"short name":"A","type":"measurement"},"A1":{"nom":60000,"long name":"Package clearance","min":10000,"max":100000,"short name":"A1","type":"measurement"},"A2":{"nom":940000,"long name":"Package height","min":880000,"max":1010000,"short name":"A2","type":"measurement"},"D":{"nom":2900000,"long name":"Package length","min":2800000,"max":3040000,"short name":"D","type":"measurement"},"E":{"nom":2400000,"long name":"Width /w leads","min":2100000,"max":2640000,"short name":"E","type":"measurement"},"E1":{"nom":1300000,"long name":"Package width","min":1200000,"max":1400000,"short name":"E1","type":"measurement"},"B":{"nom":440000,"long name":"Lead width","min":370000,"max":500000,"short name":"B","type":"measurement"},"C":{"nom":140000,"long name":"Lead thickness","min":80000,"max":200000,"short name":"C","type":"measurement"},"L":{"nom":430000,"long name":"Lead foot length","min":300000,"max":550000,"short name":"L","type":"measurement"},"e":{"nom":950000,"long name":"Lead pitch","min":null,"max":null,"short name":"e","type":"measurement"},"PHI":{"nom":false,"long name":"Lead angle","min":0,"max":10000000,"short name":"PHI","type":"measurement"},"offset x":{"nom":0,"long name":"X Center offset","min":null,"max":null,"short name":"offset x","type":"measurement"},"offset y":{"nom":0,"long name":"Y Center offset","min":null,"max":null,"short name":"offset y","type":"measurement"},"LS":{"default":"Rounded rectangle","long name":"Land shape","type":"multichoice","short name":"LS"},"LS1":{"default":"Rectangle","long name":"Land shape (Pin 1)","type":"multichoice","short name":"LS1"},"solder toe":{"nom":550000,"long name":"Solder fillet (toe)","min":null,"max":null,"short name":"solder toe","type":"fixedmeasurement"},"solder heel":{"nom":450000,"long name":"Solder fillet (heel)","min":null,"max":null,"short name":"solder heel","type":"fixedmeasurement"},"solder side":{"nom":50000,"long name":"Solder fillet (side)","min":null,"max":null,"short name":"solder side","type":"fixedmeasurement"},"courtyard":{"nom":500000,"long name":"Courtyard","min":null,"max":null,"short name":"courtyard","type":"fixedmeasurement"},"SF":{"default":"A","long name":"Packing level","type":"multichoiceparent","short name":"SF","help":"http://support.upverter.com/customer/portal/articles/978783-what-is-a-footprint-packing-level","children":["solder toe","solder heel","solder side","courtyard"]}}}'/>
+                                    <attribute name="max_junction_temp" value="+150°C"/>
+                                    <attribute name="footprint_parameters_3" value='{"fp_type":"SOT23","params":{"N":{"default":"3","long name":"Number of leads","type":"multichoice","short name":"N"},"A":{"nom":1000000,"long name":"Height","min":890000,"max":1110000,"short name":"A","type":"measurement"},"A1":{"nom":60000,"long name":"Package clearance","min":10000,"max":100000,"short name":"A1","type":"measurement"},"A2":{"nom":940000,"long name":"Package height","min":880000,"max":1010000,"short name":"A2","type":"measurement"},"D":{"nom":2900000,"long name":"Package length","min":2800000,"max":3040000,"short name":"D","type":"measurement"},"E":{"nom":2400000,"long name":"Width /w leads","min":2100000,"max":2640000,"short name":"E","type":"measurement"},"E1":{"nom":1300000,"long name":"Package width","min":1200000,"max":1400000,"short name":"E1","type":"measurement"},"B":{"nom":440000,"long name":"Lead width","min":370000,"max":500000,"short name":"B","type":"measurement"},"C":{"nom":140000,"long name":"Lead thickness","min":80000,"max":200000,"short name":"C","type":"measurement"},"L":{"nom":430000,"long name":"Lead foot length","min":300000,"max":550000,"short name":"L","type":"measurement"},"e":{"nom":950000,"long name":"Lead pitch","min":null,"max":null,"short name":"e","type":"measurement"},"PHI":{"nom":false,"long name":"Lead angle","min":0,"max":10000000,"short name":"PHI","type":"measurement"},"offset x":{"nom":0,"long name":"X Center offset","min":null,"max":null,"short name":"offset x","type":"measurement"},"offset y":{"nom":0,"long name":"Y Center offset","min":null,"max":null,"short name":"offset y","type":"measurement"},"LS":{"default":"Rounded rectangle","long name":"Land shape","type":"multichoice","short name":"LS"},"LS1":{"default":"Rectangle","long name":"Land shape (Pin 1)","type":"multichoice","short name":"LS1"},"solder toe":{"nom":150000,"long name":"Solder fillet (toe)","min":null,"max":null,"short name":"solder toe","type":"fixedmeasurement"},"solder heel":{"nom":250000,"long name":"Solder fillet (heel)","min":null,"max":null,"short name":"solder heel","type":"fixedmeasurement"},"solder side":{"nom":10000,"long name":"Solder fillet (side)","min":null,"max":null,"short name":"solder side","type":"fixedmeasurement"},"courtyard":{"nom":100000,"long name":"Courtyard","min":null,"max":null,"short name":"courtyard","type":"fixedmeasurement"},"SF":{"default":"C","long name":"Packing level","type":"multichoiceparent","short name":"SF","help":"http://support.upverter.com/customer/portal/articles/978783-what-is-a-footprint-packing-level","children":["solder toe","solder heel","solder side","courtyard"]}}}'/>
+                                    <attribute name="footprint_parameters_2" value='{"fp_type":"SOT23","params":{"N":{"default":"3","long name":"Number of leads","type":"multichoice","short name":"N"},"A":{"nom":1000000,"long name":"Height","min":890000,"max":1110000,"short name":"A","type":"measurement"},"A1":{"nom":60000,"long name":"Package clearance","min":10000,"max":100000,"short name":"A1","type":"measurement"},"A2":{"nom":940000,"long name":"Package height","min":880000,"max":1010000,"short name":"A2","type":"measurement"},"D":{"nom":2900000,"long name":"Package length","min":2800000,"max":3040000,"short name":"D","type":"measurement"},"E":{"nom":2400000,"long name":"Width /w leads","min":2100000,"max":2640000,"short name":"E","type":"measurement"},"E1":{"nom":1300000,"long name":"Package width","min":1200000,"max":1400000,"short name":"E1","type":"measurement"},"B":{"nom":440000,"long name":"Lead width","min":370000,"max":500000,"short name":"B","type":"measurement"},"C":{"nom":140000,"long name":"Lead thickness","min":80000,"max":200000,"short name":"C","type":"measurement"},"L":{"nom":430000,"long name":"Lead foot length","min":300000,"max":550000,"short name":"L","type":"measurement"},"e":{"nom":950000,"long name":"Lead pitch","min":null,"max":null,"short name":"e","type":"measurement"},"PHI":{"nom":false,"long name":"Lead angle","min":0,"max":10000000,"short name":"PHI","type":"measurement"},"offset x":{"nom":0,"long name":"X Center offset","min":null,"max":null,"short name":"offset x","type":"measurement"},"offset y":{"nom":0,"long name":"Y Center offset","min":null,"max":null,"short name":"offset y","type":"measurement"},"LS":{"default":"Rounded rectangle","long name":"Land shape","type":"multichoice","short name":"LS"},"LS1":{"default":"Rectangle","long name":"Land shape (Pin 1)","type":"multichoice","short name":"LS1"},"solder toe":{"nom":350000,"long name":"Solder fillet (toe)","min":null,"max":null,"short name":"solder toe","type":"fixedmeasurement"},"solder heel":{"nom":350000,"long name":"Solder fillet (heel)","min":null,"max":null,"short name":"solder heel","type":"fixedmeasurement"},"solder side":{"nom":30000,"long name":"Solder fillet (side)","min":null,"max":null,"short name":"solder side","type":"fixedmeasurement"},"courtyard":{"nom":250000,"long name":"Courtyard","min":null,"max":null,"short name":"courtyard","type":"fixedmeasurement"},"SF":{"default":"B","long name":"Packing level","type":"multichoiceparent","short name":"SF","help":"http://support.upverter.com/customer/portal/articles/978783-what-is-a-footprint-packing-level","children":["solder toe","solder heel","solder side","courtyard"]}}}'/>
+                                    <attribute name="temperature_range_high" value="+150°C"/>
+                                    <attribute name="MPN" value="MMBT5551LT1G"/>
+                                    <attribute name="digikey_description" value="TRANS NPN 160V 0.6A SOT23"/>
+                                    <attribute name="device_class_L1" value="Discrete Semiconductors"/>
+                                    <attribute name="digikey_part_number" value="MMBT5551LT1GOSCT-ND"/>
+                                    <attribute name="collector_emitter_saturation_voltage" value="0.2V"/>
+                                    <attribute name="prefix" value="Q"/>
+                                    <attribute name="footprint_variant_name_3" value="IPC_C"/>
+                                    <attribute name="collector_base_voltage" value="180V"/>
+                                    <attribute name="verification_version" value="0.0.0.1"/>
+                                    <attribute name="package" value="SOT-23 (TO-236)"/>
+                                    <attribute name="datasheet" value="http://www.onsemi.com/pub/Collateral/MMBT5550LT1-D.PDF"/>
+                                    <attribute name="max_collector_current" value="600mA"/>
+                                    <attribute name="power_dissipation" value="225mW"/>
+                                    <attribute name="footprint_url" value="http://www.onsemi.com/pub/Collateral/318-08.PDF"/>
+                                    <attribute name="3DS_Part_Number" value="452-00001"/>
+                                    <attribute name="collector_emitter_breakdown_voltage" value="160V"/>
+                                    <attribute name="height" value="1.11mm"/>
+                                    <attribute name="mfg_package_ident" value="318-08"/>
+                                    <attribute name="footprint_variant_name_0" value="Recommended_Land_Pattern"/>
+                                    <attribute name="footprint_variant_name_1" value="IPC_A"/>
+                                    <attribute name="footprint_variant_name_2" value="IPC_B"/>
+                                    <attribute name="emitter_base_voltage" value="6V"/>
+                                    <attribute name="lead_free" value="yes"/>
+                                    <attribute name="number_of_elements" value="1"/>
+                                    <attribute name="temperature_range_low" value="-55°C"/>
+                                    <attribute name="hFE_min" value="80"/>
+                                    <attribute name="rohs" value="yes"/>
+                                    <attribute name="centroid_not_specified" value="No"/>
+                                    <attribute name="device_class_L3" value="BJTs"/>
+                                    <attribute name="standoff_height" value="0.01mm"/>
+                                    <attribute name="mfg_package_ident_date" value="01/2018"/>
+                                    <attribute name="ipc_land_pattern_name" value="SOT95P240X100-3"/>
+                                    <attribute name="number_of_NPN" value="1"/>
+                                    <attribute name="MF" value="ON Semi"/>
+                                    <attribute name="collector_emitter_voltage" value="160V"/>
+                                    <attribute name="number_of_PNP" value="0"/>
+                                    <attribute name="device_class_L2" value="Transistors"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                        <device name="ON_SEMI_MMBT5551LT1G_0_3" package="ON_SEMI_MMBT5551LT1G_3">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="BASE"/>
+                                <connect gate="G$0" pad="2" pin="EMITTER"/>
+                                <connect gate="G$0" pad="3" pin="COLLECTOR"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="mouser_part_number" value="863-MMBT5551LT1G"/>
+                                    <attribute name="mfg_package_ident_rev" value="AS"/>
+                                    <attribute name="footprint_parameters_1" value='{"fp_type":"SOT23","params":{"N":{"default":"3","long name":"Number of leads","type":"multichoice","short name":"N"},"A":{"nom":1000000,"long name":"Height","min":890000,"max":1110000,"short name":"A","type":"measurement"},"A1":{"nom":60000,"long name":"Package clearance","min":10000,"max":100000,"short name":"A1","type":"measurement"},"A2":{"nom":940000,"long name":"Package height","min":880000,"max":1010000,"short name":"A2","type":"measurement"},"D":{"nom":2900000,"long name":"Package length","min":2800000,"max":3040000,"short name":"D","type":"measurement"},"E":{"nom":2400000,"long name":"Width /w leads","min":2100000,"max":2640000,"short name":"E","type":"measurement"},"E1":{"nom":1300000,"long name":"Package width","min":1200000,"max":1400000,"short name":"E1","type":"measurement"},"B":{"nom":440000,"long name":"Lead width","min":370000,"max":500000,"short name":"B","type":"measurement"},"C":{"nom":140000,"long name":"Lead thickness","min":80000,"max":200000,"short name":"C","type":"measurement"},"L":{"nom":430000,"long name":"Lead foot length","min":300000,"max":550000,"short name":"L","type":"measurement"},"e":{"nom":950000,"long name":"Lead pitch","min":null,"max":null,"short name":"e","type":"measurement"},"PHI":{"nom":false,"long name":"Lead angle","min":0,"max":10000000,"short name":"PHI","type":"measurement"},"offset x":{"nom":0,"long name":"X Center offset","min":null,"max":null,"short name":"offset x","type":"measurement"},"offset y":{"nom":0,"long name":"Y Center offset","min":null,"max":null,"short name":"offset y","type":"measurement"},"LS":{"default":"Rounded rectangle","long name":"Land shape","type":"multichoice","short name":"LS"},"LS1":{"default":"Rectangle","long name":"Land shape (Pin 1)","type":"multichoice","short name":"LS1"},"solder toe":{"nom":550000,"long name":"Solder fillet (toe)","min":null,"max":null,"short name":"solder toe","type":"fixedmeasurement"},"solder heel":{"nom":450000,"long name":"Solder fillet (heel)","min":null,"max":null,"short name":"solder heel","type":"fixedmeasurement"},"solder side":{"nom":50000,"long name":"Solder fillet (side)","min":null,"max":null,"short name":"solder side","type":"fixedmeasurement"},"courtyard":{"nom":500000,"long name":"Courtyard","min":null,"max":null,"short name":"courtyard","type":"fixedmeasurement"},"SF":{"default":"A","long name":"Packing level","type":"multichoiceparent","short name":"SF","help":"http://support.upverter.com/customer/portal/articles/978783-what-is-a-footprint-packing-level","children":["solder toe","solder heel","solder side","courtyard"]}}}'/>
+                                    <attribute name="max_junction_temp" value="+150°C"/>
+                                    <attribute name="footprint_parameters_3" value='{"fp_type":"SOT23","params":{"N":{"default":"3","long name":"Number of leads","type":"multichoice","short name":"N"},"A":{"nom":1000000,"long name":"Height","min":890000,"max":1110000,"short name":"A","type":"measurement"},"A1":{"nom":60000,"long name":"Package clearance","min":10000,"max":100000,"short name":"A1","type":"measurement"},"A2":{"nom":940000,"long name":"Package height","min":880000,"max":1010000,"short name":"A2","type":"measurement"},"D":{"nom":2900000,"long name":"Package length","min":2800000,"max":3040000,"short name":"D","type":"measurement"},"E":{"nom":2400000,"long name":"Width /w leads","min":2100000,"max":2640000,"short name":"E","type":"measurement"},"E1":{"nom":1300000,"long name":"Package width","min":1200000,"max":1400000,"short name":"E1","type":"measurement"},"B":{"nom":440000,"long name":"Lead width","min":370000,"max":500000,"short name":"B","type":"measurement"},"C":{"nom":140000,"long name":"Lead thickness","min":80000,"max":200000,"short name":"C","type":"measurement"},"L":{"nom":430000,"long name":"Lead foot length","min":300000,"max":550000,"short name":"L","type":"measurement"},"e":{"nom":950000,"long name":"Lead pitch","min":null,"max":null,"short name":"e","type":"measurement"},"PHI":{"nom":false,"long name":"Lead angle","min":0,"max":10000000,"short name":"PHI","type":"measurement"},"offset x":{"nom":0,"long name":"X Center offset","min":null,"max":null,"short name":"offset x","type":"measurement"},"offset y":{"nom":0,"long name":"Y Center offset","min":null,"max":null,"short name":"offset y","type":"measurement"},"LS":{"default":"Rounded rectangle","long name":"Land shape","type":"multichoice","short name":"LS"},"LS1":{"default":"Rectangle","long name":"Land shape (Pin 1)","type":"multichoice","short name":"LS1"},"solder toe":{"nom":150000,"long name":"Solder fillet (toe)","min":null,"max":null,"short name":"solder toe","type":"fixedmeasurement"},"solder heel":{"nom":250000,"long name":"Solder fillet (heel)","min":null,"max":null,"short name":"solder heel","type":"fixedmeasurement"},"solder side":{"nom":10000,"long name":"Solder fillet (side)","min":null,"max":null,"short name":"solder side","type":"fixedmeasurement"},"courtyard":{"nom":100000,"long name":"Courtyard","min":null,"max":null,"short name":"courtyard","type":"fixedmeasurement"},"SF":{"default":"C","long name":"Packing level","type":"multichoiceparent","short name":"SF","help":"http://support.upverter.com/customer/portal/articles/978783-what-is-a-footprint-packing-level","children":["solder toe","solder heel","solder side","courtyard"]}}}'/>
+                                    <attribute name="footprint_parameters_2" value='{"fp_type":"SOT23","params":{"N":{"default":"3","long name":"Number of leads","type":"multichoice","short name":"N"},"A":{"nom":1000000,"long name":"Height","min":890000,"max":1110000,"short name":"A","type":"measurement"},"A1":{"nom":60000,"long name":"Package clearance","min":10000,"max":100000,"short name":"A1","type":"measurement"},"A2":{"nom":940000,"long name":"Package height","min":880000,"max":1010000,"short name":"A2","type":"measurement"},"D":{"nom":2900000,"long name":"Package length","min":2800000,"max":3040000,"short name":"D","type":"measurement"},"E":{"nom":2400000,"long name":"Width /w leads","min":2100000,"max":2640000,"short name":"E","type":"measurement"},"E1":{"nom":1300000,"long name":"Package width","min":1200000,"max":1400000,"short name":"E1","type":"measurement"},"B":{"nom":440000,"long name":"Lead width","min":370000,"max":500000,"short name":"B","type":"measurement"},"C":{"nom":140000,"long name":"Lead thickness","min":80000,"max":200000,"short name":"C","type":"measurement"},"L":{"nom":430000,"long name":"Lead foot length","min":300000,"max":550000,"short name":"L","type":"measurement"},"e":{"nom":950000,"long name":"Lead pitch","min":null,"max":null,"short name":"e","type":"measurement"},"PHI":{"nom":false,"long name":"Lead angle","min":0,"max":10000000,"short name":"PHI","type":"measurement"},"offset x":{"nom":0,"long name":"X Center offset","min":null,"max":null,"short name":"offset x","type":"measurement"},"offset y":{"nom":0,"long name":"Y Center offset","min":null,"max":null,"short name":"offset y","type":"measurement"},"LS":{"default":"Rounded rectangle","long name":"Land shape","type":"multichoice","short name":"LS"},"LS1":{"default":"Rectangle","long name":"Land shape (Pin 1)","type":"multichoice","short name":"LS1"},"solder toe":{"nom":350000,"long name":"Solder fillet (toe)","min":null,"max":null,"short name":"solder toe","type":"fixedmeasurement"},"solder heel":{"nom":350000,"long name":"Solder fillet (heel)","min":null,"max":null,"short name":"solder heel","type":"fixedmeasurement"},"solder side":{"nom":30000,"long name":"Solder fillet (side)","min":null,"max":null,"short name":"solder side","type":"fixedmeasurement"},"courtyard":{"nom":250000,"long name":"Courtyard","min":null,"max":null,"short name":"courtyard","type":"fixedmeasurement"},"SF":{"default":"B","long name":"Packing level","type":"multichoiceparent","short name":"SF","help":"http://support.upverter.com/customer/portal/articles/978783-what-is-a-footprint-packing-level","children":["solder toe","solder heel","solder side","courtyard"]}}}'/>
+                                    <attribute name="temperature_range_high" value="+150°C"/>
+                                    <attribute name="MPN" value="MMBT5551LT1G"/>
+                                    <attribute name="digikey_description" value="TRANS NPN 160V 0.6A SOT23"/>
+                                    <attribute name="device_class_L1" value="Discrete Semiconductors"/>
+                                    <attribute name="digikey_part_number" value="MMBT5551LT1GOSCT-ND"/>
+                                    <attribute name="collector_emitter_saturation_voltage" value="0.2V"/>
+                                    <attribute name="prefix" value="Q"/>
+                                    <attribute name="footprint_variant_name_3" value="IPC_C"/>
+                                    <attribute name="collector_base_voltage" value="180V"/>
+                                    <attribute name="verification_version" value="0.0.0.1"/>
+                                    <attribute name="package" value="SOT-23 (TO-236)"/>
+                                    <attribute name="datasheet" value="http://www.onsemi.com/pub/Collateral/MMBT5550LT1-D.PDF"/>
+                                    <attribute name="max_collector_current" value="600mA"/>
+                                    <attribute name="power_dissipation" value="225mW"/>
+                                    <attribute name="footprint_url" value="http://www.onsemi.com/pub/Collateral/318-08.PDF"/>
+                                    <attribute name="3DS_Part_Number" value="452-00001"/>
+                                    <attribute name="collector_emitter_breakdown_voltage" value="160V"/>
+                                    <attribute name="height" value="1.11mm"/>
+                                    <attribute name="mfg_package_ident" value="318-08"/>
+                                    <attribute name="footprint_variant_name_0" value="Recommended_Land_Pattern"/>
+                                    <attribute name="footprint_variant_name_1" value="IPC_A"/>
+                                    <attribute name="footprint_variant_name_2" value="IPC_B"/>
+                                    <attribute name="emitter_base_voltage" value="6V"/>
+                                    <attribute name="lead_free" value="yes"/>
+                                    <attribute name="number_of_elements" value="1"/>
+                                    <attribute name="temperature_range_low" value="-55°C"/>
+                                    <attribute name="hFE_min" value="80"/>
+                                    <attribute name="rohs" value="yes"/>
+                                    <attribute name="centroid_not_specified" value="No"/>
+                                    <attribute name="device_class_L3" value="BJTs"/>
+                                    <attribute name="standoff_height" value="0.01mm"/>
+                                    <attribute name="mfg_package_ident_date" value="01/2018"/>
+                                    <attribute name="ipc_land_pattern_name" value="SOT95P240X100-3"/>
+                                    <attribute name="number_of_NPN" value="1"/>
+                                    <attribute name="MF" value="ON Semi"/>
+                                    <attribute name="collector_emitter_voltage" value="160V"/>
+                                    <attribute name="number_of_PNP" value="0"/>
+                                    <attribute name="device_class_L2" value="Transistors"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                    </devices>
+                </deviceset>
+            </devicesets>
+        </library>
+    </drawing>
+</eagle>
