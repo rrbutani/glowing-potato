@@ -1,151 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle>
-    <drawing>
-        <grid unitdist="mm" unit="mm"/>
-        <layers>
-            <layer name="Top" color="4" number="1" visible="yes" active="yes" fill="1"/>
-            <layer name="Bottom" color="4" number="16" visible="yes" active="yes" fill="1"/>
-            <layer name="tPlace" color="7" number="21" visible="yes" active="yes" fill="1"/>
-            <layer name="bPlace" color="7" number="22" visible="yes" active="yes" fill="1"/>
-            <layer name="tNames" color="7" number="25" visible="yes" active="yes" fill="1"/>
-            <layer name="bNames" color="7" number="26" visible="yes" active="yes" fill="1"/>
-            <layer name="tValues" color="7" number="27" visible="yes" active="yes" fill="1"/>
-            <layer name="bValues" color="7" number="28" visible="yes" active="yes" fill="1"/>
-            <layer name="tStop" color="7" number="29" visible="yes" active="yes" fill="1"/>
-            <layer name="bStop" color="7" number="30" visible="yes" active="yes" fill="1"/>
-            <layer name="tCream" color="7" number="31" visible="yes" active="yes" fill="1"/>
-            <layer name="bCream" color="7" number="32" visible="yes" active="yes" fill="1"/>
-            <layer name="tKeepout" color="4" number="39" visible="yes" active="yes" fill="1"/>
-            <layer name="bKeepout" color="4" number="40" visible="yes" active="yes" fill="1"/>
-            <layer name="tRestrict" color="0" number="41" visible="yes" active="yes" fill="1"/>
-            <layer name="bRestrict" color="0" number="42" visible="yes" active="yes" fill="1"/>
-            <layer name="tDocu" color="7" number="51" visible="yes" active="yes" fill="1"/>
-            <layer name="bDocu" color="7" number="52" visible="yes" active="yes" fill="1"/>
-            <layer name="Nets" color="2" number="91" visible="yes" active="yes" fill="1"/>
-            <layer name="Busses" color="1" number="92" visible="yes" active="yes" fill="1"/>
-            <layer name="Pins" color="2" number="93" visible="yes" active="yes" fill="1"/>
-            <layer name="Symbols" color="4" number="94" visible="yes" active="yes" fill="1"/>
-            <layer name="Names" color="7" number="95" visible="yes" active="yes" fill="1"/>
-            <layer name="Values" color="7" number="96" visible="yes" active="yes" fill="1"/>
-            <layer name="Info" color="7" number="97" visible="yes" active="yes" fill="1"/>
-            <layer name="Guide" color="6" number="98" visible="yes" active="yes" fill="1"/>
-        </layers>
-        <library name="Upverter Library">
-            <description>Upverter Parts Library
+<eagle version="9.3.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="0" fill="1" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="0" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<description>Upverter Parts Library
 
 Created by Upverter.com</description>
-            <packages>
-                <package name="JST_S3B-XH-SM4-TB_0">
-                    <description>2.5mm pitch/ Disconnectable Crimp style connectors</description>
-                    <wire layer="51" y2="3.5" width="0.152" x2="-6.25" y1="-3.5" x1="-6.25"/>
-                    <wire layer="51" y2="3.5" width="0.152" x2="6.25" y1="3.5" x1="-6.25"/>
-                    <wire layer="51" y2="-3.5" width="0.152" x2="6.25" y1="3.5" x1="6.25"/>
-                    <wire layer="51" y2="-3.5" width="0.152" x2="-6.25" y1="-3.5" x1="6.25"/>
-                    <wire layer="39" y2="7.4" width="0.1" x2="-6.7" y1="-3.8" x1="-6.7"/>
-                    <wire layer="39" y2="7.4" width="0.1" x2="6.7" y1="7.4" x1="-6.7"/>
-                    <wire layer="39" y2="-3.8" width="0.1" x2="6.7" y1="7.4" x1="6.7"/>
-                    <wire layer="39" y2="-3.8" width="0.1" x2="-6.7" y1="-3.8" x1="6.7"/>
-                    <wire layer="21" y2="3.5" width="0.15" x2="-3.65" y1="3.5" x1="-6.25"/>
-                    <wire layer="21" y2="0.7" width="0.15" x2="-6.25" y1="3.5" x1="-6.25"/>
-                    <wire layer="21" y2="3.5" width="0.15" x2="6.25" y1="3.5" x1="3.65"/>
-                    <wire layer="21" y2="0.7" width="0.15" x2="6.25" y1="3.5" x1="6.25"/>
-                    <wire layer="21" y2="-3.5" width="0.15" x2="4.4" y1="-3.5" x1="-4.4"/>
-                    <text layer="25" align="bottom-left" y="7.525" x="-6.55" rot="R0" size="1.0">&gt;NAME</text>
-                    <circle y="5.05" x="-3.725" layer="21" radius="0.25" width="0.0"/>
-                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="1.3" dy="4.5" y="5.05" x="-2.5" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="0" dx="1.3" dy="4.5" y="5.05" x="0.0" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="0" dx="1.3" dy="4.5" y="5.05" x="2.5" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="5" stop="yes" roundness="0" dx="1.8" dy="3.9" y="-1.75" x="5.7" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="4" stop="yes" roundness="0" dx="1.8" dy="3.9" y="-1.75" x="-5.7" rot="R0" cream="yes"/>
-                </package>
-            </packages>
-            <symbols>
-                <symbol name="JST_S3B-XH-SM4-TB_0_0">
-                    <description>2.5mm pitch/ Disconnectable Crimp style connectors</description>
-                    <wire layer="94" y2="-5.08" width="0.254" x2="2.54" y1="-35.56" x1="2.54"/>
-                    <wire layer="94" y2="-5.08" width="0.254" x2="15.24" y1="-5.08" x1="2.54"/>
-                    <wire layer="94" y2="-35.56" width="0.254" x2="15.24" y1="-5.08" x1="15.24"/>
-                    <wire layer="94" y2="-35.56" width="0.254" x2="2.54" y1="-35.56" x1="15.24"/>
-                    <wire layer="94" y2="-9.652" width="1.016" x2="7.62" y1="-10.668" x1="7.62"/>
-                    <wire layer="94" y2="-9.652" width="1.016" x2="11.938" y1="-9.652" x1="7.62"/>
-                    <wire layer="94" y2="-10.668" width="1.016" x2="11.938" y1="-9.652" x1="11.938"/>
-                    <wire layer="94" y2="-10.668" width="1.016" x2="7.62" y1="-10.668" x1="11.938"/>
-                    <wire layer="94" y2="-10.16" width="0.508" x2="15.24" y1="-10.16" x1="9.652"/>
-                    <wire layer="94" y2="-14.732" width="1.016" x2="7.62" y1="-15.748" x1="7.62"/>
-                    <wire layer="94" y2="-14.732" width="1.016" x2="11.938" y1="-14.732" x1="7.62"/>
-                    <wire layer="94" y2="-15.748" width="1.016" x2="11.938" y1="-14.732" x1="11.938"/>
-                    <wire layer="94" y2="-15.748" width="1.016" x2="7.62" y1="-15.748" x1="11.938"/>
-                    <wire layer="94" y2="-15.24" width="0.508" x2="15.24" y1="-15.24" x1="9.652"/>
-                    <wire layer="94" y2="-19.812" width="1.016" x2="7.62" y1="-20.828" x1="7.62"/>
-                    <wire layer="94" y2="-19.812" width="1.016" x2="11.938" y1="-19.812" x1="7.62"/>
-                    <wire layer="94" y2="-20.828" width="1.016" x2="11.938" y1="-19.812" x1="11.938"/>
-                    <wire layer="94" y2="-20.828" width="1.016" x2="7.62" y1="-20.828" x1="11.938"/>
-                    <wire layer="94" y2="-20.32" width="0.508" x2="15.24" y1="-20.32" x1="9.652"/>
-                    <wire layer="94" y2="-24.892" width="1.016" x2="7.62" y1="-25.908" x1="7.62"/>
-                    <wire layer="94" y2="-24.892" width="1.016" x2="11.938" y1="-24.892" x1="7.62"/>
-                    <wire layer="94" y2="-25.908" width="1.016" x2="11.938" y1="-24.892" x1="11.938"/>
-                    <wire layer="94" y2="-25.908" width="1.016" x2="7.62" y1="-25.908" x1="11.938"/>
-                    <wire layer="94" y2="-25.4" width="0.508" x2="15.24" y1="-25.4" x1="9.652"/>
-                    <wire layer="94" y2="-29.972" width="1.016" x2="7.62" y1="-30.988" x1="7.62"/>
-                    <wire layer="94" y2="-29.972" width="1.016" x2="11.938" y1="-29.972" x1="7.62"/>
-                    <wire layer="94" y2="-30.988" width="1.016" x2="11.938" y1="-29.972" x1="11.938"/>
-                    <wire layer="94" y2="-30.988" width="1.016" x2="7.62" y1="-30.988" x1="11.938"/>
-                    <wire layer="94" y2="-30.48" width="0.508" x2="15.24" y1="-30.48" x1="9.652"/>
-                    <wire layer="94" y2="-10.16" width="0.15" x2="15.24" y1="-10.16" x1="15.24"/>
-                    <wire layer="94" y2="-15.24" width="0.15" x2="15.24" y1="-15.24" x1="15.24"/>
-                    <wire layer="94" y2="-20.32" width="0.15" x2="15.24" y1="-20.32" x1="15.24"/>
-                    <wire layer="94" y2="-25.4" width="0.15" x2="15.24" y1="-25.4" x1="15.24"/>
-                    <wire layer="94" y2="-30.48" width="0.15" x2="15.24" y1="-30.48" x1="15.24"/>
-                    <text layer="95" align="top-left" y="-2.54" x="2.54" rot="R0" size="2.54">&gt;NAME</text>
-                    <text layer="95" align="top-left" y="-38.1" x="0.0" rot="R0" size="2.54">S3B-XH-SM4-TB</text>
-                    <pin name="1" visible="pad" length="middle" y="-10.16" x="20.32" rot="R180"/>
-                    <pin name="2" visible="pad" length="middle" y="-15.24" x="20.32" rot="R180"/>
-                    <pin name="3" visible="pad" length="middle" y="-20.32" x="20.32" rot="R180"/>
-                    <pin name="MNT_1" visible="pad" length="middle" y="-25.4" x="20.32" rot="R180"/>
-                    <pin name="MNT_2" visible="pad" length="middle" y="-30.48" x="20.32" rot="R180"/>
-                </symbol>
-            </symbols>
-            <devicesets>
-                <deviceset prefix="J" name="JST_S3B-XH-SM4-TB">
-                    <description>2.5mm pitch/ Disconnectable Crimp style connectors</description>
-                    <gates>
-                        <gate name="G$0" symbol="JST_S3B-XH-SM4-TB_0_0" x="0"/>
-                    </gates>
-                    <devices>
-                        <device name="JST_S3B-XH-SM4-TB_0_0" package="JST_S3B-XH-SM4-TB_0">
-                            <connects>
-                                <connect gate="G$0" pad="1" pin="1"/>
-                                <connect gate="G$0" pad="2" pin="2"/>
-                                <connect gate="G$0" pad="3" pin="3"/>
-                                <connect gate="G$0" pad="4" pin="MNT_1"/>
-                                <connect gate="G$0" pad="5" pin="MNT_2"/>
-                            </connects>
-                            <technologies>
-                                <technology>
-                                    <attribute name="Current" value="3.0A"/>
-                                    <attribute name="temperature_range_high" value="+85°C"/>
-                                    <attribute name="MPN" value="S3B-XH-SM4-TB"/>
-                                    <attribute name="digikey_description" value="CONN HEADER XH SMD 3POS 2.5MM"/>
-                                    <attribute name="digikey_part_number" value="455-2263-1-ND"/>
-                                    <attribute name="temperature_range_low" value="-25°C"/>
-                                    <attribute name="prefix" value="J"/>
-                                    <attribute name="datasheet" value="https://upverter.com/datasheet/d0ef474b08262649b2e88d8de799d1feabfec59e.pdf"/>
-                                    <attribute name="lead_free" value="yes"/>
-                                    <attribute name="voltage" value="250V"/>
-                                    <attribute name="imported_from" value="octopart"/>
-                                    <attribute name="rohs" value="yes"/>
-                                    <attribute name="centroid_not_specified" value="No"/>
-                                    <attribute name="octopart_part_number" value="a0e069d6672e7f27"/>
-                                    <attribute name="num_pins" value="3"/>
-                                    <attribute name="MF" value="JST"/>
-                                    <attribute name="package" value="HDR3"/>
-                                </technology>
-                            </technologies>
-                        </device>
-                    </devices>
-                </deviceset>
-            </devicesets>
-        </library>
-    </drawing>
+<packages>
+<package name="JST_S3B-XH-SM4-TB_0">
+<description>2.5mm pitch/ Disconnectable Crimp style connectors</description>
+<wire x1="-6.25" y1="-3.5" x2="-6.25" y2="3.5" width="0.152" layer="51"/>
+<wire x1="-6.25" y1="3.5" x2="6.25" y2="3.5" width="0.152" layer="51"/>
+<wire x1="6.25" y1="3.5" x2="6.25" y2="-3.5" width="0.152" layer="51"/>
+<wire x1="6.25" y1="-3.5" x2="-6.25" y2="-3.5" width="0.152" layer="51"/>
+<wire x1="-6.7" y1="-3.8" x2="-6.7" y2="7.4" width="0.1" layer="39"/>
+<wire x1="-6.7" y1="7.4" x2="6.7" y2="7.4" width="0.1" layer="39"/>
+<wire x1="6.7" y1="7.4" x2="6.7" y2="-3.8" width="0.1" layer="39"/>
+<wire x1="6.7" y1="-3.8" x2="-6.7" y2="-3.8" width="0.1" layer="39"/>
+<wire x1="-6.25" y1="3.5" x2="-3.65" y2="3.5" width="0.15" layer="21"/>
+<wire x1="-6.25" y1="3.5" x2="-6.25" y2="0.7" width="0.15" layer="21"/>
+<wire x1="3.65" y1="3.5" x2="6.25" y2="3.5" width="0.15" layer="21"/>
+<wire x1="6.25" y1="3.5" x2="6.25" y2="0.7" width="0.15" layer="21"/>
+<wire x1="-4.4" y1="-3.5" x2="4.4" y2="-3.5" width="0.15" layer="21"/>
+<text x="-6.55" y="7.525" size="1" layer="25">&gt;NAME</text>
+<circle x="-3.725" y="5.05" radius="0.25" width="0" layer="21"/>
+<smd name="1" x="-2.5" y="5.05" dx="1.3" dy="4.5" layer="1"/>
+<smd name="2" x="0" y="5.05" dx="1.3" dy="4.5" layer="1"/>
+<smd name="3" x="2.5" y="5.05" dx="1.3" dy="4.5" layer="1"/>
+<smd name="5" x="5.7" y="-1.75" dx="1.8" dy="3.9" layer="1"/>
+<smd name="4" x="-5.7" y="-1.75" dx="1.8" dy="3.9" layer="1"/>
+</package>
+</packages>
+<symbols>
+<symbol name="JST_S3B-XH-SM4-TB_0_0">
+<description>2.5mm pitch/ Disconnectable Crimp style connectors</description>
+<wire x1="2.54" y1="-35.56" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-5.08" x2="15.24" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-5.08" x2="15.24" y2="-35.56" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-35.56" x2="2.54" y2="-35.56" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-10.668" x2="7.62" y2="-9.652" width="1.016" layer="94"/>
+<wire x1="7.62" y1="-9.652" x2="11.938" y2="-9.652" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-9.652" x2="11.938" y2="-10.668" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-10.668" x2="7.62" y2="-10.668" width="1.016" layer="94"/>
+<wire x1="9.652" y1="-10.16" x2="15.24" y2="-10.16" width="0.508" layer="94"/>
+<wire x1="7.62" y1="-15.748" x2="7.62" y2="-14.732" width="1.016" layer="94"/>
+<wire x1="7.62" y1="-14.732" x2="11.938" y2="-14.732" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-14.732" x2="11.938" y2="-15.748" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-15.748" x2="7.62" y2="-15.748" width="1.016" layer="94"/>
+<wire x1="9.652" y1="-15.24" x2="15.24" y2="-15.24" width="0.508" layer="94"/>
+<wire x1="7.62" y1="-20.828" x2="7.62" y2="-19.812" width="1.016" layer="94"/>
+<wire x1="7.62" y1="-19.812" x2="11.938" y2="-19.812" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-19.812" x2="11.938" y2="-20.828" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-20.828" x2="7.62" y2="-20.828" width="1.016" layer="94"/>
+<wire x1="9.652" y1="-20.32" x2="15.24" y2="-20.32" width="0.508" layer="94"/>
+<wire x1="7.62" y1="-25.908" x2="7.62" y2="-24.892" width="1.016" layer="94"/>
+<wire x1="7.62" y1="-24.892" x2="11.938" y2="-24.892" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-24.892" x2="11.938" y2="-25.908" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-25.908" x2="7.62" y2="-25.908" width="1.016" layer="94"/>
+<wire x1="9.652" y1="-25.4" x2="15.24" y2="-25.4" width="0.508" layer="94"/>
+<wire x1="7.62" y1="-30.988" x2="7.62" y2="-29.972" width="1.016" layer="94"/>
+<wire x1="7.62" y1="-29.972" x2="11.938" y2="-29.972" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-29.972" x2="11.938" y2="-30.988" width="1.016" layer="94"/>
+<wire x1="11.938" y1="-30.988" x2="7.62" y2="-30.988" width="1.016" layer="94"/>
+<wire x1="9.652" y1="-30.48" x2="15.24" y2="-30.48" width="0.508" layer="94"/>
+<wire x1="15.24" y1="-10.16" x2="15.24" y2="-10.16" width="0.15" layer="94"/>
+<wire x1="15.24" y1="-15.24" x2="15.24" y2="-15.24" width="0.15" layer="94"/>
+<wire x1="15.24" y1="-20.32" x2="15.24" y2="-20.32" width="0.15" layer="94"/>
+<wire x1="15.24" y1="-25.4" x2="15.24" y2="-25.4" width="0.15" layer="94"/>
+<wire x1="15.24" y1="-30.48" x2="15.24" y2="-30.48" width="0.15" layer="94"/>
+<text x="2.54" y="-2.54" size="2.54" layer="95" align="top-left">&gt;NAME</text>
+<text x="0" y="-38.1" size="2.54" layer="95" align="top-left">S3B-XH-SM4-TB</text>
+<pin name="1" x="20.32" y="-10.16" length="middle" rot="R180"/>
+<pin name="2" x="20.32" y="-15.24" length="middle" rot="R180"/>
+<pin name="3" x="20.32" y="-20.32" length="middle" rot="R180"/>
+<pin name="MNT_1" x="20.32" y="-25.4" length="middle" rot="R180"/>
+<pin name="MNT_2" x="20.32" y="-30.48" length="middle" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="JST_S3B-XH-SM4-TB" prefix="J">
+<description>2.5mm pitch/ Disconnectable Crimp style connectors</description>
+<gates>
+<gate name="G$0" symbol="JST_S3B-XH-SM4-TB_0_0" x="0" y="0"/>
+</gates>
+<devices>
+<device name="JST_S3B-XH-SM4-TB_0_0" package="JST_S3B-XH-SM4-TB_0">
+<connects>
+<connect gate="G$0" pin="1" pad="1"/>
+<connect gate="G$0" pin="2" pad="2"/>
+<connect gate="G$0" pin="3" pad="3"/>
+<connect gate="G$0" pin="MNT_1" pad="4"/>
+<connect gate="G$0" pin="MNT_2" pad="5"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CENTROID_NOT_SPECIFIED" value="No"/>
+<attribute name="CURRENT" value="3.0A"/>
+<attribute name="DATASHEET" value="https://upverter.com/datasheet/d0ef474b08262649b2e88d8de799d1feabfec59e.pdf"/>
+<attribute name="DIGIKEY_DESCRIPTION" value="CONN HEADER XH SMD 3POS 2.5MM"/>
+<attribute name="DIGIKEY_PART_NUMBER" value="455-2263-1-ND"/>
+<attribute name="IMPORTED_FROM" value="octopart"/>
+<attribute name="LEAD_FREE" value="yes"/>
+<attribute name="MF" value="JST"/>
+<attribute name="MPN" value="S3B-XH-SM4-TB"/>
+<attribute name="NUM_PINS" value="3"/>
+<attribute name="OCTOPART_PART_NUMBER" value="a0e069d6672e7f27"/>
+<attribute name="PACKAGE" value="HDR3"/>
+<attribute name="PREFIX" value="J"/>
+<attribute name="ROHS" value="yes"/>
+<attribute name="TEMPERATURE_RANGE_HIGH" value="+85°C"/>
+<attribute name="TEMPERATURE_RANGE_LOW" value="-25°C"/>
+<attribute name="VOLTAGE" value="250V"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
 </eagle>
