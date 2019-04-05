@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle>
+    <drawing>
+        <grid unitdist="mm" unit="mm"/>
+        <layers>
+            <layer name="Top" color="4" number="1" visible="yes" active="yes" fill="1"/>
+            <layer name="Bottom" color="4" number="16" visible="yes" active="yes" fill="1"/>
+            <layer name="tPlace" color="7" number="21" visible="yes" active="yes" fill="1"/>
+            <layer name="bPlace" color="7" number="22" visible="yes" active="yes" fill="1"/>
+            <layer name="tNames" color="7" number="25" visible="yes" active="yes" fill="1"/>
+            <layer name="bNames" color="7" number="26" visible="yes" active="yes" fill="1"/>
+            <layer name="tValues" color="7" number="27" visible="yes" active="yes" fill="1"/>
+            <layer name="bValues" color="7" number="28" visible="yes" active="yes" fill="1"/>
+            <layer name="tStop" color="7" number="29" visible="yes" active="yes" fill="1"/>
+            <layer name="bStop" color="7" number="30" visible="yes" active="yes" fill="1"/>
+            <layer name="tCream" color="7" number="31" visible="yes" active="yes" fill="1"/>
+            <layer name="bCream" color="7" number="32" visible="yes" active="yes" fill="1"/>
+            <layer name="tKeepout" color="4" number="39" visible="yes" active="yes" fill="1"/>
+            <layer name="bKeepout" color="4" number="40" visible="yes" active="yes" fill="1"/>
+            <layer name="tRestrict" color="0" number="41" visible="yes" active="yes" fill="1"/>
+            <layer name="bRestrict" color="0" number="42" visible="yes" active="yes" fill="1"/>
+            <layer name="tDocu" color="7" number="51" visible="yes" active="yes" fill="1"/>
+            <layer name="bDocu" color="7" number="52" visible="yes" active="yes" fill="1"/>
+            <layer name="Nets" color="2" number="91" visible="yes" active="yes" fill="1"/>
+            <layer name="Busses" color="1" number="92" visible="yes" active="yes" fill="1"/>
+            <layer name="Pins" color="2" number="93" visible="yes" active="yes" fill="1"/>
+            <layer name="Symbols" color="4" number="94" visible="yes" active="yes" fill="1"/>
+            <layer name="Names" color="7" number="95" visible="yes" active="yes" fill="1"/>
+            <layer name="Values" color="7" number="96" visible="yes" active="yes" fill="1"/>
+            <layer name="Info" color="7" number="97" visible="yes" active="yes" fill="1"/>
+            <layer name="Guide" color="6" number="98" visible="yes" active="yes" fill="1"/>
+        </layers>
+        <library name="Upverter Library">
+            <description>Upverter Parts Library
+
+Created by Upverter.com</description>
+            <packages>
+                <package name="MOLEX_105450-0101_0">
+                    <description>USB - C USB 3.1, Superspeed+ Receptacle Connector 24 Position Surface Mount, Right Angle; Through Hole</description>
+                    <wire layer="51" y2="3.95" width="0.15" x2="-4.47" y1="-3.95" x1="-4.47"/>
+                    <wire layer="51" y2="3.95" width="0.15" x2="4.47" y1="3.95" x1="-4.47"/>
+                    <wire layer="51" y2="-3.95" width="0.15" x2="4.47" y1="3.95" x1="4.47"/>
+                    <wire layer="51" y2="-3.95" width="0.15" x2="-4.47" y1="-3.95" x1="4.47"/>
+                    <wire layer="39" y2="4.51" width="0.1" x2="-4.97" y1="-4.15" x1="-4.97"/>
+                    <wire layer="39" y2="4.51" width="0.1" x2="4.97" y1="4.51" x1="-4.97"/>
+                    <wire layer="39" y2="-4.15" width="0.1" x2="4.97" y1="4.51" x1="4.97"/>
+                    <wire layer="39" y2="-4.15" width="0.1" x2="-4.97" y1="-4.15" x1="4.97"/>
+                    <wire layer="51" y2="-3.77" width="0.15" x2="4.97" y1="-3.77" x1="-4.97"/>
+                    <wire layer="21" y2="-0.3" width="0.15" x2="-4.47" y1="1.9" x1="-4.47"/>
+                    <wire layer="21" y2="-0.3" width="0.15" x2="4.47" y1="1.9" x1="4.47"/>
+                    <text layer="25" align="bottom-left" y="5.31" x="-5.02" rot="R0" size="1.0">&gt;NAME</text>
+                    <circle y="4.885" x="-3.42" layer="21" radius="0.25" width="0.0"/>
+                    <rectangle layer="41" y2="1.88" x2="3.5" y1="-3.77" x1="-3.5"/>
+                    <pad diameter="1.067" name="1" shape="long" drill="0.635" y="3.36" x="-4.32" rot="R0"/>
+                    <pad diameter="1.067" name="2" shape="long" drill="0.635" y="3.36" x="4.32" rot="R0"/>
+                    <pad diameter="1.067" name="3" shape="long" drill="0.635" y="-2.0" x="-4.32" rot="R0"/>
+                    <pad diameter="1.067" name="4" shape="long" drill="0.635" y="-2.0" x="4.32" rot="R0"/>
+                    <smd layer="1" thermals="yes" name="A1" stop="yes" roundness="0" dx="0.3" dy="0.7" y="3.77" x="-3.0" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="A2" stop="yes" roundness="0" dx="0.3" dy="0.7" y="3.77" x="-2.5" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="A3" stop="yes" roundness="0" dx="0.3" dy="0.7" y="3.77" x="-2.0" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="A4" stop="yes" roundness="0" dx="0.3" dy="0.7" y="3.77" x="-1.5" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="A5" stop="yes" roundness="0" dx="0.3" dy="0.7" y="3.77" x="-1.0" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="A6" stop="yes" roundness="0" dx="0.3" dy="0.7" y="3.77" x="-0.5" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="A7" stop="yes" roundness="0" dx="0.3" dy="0.7" y="3.77" x="0.5" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="A8" stop="yes" roundness="0" dx="0.3" dy="0.7" y="3.77" x="1.0" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="A9" stop="yes" roundness="0" dx="0.3" dy="0.7" y="3.77" x="1.5" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="A10" stop="yes" roundness="0" dx="0.3" dy="0.7" y="3.77" x="2.0" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="A11" stop="yes" roundness="0" dx="0.3" dy="0.7" y="3.77" x="2.5" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="A12" stop="yes" roundness="0" dx="0.3" dy="0.7" y="3.77" x="3.0" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="B2" stop="yes" roundness="0" dx="0.3" dy="0.7" y="2.47" x="2.25" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="B3" stop="yes" roundness="0" dx="0.3" dy="0.7" y="2.47" x="1.75" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="B4" stop="yes" roundness="0" dx="0.3" dy="0.7" y="2.47" x="1.25" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="B5" stop="yes" roundness="0" dx="0.3" dy="0.7" y="2.47" x="0.75" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="B6" stop="yes" roundness="0" dx="0.3" dy="0.7" y="2.47" x="0.25" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="B7" stop="yes" roundness="0" dx="0.3" dy="0.7" y="2.47" x="-0.25" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="B8" stop="yes" roundness="0" dx="0.3" dy="0.7" y="2.47" x="-0.75" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="B9" stop="yes" roundness="0" dx="0.3" dy="0.7" y="2.47" x="-1.25" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="B10" stop="yes" roundness="0" dx="0.3" dy="0.7" y="2.47" x="-1.75" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="B11" stop="yes" roundness="0" dx="0.3" dy="0.7" y="2.47" x="-2.25" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="B12" stop="yes" roundness="0" dx="1.0" dy="0.7" y="2.47" x="-3.1" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="B1" stop="yes" roundness="0" dx="1.0" dy="0.7" y="2.47" x="3.1" rot="R0" cream="yes"/>
+                </package>
+            </packages>
+            <symbols>
+                <symbol name="MOLEX_105450-0101_0_0">
+                    <description>USB - C USB 3.1, Superspeed+ Receptacle Connector 24 Position Surface Mount, Right Angle; Through Hole</description>
+                    <wire layer="94" y2="-5.08" width="0.254" x2="2.54" y1="-152.4" x1="2.54"/>
+                    <wire layer="94" y2="-5.08" width="0.254" x2="15.24" y1="-5.08" x1="2.54"/>
+                    <wire layer="94" y2="-152.4" width="0.254" x2="15.24" y1="-5.08" x1="15.24"/>
+                    <wire layer="94" y2="-152.4" width="0.254" x2="2.54" y1="-152.4" x1="15.24"/>
+                    <wire layer="94" y2="-10.16" width="0.508" x2="15.24" y1="-10.16" x1="9.652"/>
+                    <wire layer="94" y2="-15.24" width="0.508" x2="15.24" y1="-15.24" x1="9.652"/>
+                    <wire layer="94" y2="-20.32" width="0.508" x2="15.24" y1="-20.32" x1="9.652"/>
+                    <wire layer="94" y2="-25.4" width="0.508" x2="15.24" y1="-25.4" x1="9.652"/>
+                    <wire layer="94" y2="-30.48" width="0.508" x2="15.24" y1="-30.48" x1="9.652"/>
+                    <wire layer="94" y2="-35.56" width="0.508" x2="15.24" y1="-35.56" x1="9.652"/>
+                    <wire layer="94" y2="-40.64" width="0.508" x2="15.24" y1="-40.64" x1="9.652"/>
+                    <wire layer="94" y2="-45.72" width="0.508" x2="15.24" y1="-45.72" x1="9.652"/>
+                    <wire layer="94" y2="-50.8" width="0.508" x2="15.24" y1="-50.8" x1="9.652"/>
+                    <wire layer="94" y2="-55.88" width="0.508" x2="15.24" y1="-55.88" x1="9.652"/>
+                    <wire layer="94" y2="-60.96" width="0.508" x2="15.24" y1="-60.96" x1="9.652"/>
+                    <wire layer="94" y2="-66.04" width="0.508" x2="15.24" y1="-66.04" x1="9.652"/>
+                    <wire layer="94" y2="-71.12" width="0.508" x2="15.24" y1="-71.12" x1="9.652"/>
+                    <wire layer="94" y2="-76.2" width="0.508" x2="15.24" y1="-76.2" x1="9.652"/>
+                    <wire layer="94" y2="-81.28" width="0.508" x2="15.24" y1="-81.28" x1="9.652"/>
+                    <wire layer="94" y2="-86.36" width="0.508" x2="15.24" y1="-86.36" x1="9.652"/>
+                    <wire layer="94" y2="-91.44" width="0.508" x2="15.24" y1="-91.44" x1="9.652"/>
+                    <wire layer="94" y2="-96.52" width="0.508" x2="15.24" y1="-96.52" x1="9.652"/>
+                    <wire layer="94" y2="-101.6" width="0.508" x2="15.24" y1="-101.6" x1="9.652"/>
+                    <wire layer="94" y2="-106.68" width="0.508" x2="15.24" y1="-106.68" x1="9.652"/>
+                    <wire layer="94" y2="-111.76" width="0.508" x2="15.24" y1="-111.76" x1="9.652"/>
+                    <wire layer="94" y2="-116.84" width="0.508" x2="15.24" y1="-116.84" x1="9.652"/>
+                    <wire layer="94" y2="-121.92" width="0.508" x2="15.24" y1="-121.92" x1="9.652"/>
+                    <wire layer="94" y2="-127.0" width="0.508" x2="15.24" y1="-127.0" x1="9.652"/>
+                    <wire layer="94" y2="-132.08" width="0.508" x2="15.24" y1="-132.08" x1="9.652"/>
+                    <wire layer="94" y2="-137.16" width="0.508" x2="15.24" y1="-137.16" x1="9.652"/>
+                    <wire layer="94" y2="-142.24" width="0.508" x2="15.24" y1="-142.24" x1="9.652"/>
+                    <wire layer="94" y2="-147.32" width="0.508" x2="15.24" y1="-147.32" x1="9.652"/>
+                    <wire layer="94" y2="-10.16" width="0.15" x2="15.24" y1="-10.16" x1="15.24"/>
+                    <wire layer="94" y2="-15.24" width="0.15" x2="15.24" y1="-15.24" x1="15.24"/>
+                    <wire layer="94" y2="-20.32" width="0.15" x2="15.24" y1="-20.32" x1="15.24"/>
+                    <wire layer="94" y2="-25.4" width="0.15" x2="15.24" y1="-25.4" x1="15.24"/>
+                    <wire layer="94" y2="-30.48" width="0.15" x2="15.24" y1="-30.48" x1="15.24"/>
+                    <wire layer="94" y2="-35.56" width="0.15" x2="15.24" y1="-35.56" x1="15.24"/>
+                    <wire layer="94" y2="-40.64" width="0.15" x2="15.24" y1="-40.64" x1="15.24"/>
+                    <wire layer="94" y2="-45.72" width="0.15" x2="15.24" y1="-45.72" x1="15.24"/>
+                    <wire layer="94" y2="-50.8" width="0.15" x2="15.24" y1="-50.8" x1="15.24"/>
+                    <wire layer="94" y2="-55.88" width="0.15" x2="15.24" y1="-55.88" x1="15.24"/>
+                    <wire layer="94" y2="-60.96" width="0.15" x2="15.24" y1="-60.96" x1="15.24"/>
+                    <wire layer="94" y2="-66.04" width="0.15" x2="15.24" y1="-66.04" x1="15.24"/>
+                    <wire layer="94" y2="-71.12" width="0.15" x2="15.24" y1="-71.12" x1="15.24"/>
+                    <wire layer="94" y2="-76.2" width="0.15" x2="15.24" y1="-76.2" x1="15.24"/>
+                    <wire layer="94" y2="-81.28" width="0.15" x2="15.24" y1="-81.28" x1="15.24"/>
+                    <wire layer="94" y2="-86.36" width="0.15" x2="15.24" y1="-86.36" x1="15.24"/>
+                    <wire layer="94" y2="-91.44" width="0.15" x2="15.24" y1="-91.44" x1="15.24"/>
+                    <wire layer="94" y2="-96.52" width="0.15" x2="15.24" y1="-96.52" x1="15.24"/>
+                    <wire layer="94" y2="-101.6" width="0.15" x2="15.24" y1="-101.6" x1="15.24"/>
+                    <wire layer="94" y2="-106.68" width="0.15" x2="15.24" y1="-106.68" x1="15.24"/>
+                    <wire layer="94" y2="-111.76" width="0.15" x2="15.24" y1="-111.76" x1="15.24"/>
+                    <wire layer="94" y2="-116.84" width="0.15" x2="15.24" y1="-116.84" x1="15.24"/>
+                    <wire layer="94" y2="-121.92" width="0.15" x2="15.24" y1="-121.92" x1="15.24"/>
+                    <wire layer="94" y2="-127.0" width="0.15" x2="15.24" y1="-127.0" x1="15.24"/>
+                    <wire layer="94" y2="-132.08" width="0.15" x2="15.24" y1="-132.08" x1="15.24"/>
+                    <wire layer="94" y2="-137.16" width="0.15" x2="15.24" y1="-137.16" x1="15.24"/>
+                    <wire layer="94" y2="-142.24" width="0.15" x2="15.24" y1="-142.24" x1="15.24"/>
+                    <wire layer="94" y2="-147.32" width="0.15" x2="15.24" y1="-147.32" x1="15.24"/>
+                    <text layer="95" align="top-left" y="-2.54" x="2.54" rot="R0" size="2.54">&gt;NAME</text>
+                    <text layer="95" align="top-left" y="-157.48" x="2.54" rot="R0" size="2.54">105450-0101</text>
+                    <pin name="MNT_1" visible="pad" length="middle" y="-10.16" x="20.32" rot="R180"/>
+                    <pin name="MNT_2" visible="pad" length="middle" y="-15.24" x="20.32" rot="R180"/>
+                    <pin name="MNT_3" visible="pad" length="middle" y="-20.32" x="20.32" rot="R180"/>
+                    <pin name="MNT_4" visible="pad" length="middle" y="-25.4" x="20.32" rot="R180"/>
+                    <pin direction="pwr" name="1_GND" visible="pad" length="middle" y="-30.48" x="20.32" rot="R180"/>
+                    <pin name="TX1+" visible="pad" length="middle" y="-35.56" x="20.32" rot="R180"/>
+                    <pin name="TX1-" visible="pad" length="middle" y="-40.64" x="20.32" rot="R180"/>
+                    <pin direction="pwr" name="1_VBUS" visible="pad" length="middle" y="-45.72" x="20.32" rot="R180"/>
+                    <pin name="CC1" visible="pad" length="middle" y="-50.8" x="20.32" rot="R180"/>
+                    <pin name="1_D+" visible="pad" length="middle" y="-55.88" x="20.32" rot="R180"/>
+                    <pin name="1_D-" visible="pad" length="middle" y="-60.96" x="20.32" rot="R180"/>
+                    <pin name="SBU1" visible="pad" length="middle" y="-66.04" x="20.32" rot="R180"/>
+                    <pin direction="pwr" name="2_VBUS" visible="pad" length="middle" y="-71.12" x="20.32" rot="R180"/>
+                    <pin name="RX2-" visible="pad" length="middle" y="-76.2" x="20.32" rot="R180"/>
+                    <pin name="RX2+" visible="pad" length="middle" y="-81.28" x="20.32" rot="R180"/>
+                    <pin direction="pwr" name="2_GND" visible="pad" length="middle" y="-86.36" x="20.32" rot="R180"/>
+                    <pin direction="pwr" name="3_GND" visible="pad" length="middle" y="-91.44" x="20.32" rot="R180"/>
+                    <pin name="TX2+" visible="pad" length="middle" y="-96.52" x="20.32" rot="R180"/>
+                    <pin name="TX2-" visible="pad" length="middle" y="-101.6" x="20.32" rot="R180"/>
+                    <pin direction="pwr" name="3_VBUS" visible="pad" length="middle" y="-106.68" x="20.32" rot="R180"/>
+                    <pin name="CC2" visible="pad" length="middle" y="-111.76" x="20.32" rot="R180"/>
+                    <pin name="2_D+" visible="pad" length="middle" y="-116.84" x="20.32" rot="R180"/>
+                    <pin name="2_D-" visible="pad" length="middle" y="-121.92" x="20.32" rot="R180"/>
+                    <pin name="SBU2" visible="pad" length="middle" y="-127.0" x="20.32" rot="R180"/>
+                    <pin direction="pwr" name="4_VBUS" visible="pad" length="middle" y="-132.08" x="20.32" rot="R180"/>
+                    <pin name="RX1-" visible="pad" length="middle" y="-137.16" x="20.32" rot="R180"/>
+                    <pin name="RX1+" visible="pad" length="middle" y="-142.24" x="20.32" rot="R180"/>
+                    <pin direction="pwr" name="4_GND" visible="pad" length="middle" y="-147.32" x="20.32" rot="R180"/>
+                    <circle y="-10.16" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-15.24" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-20.32" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-25.4" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-30.48" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-35.56" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-40.64" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-45.72" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-50.8" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-55.88" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-60.96" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-66.04" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-71.12" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-76.2" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-81.28" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-86.36" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-91.44" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-96.52" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-101.6" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-106.68" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-111.76" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-116.84" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-121.92" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-127.0" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-132.08" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-137.16" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-142.24" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-147.32" x="8.89" layer="94" radius="0.762" width="0.254"/>
+                </symbol>
+            </symbols>
+            <devicesets>
+                <deviceset prefix="J" name="MOLEX_105450-0101">
+                    <description>USB - C USB 3.1, Superspeed+ Receptacle Connector 24 Position Surface Mount, Right Angle; Through Hole</description>
+                    <gates>
+                        <gate name="G$0" symbol="MOLEX_105450-0101_0_0" x="0"/>
+                    </gates>
+                    <devices>
+                        <device name="MOLEX_105450-0101_0_0" package="MOLEX_105450-0101_0">
+                            <connects>
+                                <connect gate="G$0" pad="A1" pin="1_GND"/>
+                                <connect gate="G$0" pad="A2" pin="TX1+"/>
+                                <connect gate="G$0" pad="A3" pin="TX1-"/>
+                                <connect gate="G$0" pad="A4" pin="1_VBUS"/>
+                                <connect gate="G$0" pad="A5" pin="CC1"/>
+                                <connect gate="G$0" pad="A6" pin="1_D+"/>
+                                <connect gate="G$0" pad="A7" pin="1_D-"/>
+                                <connect gate="G$0" pad="A8" pin="SBU1"/>
+                                <connect gate="G$0" pad="A9" pin="2_VBUS"/>
+                                <connect gate="G$0" pad="A10" pin="RX2-"/>
+                                <connect gate="G$0" pad="A11" pin="RX2+"/>
+                                <connect gate="G$0" pad="A12" pin="2_GND"/>
+                                <connect gate="G$0" pad="B1" pin="3_GND"/>
+                                <connect gate="G$0" pad="B2" pin="TX2+"/>
+                                <connect gate="G$0" pad="B3" pin="TX2-"/>
+                                <connect gate="G$0" pad="B4" pin="3_VBUS"/>
+                                <connect gate="G$0" pad="B5" pin="CC2"/>
+                                <connect gate="G$0" pad="B6" pin="2_D+"/>
+                                <connect gate="G$0" pad="B7" pin="2_D-"/>
+                                <connect gate="G$0" pad="B8" pin="SBU2"/>
+                                <connect gate="G$0" pad="B9" pin="4_VBUS"/>
+                                <connect gate="G$0" pad="B10" pin="RX1-"/>
+                                <connect gate="G$0" pad="B11" pin="RX1+"/>
+                                <connect gate="G$0" pad="B12" pin="4_GND"/>
+                                <connect gate="G$0" pad="1" pin="MNT_1"/>
+                                <connect gate="G$0" pad="2" pin="MNT_2"/>
+                                <connect gate="G$0" pad="3" pin="MNT_3"/>
+                                <connect gate="G$0" pad="4" pin="MNT_4"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="mouser_part_number" value="538-105450-0101"/>
+                                    <attribute name="Current_Rating" value="0.25A, 1A, 5A"/>
+                                    <attribute name="Voltage_-_Rated" value="30VAC/DC"/>
+                                    <attribute name="description" value="USB - C USB 3.1, Superspeed+ Receptacle Connector 24 Position Surface Mount, Right Angle; Through Hole"/>
+                                    <attribute name="is_female" value="yes"/>
+                                    <attribute name="temperature_range_high" value="+85°C"/>
+                                    <attribute name="temperature_range_low" value="-30°C"/>
+                                    <attribute name="digikey_part_number" value="WM12856CT-ND"/>
+                                    <attribute name="prefix" value="J"/>
+                                    <attribute name="Shielding" value="Shielded"/>
+                                    <attribute name="datasheet" value="http://www.molex.com/pdm_docs/sd/1054500101_sd.pdf"/>
+                                    <attribute name="MPN" value="105450-0101"/>
+                                    <attribute name="lead_free" value="yes"/>
+                                    <attribute name="Contact_Finish" value="Gold"/>
+                                    <attribute name="Number_of_Ports" value="1"/>
+                                    <attribute name="digikey_description" value="CONN RCPT USB C 3.1 SMT R/A"/>
+                                    <attribute name="Mating_Cycles" value="10000"/>
+                                    <attribute name="rohs" value="yes"/>
+                                    <attribute name="centroid_not_specified" value="No"/>
+                                    <attribute name="MF" value="Molex"/>
+                                    <attribute name="package" value="CONN_SMT_8MM94_7MM9_USB"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                    </devices>
+                </deviceset>
+            </devicesets>
+        </library>
+    </drawing>
+</eagle>
