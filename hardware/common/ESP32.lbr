@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.2">
+<eagle version="9.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -720,67 +720,141 @@ Source: http://v4.cypress.com/cfuploads/img/products/cywusb6934.pdf</description
 </packages>
 <symbols>
 <symbol name="ESP32-PICO-D4">
-<wire x1="-40.64" y1="40.64" x2="-40.64" y2="-40.64" width="0.254" layer="94"/>
-<wire x1="-40.64" y1="-40.64" x2="40.64" y2="-40.64" width="0.254" layer="94"/>
-<wire x1="40.64" y1="-40.64" x2="40.64" y2="40.64" width="0.254" layer="94"/>
-<wire x1="40.64" y1="40.64" x2="-40.64" y2="40.64" width="0.254" layer="94"/>
-<pin name="VDDA_1" x="-45.72" y="27.94" length="middle" direction="pwr"/>
-<pin name="LNA_IN" x="-45.72" y="22.86" length="middle"/>
-<pin name="VDDA3P3_1" x="-45.72" y="17.78" length="middle" direction="pwr"/>
-<pin name="VDDA3P3_2" x="-45.72" y="12.7" length="middle" direction="pwr"/>
-<pin name="SENSOR_VP" x="-45.72" y="7.62" length="middle" direction="in"/>
-<pin name="SENSOR_CAPP" x="-45.72" y="2.54" length="middle" direction="in"/>
-<pin name="SENSOR_CAPN" x="-45.72" y="-2.54" length="middle" direction="in"/>
-<pin name="SENSOR_VN" x="-45.72" y="-7.62" length="middle" direction="in"/>
-<pin name="EN" x="-45.72" y="-12.7" length="middle" direction="in"/>
-<pin name="IO34" x="-45.72" y="-17.78" length="middle" direction="in"/>
-<pin name="IO35" x="-45.72" y="-22.86" length="middle" direction="in"/>
-<pin name="IO32" x="-45.72" y="-27.94" length="middle"/>
-<pin name="IO33" x="-27.94" y="-45.72" length="middle" rot="R90"/>
-<pin name="IO25" x="-22.86" y="-45.72" length="middle" rot="R90"/>
-<pin name="IO26" x="-17.78" y="-45.72" length="middle" rot="R90"/>
-<pin name="IO27" x="-12.7" y="-45.72" length="middle" rot="R90"/>
-<pin name="IO14" x="-7.62" y="-45.72" length="middle" rot="R90"/>
-<pin name="IO12" x="-2.54" y="-45.72" length="middle" rot="R90"/>
-<pin name="VDD3P3_RTC" x="2.54" y="-45.72" length="middle" direction="pwr" rot="R90"/>
-<pin name="IO13" x="7.62" y="-45.72" length="middle" rot="R90"/>
-<pin name="IO15" x="12.7" y="-45.72" length="middle" rot="R90"/>
-<pin name="IO2" x="17.78" y="-45.72" length="middle" rot="R90"/>
-<pin name="IO0" x="22.86" y="-45.72" length="middle" rot="R90"/>
-<pin name="IO4" x="27.94" y="-45.72" length="middle" rot="R90"/>
-<pin name="FLASH_CS" x="45.72" y="-27.94" length="middle" rot="R180"/>
-<pin name="VDD_SDIO" x="45.72" y="-22.86" length="middle" direction="pwr" rot="R180"/>
-<pin name="SIO1" x="45.72" y="-17.78" length="middle" rot="R180"/>
-<pin name="IO9" x="45.72" y="-12.7" length="middle" rot="R180"/>
-<pin name="PSRAM_CS" x="45.72" y="-7.62" length="middle" rot="R180"/>
-<pin name="SIO3" x="45.72" y="-2.54" length="middle" rot="R180"/>
-<pin name="SCLK" x="45.72" y="2.54" length="middle" rot="R180"/>
-<pin name="SIO2" x="45.72" y="7.62" length="middle" rot="R180"/>
-<pin name="SIO0" x="45.72" y="12.7" length="middle" rot="R180"/>
-<pin name="IO5" x="45.72" y="17.78" length="middle" rot="R180"/>
-<pin name="IO18" x="45.72" y="22.86" length="middle" rot="R180"/>
-<pin name="IO23" x="45.72" y="27.94" length="middle" rot="R180"/>
-<pin name="VDD3P3_CPU" x="27.94" y="45.72" length="middle" direction="pwr" rot="R270"/>
-<pin name="IO19" x="22.86" y="45.72" length="middle" rot="R270"/>
-<pin name="IO22" x="17.78" y="45.72" length="middle" rot="R270"/>
-<pin name="U0RXD" x="12.7" y="45.72" length="middle" rot="R270"/>
-<pin name="U0TXD" x="7.62" y="45.72" length="middle" rot="R270"/>
-<pin name="IO21" x="2.54" y="45.72" length="middle" rot="R270"/>
-<pin name="VDDA_2" x="-2.54" y="45.72" length="middle" direction="pwr" rot="R270"/>
-<pin name="XTAL_N" x="-7.62" y="45.72" length="middle" direction="nc" rot="R270"/>
-<pin name="XTAL_P" x="-12.7" y="45.72" length="middle" direction="nc" rot="R270"/>
-<pin name="VDDA_3" x="-17.78" y="45.72" length="middle" direction="pwr" rot="R270"/>
-<pin name="CAP2" x="-22.86" y="45.72" length="middle" direction="nc" rot="R270"/>
-<pin name="CAP1" x="-27.94" y="45.72" length="middle" direction="nc" rot="R270"/>
-<text x="-15.24" y="15.24" size="5.08" layer="94">&gt;NAME</text>
-<pin name="GND" x="-45.72" y="38.1" length="middle" direction="pwr"/>
-<text x="-38.1" y="9.398" size="1.016" layer="95">GPIO36, ADC1_CH0, RTC_GPIO0</text>
-<text x="-38.1" y="4.572" size="1.016" layer="95">GPIO37, ADC1_CH1, RTC_GPIO1</text>
-<text x="-38.1" y="-0.508" size="1.016" layer="95">GPIO38, ADC1_CH2, RTC_GPIO2</text>
-<text x="-38.1" y="-5.588" size="1.016" layer="95">GPIO39, ADC1_CH3, RTC_GPIO3</text>
-<text x="-38.1" y="-15.748" size="1.016" layer="95">ADC1_CH6, RTC_GPIO4</text>
-<text x="-38.1" y="-20.828" size="1.016" layer="95">ADC1_CH7, RTC_GPIO5</text>
-<text x="-38.1" y="-25.908" size="1.016" layer="95">32K_XP, ADC1_CH4, TOUCH9, RTC_GPIO9</text>
+<description>An ESP32 Pico D4 symbol. Pins on the symbol match the position of pins on the package.</description>
+<wire x1="-45.72" y1="45.72" x2="-45.72" y2="-45.72" width="0.254" layer="94"/>
+<wire x1="-45.72" y1="-45.72" x2="45.72" y2="-45.72" width="0.254" layer="94"/>
+<wire x1="45.72" y1="-45.72" x2="45.72" y2="45.72" width="0.254" layer="94"/>
+<wire x1="45.72" y1="45.72" x2="-45.72" y2="45.72" width="0.254" layer="94"/>
+<pin name="VDDA_1" x="-50.8" y="27.94" length="middle" direction="pwr"/>
+<pin name="LNA_IN" x="-50.8" y="22.86" length="middle"/>
+<pin name="VDDA3P3_1" x="-50.8" y="17.78" length="middle" direction="pwr"/>
+<pin name="VDDA3P3_2" x="-50.8" y="12.7" length="middle" direction="pwr"/>
+<pin name="SENSOR_VP" x="-50.8" y="7.62" length="middle" direction="in"/>
+<pin name="SENSOR_CAPP" x="-50.8" y="2.54" length="middle" direction="in"/>
+<pin name="SENSOR_CAPN" x="-50.8" y="-2.54" length="middle" direction="in"/>
+<pin name="SENSOR_VN" x="-50.8" y="-7.62" length="middle" direction="in"/>
+<pin name="EN" x="-50.8" y="-12.7" length="middle" direction="in"/>
+<pin name="IO34" x="-50.8" y="-17.78" length="middle" direction="in"/>
+<pin name="IO35" x="-50.8" y="-22.86" length="middle" direction="in"/>
+<pin name="IO32" x="-50.8" y="-27.94" length="middle"/>
+<pin name="IO33" x="-27.94" y="-50.8" length="middle" rot="R90"/>
+<pin name="IO25" x="-22.86" y="-50.8" length="middle" rot="R90"/>
+<pin name="IO26" x="-17.78" y="-50.8" length="middle" rot="R90"/>
+<pin name="IO27" x="-12.7" y="-50.8" length="middle" rot="R90"/>
+<pin name="IO14" x="-7.62" y="-50.8" length="middle" rot="R90"/>
+<pin name="IO12" x="-2.54" y="-50.8" length="middle" rot="R90"/>
+<pin name="VDD3P3_RTC" x="2.54" y="-50.8" length="middle" direction="pwr" rot="R90"/>
+<pin name="IO13" x="7.62" y="-50.8" length="middle" rot="R90"/>
+<pin name="IO15" x="12.7" y="-50.8" length="middle" rot="R90"/>
+<pin name="IO2" x="17.78" y="-50.8" length="middle" rot="R90"/>
+<pin name="IO0" x="22.86" y="-50.8" length="middle" rot="R90"/>
+<pin name="IO4" x="27.94" y="-50.8" length="middle" rot="R90"/>
+<pin name="FLASH_CS" x="50.8" y="-27.94" length="middle" rot="R180"/>
+<pin name="VDD_SDIO" x="50.8" y="-22.86" length="middle" direction="pwr" rot="R180"/>
+<pin name="SIO1" x="50.8" y="-17.78" length="middle" rot="R180"/>
+<pin name="IO9" x="50.8" y="-12.7" length="middle" rot="R180"/>
+<pin name="IO10" x="50.8" y="-7.62" length="middle" rot="R180"/>
+<pin name="SIO3" x="50.8" y="-2.54" length="middle" rot="R180"/>
+<pin name="SCLK" x="50.8" y="2.54" length="middle" rot="R180"/>
+<pin name="SIO2" x="50.8" y="7.62" length="middle" rot="R180"/>
+<pin name="SIO0" x="50.8" y="12.7" length="middle" rot="R180"/>
+<pin name="IO5" x="50.8" y="17.78" length="middle" rot="R180"/>
+<pin name="IO18" x="50.8" y="22.86" length="middle" rot="R180"/>
+<pin name="IO23" x="50.8" y="27.94" length="middle" rot="R180"/>
+<pin name="VDD3P3_CPU" x="27.94" y="50.8" length="middle" direction="pwr" rot="R270"/>
+<pin name="IO19" x="22.86" y="50.8" length="middle" rot="R270"/>
+<pin name="IO22" x="17.78" y="50.8" length="middle" rot="R270"/>
+<pin name="U0RXD" x="12.7" y="50.8" length="middle" rot="R270"/>
+<pin name="U0TXD" x="7.62" y="50.8" length="middle" rot="R270"/>
+<pin name="IO21" x="2.54" y="50.8" length="middle" rot="R270"/>
+<pin name="VDDA_2" x="-2.54" y="50.8" length="middle" direction="pwr" rot="R270"/>
+<pin name="XTAL_N" x="-7.62" y="50.8" length="middle" direction="nc" rot="R270"/>
+<pin name="XTAL_P" x="-12.7" y="50.8" length="middle" direction="nc" rot="R270"/>
+<pin name="VDDA_3" x="-17.78" y="50.8" length="middle" direction="pwr" rot="R270"/>
+<pin name="CAP2" x="-22.86" y="50.8" length="middle" direction="nc" rot="R270"/>
+<pin name="CAP1" x="-27.94" y="50.8" length="middle" direction="nc" rot="R270"/>
+<text x="-12.7" y="10.16" size="5.08" layer="94">&gt;NAME</text>
+<pin name="GND" x="-50.8" y="38.1" length="middle" direction="pwr"/>
+<text x="-43.18" y="5.08" size="1.016" layer="97">GPIO36, ADC1_CH0, RTC_GPIO0</text>
+<text x="-43.18" y="0" size="1.016" layer="97">GPIO37, ADC1_CH1, RTC_GPIO1</text>
+<text x="-43.18" y="-5.08" size="1.016" layer="97">GPIO38, ADC1_CH2, RTC_GPIO2</text>
+<text x="-43.18" y="-10.16" size="1.016" layer="97">GPIO39, ADC1_CH3, RTC_GPIO3</text>
+<text x="-43.18" y="-20.32" size="1.016" layer="97">ADC1_CH6, RTC_GPIO4</text>
+<text x="-43.18" y="-25.4" size="1.016" layer="97">ADC1_CH7, RTC_GPIO5</text>
+<text x="-43.18" y="-32.004" size="1.016" layer="97">32K_XP, ADC1_CH4, TOUCH9,
+RTC_GPIO9</text>
+<text x="-43.18" y="25.4" size="1.016" layer="97">Analog power supply (2.3V ~ 3.6V)</text>
+<text x="-43.18" y="20.32" size="1.016" layer="97">RF input and output</text>
+<text x="-43.18" y="15.24" size="1.016" layer="97">Analog power supply (2.3V ~ 3.6V)</text>
+<text x="-43.18" y="10.16" size="1.016" layer="97">Analog power supply (2.3V ~ 3.6V)</text>
+<text x="-43.18" y="-15.24" size="1.143" layer="97">High: Enabled; Low: Off</text>
+<text x="-30.48" y="-40.64" size="1.016" layer="97" rot="R180">32K_XN, ADC1_CH5,
+TOUCH8, RTC_GPIO8</text>
+<text x="-19.05" y="-43.18" size="1.016" layer="97" rot="R90">GPIO25, DAC_1, ADC2_CH8,
+RTC_GPIO6, EMAC_RXD0</text>
+<text x="-13.97" y="-43.18" size="1.016" layer="97" rot="R90">GPIO26, DAC_2, ADC2_CH9,
+RTC_GPIO7, EMAC_RXD1</text>
+<text x="-8.89" y="-43.18" size="1.016" layer="97" rot="R90">GPIO27, ADC2_CH7, TOUCH7,
+RTC_GPIO17, EMAC_RX_DV</text>
+<text x="-4.064" y="-43.18" size="1.016" layer="97" rot="R90">ADC2_CH6, TOUCH6, RTC_GPIO16, MTMS,
+HSPICLK, HS2_CLK, SD_CLK, EMAC_TXD2</text>
+<text x="1.016" y="-43.18" size="1.016" layer="97" rot="R90">ADC2_CH5, TOUCH5, RTC_GPIO15, MTDI,
+HSPIQ, HS2_DATA2, SD_DATA2, EMAC_TXD3</text>
+<text x="6.096" y="-43.18" size="1.016" layer="97" rot="R90">Input power supply (RTC IO)
+(2.3V ~ 3.6V)</text>
+<text x="11.176" y="-43.18" size="1.016" layer="97" rot="R90">ADC2_CH4, TOUCH4, RTC_GPIO14, MTCK,
+HSPID, HS2_DATA3, SD_DATA3, EMAC_RX_ER</text>
+<text x="16.256" y="-43.18" size="1.016" layer="97" rot="R90">ADC2_CH3, TOUCH3, RTC_GPIO13, MTDO,
+HSPICS0, HS2_CMD, SD_CMD, EMAC_RXD3</text>
+<text x="21.336" y="-43.18" size="1.016" layer="97" rot="R90">ADC2_CH2, TOUCH2, RTC_GPIO12,
+HSPIWP, HS2_DATA0, SD_DATA0</text>
+<text x="26.416" y="-43.18" size="1.016" layer="97" rot="R90">ADC2_CH1, TOUCH1, RTC_GPIO11,
+CLK_OUT1, EMAC_TX_CLK</text>
+<text x="29.21" y="-43.18" size="1.016" layer="97">ADC2_CH0, TOUCH0,
+RTC_GPIO10, HSPIHD,
+HS2_DATA1, SD_DATA1,
+EMAC_TX_ER</text>
+<text x="44.45" y="-29.718" size="1.016" layer="97" rot="R180">GPIO16, HS1_DATA4,
+U2RXD, EMAC_CLK_OUT</text>
+<text x="44.45" y="-24.384" size="1.016" layer="97" rot="R180">Output Power Supply
+(same as VDD3P3_RTC)</text>
+<text x="44.704" y="-19.05" size="1.016" layer="97" rot="R180">GPIO17, HS1_DATA5, U2TXD,
+EMAC_CLK_OUT_180</text>
+<text x="44.45" y="-13.97" size="1.016" layer="97" rot="R180">GPIO9, SD_DATA2, SPIHD,
+HS1_DATA2, U1RXD</text>
+<text x="44.45" y="-9.144" size="1.016" layer="97" rot="R180">GPIO10, SD_DATA3, SPIWP,
+HS1_DATA3, U1TXD</text>
+<text x="44.45" y="-4.572" size="1.016" layer="97" rot="R180">GPIO11, SD_CMD, SPICS0, HS1_CMD, U1RTS</text>
+<text x="44.45" y="0.508" size="1.016" layer="97" rot="R180">GPIO6, SD_CLK, SPICLK, HS1_CLK, U1CTS</text>
+<text x="44.45" y="5.588" size="1.016" layer="97" rot="R180">GPIO7, SD_DATA0, SPIQ, HS1_DATA0, U2RTS</text>
+<text x="44.45" y="10.668" size="1.016" layer="97" rot="R180">GPIO8, SD_DATA1, SPID, HS1_DATA1, U2CTS</text>
+<text x="44.45" y="15.748" size="1.016" layer="97" rot="R180">GPIO5, VSPICS0, HS1_DATA6, EMAC_RX_CLK</text>
+<text x="44.196" y="20.828" size="1.016" layer="97" rot="R180">GPIO18, VSPICLK, HS1_DATA7</text>
+<text x="44.45" y="25.908" size="1.016" layer="97" rot="R180">GPIO23, VSPID, HS1_STROBE</text>
+<text x="29.464" y="43.18" size="1.016" layer="97" rot="R270">Input power supply
+(CPU IO) (1.8V ~ 3.6V)</text>
+<text x="24.13" y="42.926" size="1.016" layer="97" rot="R270">GPIO19, VSPIQ, U0CTS,
+EMAC_TXD0</text>
+<text x="19.812" y="43.18" size="1.016" layer="97" rot="R270">GPIO22, VSPWP, U0RTS, EMAC_TXD1</text>
+<text x="14.732" y="43.18" size="1.016" layer="97" rot="R270">GPIO3, U0RXD, CLK_OUT2</text>
+<text x="9.652" y="43.18" size="1.016" layer="97" rot="R270">GPIO1, U0TXD, CLK_OUT3, EMAC_RXD2</text>
+<text x="4.572" y="43.18" size="1.016" layer="97" rot="R270">GPIO21, VSPIHD, EMAC_TX_EN</text>
+<text x="-1.016" y="43.18" size="1.016" layer="97" rot="R270">Analog power supply
+(2.3V ~ 3.6V)</text>
+<text x="-16.51" y="43.18" size="1.016" layer="97" rot="R270">Analog power supply
+(2.3V ~ 3.6V)</text>
+<wire x1="48.26" y1="0" x2="53.34" y2="0" width="0.254" layer="97"/>
+<wire x1="53.34" y1="0" x2="53.34" y2="-5.08" width="0.254" layer="97"/>
+<wire x1="48.26" y1="5.08" x2="53.34" y2="5.08" width="0.254" layer="97"/>
+<wire x1="53.34" y1="5.08" x2="53.34" y2="0" width="0.254" layer="97"/>
+<wire x1="48.26" y1="10.16" x2="53.34" y2="10.16" width="0.254" layer="97"/>
+<wire x1="53.34" y1="10.16" x2="53.34" y2="5.08" width="0.254" layer="97"/>
+<wire x1="48.26" y1="15.24" x2="53.34" y2="15.24" width="0.254" layer="97"/>
+<wire x1="53.34" y1="15.24" x2="53.34" y2="10.16" width="0.254" layer="97"/>
+<wire x1="48.26" y1="-15.24" x2="53.34" y2="-15.24" width="0.254" layer="97"/>
+<wire x1="53.34" y1="-15.24" x2="53.34" y2="-20.32" width="0.254" layer="97"/>
+<wire x1="48.26" y1="-25.4" x2="53.34" y2="-25.4" width="0.254" layer="97"/>
+<wire x1="53.34" y1="-25.4" x2="53.34" y2="-30.48" width="0.254" layer="97"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -797,6 +871,7 @@ Source: http://v4.cypress.com/cfuploads/img/products/cywusb6934.pdf</description
 <connect gate="G$1" pin="FLASH_CS" pad="25"/>
 <connect gate="G$1" pin="GND" pad="EXP"/>
 <connect gate="G$1" pin="IO0" pad="23"/>
+<connect gate="G$1" pin="IO10" pad="29"/>
 <connect gate="G$1" pin="IO12" pad="18"/>
 <connect gate="G$1" pin="IO13" pad="20"/>
 <connect gate="G$1" pin="IO14" pad="17"/>
@@ -818,7 +893,6 @@ Source: http://v4.cypress.com/cfuploads/img/products/cywusb6934.pdf</description
 <connect gate="G$1" pin="IO5" pad="34"/>
 <connect gate="G$1" pin="IO9" pad="28"/>
 <connect gate="G$1" pin="LNA_IN" pad="2"/>
-<connect gate="G$1" pin="PSRAM_CS" pad="29"/>
 <connect gate="G$1" pin="SCLK" pad="31"/>
 <connect gate="G$1" pin="SENSOR_CAPN" pad="7"/>
 <connect gate="G$1" pin="SENSOR_CAPP" pad="6"/>
@@ -851,6 +925,10 @@ Source: http://v4.cypress.com/cfuploads/img/products/cywusb6934.pdf</description
 </library>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.3" severity="warning">
 Since Version 8.3, EAGLE supports URNs for individual library
 assets (packages, symbols, and devices). The URNs of those assets
