@@ -21661,8 +21661,7 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <net name="GND" class="0">
 <segment>
 <pinref part="U$7" gate="G$1" pin="DGND0"/>
-<wire x1="-33.02" y1="149.86" x2="-40.64" y2="149.86" width="0.1524" layer="91"/>
-<wire x1="-40.64" y1="149.86" x2="-50.8" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="149.86" x2="-50.8" y2="149.86" width="0.1524" layer="91"/>
 <wire x1="-50.8" y1="149.86" x2="-50.8" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="GND25" gate="1" pin="GND"/>
 <wire x1="-50.8" y1="88.9" x2="-50.8" y2="68.58" width="0.1524" layer="91"/>
@@ -21709,14 +21708,6 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <junction x="45.72" y="53.34"/>
 <wire x1="60.96" y1="27.94" x2="66.04" y2="27.94" width="0.1524" layer="91"/>
 <junction x="66.04" y="27.94"/>
-<pinref part="U$7" gate="G$1" pin="MICP/LINE1"/>
-<wire x1="-33.02" y1="165.1" x2="-40.64" y2="165.1" width="0.1524" layer="91"/>
-<pinref part="U$7" gate="G$1" pin="MICN"/>
-<wire x1="-40.64" y1="165.1" x2="-40.64" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="-40.64" y1="160.02" x2="-33.02" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="-40.64" y1="160.02" x2="-40.64" y2="149.86" width="0.1524" layer="91"/>
-<junction x="-40.64" y="160.02"/>
-<junction x="-40.64" y="149.86"/>
 <pinref part="R13" gate="G$1" pin="2"/>
 <pinref part="C22" gate="G$1" pin="1"/>
 <wire x1="-101.6" y1="88.9" x2="-109.22" y2="88.9" width="0.1524" layer="91"/>
