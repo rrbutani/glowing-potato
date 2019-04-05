@@ -1,239 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle>
-    <drawing>
-        <grid unitdist="mm" unit="mm"/>
-        <layers>
-            <layer name="Top" color="4" number="1" visible="yes" active="yes" fill="1"/>
-            <layer name="Bottom" color="4" number="16" visible="yes" active="yes" fill="1"/>
-            <layer name="tPlace" color="7" number="21" visible="yes" active="yes" fill="1"/>
-            <layer name="bPlace" color="7" number="22" visible="yes" active="yes" fill="1"/>
-            <layer name="tNames" color="7" number="25" visible="yes" active="yes" fill="1"/>
-            <layer name="bNames" color="7" number="26" visible="yes" active="yes" fill="1"/>
-            <layer name="tValues" color="7" number="27" visible="yes" active="yes" fill="1"/>
-            <layer name="bValues" color="7" number="28" visible="yes" active="yes" fill="1"/>
-            <layer name="tStop" color="7" number="29" visible="yes" active="yes" fill="1"/>
-            <layer name="bStop" color="7" number="30" visible="yes" active="yes" fill="1"/>
-            <layer name="tCream" color="7" number="31" visible="yes" active="yes" fill="1"/>
-            <layer name="bCream" color="7" number="32" visible="yes" active="yes" fill="1"/>
-            <layer name="tKeepout" color="4" number="39" visible="yes" active="yes" fill="1"/>
-            <layer name="bKeepout" color="4" number="40" visible="yes" active="yes" fill="1"/>
-            <layer name="tRestrict" color="0" number="41" visible="yes" active="yes" fill="1"/>
-            <layer name="bRestrict" color="0" number="42" visible="yes" active="yes" fill="1"/>
-            <layer name="tDocu" color="7" number="51" visible="yes" active="yes" fill="1"/>
-            <layer name="bDocu" color="7" number="52" visible="yes" active="yes" fill="1"/>
-            <layer name="Nets" color="2" number="91" visible="yes" active="yes" fill="1"/>
-            <layer name="Busses" color="1" number="92" visible="yes" active="yes" fill="1"/>
-            <layer name="Pins" color="2" number="93" visible="yes" active="yes" fill="1"/>
-            <layer name="Symbols" color="4" number="94" visible="yes" active="yes" fill="1"/>
-            <layer name="Names" color="7" number="95" visible="yes" active="yes" fill="1"/>
-            <layer name="Values" color="7" number="96" visible="yes" active="yes" fill="1"/>
-            <layer name="Info" color="7" number="97" visible="yes" active="yes" fill="1"/>
-            <layer name="Guide" color="6" number="98" visible="yes" active="yes" fill="1"/>
-        </layers>
-        <library name="Upverter Library">
-            <description>Upverter Parts Library
+<eagle version="9.3.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="0" fill="1" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="0" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<description>Upverter Parts Library
 
 Created by Upverter.com</description>
-            <packages>
-                <package name="HIROSE_DM3BT-DSF-PEJS_0">
-                    <description>Right Angle Surface Mount Micro SD Card Connector, with Solder Termination</description>
-                    <polygon layer="29">
-                        <vertex y="-8.125" x="-7.325"/>
-                        <vertex y="-8.125" x="-5.325"/>
-                        <vertex y="-7.625" x="-5.325"/>
-                        <vertex y="-7.625" x="-5.675"/>
-                        <vertex y="-7.475" x="-5.825"/>
-                        <vertex y="-6.225" x="-5.825"/>
-                        <vertex y="-6.225" x="-7.325"/>
-                        <vertex y="-8.125" x="-7.325"/>
-                    </polygon>
-                    <polygon layer="31">
-                        <vertex y="-8.125" x="-7.325"/>
-                        <vertex y="-8.125" x="-5.325"/>
-                        <vertex y="-7.625" x="-5.325"/>
-                        <vertex y="-7.625" x="-5.675"/>
-                        <vertex y="-7.475" x="-5.825"/>
-                        <vertex y="-6.225" x="-5.825"/>
-                        <vertex y="-6.225" x="-7.325"/>
-                        <vertex y="-8.125" x="-7.325"/>
-                    </polygon>
-                    <polygon layer="1">
-                        <vertex y="-8.125" x="-7.325"/>
-                        <vertex y="-8.125" x="-5.325"/>
-                        <vertex y="-7.625" x="-5.325"/>
-                        <vertex y="-7.625" x="-5.675"/>
-                        <vertex y="-7.475" x="-5.825"/>
-                        <vertex y="-6.225" x="-5.825"/>
-                        <vertex y="-6.225" x="-7.325"/>
-                        <vertex y="-8.125" x="-7.325"/>
-                    </polygon>
-                    <wire layer="51" y2="8.125" width="0.15" x2="-7.025" y1="-8.125" x1="-7.025"/>
-                    <wire layer="51" y2="8.125" width="0.15" x2="7.025" y1="8.125" x1="-7.025"/>
-                    <wire layer="51" y2="-8.125" width="0.15" x2="7.025" y1="8.125" x1="7.025"/>
-                    <wire layer="51" y2="-8.125" width="0.15" x2="-7.025" y1="-8.125" x1="7.025"/>
-                    <wire layer="39" y2="8.625" width="0.1" x2="-7.425" y1="-8.225" x1="-7.425"/>
-                    <wire layer="39" y2="8.625" width="0.1" x2="7.425" y1="8.625" x1="-7.425"/>
-                    <wire layer="39" y2="-8.225" width="0.1" x2="7.425" y1="8.625" x1="7.425"/>
-                    <wire layer="39" y2="-8.225" width="0.1" x2="-7.425" y1="-8.225" x1="7.425"/>
-                    <wire layer="21" y2="8.125" width="0.15" x2="-5.55" y1="8.125" x1="-7.025"/>
-                    <wire layer="21" y2="8.125" width="0.15" x2="-3.5" y1="8.125" x1="-3.8"/>
-                    <wire layer="21" y2="8.125" width="0.15" x2="7.025" y1="8.125" x1="6.6"/>
-                    <wire layer="21" y2="-3.35" width="0.15" x2="7.025" y1="-4.2" x1="7.025"/>
-                    <wire layer="21" y2="2.65" width="0.15" x2="7.025" y1="-1.8" x1="7.025"/>
-                    <wire layer="21" y2="8.125" width="0.15" x2="7.025" y1="4.6" x1="7.025"/>
-                    <wire layer="21" y2="-8.125" width="0.15" x2="5.75" y1="-8.125" x1="-4.95"/>
-                    <wire layer="21" y2="8.125" width="0.15" x2="-7.025" y1="-5.85" x1="-7.025"/>
-                    <text layer="25" align="bottom-left" y="9.0" x="-7.05" rot="R0" size="1.0">&gt;NAME</text>
-                    <circle y="9.1" x="-2.775" layer="21" radius="0.25" width="0.0"/>
-                    <rectangle layer="41" y2="3.025" x2="7.225" y1="-0.575" x1="6.475"/>
-                    <rectangle layer="41" y2="7.475" x2="7.225" y1="4.225" x1="6.475"/>
-                    <smd layer="1" thermals="yes" name="11" stop="yes" roundness="0" dx="1.0" dy="1.4" y="7.825" x="-4.675" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="0.7" dy="1.4" y="7.825" x="-2.775" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="0" dx="0.7" dy="1.4" y="7.825" x="-1.675" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="0" dx="0.7" dy="1.4" y="7.825" x="-0.575" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="4" stop="yes" roundness="0" dx="0.7" dy="1.4" y="7.825" x="0.525" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="5" stop="yes" roundness="0" dx="0.7" dy="1.4" y="7.825" x="1.625" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="6" stop="yes" roundness="0" dx="0.7" dy="1.4" y="7.825" x="2.725" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="7" stop="yes" roundness="0" dx="0.7" dy="1.4" y="7.825" x="3.825" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="8" stop="yes" roundness="0" dx="0.7" dy="1.4" y="7.825" x="4.925" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="9" stop="yes" roundness="0" dx="0.7" dy="1.2" y="7.925" x="5.875" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="10" stop="yes" roundness="0" dx="1.2" dy="0.8" y="-2.575" x="6.725" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="12" stop="yes" roundness="0" dx="1.2" dy="1.2" y="3.625" x="6.725" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="no" name="13" stop="no" roundness="100" dx="1.311" dy="1.311" y="-7.116" x="-6.553" rot="R0" cream="no"/>
-                    <smd layer="1" thermals="yes" name="14" stop="yes" roundness="0" dx="1.2" dy="3.2" y="-6.175" x="6.725" rot="R0" cream="yes"/>
-                </package>
-            </packages>
-            <symbols>
-                <symbol name="HIROSE_DM3BT-DSF-PEJS_0_0">
-                    <description>Right Angle Surface Mount Micro SD Card Connector, with Solder Termination</description>
-                    <wire layer="94" y2="-5.08" width="0.254" x2="2.54" y1="-86.36" x1="2.54"/>
-                    <wire layer="94" y2="-5.08" width="0.254" x2="17.78" y1="-5.08" x1="2.54"/>
-                    <wire layer="94" y2="-86.36" width="0.254" x2="17.78" y1="-5.08" x1="17.78"/>
-                    <wire layer="94" y2="-86.36" width="0.254" x2="2.54" y1="-86.36" x1="17.78"/>
-                    <wire layer="94" y2="-25.4" width="0.508" x2="17.78" y1="-25.4" x1="10.922"/>
-                    <wire layer="94" y2="-30.48" width="0.508" x2="17.78" y1="-30.48" x1="10.922"/>
-                    <wire layer="94" y2="-35.56" width="0.508" x2="17.78" y1="-35.56" x1="10.922"/>
-                    <wire layer="94" y2="-10.16" width="0.508" x2="17.78" y1="-10.16" x1="10.922"/>
-                    <wire layer="94" y2="-40.64" width="0.508" x2="17.78" y1="-40.64" x1="10.922"/>
-                    <wire layer="94" y2="-45.72" width="0.508" x2="17.78" y1="-45.72" x1="10.922"/>
-                    <wire layer="94" y2="-15.24" width="0.508" x2="17.78" y1="-15.24" x1="10.922"/>
-                    <wire layer="94" y2="-20.32" width="0.508" x2="17.78" y1="-20.32" x1="10.922"/>
-                    <wire layer="94" y2="-58.42" width="0.508" x2="17.78" y1="-58.42" x1="10.922"/>
-                    <wire layer="94" y2="-53.34" width="0.508" x2="17.78" y1="-53.34" x1="10.922"/>
-                    <wire layer="94" y2="-66.04" width="0.508" x2="17.78" y1="-66.04" x1="10.922"/>
-                    <wire layer="94" y2="-71.12" width="0.508" x2="17.78" y1="-71.12" x1="10.922"/>
-                    <wire layer="94" y2="-76.2" width="0.508" x2="17.78" y1="-76.2" x1="10.922"/>
-                    <wire layer="94" y2="-81.28" width="0.508" x2="17.78" y1="-81.28" x1="10.922"/>
-                    <wire layer="94" y2="-25.4" width="0.15" x2="17.78" y1="-25.4" x1="17.78"/>
-                    <wire layer="94" y2="-30.48" width="0.15" x2="17.78" y1="-30.48" x1="17.78"/>
-                    <wire layer="94" y2="-35.56" width="0.15" x2="17.78" y1="-35.56" x1="17.78"/>
-                    <wire layer="94" y2="-10.16" width="0.15" x2="17.78" y1="-10.16" x1="17.78"/>
-                    <wire layer="94" y2="-40.64" width="0.15" x2="17.78" y1="-40.64" x1="17.78"/>
-                    <wire layer="94" y2="-45.72" width="0.15" x2="17.78" y1="-45.72" x1="17.78"/>
-                    <wire layer="94" y2="-15.24" width="0.15" x2="17.78" y1="-15.24" x1="17.78"/>
-                    <wire layer="94" y2="-20.32" width="0.15" x2="17.78" y1="-20.32" x1="17.78"/>
-                    <wire layer="94" y2="-58.42" width="0.15" x2="17.78" y1="-58.42" x1="17.78"/>
-                    <wire layer="94" y2="-53.34" width="0.15" x2="17.78" y1="-53.34" x1="17.78"/>
-                    <wire layer="94" y2="-66.04" width="0.15" x2="17.78" y1="-66.04" x1="17.78"/>
-                    <wire layer="94" y2="-71.12" width="0.15" x2="17.78" y1="-71.12" x1="17.78"/>
-                    <wire layer="94" y2="-76.2" width="0.15" x2="17.78" y1="-76.2" x1="17.78"/>
-                    <wire layer="94" y2="-81.28" width="0.15" x2="17.78" y1="-81.28" x1="17.78"/>
-                    <text layer="95" align="top-left" y="-2.54" x="2.54" rot="R0" size="2.54">&gt;NAME</text>
-                    <text layer="95" align="top-left" y="-88.9" x="2.54" rot="R0" size="2.54">DM3BT-DSF-PEJS</text>
-                    <pin direction="io" name="DAT2" visible="pad" length="middle" y="-25.4" x="22.86" rot="R180"/>
-                    <pin direction="io" name="CD/DAT3" visible="pad" length="middle" y="-30.48" x="22.86" rot="R180"/>
-                    <pin direction="in" name="CMD" visible="pad" length="middle" y="-35.56" x="22.86" rot="R180"/>
-                    <pin direction="pwr" name="VDD" visible="pad" length="middle" y="-10.16" x="22.86" rot="R180"/>
-                    <pin direction="in" name="CLK" visible="pad" length="middle" y="-40.64" x="22.86" rot="R180"/>
-                    <pin direction="pwr" name="VSS" visible="pad" length="middle" y="-45.72" x="22.86" rot="R180"/>
-                    <pin direction="io" name="DAT0" visible="pad" length="middle" y="-15.24" x="22.86" rot="R180"/>
-                    <pin direction="io" name="DAT1" visible="pad" length="middle" y="-20.32" x="22.86" rot="R180"/>
-                    <pin direction="pas" name="B" visible="pad" length="middle" y="-58.42" x="22.86" rot="R180"/>
-                    <pin direction="pas" name="A" visible="pad" length="middle" y="-53.34" x="22.86" rot="R180"/>
-                    <pin direction="pas" name="MNT_1" visible="pad" length="middle" y="-66.04" x="22.86" rot="R180"/>
-                    <pin direction="pas" name="MNT_2" visible="pad" length="middle" y="-71.12" x="22.86" rot="R180"/>
-                    <pin direction="pas" name="MNT_3" visible="pad" length="middle" y="-76.2" x="22.86" rot="R180"/>
-                    <pin direction="pas" name="MNT_4" visible="pad" length="middle" y="-81.28" x="22.86" rot="R180"/>
-                    <circle y="-25.4" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                    <circle y="-30.48" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                    <circle y="-35.56" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                    <circle y="-10.16" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                    <circle y="-40.64" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                    <circle y="-45.72" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                    <circle y="-15.24" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                    <circle y="-20.32" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                    <circle y="-58.42" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                    <circle y="-53.34" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                    <circle y="-66.04" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                    <circle y="-71.12" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                    <circle y="-76.2" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                    <circle y="-81.28" x="10.16" layer="94" radius="0.762" width="0.254"/>
-                </symbol>
-            </symbols>
-            <devicesets>
-                <deviceset prefix="J" name="HIROSE_DM3BT-DSF-PEJS">
-                    <description>Right Angle Surface Mount Micro SD Card Connector, with Solder Termination</description>
-                    <gates>
-                        <gate name="G$0" symbol="HIROSE_DM3BT-DSF-PEJS_0_0" x="0"/>
-                    </gates>
-                    <devices>
-                        <device name="HIROSE_DM3BT-DSF-PEJS_0_0" package="HIROSE_DM3BT-DSF-PEJS_0">
-                            <connects>
-                                <connect gate="G$0" pad="1" pin="DAT2"/>
-                                <connect gate="G$0" pad="2" pin="CD/DAT3"/>
-                                <connect gate="G$0" pad="3" pin="CMD"/>
-                                <connect gate="G$0" pad="4" pin="VDD"/>
-                                <connect gate="G$0" pad="5" pin="CLK"/>
-                                <connect gate="G$0" pad="6" pin="VSS"/>
-                                <connect gate="G$0" pad="7" pin="DAT0"/>
-                                <connect gate="G$0" pad="8" pin="DAT1"/>
-                                <connect gate="G$0" pad="9" pin="B"/>
-                                <connect gate="G$0" pad="10" pin="A"/>
-                                <connect gate="G$0" pad="11" pin="MNT_1"/>
-                                <connect gate="G$0" pad="12" pin="MNT_2"/>
-                                <connect gate="G$0" pad="13" pin="MNT_3"/>
-                                <connect gate="G$0" pad="14" pin="MNT_4"/>
-                            </connects>
-                            <technologies>
-                                <technology>
-                                    <attribute name="mouser_description" value="Memory Card Connectors MICRO SD CD CONN REV SMT PUSHPUSH"/>
-                                    <attribute name="mouser_part_number" value="798-DM3BT-DSF-PEJS"/>
-                                    <attribute name="prefix" value="J"/>
-                                    <attribute name="mfg_package_ident_rev" value="0"/>
-                                    <attribute name="mfg_package_ident_date" value="0"/>
-                                    <attribute name="is_female" value="yes"/>
-                                    <attribute name="temperature_range_high" value="+85°C"/>
-                                    <attribute name="MPN" value="DM3BT-DSF-PEJS"/>
-                                    <attribute name="digikey_description" value="CONN MICRO SD CARD PUSH-PUSH R/A"/>
-                                    <attribute name="device_class_L3" value="unset"/>
-                                    <attribute name="device_class_L1" value="Connectors"/>
-                                    <attribute name="digikey_part_number" value="HR1942CT-ND"/>
-                                    <attribute name="shielding" value="true"/>
-                                    <attribute name="current_rating" value="0.5A"/>
-                                    <attribute name="verification_version" value="0.0.0.1"/>
-                                    <attribute name="datasheet" value="https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&amp;item_id=195&amp;is_series=1"/>
-                                    <attribute name="footprint_url" value="https://www.hirose.com/product/en/download_file/key_name/DM3BT-DSF-PEJS/category/Drawing%20(2D)/doc_file_id/44097/?file_category_id=6&amp;item_id=06090029900&amp;is_series="/>
-                                    <attribute name="voltage_rating" value="125V"/>
-                                    <attribute name="lead_free" value="yes"/>
-                                    <attribute name="height" value="2.38mm"/>
-                                    <attribute name="mfg_package_ident" value="DM3BT-DSF-PEJS"/>
-                                    <attribute name="device_class_L2" value="Memory Connectors"/>
-                                    <attribute name="number_of_contacts" value="8"/>
-                                    <attribute name="conn_orientation" value="Right Angle"/>
-                                    <attribute name="temperature_range_low" value="-25°C"/>
-                                    <attribute name="rohs" value="yes"/>
-                                    <attribute name="centroid_not_specified" value="No"/>
-                                    <attribute name="memory_type" value="FLASH"/>
-                                    <attribute name="MF" value="HIROSE"/>
-                                    <attribute name="contact_material" value="Gold"/>
-                                    <attribute name="package" value="CONN_SMT_MICROSD_13MM85_16MM05"/>
-                                </technology>
-                            </technologies>
-                        </device>
-                    </devices>
-                </deviceset>
-            </devicesets>
-        </library>
-    </drawing>
+<packages>
+<package name="HIROSE_DM3BT-DSF-PEJS_0">
+<description>Right Angle Surface Mount Micro SD Card Connector, with Solder Termination</description>
+<polygon width="0" layer="29">
+<vertex x="-7.325" y="-8.125"/>
+<vertex x="-5.325" y="-8.125"/>
+<vertex x="-5.325" y="-7.625"/>
+<vertex x="-5.675" y="-7.625"/>
+<vertex x="-5.825" y="-7.475"/>
+<vertex x="-5.825" y="-6.225"/>
+<vertex x="-7.325" y="-6.225"/>
+</polygon>
+<polygon width="0" layer="31">
+<vertex x="-7.325" y="-8.125"/>
+<vertex x="-5.325" y="-8.125"/>
+<vertex x="-5.325" y="-7.625"/>
+<vertex x="-5.675" y="-7.625"/>
+<vertex x="-5.825" y="-7.475"/>
+<vertex x="-5.825" y="-6.225"/>
+<vertex x="-7.325" y="-6.225"/>
+</polygon>
+<polygon width="0" layer="1">
+<vertex x="-7.325" y="-8.125"/>
+<vertex x="-5.325" y="-8.125"/>
+<vertex x="-5.325" y="-7.625"/>
+<vertex x="-5.675" y="-7.625"/>
+<vertex x="-5.825" y="-7.475"/>
+<vertex x="-5.825" y="-6.225"/>
+<vertex x="-7.325" y="-6.225"/>
+</polygon>
+<wire x1="-7.025" y1="-8.125" x2="-7.025" y2="8.125" width="0.15" layer="51"/>
+<wire x1="-7.025" y1="8.125" x2="7.025" y2="8.125" width="0.15" layer="51"/>
+<wire x1="7.025" y1="8.125" x2="7.025" y2="-8.125" width="0.15" layer="51"/>
+<wire x1="7.025" y1="-8.125" x2="-7.025" y2="-8.125" width="0.15" layer="51"/>
+<wire x1="-7.425" y1="-8.225" x2="-7.425" y2="8.625" width="0.1" layer="39"/>
+<wire x1="-7.425" y1="8.625" x2="7.425" y2="8.625" width="0.1" layer="39"/>
+<wire x1="7.425" y1="8.625" x2="7.425" y2="-8.225" width="0.1" layer="39"/>
+<wire x1="7.425" y1="-8.225" x2="-7.425" y2="-8.225" width="0.1" layer="39"/>
+<wire x1="-7.025" y1="8.125" x2="-5.55" y2="8.125" width="0.15" layer="21"/>
+<wire x1="-3.8" y1="8.125" x2="-3.5" y2="8.125" width="0.15" layer="21"/>
+<wire x1="6.6" y1="8.125" x2="7.025" y2="8.125" width="0.15" layer="21"/>
+<wire x1="7.025" y1="-4.2" x2="7.025" y2="-3.35" width="0.15" layer="21"/>
+<wire x1="7.025" y1="-1.8" x2="7.025" y2="2.65" width="0.15" layer="21"/>
+<wire x1="7.025" y1="4.6" x2="7.025" y2="8.125" width="0.15" layer="21"/>
+<wire x1="-4.95" y1="-8.125" x2="5.75" y2="-8.125" width="0.15" layer="21"/>
+<wire x1="-7.025" y1="-5.85" x2="-7.025" y2="8.125" width="0.15" layer="21"/>
+<text x="-7.05" y="9" size="1" layer="25">&gt;NAME</text>
+<circle x="-2.775" y="9.1" radius="0.25" width="0" layer="21"/>
+<rectangle x1="6.475" y1="-0.575" x2="7.225" y2="3.025" layer="41"/>
+<rectangle x1="6.475" y1="4.225" x2="7.225" y2="7.475" layer="41"/>
+<smd name="11" x="-4.675" y="7.825" dx="1" dy="1.4" layer="1"/>
+<smd name="1" x="-2.775" y="7.825" dx="0.7" dy="1.4" layer="1"/>
+<smd name="2" x="-1.675" y="7.825" dx="0.7" dy="1.4" layer="1"/>
+<smd name="3" x="-0.575" y="7.825" dx="0.7" dy="1.4" layer="1"/>
+<smd name="4" x="0.525" y="7.825" dx="0.7" dy="1.4" layer="1"/>
+<smd name="5" x="1.625" y="7.825" dx="0.7" dy="1.4" layer="1"/>
+<smd name="6" x="2.725" y="7.825" dx="0.7" dy="1.4" layer="1"/>
+<smd name="7" x="3.825" y="7.825" dx="0.7" dy="1.4" layer="1"/>
+<smd name="8" x="4.925" y="7.825" dx="0.7" dy="1.4" layer="1"/>
+<smd name="9" x="5.875" y="7.925" dx="0.7" dy="1.2" layer="1"/>
+<smd name="10" x="6.725" y="-2.575" dx="1.2" dy="0.8" layer="1"/>
+<smd name="12" x="6.725" y="3.625" dx="1.2" dy="1.2" layer="1"/>
+<smd name="13" x="-6.553" y="-7.116" dx="1.311" dy="1.311" layer="1" roundness="100" stop="no" thermals="no" cream="no"/>
+<smd name="14" x="6.725" y="-6.175" dx="1.2" dy="3.2" layer="1"/>
+</package>
+</packages>
+<symbols>
+<symbol name="HIROSE_DM3BT-DSF-PEJS_0_0">
+<description>Right Angle Surface Mount Micro SD Card Connector, with Solder Termination</description>
+<wire x1="2.54" y1="-86.36" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-5.08" x2="17.78" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="17.78" y1="-5.08" x2="17.78" y2="-86.36" width="0.254" layer="94"/>
+<wire x1="17.78" y1="-86.36" x2="2.54" y2="-86.36" width="0.254" layer="94"/>
+<wire x1="10.922" y1="-25.4" x2="17.78" y2="-25.4" width="0.508" layer="94"/>
+<wire x1="10.922" y1="-30.48" x2="17.78" y2="-30.48" width="0.508" layer="94"/>
+<wire x1="10.922" y1="-35.56" x2="17.78" y2="-35.56" width="0.508" layer="94"/>
+<wire x1="10.922" y1="-10.16" x2="17.78" y2="-10.16" width="0.508" layer="94"/>
+<wire x1="10.922" y1="-40.64" x2="17.78" y2="-40.64" width="0.508" layer="94"/>
+<wire x1="10.922" y1="-45.72" x2="17.78" y2="-45.72" width="0.508" layer="94"/>
+<wire x1="10.922" y1="-15.24" x2="17.78" y2="-15.24" width="0.508" layer="94"/>
+<wire x1="10.922" y1="-20.32" x2="17.78" y2="-20.32" width="0.508" layer="94"/>
+<wire x1="10.922" y1="-58.42" x2="17.78" y2="-58.42" width="0.508" layer="94"/>
+<wire x1="10.922" y1="-53.34" x2="17.78" y2="-53.34" width="0.508" layer="94"/>
+<wire x1="10.922" y1="-66.04" x2="17.78" y2="-66.04" width="0.508" layer="94"/>
+<wire x1="10.922" y1="-71.12" x2="17.78" y2="-71.12" width="0.508" layer="94"/>
+<wire x1="10.922" y1="-76.2" x2="17.78" y2="-76.2" width="0.508" layer="94"/>
+<wire x1="10.922" y1="-81.28" x2="17.78" y2="-81.28" width="0.508" layer="94"/>
+<wire x1="17.78" y1="-25.4" x2="17.78" y2="-25.4" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-30.48" x2="17.78" y2="-30.48" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-35.56" x2="17.78" y2="-35.56" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-10.16" x2="17.78" y2="-10.16" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-40.64" x2="17.78" y2="-40.64" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-45.72" x2="17.78" y2="-45.72" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-15.24" x2="17.78" y2="-15.24" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-20.32" x2="17.78" y2="-20.32" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-58.42" x2="17.78" y2="-58.42" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-53.34" x2="17.78" y2="-53.34" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-66.04" x2="17.78" y2="-66.04" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-71.12" x2="17.78" y2="-71.12" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-76.2" x2="17.78" y2="-76.2" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-81.28" x2="17.78" y2="-81.28" width="0.15" layer="94"/>
+<text x="2.54" y="-2.54" size="2.54" layer="95" align="top-left">&gt;NAME</text>
+<text x="2.54" y="-88.9" size="2.54" layer="95" align="top-left">DM3BT-DSF-PEJS</text>
+<pin name="DAT2" x="22.86" y="-25.4" length="middle" rot="R180"/>
+<pin name="CD/DAT3" x="22.86" y="-30.48" length="middle" rot="R180"/>
+<pin name="CMD" x="22.86" y="-35.56" length="middle" direction="in" rot="R180"/>
+<pin name="VDD" x="22.86" y="-10.16" length="middle" direction="pwr" rot="R180"/>
+<pin name="CLK" x="22.86" y="-40.64" length="middle" direction="in" rot="R180"/>
+<pin name="VSS" x="22.86" y="-45.72" length="middle" direction="pwr" rot="R180"/>
+<pin name="DAT0" x="22.86" y="-15.24" length="middle" rot="R180"/>
+<pin name="DAT1" x="22.86" y="-20.32" length="middle" rot="R180"/>
+<pin name="B" x="22.86" y="-58.42" length="middle" direction="pas" rot="R180"/>
+<pin name="A" x="22.86" y="-53.34" length="middle" direction="pas" rot="R180"/>
+<pin name="MNT_1" x="22.86" y="-66.04" length="middle" direction="pas" rot="R180"/>
+<pin name="MNT_2" x="22.86" y="-71.12" length="middle" direction="pas" rot="R180"/>
+<pin name="MNT_3" x="22.86" y="-76.2" length="middle" direction="pas" rot="R180"/>
+<pin name="MNT_4" x="22.86" y="-81.28" length="middle" direction="pas" rot="R180"/>
+<circle x="10.16" y="-25.4" radius="0.762" width="0.254" layer="94"/>
+<circle x="10.16" y="-30.48" radius="0.762" width="0.254" layer="94"/>
+<circle x="10.16" y="-35.56" radius="0.762" width="0.254" layer="94"/>
+<circle x="10.16" y="-10.16" radius="0.762" width="0.254" layer="94"/>
+<circle x="10.16" y="-40.64" radius="0.762" width="0.254" layer="94"/>
+<circle x="10.16" y="-45.72" radius="0.762" width="0.254" layer="94"/>
+<circle x="10.16" y="-15.24" radius="0.762" width="0.254" layer="94"/>
+<circle x="10.16" y="-20.32" radius="0.762" width="0.254" layer="94"/>
+<circle x="10.16" y="-58.42" radius="0.762" width="0.254" layer="94"/>
+<circle x="10.16" y="-53.34" radius="0.762" width="0.254" layer="94"/>
+<circle x="10.16" y="-66.04" radius="0.762" width="0.254" layer="94"/>
+<circle x="10.16" y="-71.12" radius="0.762" width="0.254" layer="94"/>
+<circle x="10.16" y="-76.2" radius="0.762" width="0.254" layer="94"/>
+<circle x="10.16" y="-81.28" radius="0.762" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="HIROSE_DM3BT-DSF-PEJS" prefix="J">
+<description>Right Angle Surface Mount Micro SD Card Connector, with Solder Termination</description>
+<gates>
+<gate name="G$0" symbol="HIROSE_DM3BT-DSF-PEJS_0_0" x="0" y="0"/>
+</gates>
+<devices>
+<device name="HIROSE_DM3BT-DSF-PEJS_0_0" package="HIROSE_DM3BT-DSF-PEJS_0">
+<connects>
+<connect gate="G$0" pin="A" pad="10"/>
+<connect gate="G$0" pin="B" pad="9"/>
+<connect gate="G$0" pin="CD/DAT3" pad="2"/>
+<connect gate="G$0" pin="CLK" pad="5"/>
+<connect gate="G$0" pin="CMD" pad="3"/>
+<connect gate="G$0" pin="DAT0" pad="7"/>
+<connect gate="G$0" pin="DAT1" pad="8"/>
+<connect gate="G$0" pin="DAT2" pad="1"/>
+<connect gate="G$0" pin="MNT_1" pad="11"/>
+<connect gate="G$0" pin="MNT_2" pad="12"/>
+<connect gate="G$0" pin="MNT_3" pad="13"/>
+<connect gate="G$0" pin="MNT_4" pad="14"/>
+<connect gate="G$0" pin="VDD" pad="4"/>
+<connect gate="G$0" pin="VSS" pad="6"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CENTROID_NOT_SPECIFIED" value="No"/>
+<attribute name="CONN_ORIENTATION" value="Right Angle"/>
+<attribute name="CONTACT_MATERIAL" value="Gold"/>
+<attribute name="CURRENT_RATING" value="0.5A"/>
+<attribute name="DATASHEET" value="https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&amp;item_id=195&amp;is_series=1"/>
+<attribute name="DEVICE_CLASS_L1" value="Connectors"/>
+<attribute name="DEVICE_CLASS_L2" value="Memory Connectors"/>
+<attribute name="DEVICE_CLASS_L3" value="unset"/>
+<attribute name="DIGIKEY_DESCRIPTION" value="CONN MICRO SD CARD PUSH-PUSH R/A"/>
+<attribute name="DIGIKEY_PART_NUMBER" value="HR1942CT-ND"/>
+<attribute name="FOOTPRINT_URL" value="https://www.hirose.com/product/en/download_file/key_name/DM3BT-DSF-PEJS/category/Drawing%20(2D)/doc_file_id/44097/?file_category_id=6&amp;item_id=06090029900&amp;is_series="/>
+<attribute name="HEIGHT" value="2.38mm"/>
+<attribute name="IS_FEMALE" value="yes"/>
+<attribute name="LEAD_FREE" value="yes"/>
+<attribute name="MEMORY_TYPE" value="FLASH"/>
+<attribute name="MF" value="HIROSE"/>
+<attribute name="MFG_PACKAGE_IDENT" value="DM3BT-DSF-PEJS"/>
+<attribute name="MFG_PACKAGE_IDENT_DATE" value="0"/>
+<attribute name="MFG_PACKAGE_IDENT_REV" value="0"/>
+<attribute name="MOUSER_DESCRIPTION" value="Memory Card Connectors MICRO SD CD CONN REV SMT PUSHPUSH"/>
+<attribute name="MOUSER_PART_NUMBER" value="798-DM3BT-DSF-PEJS"/>
+<attribute name="MPN" value="DM3BT-DSF-PEJS"/>
+<attribute name="NUMBER_OF_CONTACTS" value="8"/>
+<attribute name="PACKAGE" value="CONN_SMT_MICROSD_13MM85_16MM05"/>
+<attribute name="PREFIX" value="J"/>
+<attribute name="ROHS" value="yes"/>
+<attribute name="SHIELDING" value="true"/>
+<attribute name="TEMPERATURE_RANGE_HIGH" value="+85°C"/>
+<attribute name="TEMPERATURE_RANGE_LOW" value="-25°C"/>
+<attribute name="VERIFICATION_VERSION" value="0.0.0.1"/>
+<attribute name="VOLTAGE_RATING" value="125V"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
 </eagle>

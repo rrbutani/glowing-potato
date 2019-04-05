@@ -750,7 +750,7 @@ Source: http://v4.cypress.com/cfuploads/img/products/cywusb6934.pdf</description
 <pin name="IO0" x="22.86" y="-50.8" length="middle" rot="R90"/>
 <pin name="IO4" x="27.94" y="-50.8" length="middle" rot="R90"/>
 <pin name="FLASH_CS" x="50.8" y="-27.94" length="middle" rot="R180"/>
-<pin name="VDD_SDIO" x="50.8" y="-22.86" length="middle" direction="pwr" rot="R180"/>
+<pin name="VDD_SDIO" x="50.8" y="-22.86" length="middle" direction="nc" rot="R180"/>
 <pin name="SIO1" x="50.8" y="-17.78" length="middle" rot="R180"/>
 <pin name="IO9" x="50.8" y="-12.7" length="middle" rot="R180"/>
 <pin name="IO10" x="50.8" y="-7.62" length="middle" rot="R180"/>
@@ -779,8 +779,9 @@ Source: http://v4.cypress.com/cfuploads/img/products/cywusb6934.pdf</description
 <text x="-43.18" y="0" size="1.016" layer="97">GPIO37, ADC1_CH1, RTC_GPIO1</text>
 <text x="-43.18" y="-5.08" size="1.016" layer="97">GPIO38, ADC1_CH2, RTC_GPIO2</text>
 <text x="-43.18" y="-10.16" size="1.016" layer="97">GPIO39, ADC1_CH3, RTC_GPIO3</text>
-<text x="-43.18" y="-20.32" size="1.016" layer="97">ADC1_CH6, RTC_GPIO4</text>
-<text x="-43.18" y="-25.4" size="1.016" layer="97">ADC1_CH7, RTC_GPIO5</text>
+<text x="-43.18" y="-20.32" size="1.016" layer="97">ADC1_CH6, RTC_GPIO4, VDET_1</text>
+<text x="-43.18" y="-26.67" size="1.016" layer="97">ADC1_CH7, RTC_GPIO5
+VDET_2</text>
 <text x="-43.18" y="-32.004" size="1.016" layer="97">32K_XP, ADC1_CH4, TOUCH9,
 RTC_GPIO9</text>
 <text x="-43.18" y="25.4" size="1.016" layer="97">Analog power supply (2.3V ~ 3.6V)</text>
