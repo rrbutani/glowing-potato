@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle>
+    <drawing>
+        <grid unitdist="mm" unit="mm"/>
+        <layers>
+            <layer name="Top" color="4" number="1" visible="yes" active="yes" fill="1"/>
+            <layer name="Bottom" color="4" number="16" visible="yes" active="yes" fill="1"/>
+            <layer name="tPlace" color="7" number="21" visible="yes" active="yes" fill="1"/>
+            <layer name="bPlace" color="7" number="22" visible="yes" active="yes" fill="1"/>
+            <layer name="tNames" color="7" number="25" visible="yes" active="yes" fill="1"/>
+            <layer name="bNames" color="7" number="26" visible="yes" active="yes" fill="1"/>
+            <layer name="tValues" color="7" number="27" visible="yes" active="yes" fill="1"/>
+            <layer name="bValues" color="7" number="28" visible="yes" active="yes" fill="1"/>
+            <layer name="tStop" color="7" number="29" visible="yes" active="yes" fill="1"/>
+            <layer name="bStop" color="7" number="30" visible="yes" active="yes" fill="1"/>
+            <layer name="tCream" color="7" number="31" visible="yes" active="yes" fill="1"/>
+            <layer name="bCream" color="7" number="32" visible="yes" active="yes" fill="1"/>
+            <layer name="tKeepout" color="4" number="39" visible="yes" active="yes" fill="1"/>
+            <layer name="bKeepout" color="4" number="40" visible="yes" active="yes" fill="1"/>
+            <layer name="tRestrict" color="0" number="41" visible="yes" active="yes" fill="1"/>
+            <layer name="bRestrict" color="0" number="42" visible="yes" active="yes" fill="1"/>
+            <layer name="tDocu" color="7" number="51" visible="yes" active="yes" fill="1"/>
+            <layer name="bDocu" color="7" number="52" visible="yes" active="yes" fill="1"/>
+            <layer name="Nets" color="2" number="91" visible="yes" active="yes" fill="1"/>
+            <layer name="Busses" color="1" number="92" visible="yes" active="yes" fill="1"/>
+            <layer name="Pins" color="2" number="93" visible="yes" active="yes" fill="1"/>
+            <layer name="Symbols" color="4" number="94" visible="yes" active="yes" fill="1"/>
+            <layer name="Names" color="7" number="95" visible="yes" active="yes" fill="1"/>
+            <layer name="Values" color="7" number="96" visible="yes" active="yes" fill="1"/>
+            <layer name="Info" color="7" number="97" visible="yes" active="yes" fill="1"/>
+            <layer name="Guide" color="6" number="98" visible="yes" active="yes" fill="1"/>
+        </layers>
+        <library name="Upverter Library">
+            <description>Upverter Parts Library
+
+Created by Upverter.com</description>
+            <packages>
+                <package name="ON_SEMICONDUCTOR_ESD5Z5.0T1G_0">
+                    <description>ONSC-K1A2-2</description>
+                    <wire layer="51" y2="0.4" width="0.1" x2="-0.6" y1="-0.4" x1="-0.6"/>
+                    <wire layer="51" y2="-0.4" width="0.1" x2="0.6" y1="-0.4" x1="-0.6"/>
+                    <wire layer="51" y2="0.4" width="0.1" x2="0.6" y1="-0.4" x1="0.6"/>
+                    <wire layer="51" y2="0.4" width="0.1" x2="0.6" y1="0.4" x1="-0.6"/>
+                    <wire layer="21" y2="0.4" width="0.15" x2="0.074" y1="0.4" x1="-0.074"/>
+                    <wire layer="21" y2="-0.4" width="0.15" x2="0.074" y1="-0.4" x1="-0.074"/>
+                    <wire layer="39" y2="0.5" width="0.1" x2="-1.0" y1="-0.5" x1="-1.0"/>
+                    <wire layer="39" y2="0.5" width="0.1" x2="1.0" y1="0.5" x1="-1.0"/>
+                    <wire layer="39" y2="-0.5" width="0.1" x2="1.0" y1="0.5" x1="1.0"/>
+                    <wire layer="39" y2="-0.5" width="0.1" x2="-1.0" y1="-0.5" x1="1.0"/>
+                    <text layer="25" align="bottom-left" y="0.65" x="-2.0" rot="R0" size="1.0">&gt;NAME</text>
+                    <circle y="0.6" x="-0.7" layer="21" radius="0.05" width="0.1"/>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="0.48" dy="0.4" y="-0.0" x="-0.66" rot="R180" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="0" dx="0.48" dy="0.4" y="-0.0" x="0.66" rot="R180" cream="yes"/>
+                </package>
+            </packages>
+            <symbols>
+                <symbol name="ON_SEMICONDUCTOR_ESD5Z5.0T1G_0_0">
+                    <description>ONSC-K1A2-2</description>
+                    <polygon layer="94" width="0.254">
+                        <vertex y="-5.08" x="7.62"/>
+                        <vertex y="-10.16" x="7.62"/>
+                        <vertex y="-7.62" x="5.08"/>
+                        <vertex y="-5.08" x="7.62"/>
+                    </polygon>
+                    <wire layer="94" y2="-9.144" width="0.254" x2="5.08" y1="-10.16" x1="6.096"/>
+                    <wire layer="94" y2="-6.096" width="0.254" x2="5.08" y1="-9.144" x1="5.08"/>
+                    <wire layer="94" y2="-5.08" width="0.254" x2="4.064" y1="-6.096" x1="5.08"/>
+                    <wire layer="94" y2="-7.62" width="0.15" x2="5.08" y1="-7.62" x1="5.08"/>
+                    <wire layer="94" y2="-7.62" width="0.15" x2="7.62" y1="-7.62" x1="7.62"/>
+                    <text layer="95" align="top-left" y="-2.54" x="4.064" rot="R0" size="2.54">&gt;NAME</text>
+                    <text layer="95" align="top-left" y="-15.24" x="4.064" rot="R0" size="2.54">ESD5Z5.0T1G</text>
+                    <pin direction="pas" name="K" visible="pad" length="middle" y="-7.62" x="0.0"/>
+                    <pin direction="pas" name="A" visible="pad" length="middle" y="-7.62" x="12.7" rot="R180"/>
+                </symbol>
+            </symbols>
+            <devicesets>
+                <deviceset prefix="D" name="ON_SEMICONDUCTOR_ESD5Z5.0T1G">
+                    <description>ONSC-K1A2-2</description>
+                    <gates>
+                        <gate name="G$0" symbol="ON_SEMICONDUCTOR_ESD5Z5.0T1G_0_0" x="0"/>
+                    </gates>
+                    <devices>
+                        <device name="ON_SEMICONDUCTOR_ESD5Z5.0T1G_0_0" package="ON_SEMICONDUCTOR_ESD5Z5.0T1G_0">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="K"/>
+                                <connect gate="G$0" pad="2" pin="A"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="ciiva_ids" value="284485"/>
+                                    <attribute name="VBR_Min_V" value="6.2"/>
+                                    <attribute name="Package_Version" value="Rev. E, 09/2010"/>
+                                    <attribute name="Component_Link_1_Description" value="Manufacturer URL"/>
+                                    <attribute name="vault_guid" value="2E60F141-7E89-4DCC-B1D9-9638F7D41C5F"/>
+                                    <attribute name="VRWM_Max_V" value="5"/>
+                                    <attribute name="Mounting_Technology" value="Surface Mount"/>
+                                    <attribute name="MPN" value="ESD5Z5.0T1G"/>
+                                    <attribute name="Direction" value="Unidirectional"/>
+                                    <attribute name="imported" value="yes"/>
+                                    <attribute name="MF" value="On Semiconductor"/>
+                                    <attribute name="prefix" value="D"/>
+                                    <attribute name="import_ts" value="1521842713"/>
+                                    <attribute name="Datasheet_Version" value="Rev. 10"/>
+                                    <attribute name="Packing" value="Tape and Reel"/>
+                                    <attribute name="Package_Description" value="2-Pin SOD, Body 1.2 x 0.8 mm"/>
+                                    <attribute name="datasheet" value="http://www.onsemi.cn/pub_link/Collateral/ESD5Z2.5T1-D.PDF"/>
+                                    <attribute name="vault_revision" value="3E28F6AD-A77D-4A2F-8313-20A51EDFA349"/>
+                                    <attribute name="Number_of_Lines" value="1"/>
+                                    <attribute name="footprint_variant_name_0" value="Manufacturer Recommended"/>
+                                    <attribute name="release_date" value="1407165284"/>
+                                    <attribute name="imported_from" value="vault"/>
+                                    <attribute name="rohs" value="No"/>
+                                    <attribute name="Component_Link_3_Description" value="Package Specification"/>
+                                    <attribute name="IR_Max_uA" value="0.05"/>
+                                    <attribute name="Component_Link_1_URL" value="http://www.onsemi.com/"/>
+                                    <attribute name="PPK_Max_W" value="174"/>
+                                    <attribute name="package" value="SOD-523-2-502-01"/>
+                                    <attribute name="Component_Link_3_URL" value="http://www.onsemi.com/pub_link/Collateral/502-01.PDF"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                    </devices>
+                </deviceset>
+            </devicesets>
+        </library>
+    </drawing>
+</eagle>
