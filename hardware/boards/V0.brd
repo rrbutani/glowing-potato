@@ -4176,6 +4176,35 @@ Created by Upverter.com</description>
 </package>
 </packages>
 </library>
+<library name="Microchip-MCP73831T-2ATI">
+<description>Upverter Parts Library
+
+Created by Upverter.com</description>
+<packages>
+<package name="MICROCHIP_MCP73831T-2ATI-OT_1">
+<description>PM-BM-MCP73831-SOT5</description>
+<wire x1="0.25" y1="-1.55" x2="0.25" y2="1.55" width="0.15" layer="21"/>
+<wire x1="-0.25" y1="-1.55" x2="-0.25" y2="1.55" width="0.15" layer="21"/>
+<wire x1="-0.25" y1="-1.55" x2="0.25" y2="-1.55" width="0.15" layer="21"/>
+<wire x1="-0.25" y1="1.55" x2="0.25" y2="1.55" width="0.15" layer="21"/>
+<wire x1="-0.9" y1="-1.55" x2="0.9" y2="-1.55" width="0.1" layer="51"/>
+<wire x1="-0.9" y1="1.55" x2="0.9" y2="1.55" width="0.1" layer="51"/>
+<wire x1="0.9" y1="-1.55" x2="0.9" y2="1.55" width="0.1" layer="51"/>
+<wire x1="-0.9" y1="-1.55" x2="-0.9" y2="1.55" width="0.1" layer="51"/>
+<wire x1="-2" y1="-1.8" x2="-2" y2="1.8" width="0.1" layer="39"/>
+<wire x1="-2" y1="1.8" x2="2" y2="1.8" width="0.1" layer="39"/>
+<wire x1="2" y1="1.8" x2="2" y2="-1.8" width="0.1" layer="39"/>
+<wire x1="2" y1="-1.8" x2="-2" y2="-1.8" width="0.1" layer="39"/>
+<text x="-3" y="1.95" size="1" layer="25">&gt;NAME</text>
+<circle x="-1.2" y="1.825" radius="0.125" width="0.25" layer="21"/>
+<smd name="5" x="1.2" y="0.95" dx="0.65" dy="1.1" layer="1" rot="R90"/>
+<smd name="4" x="1.2" y="-0.95" dx="0.65" dy="1.1" layer="1" rot="R90"/>
+<smd name="3" x="-1.2" y="-0.95" dx="0.65" dy="1.1" layer="1" rot="R90"/>
+<smd name="2" x="-1.2" y="0" dx="0.65" dy="1.1" layer="1" rot="R90"/>
+<smd name="1" x="-1.2" y="0.95" dx="0.65" dy="1.1" layer="1" rot="R90"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5109,6 +5138,52 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="R" x="-36" y="-529" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-36.635" y="-531.54" size="1.27" layer="27"/>
 </element>
+<element name="U2" library="Microchip-MCP73831T-2ATI" package="MICROCHIP_MCP73831T-2ATI-OT_1" value="MICROCHIP_MCP73831T-2ATI-OTMICROCHIP_MCP73831T-2ATI-OT_0_1" x="-34" y="-536" smashed="yes">
+<attribute name="CIIVA_IDS" value="961386" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="CODE__IPC" value="SOT23-5" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="DATASHEET_VERSION" value="revE, Sep-2008" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="FOOTPRINT_VARIANT_NAME_0" value="Level C" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="FOOTPRINT_VARIANT_NAME_1" value="Level B" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="FOOTPRINT_VARIANT_NAME_2" value="Level A" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="IMPORTED" value="yes" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="IMPORTED_FROM" value="vault" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="IMPORT_TS" value="1521858219" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="Microchip" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="MCP73831T-2ATI/OT" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="-37" y="-534.05" size="1" layer="25"/>
+<attribute name="PACKAGE" value="SOT-23-OT5" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="PACKAGE_DESCRIPTION" value="5-Lead Plastic Small Outline Transistor (OT) [SOT-23]" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="PACKAGE_VERSION" value="revBB, Aug-2009" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="PREFIX" value="U" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="RELEASE_DATE" value="1300334172" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="VAULT_GUID" value="2E16BB74-376E-4BA5-8468-379BB32F6F4F" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+<attribute name="VAULT_REVISION" value="08CA403F-6CAA-4AD2-9BA5-F14A59377F17" x="-34" y="-536" size="1.778" layer="27" display="off"/>
+</element>
+<element name="C26" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="4.7uF" x="-36" y="-541" smashed="yes">
+<attribute name="NAME" x="-37.27" y="-539.73" size="1.27" layer="25"/>
+<attribute name="SPICEPREFIX" value="C" x="-36" y="-541" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-37.27" y="-543.54" size="1.27" layer="27"/>
+</element>
+<element name="R34" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="2k" x="-36" y="-548" smashed="yes">
+<attribute name="NAME" x="-36.635" y="-546.73" size="1.27" layer="25"/>
+<attribute name="SPICEPREFIX" value="R" x="-36" y="-548" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-36.635" y="-550.54" size="1.27" layer="27"/>
+</element>
+<element name="C27" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="4.7uF" x="-36" y="-555" smashed="yes">
+<attribute name="NAME" x="-37.27" y="-553.73" size="1.27" layer="25"/>
+<attribute name="SPICEPREFIX" value="C" x="-36" y="-555" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-37.27" y="-557.54" size="1.27" layer="27"/>
+</element>
+<element name="R35" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100" x="-36" y="-562" smashed="yes">
+<attribute name="NAME" x="-36.635" y="-560.73" size="1.27" layer="25"/>
+<attribute name="SPICEPREFIX" value="R" x="-36" y="-562" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-36.635" y="-564.54" size="1.27" layer="27"/>
+</element>
+<element name="R36" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="" x="-36" y="-569" smashed="yes">
+<attribute name="NAME" x="-36.635" y="-567.73" size="1.27" layer="25"/>
+<attribute name="SPICEPREFIX" value="R" x="-36" y="-569" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="-36.635" y="-571.54" size="1.27" layer="27"/>
+</element>
 </elements>
 <signals>
 <signal name="VDDA_1">
@@ -5229,6 +5304,10 @@ design rules under a new name.</description>
 <contactref element="C24" pad="-"/>
 <contactref element="C25" pad="-"/>
 <contactref element="R32" pad="1"/>
+<contactref element="C26" pad="2"/>
+<contactref element="U2" pad="2"/>
+<contactref element="R34" pad="2"/>
+<contactref element="C27" pad="2"/>
 <wire x1="-21.275" y1="-222.175" x2="-28.675" y2="-222.175" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.075" y1="-200.0822" x2="-21.275" y2="-222.175" width="0" layer="19" extent="1-1"/>
 <wire x1="-25.75" y1="-248" x2="-28.675" y2="-222.175" width="0" layer="19" extent="1-1"/>
@@ -5319,6 +5398,10 @@ design rules under a new name.</description>
 <wire x1="-36.525" y1="-509" x2="-36.525" y2="-501" width="0" layer="19" extent="1-1"/>
 <wire x1="-36.525" y1="-517" x2="-36.525" y2="-509" width="0" layer="19" extent="1-1"/>
 <wire x1="-36.95" y1="-524" x2="-36.525" y2="-517" width="0" layer="19" extent="1-1"/>
+<wire x1="-35.2" y1="-536" x2="-36.95" y2="-524" width="0" layer="19" extent="1-1"/>
+<wire x1="-35.05" y1="-541" x2="-35.2" y2="-536" width="0" layer="19" extent="1-1"/>
+<wire x1="-35.05" y1="-548" x2="-35.05" y2="-541" width="0" layer="19" extent="1-1"/>
+<wire x1="-35.05" y1="-555" x2="-35.05" y2="-548" width="0" layer="19" extent="1-1"/>
 <wire x1="-18" y1="-7" x2="-19" y2="-82.95" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.135" y1="0.35" x2="-18" y2="-7" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -5350,6 +5433,8 @@ design rules under a new name.</description>
 <contactref element="C22" pad="+"/>
 <contactref element="C23" pad="+"/>
 <contactref element="R33" pad="2"/>
+<contactref element="U2" pad="3"/>
+<contactref element="C26" pad="1"/>
 <wire x1="-18.8375" y1="-156" x2="-27.5" y2="-162.95" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.85" y1="-150" x2="-18.8375" y2="-156" width="0" layer="19" extent="1-1"/>
 <wire x1="-18" y1="-131.475" x2="-24.85" y2="-150" width="0" layer="19" extent="1-1"/>
@@ -5360,6 +5445,8 @@ design rules under a new name.</description>
 <wire x1="-31.475" y1="-495" x2="-27.5" y2="-162.95" width="0" layer="19" extent="1-1"/>
 <wire x1="-31.475" y1="-501" x2="-31.475" y2="-495" width="0" layer="19" extent="1-1"/>
 <wire x1="-35.05" y1="-529" x2="-31.475" y2="-501" width="0" layer="19" extent="1-1"/>
+<wire x1="-35.2" y1="-536.95" x2="-35.05" y2="-529" width="0" layer="19" extent="1-1"/>
+<wire x1="-36.95" y1="-541" x2="-35.2" y2="-536.95" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="V3P3">
 <contactref element="IC2" pad="10"/>
@@ -5839,7 +5926,11 @@ design rules under a new name.</description>
 <contactref element="J3" pad="B9"/>
 <contactref element="D10" pad="1"/>
 <contactref element="R29" pad="2"/>
+<contactref element="C27" pad="1"/>
+<contactref element="U2" pad="4"/>
 <wire x1="-35.05" y1="-476" x2="-35.66" y2="-459" width="0" layer="19" extent="1-1"/>
+<wire x1="-32.8" y1="-536.95" x2="-35.05" y2="-476" width="0" layer="19" extent="1-1"/>
+<wire x1="-36.95" y1="-555" x2="-32.8" y2="-536.95" width="0" layer="19" extent="1-1"/>
 <wire x1="-27.25" y1="-341.53" x2="-35.66" y2="-459" width="0" layer="19" extent="1-1"/>
 <wire x1="-27.5" y1="-340.23" x2="-27.25" y2="-341.53" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.75" y1="-341.53" x2="-27.25" y2="-341.53" width="0" layer="19" extent="1-1"/>
@@ -5880,6 +5971,32 @@ design rules under a new name.</description>
 <contactref element="R33" pad="1"/>
 <contactref element="R32" pad="2"/>
 <wire x1="-35.05" y1="-524" x2="-36.95" y2="-529" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$54">
+<contactref element="U2" pad="5"/>
+<contactref element="R34" pad="1"/>
+<wire x1="-32.8" y1="-535.05" x2="-36.95" y2="-548" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$55">
+<contactref element="D1" pad="3"/>
+<contactref element="R35" pad="1"/>
+<wire x1="-36.95" y1="-562" x2="-28.575" y2="-351.6" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="RED_LED_CATH">
+<contactref element="R35" pad="2"/>
+<contactref element="U2" pad="1"/>
+<wire x1="-35.2" y1="-535.05" x2="-35.05" y2="-562" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$56">
+<contactref element="D1" pad="4"/>
+<contactref element="R36" pad="1"/>
+<wire x1="-36.95" y1="-569" x2="-27.675" y2="-351.25" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="GREEN_LED_CATH">
+<contactref element="R36" pad="2"/>
+</signal>
+<signal name="BLUE_LED_CATH">
+<contactref element="D1" pad="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

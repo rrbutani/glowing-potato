@@ -29517,6 +29517,10 @@ Created by Upverter.com</description>
 <pin name="RED_CATHODE" x="17.78" y="-20.32" visible="pad" length="middle" rot="R180"/>
 <pin name="GREEN_CATHODE" x="17.78" y="-30.48" visible="pad" length="middle" rot="R180"/>
 <circle x="5.08" y="-20.32" radius="0.254" width="0.254" layer="94"/>
+<text x="12.7" y="-12.7" size="1.778" layer="97">Blue</text>
+<text x="5.08" y="-20.32" size="1.778" layer="97" rot="R90">Common</text>
+<text x="12.7" y="-22.86" size="1.778" layer="97">Red</text>
+<text x="12.7" y="-33.02" size="1.778" layer="97">Green</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -29737,6 +29741,203 @@ Created by Upverter.com</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="Microchip-MCP73831T-2ATI">
+<description>Upverter Parts Library
+
+Created by Upverter.com</description>
+<packages>
+<package name="MICROCHIP_MCP73831T-2ATI-OT_0">
+<description>PM-BM-MCP73831-SOT5</description>
+<wire x1="0.35" y1="-1.55" x2="0.35" y2="1.55" width="0.15" layer="21"/>
+<wire x1="-0.35" y1="-1.55" x2="-0.35" y2="1.55" width="0.15" layer="21"/>
+<wire x1="-0.35" y1="-1.55" x2="0.35" y2="-1.55" width="0.15" layer="21"/>
+<wire x1="-0.35" y1="1.55" x2="0.35" y2="1.55" width="0.15" layer="21"/>
+<wire x1="-0.9" y1="-1.55" x2="0.9" y2="-1.55" width="0.1" layer="51"/>
+<wire x1="-0.9" y1="1.55" x2="0.9" y2="1.55" width="0.1" layer="51"/>
+<wire x1="0.9" y1="-1.55" x2="0.9" y2="1.55" width="0.1" layer="51"/>
+<wire x1="-0.9" y1="-1.55" x2="-0.9" y2="1.55" width="0.1" layer="51"/>
+<wire x1="-1.75" y1="-1.65" x2="-1.75" y2="1.65" width="0.1" layer="39"/>
+<wire x1="-1.75" y1="1.65" x2="1.75" y2="1.65" width="0.1" layer="39"/>
+<wire x1="1.75" y1="1.65" x2="1.75" y2="-1.65" width="0.1" layer="39"/>
+<wire x1="1.75" y1="-1.65" x2="-1.75" y2="-1.65" width="0.1" layer="39"/>
+<text x="-2.75" y="1.95" size="1" layer="25">&gt;NAME</text>
+<circle x="-1.2" y="1.825" radius="0.125" width="0.25" layer="21"/>
+<smd name="5" x="1.2" y="0.95" dx="0.65" dy="0.9" layer="1" rot="R90"/>
+<smd name="4" x="1.2" y="-0.95" dx="0.65" dy="0.9" layer="1" rot="R90"/>
+<smd name="3" x="-1.2" y="-0.95" dx="0.65" dy="0.9" layer="1" rot="R90"/>
+<smd name="2" x="-1.2" y="0" dx="0.65" dy="0.9" layer="1" rot="R90"/>
+<smd name="1" x="-1.2" y="0.95" dx="0.65" dy="0.9" layer="1" rot="R90"/>
+</package>
+<package name="MICROCHIP_MCP73831T-2ATI-OT_1">
+<description>PM-BM-MCP73831-SOT5</description>
+<wire x1="0.25" y1="-1.55" x2="0.25" y2="1.55" width="0.15" layer="21"/>
+<wire x1="-0.25" y1="-1.55" x2="-0.25" y2="1.55" width="0.15" layer="21"/>
+<wire x1="-0.25" y1="-1.55" x2="0.25" y2="-1.55" width="0.15" layer="21"/>
+<wire x1="-0.25" y1="1.55" x2="0.25" y2="1.55" width="0.15" layer="21"/>
+<wire x1="-0.9" y1="-1.55" x2="0.9" y2="-1.55" width="0.1" layer="51"/>
+<wire x1="-0.9" y1="1.55" x2="0.9" y2="1.55" width="0.1" layer="51"/>
+<wire x1="0.9" y1="-1.55" x2="0.9" y2="1.55" width="0.1" layer="51"/>
+<wire x1="-0.9" y1="-1.55" x2="-0.9" y2="1.55" width="0.1" layer="51"/>
+<wire x1="-2" y1="-1.8" x2="-2" y2="1.8" width="0.1" layer="39"/>
+<wire x1="-2" y1="1.8" x2="2" y2="1.8" width="0.1" layer="39"/>
+<wire x1="2" y1="1.8" x2="2" y2="-1.8" width="0.1" layer="39"/>
+<wire x1="2" y1="-1.8" x2="-2" y2="-1.8" width="0.1" layer="39"/>
+<text x="-3" y="1.95" size="1" layer="25">&gt;NAME</text>
+<circle x="-1.2" y="1.825" radius="0.125" width="0.25" layer="21"/>
+<smd name="5" x="1.2" y="0.95" dx="0.65" dy="1.1" layer="1" rot="R90"/>
+<smd name="4" x="1.2" y="-0.95" dx="0.65" dy="1.1" layer="1" rot="R90"/>
+<smd name="3" x="-1.2" y="-0.95" dx="0.65" dy="1.1" layer="1" rot="R90"/>
+<smd name="2" x="-1.2" y="0" dx="0.65" dy="1.1" layer="1" rot="R90"/>
+<smd name="1" x="-1.2" y="0.95" dx="0.65" dy="1.1" layer="1" rot="R90"/>
+</package>
+<package name="MICROCHIP_MCP73831T-2ATI-OT_2">
+<description>PM-BM-MCP73831-SOT5</description>
+<wire x1="0.15" y1="-1.55" x2="0.15" y2="1.55" width="0.15" layer="21"/>
+<wire x1="-0.15" y1="-1.55" x2="-0.15" y2="1.55" width="0.15" layer="21"/>
+<wire x1="-0.15" y1="-1.55" x2="0.15" y2="-1.55" width="0.15" layer="21"/>
+<wire x1="-0.15" y1="1.55" x2="0.15" y2="1.55" width="0.15" layer="21"/>
+<wire x1="-0.9" y1="-1.55" x2="0.9" y2="-1.55" width="0.1" layer="51"/>
+<wire x1="-0.9" y1="1.55" x2="0.9" y2="1.55" width="0.1" layer="51"/>
+<wire x1="0.9" y1="-1.55" x2="0.9" y2="1.55" width="0.1" layer="51"/>
+<wire x1="-0.9" y1="-1.55" x2="-0.9" y2="1.55" width="0.1" layer="51"/>
+<wire x1="-2.35" y1="-2.05" x2="-2.35" y2="2.05" width="0.1" layer="39"/>
+<wire x1="-2.35" y1="2.05" x2="2.35" y2="2.05" width="0.1" layer="39"/>
+<wire x1="2.35" y1="2.05" x2="2.35" y2="-2.05" width="0.1" layer="39"/>
+<wire x1="2.35" y1="-2.05" x2="-2.35" y2="-2.05" width="0.1" layer="39"/>
+<text x="-3.35" y="2.05" size="1" layer="25">&gt;NAME</text>
+<circle x="-1.2" y="1.85" radius="0.125" width="0.25" layer="21"/>
+<smd name="5" x="1.2" y="0.95" dx="0.7" dy="1.3" layer="1" rot="R90"/>
+<smd name="4" x="1.2" y="-0.95" dx="0.7" dy="1.3" layer="1" rot="R90"/>
+<smd name="3" x="-1.2" y="-0.95" dx="0.7" dy="1.3" layer="1" rot="R90"/>
+<smd name="2" x="-1.2" y="0" dx="0.7" dy="1.3" layer="1" rot="R90"/>
+<smd name="1" x="-1.2" y="0.95" dx="0.7" dy="1.3" layer="1" rot="R90"/>
+</package>
+</packages>
+<symbols>
+<symbol name="MICROCHIP_MCP73831T-2ATI-OT_0_0">
+<description>PM-BM-MCP73831-SOT5</description>
+<wire x1="0" y1="-20.32" x2="0" y2="-5.08" width="0.508" layer="94"/>
+<wire x1="0" y1="-5.08" x2="17.78" y2="-5.08" width="0.508" layer="94"/>
+<wire x1="17.78" y1="-5.08" x2="17.78" y2="-20.32" width="0.508" layer="94"/>
+<wire x1="17.78" y1="-20.32" x2="0" y2="-20.32" width="0.508" layer="94"/>
+<wire x1="17.78" y1="-17.78" x2="17.78" y2="-17.78" width="0.15" layer="94"/>
+<wire x1="0" y1="-7.62" x2="0" y2="-7.62" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-7.62" x2="17.78" y2="-7.62" width="0.15" layer="94"/>
+<wire x1="0" y1="-17.78" x2="0" y2="-17.78" width="0.15" layer="94"/>
+<wire x1="17.78" y1="-12.7" x2="17.78" y2="-12.7" width="0.15" layer="94"/>
+<text x="0" y="-2.54" size="2.54" layer="95" align="top-left">&gt;NAME</text>
+<text x="0" y="-25.4" size="2.54" layer="95" align="top-left">MCP73831T-2ATI/OT</text>
+<pin name="VSS" x="22.86" y="-17.78" length="middle" direction="pwr" rot="R180"/>
+<pin name="VDD" x="-5.08" y="-7.62" length="middle" direction="pwr"/>
+<pin name="VBAT" x="22.86" y="-7.62" length="middle" direction="pwr" rot="R180"/>
+<pin name="STAT" x="-5.08" y="-17.78" length="middle" direction="out"/>
+<pin name="PROG" x="22.86" y="-12.7" length="middle" direction="pas" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MICROCHIP_MCP73831T-2ATI-OT" prefix="U">
+<description>PM-BM-MCP73831-SOT5</description>
+<gates>
+<gate name="G$0" symbol="MICROCHIP_MCP73831T-2ATI-OT_0_0" x="0" y="0"/>
+</gates>
+<devices>
+<device name="MICROCHIP_MCP73831T-2ATI-OT_0_0" package="MICROCHIP_MCP73831T-2ATI-OT_0">
+<connects>
+<connect gate="G$0" pin="PROG" pad="5"/>
+<connect gate="G$0" pin="STAT" pad="1"/>
+<connect gate="G$0" pin="VBAT" pad="3"/>
+<connect gate="G$0" pin="VDD" pad="4"/>
+<connect gate="G$0" pin="VSS" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CIIVA_IDS" value="961386"/>
+<attribute name="CODE__IPC" value="SOT23-5"/>
+<attribute name="DATASHEET_VERSION" value="revE, Sep-2008"/>
+<attribute name="FOOTPRINT_VARIANT_NAME_0" value="Level C"/>
+<attribute name="FOOTPRINT_VARIANT_NAME_1" value="Level B"/>
+<attribute name="FOOTPRINT_VARIANT_NAME_2" value="Level A"/>
+<attribute name="IMPORTED" value="yes"/>
+<attribute name="IMPORTED_FROM" value="vault"/>
+<attribute name="IMPORT_TS" value="1521858219"/>
+<attribute name="MF" value="Microchip"/>
+<attribute name="MPN" value="MCP73831T-2ATI/OT"/>
+<attribute name="PACKAGE" value="SOT-23-OT5"/>
+<attribute name="PACKAGE_DESCRIPTION" value="5-Lead Plastic Small Outline Transistor (OT) [SOT-23]"/>
+<attribute name="PACKAGE_VERSION" value="revBB, Aug-2009"/>
+<attribute name="PREFIX" value="U"/>
+<attribute name="RELEASE_DATE" value="1300334172"/>
+<attribute name="VAULT_GUID" value="2E16BB74-376E-4BA5-8468-379BB32F6F4F"/>
+<attribute name="VAULT_REVISION" value="08CA403F-6CAA-4AD2-9BA5-F14A59377F17"/>
+</technology>
+</technologies>
+</device>
+<device name="MICROCHIP_MCP73831T-2ATI-OT_0_1" package="MICROCHIP_MCP73831T-2ATI-OT_1">
+<connects>
+<connect gate="G$0" pin="PROG" pad="5"/>
+<connect gate="G$0" pin="STAT" pad="1"/>
+<connect gate="G$0" pin="VBAT" pad="3"/>
+<connect gate="G$0" pin="VDD" pad="4"/>
+<connect gate="G$0" pin="VSS" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CIIVA_IDS" value="961386"/>
+<attribute name="CODE__IPC" value="SOT23-5"/>
+<attribute name="DATASHEET_VERSION" value="revE, Sep-2008"/>
+<attribute name="FOOTPRINT_VARIANT_NAME_0" value="Level C"/>
+<attribute name="FOOTPRINT_VARIANT_NAME_1" value="Level B"/>
+<attribute name="FOOTPRINT_VARIANT_NAME_2" value="Level A"/>
+<attribute name="IMPORTED" value="yes"/>
+<attribute name="IMPORTED_FROM" value="vault"/>
+<attribute name="IMPORT_TS" value="1521858219"/>
+<attribute name="MF" value="Microchip"/>
+<attribute name="MPN" value="MCP73831T-2ATI/OT"/>
+<attribute name="PACKAGE" value="SOT-23-OT5"/>
+<attribute name="PACKAGE_DESCRIPTION" value="5-Lead Plastic Small Outline Transistor (OT) [SOT-23]"/>
+<attribute name="PACKAGE_VERSION" value="revBB, Aug-2009"/>
+<attribute name="PREFIX" value="U"/>
+<attribute name="RELEASE_DATE" value="1300334172"/>
+<attribute name="VAULT_GUID" value="2E16BB74-376E-4BA5-8468-379BB32F6F4F"/>
+<attribute name="VAULT_REVISION" value="08CA403F-6CAA-4AD2-9BA5-F14A59377F17"/>
+</technology>
+</technologies>
+</device>
+<device name="MICROCHIP_MCP73831T-2ATI-OT_0_2" package="MICROCHIP_MCP73831T-2ATI-OT_2">
+<connects>
+<connect gate="G$0" pin="PROG" pad="5"/>
+<connect gate="G$0" pin="STAT" pad="1"/>
+<connect gate="G$0" pin="VBAT" pad="3"/>
+<connect gate="G$0" pin="VDD" pad="4"/>
+<connect gate="G$0" pin="VSS" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CIIVA_IDS" value="961386"/>
+<attribute name="CODE__IPC" value="SOT23-5"/>
+<attribute name="DATASHEET_VERSION" value="revE, Sep-2008"/>
+<attribute name="FOOTPRINT_VARIANT_NAME_0" value="Level C"/>
+<attribute name="FOOTPRINT_VARIANT_NAME_1" value="Level B"/>
+<attribute name="FOOTPRINT_VARIANT_NAME_2" value="Level A"/>
+<attribute name="IMPORTED" value="yes"/>
+<attribute name="IMPORTED_FROM" value="vault"/>
+<attribute name="IMPORT_TS" value="1521858219"/>
+<attribute name="MF" value="Microchip"/>
+<attribute name="MPN" value="MCP73831T-2ATI/OT"/>
+<attribute name="PACKAGE" value="SOT-23-OT5"/>
+<attribute name="PACKAGE_DESCRIPTION" value="5-Lead Plastic Small Outline Transistor (OT) [SOT-23]"/>
+<attribute name="PACKAGE_VERSION" value="revBB, Aug-2009"/>
+<attribute name="PREFIX" value="U"/>
+<attribute name="RELEASE_DATE" value="1300334172"/>
+<attribute name="VAULT_GUID" value="2E16BB74-376E-4BA5-8468-379BB32F6F4F"/>
+<attribute name="VAULT_REVISION" value="08CA403F-6CAA-4AD2-9BA5-F14A59377F17"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -29873,6 +30074,16 @@ Created by Upverter.com</description>
 <part name="GND26" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R32" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
 <part name="R33" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5k"/>
+<part name="U2" library="Microchip-MCP73831T-2ATI" deviceset="MICROCHIP_MCP73831T-2ATI-OT" device="MICROCHIP_MCP73831T-2ATI-OT_0_1"/>
+<part name="C26" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="4.7uF"/>
+<part name="GND27" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND28" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND29" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="R34" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="2k"/>
+<part name="C27" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="4.7uF"/>
+<part name="GND30" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="R35" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100"/>
+<part name="R36" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2"/>
 </parts>
 <sheets>
 <sheet>
@@ -30254,6 +30465,9 @@ Created by Upverter.com</description>
 <description>Regulators + Charge IC</description>
 <plain>
 <text x="30.48" y="-7.62" size="1.778" layer="95">TPS6224</text>
+<text x="-83.82" y="71.12" size="1.778" layer="94">TODO: Actually use CHREN/CHR0/CHR1 here!!
+Fixed at 500 mA for now..</text>
+<text x="-81.28" y="30.48" size="1.778" layer="97">STAT can sink up to 25mA (our LEDs can do 20) so this should be fine.</text>
 </plain>
 <instances>
 <instance part="IC2" gate="G$1" x="-27.94" y="2.54" smashed="yes">
@@ -30293,6 +30507,33 @@ Created by Upverter.com</description>
 </instance>
 <instance part="BATT_CON" gate="G$0" x="-149.86" y="66.04" smashed="yes">
 <attribute name="NAME" x="-147.32" y="63.5" size="2.54" layer="95" align="top-left"/>
+</instance>
+<instance part="U2" gate="G$0" x="-83.82" y="68.58" smashed="yes">
+<attribute name="NAME" x="-83.82" y="66.04" size="2.54" layer="95" align="top-left"/>
+</instance>
+<instance part="C26" gate="G$1" x="-43.18" y="55.88" smashed="yes">
+<attribute name="NAME" x="-42.164" y="56.515" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-42.164" y="51.689" size="1.778" layer="96"/>
+</instance>
+<instance part="GND27" gate="1" x="-43.18" y="45.72" smashed="yes">
+<attribute name="VALUE" x="-45.72" y="43.18" size="1.778" layer="96"/>
+</instance>
+<instance part="GND28" gate="1" x="-60.96" y="48.26" smashed="yes">
+<attribute name="VALUE" x="-63.5" y="45.72" size="1.778" layer="96"/>
+</instance>
+<instance part="GND29" gate="1" x="-50.8" y="48.26" smashed="yes">
+<attribute name="VALUE" x="-53.34" y="45.72" size="1.778" layer="96"/>
+</instance>
+<instance part="R34" gate="G$1" x="-55.88" y="55.88" smashed="yes">
+<attribute name="NAME" x="-59.69" y="57.3786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-59.69" y="52.578" size="1.778" layer="96"/>
+</instance>
+<instance part="C27" gate="G$1" x="-101.6" y="55.88" smashed="yes">
+<attribute name="NAME" x="-100.584" y="56.515" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-100.584" y="51.689" size="1.778" layer="96"/>
+</instance>
+<instance part="GND30" gate="1" x="-101.6" y="45.72" smashed="yes">
+<attribute name="VALUE" x="-104.14" y="43.18" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -30370,6 +30611,15 @@ Created by Upverter.com</description>
 <wire x1="-129.54" y1="55.88" x2="-124.46" y2="55.88" width="0.1524" layer="91"/>
 <label x="-124.46" y="58.42" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U2" gate="G$0" pin="VBAT"/>
+<wire x1="-60.96" y1="60.96" x2="-43.18" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="C26" gate="G$1" pin="1"/>
+<wire x1="-43.18" y1="60.96" x2="-43.18" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="60.96" x2="-30.48" y2="60.96" width="0.1524" layer="91"/>
+<junction x="-43.18" y="60.96"/>
+<label x="-30.48" y="60.96" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="N$8" class="0">
 <segment>
@@ -30428,6 +30678,25 @@ Created by Upverter.com</description>
 <wire x1="-127" y1="35.56" x2="-127" y2="40.64" width="0.1524" layer="91"/>
 <junction x="-127" y="40.64"/>
 </segment>
+<segment>
+<pinref part="GND27" gate="1" pin="GND"/>
+<pinref part="C26" gate="G$1" pin="2"/>
+<wire x1="-43.18" y1="48.26" x2="-43.18" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U2" gate="G$0" pin="VSS"/>
+<pinref part="GND28" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R34" gate="G$1" pin="2"/>
+<pinref part="GND29" gate="1" pin="GND"/>
+<wire x1="-50.8" y1="55.88" x2="-50.8" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C27" gate="G$1" pin="2"/>
+<pinref part="GND30" gate="1" pin="GND"/>
+<wire x1="-101.6" y1="48.26" x2="-101.6" y2="50.8" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="V1P8" class="0">
 <segment>
@@ -30448,6 +30717,31 @@ Created by Upverter.com</description>
 <segment>
 <pinref part="TPS6224" gate="G$1" pin="SW"/>
 <pinref part="U$5" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="N$54" class="0">
+<segment>
+<pinref part="U2" gate="G$0" pin="PROG"/>
+<pinref part="R34" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="VBUS" class="0">
+<segment>
+<pinref part="C27" gate="G$1" pin="1"/>
+<wire x1="-101.6" y1="58.42" x2="-101.6" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$0" pin="VDD"/>
+<wire x1="-101.6" y1="60.96" x2="-88.9" y2="60.96" width="0.1524" layer="91"/>
+<junction x="-101.6" y="60.96"/>
+<wire x1="-101.6" y1="60.96" x2="-106.68" y2="60.96" width="0.1524" layer="91"/>
+<label x="-106.68" y="63.5" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RED_LED_CATH" class="0">
+<segment>
+<pinref part="U2" gate="G$0" pin="STAT"/>
+<wire x1="-88.9" y1="50.8" x2="-88.9" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="-88.9" y1="35.56" x2="-81.28" y2="35.56" width="0.1524" layer="91"/>
+<label x="-78.74" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -32011,6 +32305,15 @@ Created by Upverter.com</description>
 
 (Line In Controls, LED, Battery Voltage)</description>
 <plain>
+<text x="-35.56" y="22.86" size="1.778" layer="97">Red LED has a 1.9V drop and 20mA, so:
+
+1.4V for 20mA = V / I = R = 1.4V / 20mA = 70 ohms
+
+since we don't want to blind people let's call it an even 100</text>
+<text x="-38.1" y="-30.48" size="1.778" layer="97">Green LED (AlInGaP Green on the C113) has a drop of about 2.3 volts also on about 20mA.
+
+1.0 volts for 20mA = V / I = R = 1 / 20mA = 50 ohms</text>
+<text x="-38.1" y="-38.1" size="1.778" layer="97">Blue has a voltage drop of ~3.7V which is greater than our regulated voltage so we won't bother with a current limiting resistor.</text>
 </plain>
 <instances>
 <instance part="D1" gate="G$0" x="-27.94" y="20.32" smashed="yes">
@@ -32026,6 +32329,14 @@ Created by Upverter.com</description>
 <instance part="R33" gate="G$1" x="43.18" y="10.16" smashed="yes" rot="R90">
 <attribute name="NAME" x="41.6814" y="6.35" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="46.482" y="6.35" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R35" gate="G$1" x="-2.54" y="0" smashed="yes">
+<attribute name="NAME" x="-6.35" y="1.4986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-6.35" y="-3.302" size="1.778" layer="96"/>
+</instance>
+<instance part="R36" gate="G$1" x="-2.54" y="-10.16" smashed="yes">
+<attribute name="NAME" x="-6.35" y="-8.6614" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-6.35" y="-13.462" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -32063,6 +32374,41 @@ Created by Upverter.com</description>
 <wire x1="-25.4" y1="0" x2="-35.56" y2="0" width="0.1524" layer="91"/>
 <wire x1="-35.56" y1="0" x2="-35.56" y2="10.16" width="0.1524" layer="91"/>
 <label x="-38.1" y="12.7" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$55" class="0">
+<segment>
+<pinref part="D1" gate="G$0" pin="RED_CATHODE"/>
+<pinref part="R35" gate="G$1" pin="1"/>
+<wire x1="-10.16" y1="0" x2="-7.62" y2="0" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="RED_LED_CATH" class="0">
+<segment>
+<pinref part="R35" gate="G$1" pin="2"/>
+<wire x1="2.54" y1="0" x2="7.62" y2="0" width="0.1524" layer="91"/>
+<label x="7.62" y="0" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$56" class="0">
+<segment>
+<pinref part="D1" gate="G$0" pin="GREEN_CATHODE"/>
+<pinref part="R36" gate="G$1" pin="1"/>
+<wire x1="-10.16" y1="-10.16" x2="-7.62" y2="-10.16" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="GREEN_LED_CATH" class="0">
+<segment>
+<pinref part="R36" gate="G$1" pin="2"/>
+<wire x1="2.54" y1="-10.16" x2="7.62" y2="-10.16" width="0.1524" layer="91"/>
+<label x="7.62" y="-10.16" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="BLUE_LED_CATH" class="0">
+<segment>
+<pinref part="D1" gate="G$0" pin="BLUE_CATHODE"/>
+<wire x1="-10.16" y1="10.16" x2="7.62" y2="10.16" width="0.1524" layer="91"/>
+<label x="7.62" y="10.16" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
