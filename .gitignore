@@ -85,3 +85,7 @@
 *.s#*
 *.b#*
 *.l#*
+
+# LTSpice
+*.raw
+*.log
