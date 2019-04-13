@@ -616,13 +616,14 @@ MAX3223-MAX3243.pdf</description>
 <label x="-33.02" y="17.78" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="KEY0" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="KEY0"/>
 <wire x1="20.32" y1="-27.94" x2="33.02" y2="-27.94" width="0.1524" layer="91"/>
 <wire x1="33.02" y1="-27.94" x2="33.02" y2="-25.4" width="0.1524" layer="91"/>
 <wire x1="33.02" y1="-25.4" x2="55.88" y2="-25.4" width="0.1524" layer="91"/>
 <pinref part="JP1" gate="A" pin="4"/>
+<label x="33.02" y="-27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$6" class="0">
