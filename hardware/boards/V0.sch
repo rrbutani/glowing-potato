@@ -27933,6 +27933,100 @@ wave soldering</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="E-Switch-TL3315NF100Q">
+<description>Upverter Parts Library
+
+Created by Upverter.com</description>
+<packages>
+<package name="E-SWITCH_TL3315NF100Q_0">
+<description>SWITCH TACTILE SPST</description>
+<wire x1="-2.25" y1="-2.25" x2="-2.25" y2="2.25" width="0.15" layer="51"/>
+<wire x1="-2.25" y1="2.25" x2="2.25" y2="2.25" width="0.15" layer="51"/>
+<wire x1="2.25" y1="2.25" x2="2.25" y2="-2.25" width="0.15" layer="51"/>
+<wire x1="2.25" y1="-2.25" x2="-2.25" y2="-2.25" width="0.15" layer="51"/>
+<wire x1="-1.4" y1="2.25" x2="1.4" y2="2.25" width="0.15" layer="21"/>
+<wire x1="-1.4" y1="-2.25" x2="1.4" y2="-2.25" width="0.15" layer="21"/>
+<wire x1="-2.25" y1="0.8" x2="-2.25" y2="-0.8" width="0.15" layer="21"/>
+<wire x1="2.25" y1="-0.8" x2="2.25" y2="0.8" width="0.15" layer="21"/>
+<wire x1="-2.675" y1="-2.475" x2="-2.675" y2="2.475" width="0.1" layer="39"/>
+<wire x1="-2.675" y1="2.475" x2="2.675" y2="2.475" width="0.1" layer="39"/>
+<wire x1="2.675" y1="2.475" x2="2.675" y2="-2.475" width="0.1" layer="39"/>
+<wire x1="2.675" y1="-2.475" x2="-2.675" y2="-2.475" width="0.1" layer="39"/>
+<text x="-2.425" y="2.875" size="1" layer="25">&gt;NAME</text>
+<circle x="-3.15" y="1.75" radius="0.25" width="0" layer="21"/>
+<smd name="1" x="-2.125" y="1.75" dx="0.5" dy="0.7" layer="1"/>
+<smd name="2" x="2.125" y="1.75" dx="0.5" dy="0.7" layer="1"/>
+<smd name="3" x="-2.125" y="-1.75" dx="0.5" dy="0.7" layer="1"/>
+<smd name="4" x="2.125" y="-1.75" dx="0.5" dy="0.7" layer="1"/>
+<smd name="1-2" x="-2.475" y="1.75" dx="0.2" dy="1.1" layer="1"/>
+<smd name="2-2" x="2.475" y="1.75" dx="0.2" dy="1.1" layer="1"/>
+<smd name="3-2" x="-2.475" y="-1.75" dx="0.2" dy="1.1" layer="1"/>
+<smd name="4-2" x="2.475" y="-1.75" dx="0.2" dy="1.1" layer="1"/>
+</package>
+</packages>
+<symbols>
+<symbol name="E-SWITCH_TL3315NF100Q_0_0">
+<description>SWITCH TACTILE SPST</description>
+<wire x1="5.334" y1="-3.81" x2="9.906" y2="-3.81" width="0.508" layer="94"/>
+<wire x1="6.858" y1="-3.81" x2="6.858" y2="-2.794" width="0.508" layer="94"/>
+<wire x1="6.858" y1="-2.794" x2="8.382" y2="-2.794" width="0.508" layer="94"/>
+<wire x1="8.382" y1="-2.794" x2="8.382" y2="-3.556" width="0.508" layer="94"/>
+<wire x1="5.334" y1="-5.08" x2="2.794" y2="-5.08" width="0.508" layer="94"/>
+<wire x1="9.906" y1="-5.08" x2="12.446" y2="-5.08" width="0.508" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="-7.62" width="0.508" layer="94"/>
+<wire x1="12.7" y1="-2.54" x2="12.7" y2="-7.62" width="0.508" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="-2.54" width="0.15" layer="94"/>
+<wire x1="12.7" y1="-2.54" x2="12.7" y2="-2.54" width="0.15" layer="94"/>
+<wire x1="2.54" y1="-7.62" x2="2.54" y2="-7.62" width="0.15" layer="94"/>
+<wire x1="12.7" y1="-7.62" x2="12.7" y2="-7.62" width="0.15" layer="94"/>
+<text x="3.302" y="1.016" size="2.54" layer="95" align="top-left">&gt;NAME</text>
+<text x="1.524" y="-10.922" size="2.54" layer="95" align="top-left">TL3315NF100Q</text>
+<pin name="1" x="-2.54" y="-2.54" visible="pad" length="middle"/>
+<pin name="3" x="17.78" y="-2.54" visible="pad" length="middle" rot="R180"/>
+<pin name="2" x="-2.54" y="-7.62" visible="pad" length="middle"/>
+<pin name="4" x="17.78" y="-7.62" visible="pad" length="middle" rot="R180"/>
+<circle x="5.842" y="-5.08" radius="0.508" width="0.254" layer="94"/>
+<circle x="9.398" y="-5.08" radius="0.508" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="E-SWITCH_TL3315NF100Q" prefix="SW">
+<description>SWITCH TACTILE SPST</description>
+<gates>
+<gate name="G$0" symbol="E-SWITCH_TL3315NF100Q_0_0" x="0" y="0"/>
+</gates>
+<devices>
+<device name="E-SWITCH_TL3315NF100Q_0_0" package="E-SWITCH_TL3315NF100Q_0">
+<connects>
+<connect gate="G$0" pin="1" pad="1 1-2"/>
+<connect gate="G$0" pin="2" pad="2 2-2"/>
+<connect gate="G$0" pin="3" pad="3 3-2"/>
+<connect gate="G$0" pin="4" pad="4 4-2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CENTROID_NOT_SPECIFIED" value="No"/>
+<attribute name="CIRCUIT" value="SPST-NO"/>
+<attribute name="CONTACT_RATING_@_VOLTAGE" value="0.05A @ 15VDC"/>
+<attribute name="DATASHEET" value="http://spec_sheets.e-switch.com/specs/P010336.pdf"/>
+<attribute name="DIGIKEY_DESCRIPTION" value="SWITCH Tactile Switch SPST-NO Top Actuated Surface Mount"/>
+<attribute name="DIGIKEY_PART_NUMBER" value="EG4620CT-ND"/>
+<attribute name="LEAD_FREE" value="yes"/>
+<attribute name="MF" value="E-Switch"/>
+<attribute name="MOUSER_PART_NUMBER" value="612-TL3315NF100Q"/>
+<attribute name="MPN" value="TL3315NF100Q"/>
+<attribute name="PACKAGE" value="SMT_4POS"/>
+<attribute name="PREFIX" value="SW"/>
+<attribute name="ROHS" value="yes"/>
+<attribute name="TEMPERATURE_RANGE_HIGH" value="+70°C"/>
+<attribute name="TEMPERATURE_RANGE_LOW" value="-20°C"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -28012,7 +28106,7 @@ wave soldering</description>
 <attribute name="SPICEPREFIX" value="E"/>
 </part>
 <part name="DOWN_SW" library="E-Switch-TL3315NF160Q" deviceset="E-SWITCH_TL3315NF160Q" device="E-SWITCH_TL3315NF160Q_0_0"/>
-<part name="CENTER_SW" library="E-Switch-TL3315NF160Q" deviceset="E-SWITCH_TL3315NF160Q" device="E-SWITCH_TL3315NF160Q_0_0"/>
+<part name="CENTER_SW" library="E-Switch-TL3315NF100Q" deviceset="E-SWITCH_TL3315NF100Q" device="E-SWITCH_TL3315NF100Q_0_0"/>
 <part name="LEFT_SW" library="E-Switch-TL3315NF160Q" deviceset="E-SWITCH_TL3315NF160Q" device="E-SWITCH_TL3315NF160Q_0_0">
 <attribute name="SPICEPREFIX" value="E"/>
 </part>
@@ -28072,7 +28166,7 @@ wave soldering</description>
 <part name="GND30" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R35" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100"/>
 <part name="R36" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="50"/>
-<part name="CENTER_SW_PWR" library="E-Switch-TL3315NF160Q" deviceset="E-SWITCH_TL3315NF160Q" device="E-SWITCH_TL3315NF160Q_0_0"/>
+<part name="CENTER_SW_PWR" library="E-Switch-TL3315NF100Q" deviceset="E-SWITCH_TL3315NF100Q" device="E-SWITCH_TL3315NF100Q_0_0"/>
 <part name="GND31" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND32" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND33" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -30943,8 +31037,8 @@ It's not optimal but it's a lot less risky than hooking up the
 <instance part="DOWN_SW" gate="G$0" x="35.56" y="30.48" smashed="yes">
 <attribute name="NAME" x="32.766" y="30.226" size="2.54" layer="95" align="top-left"/>
 </instance>
-<instance part="CENTER_SW" gate="G$0" x="66.04" y="30.48" smashed="yes">
-<attribute name="NAME" x="63.246" y="30.226" size="2.54" layer="95" align="top-left"/>
+<instance part="CENTER_SW" gate="G$0" x="63.5" y="27.94" smashed="yes" rot="MR270">
+<attribute name="NAME" x="63.754" y="30.734" size="2.54" layer="95" rot="MR270" align="top-left"/>
 </instance>
 <instance part="LEFT_SW" gate="G$0" x="-63.5" y="30.48" smashed="yes">
 <attribute name="NAME" x="-66.294" y="30.226" size="2.54" layer="95" align="top-left"/>
@@ -31011,8 +31105,8 @@ It's not optimal but it's a lot less risky than hooking up the
 <attribute name="NAME" x="71.12" y="2.54" size="1.27" layer="95" rot="R270"/>
 <attribute name="VALUE" x="64.77" y="2.54" size="1.27" layer="96" rot="R270"/>
 </instance>
-<instance part="CENTER_SW_PWR" gate="G$0" x="134.62" y="33.02" smashed="yes">
-<attribute name="NAME" x="131.826" y="32.766" size="2.54" layer="95" align="top-left"/>
+<instance part="CENTER_SW_PWR" gate="G$0" x="147.32" y="30.48" smashed="yes" rot="R270">
+<attribute name="NAME" x="147.066" y="33.274" size="2.54" layer="95" rot="R270" align="top-left"/>
 </instance>
 <instance part="GND31" gate="1" x="139.7" y="7.62" smashed="yes">
 <attribute name="VALUE" x="137.16" y="5.08" size="1.778" layer="96"/>
@@ -31031,7 +31125,8 @@ It's not optimal but it's a lot less risky than hooking up the
 <wire x1="-20.32" y1="33.02" x2="0" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="0" y1="33.02" x2="12.7" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="12.7" y1="33.02" x2="45.72" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="45.72" y1="33.02" x2="76.2" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="33.02" x2="73.66" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="33.02" x2="101.6" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="-25.4" y1="25.4" x2="-20.32" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="-20.32" y1="25.4" x2="-20.32" y2="33.02" width="0.1524" layer="91"/>
 <junction x="-20.32" y="33.02"/>
@@ -31043,17 +31138,16 @@ It's not optimal but it's a lot less risky than hooking up the
 <wire x1="40.64" y1="25.4" x2="45.72" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="25.4" x2="45.72" y2="33.02" width="0.1524" layer="91"/>
 <junction x="45.72" y="33.02"/>
-<pinref part="CENTER_SW" gate="G$0" pin="2"/>
-<wire x1="71.12" y1="25.4" x2="76.2" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="25.4" x2="76.2" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="0" y1="33.02" x2="0" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="0" y1="40.64" x2="7.62" y2="40.64" width="0.1524" layer="91"/>
 <junction x="0" y="33.02"/>
 <label x="10.16" y="40.64" size="1.778" layer="95"/>
-<wire x1="76.2" y1="33.02" x2="101.6" y2="33.02" width="0.1524" layer="91"/>
-<junction x="76.2" y="33.02"/>
 <pinref part="C21" gate="G$1" pin="1"/>
 <wire x1="101.6" y1="33.02" x2="101.6" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="CENTER_SW" gate="G$0" pin="2"/>
+<wire x1="71.12" y1="30.48" x2="73.66" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="30.48" x2="73.66" y2="33.02" width="0.1524" layer="91"/>
+<junction x="73.66" y="33.02"/>
 </segment>
 </net>
 <net name="N$32" class="0">
@@ -31127,7 +31221,7 @@ It's not optimal but it's a lot less risky than hooking up the
 <segment>
 <pinref part="CENTER_SW_PWR" gate="G$0" pin="4"/>
 <pinref part="GND31" gate="1" pin="GND"/>
-<wire x1="139.7" y1="17.78" x2="139.7" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="12.7" x2="139.7" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="BUTTON_DIN" class="0">
@@ -31191,24 +31285,24 @@ It's not optimal but it's a lot less risky than hooking up the
 <junction x="40.64" y="15.24"/>
 </segment>
 </net>
-<net name="CENTER_SW" class="0">
-<segment>
-<pinref part="R23" gate="G$1" pin="2"/>
-<pinref part="CENTER_SW" gate="G$0" pin="4"/>
-<wire x1="71.12" y1="15.24" x2="76.2" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="15.24" x2="76.2" y2="7.62" width="0.1524" layer="91"/>
-<pinref part="D7" gate="G$1" pin="A"/>
-<wire x1="68.58" y1="2.54" x2="68.58" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="12.7" x2="71.12" y2="15.24" width="0.1524" layer="91"/>
-<junction x="71.12" y="15.24"/>
-</segment>
-</net>
 <net name="CENTER_SW_PWR_TOP" class="0">
 <segment>
 <pinref part="CENTER_SW_PWR" gate="G$0" pin="2"/>
-<wire x1="139.7" y1="27.94" x2="139.7" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="33.02" x2="139.7" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="35.56" x2="170.18" y2="35.56" width="0.1524" layer="91"/>
 <label x="170.18" y="38.1" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$44" class="0">
+<segment>
+<pinref part="D7" gate="G$1" pin="A"/>
+<wire x1="68.58" y1="2.54" x2="68.58" y2="7.62" width="0.1524" layer="91"/>
+<pinref part="CENTER_SW" gate="G$0" pin="4"/>
+<wire x1="68.58" y1="7.62" x2="71.12" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="R23" gate="G$1" pin="2"/>
+<wire x1="76.2" y1="7.62" x2="76.2" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="10.16" x2="71.12" y2="10.16" width="0.1524" layer="91"/>
+<junction x="71.12" y="10.16"/>
 </segment>
 </net>
 </nets>

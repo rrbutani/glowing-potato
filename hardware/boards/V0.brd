@@ -4035,6 +4035,38 @@ Includes Amendment 1, October 1996&lt;p&gt;
 </package3d>
 </packages3d>
 </library>
+<library name="E-Switch-TL3315NF100Q">
+<description>Upverter Parts Library
+
+Created by Upverter.com</description>
+<packages>
+<package name="E-SWITCH_TL3315NF100Q_0">
+<description>SWITCH TACTILE SPST</description>
+<wire x1="-2.25" y1="-2.25" x2="-2.25" y2="2.25" width="0.15" layer="51"/>
+<wire x1="-2.25" y1="2.25" x2="2.25" y2="2.25" width="0.15" layer="51"/>
+<wire x1="2.25" y1="2.25" x2="2.25" y2="-2.25" width="0.15" layer="51"/>
+<wire x1="2.25" y1="-2.25" x2="-2.25" y2="-2.25" width="0.15" layer="51"/>
+<wire x1="-1.4" y1="2.25" x2="1.4" y2="2.25" width="0.15" layer="21"/>
+<wire x1="-1.4" y1="-2.25" x2="1.4" y2="-2.25" width="0.15" layer="21"/>
+<wire x1="-2.25" y1="0.8" x2="-2.25" y2="-0.8" width="0.15" layer="21"/>
+<wire x1="2.25" y1="-0.8" x2="2.25" y2="0.8" width="0.15" layer="21"/>
+<wire x1="-2.675" y1="-2.475" x2="-2.675" y2="2.475" width="0.1" layer="39"/>
+<wire x1="-2.675" y1="2.475" x2="2.675" y2="2.475" width="0.1" layer="39"/>
+<wire x1="2.675" y1="2.475" x2="2.675" y2="-2.475" width="0.1" layer="39"/>
+<wire x1="2.675" y1="-2.475" x2="-2.675" y2="-2.475" width="0.1" layer="39"/>
+<text x="-2.425" y="2.875" size="1" layer="25">&gt;NAME</text>
+<circle x="-3.15" y="1.75" radius="0.25" width="0" layer="21"/>
+<smd name="1" x="-2.125" y="1.75" dx="0.5" dy="0.7" layer="1"/>
+<smd name="2" x="2.125" y="1.75" dx="0.5" dy="0.7" layer="1"/>
+<smd name="3" x="-2.125" y="-1.75" dx="0.5" dy="0.7" layer="1"/>
+<smd name="4" x="2.125" y="-1.75" dx="0.5" dy="0.7" layer="1"/>
+<smd name="1-2" x="-2.475" y="1.75" dx="0.2" dy="1.1" layer="1"/>
+<smd name="2-2" x="2.475" y="1.75" dx="0.2" dy="1.1" layer="1"/>
+<smd name="3-2" x="-2.475" y="-1.75" dx="0.2" dy="1.1" layer="1"/>
+<smd name="4-2" x="2.475" y="-1.75" dx="0.2" dy="1.1" layer="1"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -4701,17 +4733,19 @@ design rules under a new name.</description>
 <attribute name="TEMPERATURE_RANGE_HIGH" value="+70°C" x="-41" y="-357" size="1.778" layer="27" display="off"/>
 <attribute name="TEMPERATURE_RANGE_LOW" value="-20°C" x="-41" y="-357" size="1.778" layer="27" display="off"/>
 </element>
-<element name="CENTER_SW" library="E-Switch-TL3315NF160Q" package="E-SWITCH_TL3315NF160Q_0" value="E-SWITCH_TL3315NF160QE-SWITCH_TL3315NF160Q_0_0" x="-35" y="-371" smashed="yes">
+<element name="CENTER_SW" library="E-Switch-TL3315NF100Q" package="E-SWITCH_TL3315NF100Q_0" value="E-SWITCH_TL3315NF100QE-SWITCH_TL3315NF100Q_0_0" x="-35" y="-371" smashed="yes">
 <attribute name="CENTROID_NOT_SPECIFIED" value="No" x="-41" y="-364" size="1.778" layer="27" display="off"/>
-<attribute name="DATASHEET" value="http://media.digikey.com/pdf/Data%20Sheets/E-Switch%20PDFs/TL3315.pdf" x="-41" y="-364" size="1.778" layer="27" display="off"/>
-<attribute name="DIGIKEY_DESCRIPTION" value="SWITCH TACTILE SPST-NO 0.05A 15V" x="-41" y="-364" size="1.778" layer="27" display="off"/>
-<attribute name="DIGIKEY_PART_NUMBER" value="EG4621CT-ND" x="-41" y="-364" size="1.778" layer="27" display="off"/>
+<attribute name="CIRCUIT" value="SPST-NO" x="-35" y="-371" size="1.778" layer="27" display="off"/>
+<attribute name="CONTACT_RATING_@_VOLTAGE" value="0.05A @ 15VDC" x="-35" y="-371" size="1.778" layer="27" display="off"/>
+<attribute name="DATASHEET" value="http://spec_sheets.e-switch.com/specs/P010336.pdf" x="-41" y="-364" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY_DESCRIPTION" value="SWITCH Tactile Switch SPST-NO Top Actuated Surface Mount" x="-41" y="-364" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY_PART_NUMBER" value="EG4620CT-ND" x="-41" y="-364" size="1.778" layer="27" display="off"/>
 <attribute name="LEAD_FREE" value="yes" x="-41" y="-364" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="E-Switch" x="-41" y="-364" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="612-TL3315NF160Q" x="-41" y="-364" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="TL3315NF160Q" x="-41" y="-364" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="612-TL3315NF100Q" x="-41" y="-364" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="TL3315NF100Q" x="-41" y="-364" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="-37.725" y="-368.375" size="1" layer="25"/>
-<attribute name="PACKAGE" value="SW_SMT_4MM5_4MM5" x="-41" y="-364" size="1.778" layer="27" display="off"/>
+<attribute name="PACKAGE" value="SMT_4POS" x="-41" y="-364" size="1.778" layer="27" display="off"/>
 <attribute name="PREFIX" value="SW" x="-41" y="-364" size="1.778" layer="27" display="off"/>
 <attribute name="ROHS" value="yes" x="-41" y="-364" size="1.778" layer="27" display="off"/>
 <attribute name="TEMPERATURE_RANGE_HIGH" value="+70°C" x="-41" y="-364" size="1.778" layer="27" display="off"/>
@@ -4996,17 +5030,19 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="R" x="-36" y="-569" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-36.635" y="-571.54" size="1.27" layer="27"/>
 </element>
-<element name="CENTER_SW_PWR" library="E-Switch-TL3315NF160Q" package="E-SWITCH_TL3315NF160Q_0" value="E-SWITCH_TL3315NF160QE-SWITCH_TL3315NF160Q_0_0" x="-41" y="-567" smashed="yes">
+<element name="CENTER_SW_PWR" library="E-Switch-TL3315NF100Q" package="E-SWITCH_TL3315NF100Q_0" value="E-SWITCH_TL3315NF100QE-SWITCH_TL3315NF100Q_0_0" x="-41" y="-567" smashed="yes">
 <attribute name="CENTROID_NOT_SPECIFIED" value="No" x="-41" y="-567" size="1.778" layer="27" display="off"/>
-<attribute name="DATASHEET" value="http://media.digikey.com/pdf/Data%20Sheets/E-Switch%20PDFs/TL3315.pdf" x="-41" y="-567" size="1.778" layer="27" display="off"/>
-<attribute name="DIGIKEY_DESCRIPTION" value="SWITCH TACTILE SPST-NO 0.05A 15V" x="-41" y="-567" size="1.778" layer="27" display="off"/>
-<attribute name="DIGIKEY_PART_NUMBER" value="EG4621CT-ND" x="-41" y="-567" size="1.778" layer="27" display="off"/>
+<attribute name="CIRCUIT" value="SPST-NO" x="-41" y="-567" size="1.778" layer="27" display="off"/>
+<attribute name="CONTACT_RATING_@_VOLTAGE" value="0.05A @ 15VDC" x="-41" y="-567" size="1.778" layer="27" display="off"/>
+<attribute name="DATASHEET" value="http://spec_sheets.e-switch.com/specs/P010336.pdf" x="-41" y="-567" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY_DESCRIPTION" value="SWITCH Tactile Switch SPST-NO Top Actuated Surface Mount" x="-41" y="-567" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY_PART_NUMBER" value="EG4620CT-ND" x="-41" y="-567" size="1.778" layer="27" display="off"/>
 <attribute name="LEAD_FREE" value="yes" x="-41" y="-567" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="E-Switch" x="-41" y="-567" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="612-TL3315NF160Q" x="-41" y="-567" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="TL3315NF160Q" x="-41" y="-567" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="612-TL3315NF100Q" x="-41" y="-567" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="TL3315NF100Q" x="-41" y="-567" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="-43.725" y="-564.375" size="1" layer="25"/>
-<attribute name="PACKAGE" value="SW_SMT_4MM5_4MM5" x="-41" y="-567" size="1.778" layer="27" display="off"/>
+<attribute name="PACKAGE" value="SMT_4POS" x="-41" y="-567" size="1.778" layer="27" display="off"/>
 <attribute name="PREFIX" value="SW" x="-41" y="-567" size="1.778" layer="27" display="off"/>
 <attribute name="ROHS" value="yes" x="-41" y="-567" size="1.778" layer="27" display="off"/>
 <attribute name="TEMPERATURE_RANGE_HIGH" value="+70°C" x="-41" y="-567" size="1.778" layer="27" display="off"/>
@@ -5511,8 +5547,6 @@ design rules under a new name.</description>
 <contactref element="RIGHT_SW" pad="2"/>
 <contactref element="DOWN_SW" pad="2-2"/>
 <contactref element="DOWN_SW" pad="2"/>
-<contactref element="CENTER_SW" pad="2-2"/>
-<contactref element="CENTER_SW" pad="2"/>
 <contactref element="C21" pad="1"/>
 <contactref element="D1" pad="2"/>
 <contactref element="U$6" pad="11"/>
@@ -5551,6 +5585,8 @@ design rules under a new name.</description>
 <contactref element="R31" pad="2"/>
 <contactref element="X3" pad="33"/>
 <contactref element="X3" pad="31"/>
+<contactref element="CENTER_SW" pad="2"/>
+<contactref element="CENTER_SW" pad="2-2"/>
 <wire x1="-24.075" y1="-200.0822" x2="-23.475" y2="-222.175" width="0" layer="19" extent="1-1"/>
 <wire x1="-26.025" y1="-200.0822" x2="-24.075" y2="-200.0822" width="0" layer="19" extent="1-1"/>
 <wire x1="-26.25" y1="-248" x2="-23.475" y2="-222.175" width="0" layer="19" extent="1-1"/>
@@ -5579,9 +5615,9 @@ design rules under a new name.</description>
 <wire x1="-32.875" y1="-355.25" x2="-32.525" y2="-355.25" width="0" layer="19" extent="1-1"/>
 <wire x1="-32.525" y1="-362.25" x2="-32.525" y2="-355.25" width="0" layer="19" extent="1-1"/>
 <wire x1="-32.875" y1="-362.25" x2="-32.525" y2="-362.25" width="0" layer="19" extent="1-1"/>
-<wire x1="-32.525" y1="-369.25" x2="-32.525" y2="-362.25" width="0" layer="19" extent="1-1"/>
-<wire x1="-32.875" y1="-369.25" x2="-32.525" y2="-369.25" width="0" layer="19" extent="1-1"/>
-<wire x1="-32.525" y1="-376.25" x2="-32.525" y2="-369.25" width="0" layer="19" extent="1-1"/>
+<wire x1="-32.875" y1="-369.25" x2="-32.525" y2="-362.25" width="0" layer="19" extent="1-1"/>
+<wire x1="-32.525" y1="-369.25" x2="-32.875" y2="-369.25" width="0" layer="19" extent="1-1"/>
+<wire x1="-32.525" y1="-376.25" x2="-32.875" y2="-369.25" width="0" layer="19" extent="1-1"/>
 <wire x1="-32.875" y1="-376.25" x2="-32.525" y2="-376.25" width="0" layer="19" extent="1-1"/>
 <wire x1="-5.7" y1="-331" x2="-7.05" y2="-315" width="0" layer="19" extent="1-1"/>
 <wire x1="-37" y1="-420" x2="-32.875" y2="-376.25" width="0" layer="19" extent="1-1"/>
@@ -5927,15 +5963,6 @@ design rules under a new name.</description>
 <wire x1="-32.875" y1="-365.75" x2="-35.05" y2="-399" width="0" layer="19" extent="1-1"/>
 <wire x1="-32.525" y1="-365.75" x2="-32.875" y2="-365.75" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="CENTER_SW">
-<contactref element="CENTER_SW" pad="4-2"/>
-<contactref element="CENTER_SW" pad="4"/>
-<contactref element="R23" pad="2"/>
-<contactref element="D7" pad="A"/>
-<wire x1="-35.05" y1="-404" x2="-37" y2="-447.8" width="0" layer="19" extent="1-1"/>
-<wire x1="-32.875" y1="-372.75" x2="-35.05" y2="-404" width="0" layer="19" extent="1-1"/>
-<wire x1="-32.525" y1="-372.75" x2="-32.875" y2="-372.75" width="0" layer="19" extent="1-1"/>
-</signal>
 <signal name="USB_D+">
 <contactref element="JL" pad="P$4"/>
 <contactref element="D9" pad="1"/>
@@ -6278,6 +6305,15 @@ design rules under a new name.</description>
 <contactref element="G1" pad="2"/>
 <contactref element="U$2" pad="8"/>
 <wire x1="-25.05" y1="-265.075" x2="-40.05" y2="-803.1" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$44">
+<contactref element="D7" pad="A"/>
+<contactref element="CENTER_SW" pad="4-2"/>
+<contactref element="CENTER_SW" pad="4"/>
+<contactref element="R23" pad="2"/>
+<wire x1="-35.05" y1="-404" x2="-37" y2="-447.8" width="0" layer="19" extent="1-1"/>
+<wire x1="-32.875" y1="-372.75" x2="-35.05" y2="-404" width="0" layer="19" extent="1-1"/>
+<wire x1="-32.525" y1="-372.75" x2="-32.875" y2="-372.75" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
