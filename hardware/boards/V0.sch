@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.000000123031" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -27745,7 +27745,7 @@ wave soldering</description>
 <part name="C6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1uF"/>
 <part name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1uF"/>
 <part name="U$2" library="TOSHIBA_NAND-GATE" deviceset="TOSHIBA-NAND-GATE" device=""/>
-<part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5M"/>
+<part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10M"/>
 <part name="GND22" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="X3" library="con-hirose" library_urn="urn:adsk.eagle:library:152" deviceset="FH12-45S-0.5S" device="H" package3d_urn="urn:adsk.eagle:package:7301/1"/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -30542,13 +30542,6 @@ EN on the regulator is 7V tolerant so that's fine too.</text>
 <junction x="-2.54" y="22.86"/>
 </segment>
 </net>
-<net name="N$12" class="0">
-<segment>
-<pinref part="R10" gate="G$1" pin="1"/>
-<pinref part="C6" gate="G$1" pin="1"/>
-<wire x1="-43.18" y1="22.86" x2="-25.4" y2="22.86" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$14" class="0">
 <segment>
 <pinref part="C7" gate="G$1" pin="2"/>
@@ -30599,8 +30592,15 @@ EN on the regulator is 7V tolerant so that's fine too.</text>
 <net name="CENTER_SW_PWR_TOP" class="0">
 <segment>
 <pinref part="R11" gate="G$1" pin="1"/>
-<wire x1="-22.86" y1="15.24" x2="-33.02" y2="15.24" width="0.1524" layer="91"/>
-<label x="-35.56" y="15.24" size="1.778" layer="95" rot="R180"/>
+<label x="-50.8" y="12.7" size="1.778" layer="95" rot="R180"/>
+<pinref part="R10" gate="G$1" pin="1"/>
+<pinref part="C6" gate="G$1" pin="1"/>
+<wire x1="-43.18" y1="22.86" x2="-25.4" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="22.86" x2="-43.18" y2="15.24" width="0.1524" layer="91"/>
+<junction x="-43.18" y="22.86"/>
+<wire x1="-43.18" y1="15.24" x2="-22.86" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="15.24" x2="-48.26" y2="15.24" width="0.1524" layer="91"/>
+<junction x="-43.18" y="15.24"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -30819,6 +30819,11 @@ It's not optimal but it's a lot less risky than hooking up the
 <wire x1="-71.12" y1="-22.86" x2="-71.12" y2="-27.94" width="0.1524" layer="91"/>
 <pinref part="GND7" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="CENTER_SW_PWR" gate="G$0" pin="4"/>
+<pinref part="GND31" gate="1" pin="GND"/>
+<wire x1="139.7" y1="17.78" x2="139.7" y2="10.16" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="BUTTON_DIN" class="0">
 <segment>
@@ -30899,16 +30904,6 @@ It's not optimal but it's a lot less risky than hooking up the
 <wire x1="139.7" y1="27.94" x2="139.7" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="35.56" x2="170.18" y2="35.56" width="0.1524" layer="91"/>
 <label x="170.18" y="38.1" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="CENTER_SW_PWR_BTM" class="0">
-<segment>
-<pinref part="CENTER_SW_PWR" gate="G$0" pin="4"/>
-<wire x1="139.7" y1="17.78" x2="139.7" y2="10.16" width="0.1524" layer="91"/>
-<pinref part="GND31" gate="1" pin="GND"/>
-<wire x1="139.7" y1="17.78" x2="170.18" y2="17.78" width="0.1524" layer="91"/>
-<junction x="139.7" y="17.78"/>
-<label x="170.18" y="17.78" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
