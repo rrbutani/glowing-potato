@@ -12,6 +12,6 @@ One big flaw in all this is that the circuit runs off unregulated power because 
 
 So we'll settle for not truly being able to turn off the device from the ESP32. This is going to result in a weird user interface where we'll expose a software shutdown option which, after performing the necessary software shutdown routines, instructs the user to power and hold the power button to _truly_ shutdown.
 
-Or we can just go into a soft shutdown state (with a button press triggering a 'boot' up) and hope that the other components aren't drawing too much power and that UVLO will save us.
+Or we can just go into a soft shutdown state (with a button press triggering a 'boot' up) and hope that the other components aren't drawing too much power and that UVLO will save us (now that we have a UVLO circuit this is something that we can actually maybe count on). Sidenote: UVLO should disengage once charging kicks in as we'd expect.
 
 So now that I've written this, it's become apparent that writing this quick and dirty test would be a bad use of time. So, till next time!
