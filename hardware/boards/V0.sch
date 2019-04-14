@@ -28228,6 +28228,7 @@ Created by Upverter.com</description>
 <part name="GND47" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C36" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="100nF"/>
 <part name="GND48" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="R53" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
 </parts>
 <sheets>
 <sheet>
@@ -29086,6 +29087,13 @@ Created by Upverter.com</description>
 <pinref part="U$1" gate="G$1" pin="IO14"/>
 <wire x1="-7.62" y1="-50.8" x2="-7.62" y2="-55.88" width="0.1524" layer="91"/>
 <label x="-7.62" y="-55.88" size="1.778" layer="95" rot="R270"/>
+</segment>
+</net>
+<net name="CHARGE_DETECT" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="SENSOR_CAPP"/>
+<wire x1="-50.8" y1="2.54" x2="-55.88" y2="2.54" width="0.1524" layer="91"/>
+<label x="-53.594" y="1.016" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 </nets>
@@ -31321,6 +31329,8 @@ since we don't want to blind people let's call it an even 100</text>
 
 1.0 volts for 20mA = V / I = R = 1 / 20mA = 50 ohms</text>
 <text x="-38.1" y="-38.1" size="1.778" layer="97">Blue has a voltage drop of ~3.7V which is greater than our regulated voltage so we won't bother with a current limiting resistor.</text>
+<text x="106.68" y="12.7" size="1.778" layer="97">I'm not sure this will work, so leave this resistor
+off initially/until we've thought it through.</text>
 </plain>
 <instances>
 <instance part="D1" gate="G$0" x="-27.94" y="20.32" smashed="yes">
@@ -31348,6 +31358,10 @@ since we don't want to blind people let's call it an even 100</text>
 <instance part="R44" gate="G$1" x="-83.82" y="-10.16" smashed="yes" rot="R90">
 <attribute name="NAME" x="-85.3186" y="-13.97" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="-80.518" y="-13.97" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R53" gate="G$1" x="99.06" y="15.24" smashed="yes" rot="R90">
+<attribute name="NAME" x="97.5614" y="11.43" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="102.362" y="11.43" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -31406,6 +31420,11 @@ since we don't want to blind people let's call it an even 100</text>
 <wire x1="2.54" y1="0" x2="7.62" y2="0" width="0.1524" layer="91"/>
 <label x="7.62" y="0" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="99.06" y1="30.48" x2="99.06" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="R53" gate="G$1" pin="2"/>
+<label x="101.6" y="30.48" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="N$56" class="0">
 <segment>
@@ -31437,6 +31456,13 @@ since we don't want to blind people let's call it an even 100</text>
 <pinref part="R44" gate="G$1" pin="1"/>
 <wire x1="-83.82" y1="-15.24" x2="-83.82" y2="-27.94" width="0.1524" layer="91"/>
 <label x="-81.28" y="-27.94" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="CHARGE_DETECT" class="0">
+<segment>
+<pinref part="R53" gate="G$1" pin="1"/>
+<wire x1="99.06" y1="10.16" x2="99.06" y2="0" width="0.1524" layer="91"/>
+<label x="101.6" y="0" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
