@@ -28057,7 +28057,7 @@ Created by Upverter.com</description>
 <part name="C5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C1210" package3d_urn="urn:adsk.eagle:package:23619/2" value="10 uF"/>
 <part name="U$5" library="CR43NP-4R7MC" deviceset="CR43NP-2R2MC" device=""/>
 <part name="BATT_CON" library="JST-S3B-XH-SM4-TB" deviceset="JST_S3B-XH-SM4-TB" device="JST_S3B-XH-SM4-TB_0_0"/>
-<part name="J1" library="TRRS-Jack-SJ-43515TS-SMT" deviceset="SJ-43515TS-SMT" device=""/>
+<part name="J12" library="TRRS-Jack-SJ-43515TS-SMT" deviceset="SJ-43515TS-SMT" device="" value="3.5mm TRRS Jack"/>
 <part name="U$6" library="AT42QT2120" deviceset="COMMS-AT42QT2120" device="XU" package3d_urn="urn:adsk.eagle:package:4349/2" value="COMMS-AT42QT2120XU"/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0201" package3d_urn="urn:adsk.eagle:package:23690/2" value="50uF"/>
 <part name="R1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:6240587/1" value="50K"/>
@@ -29947,7 +29947,7 @@ Fixed at 500 mA for now..</text>
 <plain>
 </plain>
 <instances>
-<instance part="J1" gate="G$1" x="111.76" y="60.96" smashed="yes" rot="R180">
+<instance part="J12" gate="G$1" x="111.76" y="60.96" smashed="yes" rot="R180">
 <attribute name="NAME" x="119.39685" y="52.55948125" size="1.78193125" layer="95" rot="R180"/>
 <attribute name="VALUE" x="119.40558125" y="71.1542" size="1.78396875" layer="96" rot="R180"/>
 </instance>
@@ -30465,7 +30465,7 @@ Fixed at 500 mA for now..</text>
 </net>
 <net name="TRRS_TIP_SW" class="0">
 <segment>
-<pinref part="J1" gate="G$1" pin="TIP_SWITCH"/>
+<pinref part="J12" gate="G$1" pin="TIP_SWITCH"/>
 <wire x1="101.6" y1="63.5" x2="127" y2="63.5" width="0.1524" layer="91"/>
 <label x="129.54" y="63.5" size="1.778" layer="95"/>
 <wire x1="127" y1="63.5" x2="127" y2="73.66" width="0.1524" layer="91"/>
@@ -30482,7 +30482,7 @@ Fixed at 500 mA for now..</text>
 <wire x1="20.32" y1="-5.08" x2="96.52" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="-5.08" x2="96.52" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="10.16" x2="127" y2="10.16" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="RING2"/>
+<pinref part="J12" gate="G$1" pin="RING2"/>
 <wire x1="101.6" y1="58.42" x2="96.52" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="58.42" x2="96.52" y2="48.26" width="0.1524" layer="91"/>
 <junction x="96.52" y="10.16"/>
@@ -30498,7 +30498,7 @@ Fixed at 500 mA for now..</text>
 <pinref part="U1" gate="G$1" pin="RIGHT"/>
 <wire x1="20.32" y1="-2.54" x2="93.98" y2="-2.54" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="-2.54" x2="93.98" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="RING1"/>
+<pinref part="J12" gate="G$1" pin="RING1"/>
 <wire x1="101.6" y1="60.96" x2="93.98" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="60.96" x2="93.98" y2="27.94" width="0.1524" layer="91"/>
 <junction x="93.98" y="27.94"/>
@@ -30506,14 +30506,14 @@ Fixed at 500 mA for now..</text>
 </net>
 <net name="TRRS_INLINE_CTRL" class="0">
 <segment>
-<pinref part="J1" gate="G$1" pin="SLEEVE"/>
+<pinref part="J12" gate="G$1" pin="SLEEVE"/>
 <wire x1="101.6" y1="55.88" x2="124.46" y2="55.88" width="0.1524" layer="91"/>
 <label x="129.54" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$57" class="0">
 <segment>
-<pinref part="J1" gate="G$1" pin="TIP"/>
+<pinref part="J12" gate="G$1" pin="TIP"/>
 <wire x1="91.44" y1="66.04" x2="101.6" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="TP3" gate="G$1" pin="TP"/>
 <wire x1="91.44" y1="66.04" x2="91.44" y2="53.34" width="0.1524" layer="91"/>
