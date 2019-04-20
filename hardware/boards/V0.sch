@@ -25434,6 +25434,7 @@ Created by Upverter.com</description>
 <part name="C36" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="100nF"/>
 <part name="GND48" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R53" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
+<part name="R54" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="315k"/>
 </parts>
 <sheets>
 <sheet>
@@ -26790,6 +26791,11 @@ Fixed at 500 mA for now..</text>
 <junction x="-15.24" y="96.52"/>
 <label x="-15.24" y="101.6" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="J2" gate="G$0" pin="A"/>
+<wire x1="-116.84" y1="53.34" x2="-114.3" y2="53.34" width="0.1524" layer="91"/>
+<label x="-114.3" y="53.34" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -26828,6 +26834,13 @@ Fixed at 500 mA for now..</text>
 <junction x="-50.8" y="71.12"/>
 <wire x1="-43.18" y1="71.12" x2="-43.18" y2="86.36" width="0.1524" layer="91"/>
 <label x="-43.18" y="86.36" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="CARD_DETECT" class="0">
+<segment>
+<pinref part="J2" gate="G$0" pin="B"/>
+<wire x1="-116.84" y1="48.26" x2="-114.3" y2="48.26" width="0.1524" layer="91"/>
+<label x="-114.3" y="48.26" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -28343,6 +28356,10 @@ It's not optimal but it's a lot less risky than hooking up the
 <instance part="GND31" gate="1" x="139.7" y="7.62" smashed="yes">
 <attribute name="VALUE" x="137.16" y="5.08" size="1.778" layer="96"/>
 </instance>
+<instance part="R54" gate="G$1" x="-83.82" y="15.24" smashed="yes" rot="R90">
+<attribute name="NAME" x="-85.3186" y="11.43" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-80.518" y="11.43" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -28429,14 +28446,20 @@ It's not optimal but it's a lot less risky than hooking up the
 <pinref part="R22" gate="G$1" pin="1"/>
 <wire x1="45.72" y1="-2.54" x2="45.72" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="45.72" y="-7.62"/>
-<wire x1="-53.34" y1="-7.62" x2="-71.12" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="-7.62" x2="-66.04" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="-53.34" y="-7.62"/>
+<wire x1="-66.04" y1="-7.62" x2="-71.12" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="-71.12" y1="-7.62" x2="-71.12" y2="-2.54" width="0.1524" layer="91"/>
 <wire x1="-71.12" y1="-2.54" x2="-76.2" y2="-2.54" width="0.1524" layer="91"/>
 <label x="-76.2" y="0" size="1.778" layer="95" rot="R180"/>
 <pinref part="R25" gate="G$1" pin="2"/>
 <wire x1="-71.12" y1="-12.7" x2="-71.12" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="-71.12" y="-7.62"/>
+<wire x1="-66.04" y1="-7.62" x2="-66.04" y2="2.54" width="0.1524" layer="91"/>
+<junction x="-66.04" y="-7.62"/>
+<wire x1="-66.04" y1="2.54" x2="-83.82" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="-83.82" y1="2.54" x2="-83.82" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="R54" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -28545,6 +28568,13 @@ It's not optimal but it's a lot less risky than hooking up the
 <wire x1="73.66" y1="10.16" x2="71.12" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="7.62" x2="73.66" y2="10.16" width="0.1524" layer="91"/>
 <junction x="73.66" y="10.16"/>
+</segment>
+</net>
+<net name="CARD_DETECT" class="0">
+<segment>
+<pinref part="R54" gate="G$1" pin="2"/>
+<wire x1="-83.82" y1="20.32" x2="-83.82" y2="33.02" width="0.1524" layer="91"/>
+<label x="-83.82" y="33.02" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

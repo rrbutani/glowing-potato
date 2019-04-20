@@ -1,0 +1,24 @@
+things to keep in mind while routing:
+- trace width needs to match the current
+- our important signal trace pairs should be the same length (use miter)
+- silkscreen labels for parts should be small and close to the actual component
+- silkscreen things can't overlap vias or pins
+- there are minimum via and trace sizes and also minimum distances between things; use the jlcpcb DRU file and run DRC; eagle will check this stuff for you
+- some components have particular recommended layouts (@Blake if you don't have time to route, that's fine but can you point me to the suggested layouts/things to check for the crystal, the regulators, and the VS1053?)
+- we want to leave a large space from the antenna to the display connector empty so that the battery can go there; traces are fine here and so are low profile components (*<=1mm*)
+- nothing on the top of the PCB where the buttons are (unless they're <1mm, but I doubt we'll have anything)
+- ATQ traces are sensitive and need to be away from other things
+- the antenna is sensitive and needs to have the surrounding ground place stripped away
+- nothing on the top layer where the display is other than the traces
+- follow the conventions for silkscreen labels (top left anchor for bottom layer parts, text left to right and top to bottom, 90degrees clockwise for vertical labels)
+- don't place components in the area directly above the sd card and the headphone jack and in the same places reflected over the middle of the board; we want to leave some space for the magnets (probably 3 by 6mm, 6 vertically)
+- don't move the connectors on the bottom (USB, headphone jack, microSD) or the display connector or it's hole or the CP2102N or the antenna or the buttons or the mounting holes around the board. VS1053 should stay roughly where it is and the esp32 and everything else is fair game to move. battery connector I'm thinking should go below the antenna
+- turn off measures and document layers to hide all the alignment stuff (don't remove or move anything already on those layers though)
+- we have top and bottom ground planes (remind me: *these need to be connected*); use ratsnest to fill them in and ripup to remove them
+- using 0402 for resistors and also 0402 for caps *that aren't special*; so far I've only changed the parts on the first page of the schematic
+- save early and often; eagle tends to crash with this board, at least for me
+- for trace widths: you have to consider how much current will actually go through a particular trace, not just how much current the part you happen to be connecting at that point will draw
+- the buttons' footprint is problematic; it has restrict errors which we can fix later
+- inductor footprints as of now are misleading and probably should be updated (they take up more space than just their pads)
+- I'm thinking either under the display or where the buttons are for silkscreen art
+- we can't do via-in-pins or blind/buried via, I think
