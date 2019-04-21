@@ -25435,6 +25435,7 @@ Created by Upverter.com</description>
 <part name="GND48" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R53" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
 <part name="R54" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="315k"/>
+<part name="R55" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="25"/>
 </parts>
 <sheets>
 <sheet>
@@ -25445,6 +25446,26 @@ Created by Upverter.com</description>
 <text x="-220.98" y="-101.6" size="1.778" layer="97">I'm assuming CTS and RTS (outside of it's connection to IO0) are
 indeed disconnected as shown on the esp32 pico dev board
 schematic (NC) and on this: https://cdn.hackaday.io/files/853893653282976/ESP32-Prog-1.pdf</text>
+<text x="66.04" y="-111.76" size="1.778" layer="97">IO2 is a strapping pin that allows the esp32 to enter download
+mode (iirc) - it's required to be pulled low when flashing the esp.
+Unforuntately, we have to use IO2 for the one usable SD/MMC
+interface on the esp32 (the other uses the same pins as flash).
+
+IO0 is also a strapping pin: it's connected to RTS on the CP2102N
+and is pulled low when we're flashing the board. So, if we tie IO0
+to IO2, IO2 will be pulled down while flashing. This solves our
+problem!
+
+Unforunately this means that we can't use IO0 for anything else
+since it remains tied to IO2 (anything we do to IO0 will affect the
+SD/MMC peripheral). We could use a fancy circuit that pulls IO2
+low only when the chip is reset (for a second or so) or do some
+transistor magic (only pull IO2 low when multiple other pins are
+low or something), but since we're only using IO0 for an LED, I
+figure it's not worth the trouble.
+
+We'll move the LED's net to something else and connect IO0 and
+IO2.</text>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="0" y="0" smashed="yes">
@@ -26054,11 +26075,6 @@ schematic (NC) and on this: https://cdn.hackaday.io/files/853893653282976/ESP32-
 <wire x1="-73.66" y1="-93.98" x2="-66.04" y2="-93.98" width="0.1524" layer="91"/>
 <label x="-68.58" y="-93.98" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="IO0"/>
-<wire x1="22.86" y1="-50.8" x2="22.86" y2="-68.58" width="0.1524" layer="91"/>
-<label x="22.86" y="-71.12" size="1.778" layer="95" rot="R270"/>
-</segment>
 </net>
 <net name="V3P3" class="0">
 <segment>
@@ -26189,6 +26205,9 @@ schematic (NC) and on this: https://cdn.hackaday.io/files/853893653282976/ESP32-
 <pinref part="U$1" gate="G$1" pin="IO2"/>
 <wire x1="17.78" y1="-50.8" x2="17.78" y2="-68.58" width="0.1524" layer="91"/>
 <label x="17.78" y="-71.12" size="1.778" layer="95" rot="R270"/>
+<pinref part="U$1" gate="G$1" pin="IO0"/>
+<wire x1="22.86" y1="-50.8" x2="22.86" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="-68.58" x2="22.86" y2="-68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="IO4" class="0">
@@ -26282,7 +26301,7 @@ schematic (NC) and on this: https://cdn.hackaday.io/files/853893653282976/ESP32-
 <label x="-55.88" y="-17.78" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
-<net name="GREEN_LED_CATH" class="0">
+<net name="BLUE_GREEN_LED_CATH" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="IO9"/>
 <wire x1="50.8" y1="-12.7" x2="55.88" y2="-12.7" width="0.1524" layer="91"/>
@@ -28595,6 +28614,7 @@ since we don't want to blind people let's call it an even 100</text>
 <text x="-38.1" y="-38.1" size="1.778" layer="97">Blue has a voltage drop of ~3.7V which is greater than our regulated voltage so we won't bother with a current limiting resistor.</text>
 <text x="106.68" y="12.7" size="1.778" layer="97">I'm not sure this will work, so leave this resistor
 off initially/until we've thought it through.</text>
+<text x="-12.7" y="15.24" size="1.778" layer="97">(resistor value here is a guess)</text>
 </plain>
 <instances>
 <instance part="D1" gate="G$0" x="-27.94" y="20.32" smashed="yes">
@@ -28626,6 +28646,10 @@ off initially/until we've thought it through.</text>
 <instance part="R53" gate="G$1" x="99.06" y="15.24" smashed="yes" rot="R90">
 <attribute name="NAME" x="97.5614" y="11.43" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="102.362" y="11.43" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R55" gate="G$1" x="-2.54" y="10.16" smashed="yes">
+<attribute name="NAME" x="-6.35" y="11.6586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-6.35" y="6.858" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -28697,24 +28721,6 @@ off initially/until we've thought it through.</text>
 <wire x1="-10.16" y1="-10.16" x2="-7.62" y2="-10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="GREEN_LED_CATH" class="0">
-<segment>
-<pinref part="R36" gate="G$1" pin="2"/>
-<wire x1="2.54" y1="-10.16" x2="7.62" y2="-10.16" width="0.1524" layer="91"/>
-<label x="7.62" y="-10.16" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="IO0" class="0">
-<segment>
-<pinref part="D1" gate="G$0" pin="BLUE_CATHODE"/>
-<wire x1="-10.16" y1="10.16" x2="-2.54" y2="10.16" width="0.1524" layer="91"/>
-<label x="7.62" y="10.16" size="1.778" layer="95"/>
-<wire x1="-2.54" y1="10.16" x2="7.62" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="-2.54" y1="10.16" x2="-2.54" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="-2.54" y1="15.24" x2="0" y2="17.78" width="0.1524" layer="91"/>
-<junction x="-2.54" y="10.16"/>
-</segment>
-</net>
 <net name="TRRS_INLINE_CTRL" class="0">
 <segment>
 <pinref part="R44" gate="G$1" pin="1"/>
@@ -28727,6 +28733,25 @@ off initially/until we've thought it through.</text>
 <pinref part="R53" gate="G$1" pin="1"/>
 <wire x1="99.06" y1="10.16" x2="99.06" y2="0" width="0.1524" layer="91"/>
 <label x="101.6" y="0" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="D1" gate="G$0" pin="BLUE_CATHODE"/>
+<pinref part="R55" gate="G$1" pin="1"/>
+<wire x1="-10.16" y1="10.16" x2="-7.62" y2="10.16" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="BLUE_GREEN_LED_CATH" class="0">
+<segment>
+<pinref part="R55" gate="G$1" pin="2"/>
+<wire x1="2.54" y1="10.16" x2="7.62" y2="10.16" width="0.1524" layer="91"/>
+<label x="7.62" y="10.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R36" gate="G$1" pin="2"/>
+<wire x1="2.54" y1="-10.16" x2="7.62" y2="-10.16" width="0.1524" layer="91"/>
+<label x="7.62" y="-10.16" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
