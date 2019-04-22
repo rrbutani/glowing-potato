@@ -28611,7 +28611,9 @@ since we don't want to blind people let's call it an even 100</text>
 <text x="-38.1" y="-30.48" size="1.778" layer="97">Green LED (AlInGaP Green on the C113) has a drop of about 2.3 volts also on about 20mA.
 
 1.0 volts for 20mA = V / I = R = 1 / 20mA = 50 ohms</text>
-<text x="-38.1" y="-38.1" size="1.778" layer="97">Blue has a voltage drop of ~3.7V which is greater than our regulated voltage so we won't bother with a current limiting resistor.</text>
+<text x="-38.1" y="-40.64" size="1.778" layer="97">Blue has a voltage drop of ~3.7V which is greater than our regulated voltage so we won't bother with a current limiting resistor.
+
+Actually we'll add one to protect the esp.</text>
 <text x="106.68" y="12.7" size="1.778" layer="97">I'm not sure this will work, so leave this resistor
 off initially/until we've thought it through.</text>
 <text x="-12.7" y="15.24" size="1.778" layer="97">(resistor value here is a guess)</text>
