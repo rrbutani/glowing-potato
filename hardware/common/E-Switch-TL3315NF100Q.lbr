@@ -1,129 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle>
-    <drawing>
-        <grid unitdist="mm" unit="mm"/>
-        <layers>
-            <layer name="Top" color="4" number="1" visible="yes" active="yes" fill="1"/>
-            <layer name="Bottom" color="4" number="16" visible="yes" active="yes" fill="1"/>
-            <layer name="tPlace" color="7" number="21" visible="yes" active="yes" fill="1"/>
-            <layer name="bPlace" color="7" number="22" visible="yes" active="yes" fill="1"/>
-            <layer name="tNames" color="7" number="25" visible="yes" active="yes" fill="1"/>
-            <layer name="bNames" color="7" number="26" visible="yes" active="yes" fill="1"/>
-            <layer name="tValues" color="7" number="27" visible="yes" active="yes" fill="1"/>
-            <layer name="bValues" color="7" number="28" visible="yes" active="yes" fill="1"/>
-            <layer name="tStop" color="7" number="29" visible="yes" active="yes" fill="1"/>
-            <layer name="bStop" color="7" number="30" visible="yes" active="yes" fill="1"/>
-            <layer name="tCream" color="7" number="31" visible="yes" active="yes" fill="1"/>
-            <layer name="bCream" color="7" number="32" visible="yes" active="yes" fill="1"/>
-            <layer name="tKeepout" color="4" number="39" visible="yes" active="yes" fill="1"/>
-            <layer name="bKeepout" color="4" number="40" visible="yes" active="yes" fill="1"/>
-            <layer name="tRestrict" color="0" number="41" visible="yes" active="yes" fill="1"/>
-            <layer name="bRestrict" color="0" number="42" visible="yes" active="yes" fill="1"/>
-            <layer name="tDocu" color="7" number="51" visible="yes" active="yes" fill="1"/>
-            <layer name="bDocu" color="7" number="52" visible="yes" active="yes" fill="1"/>
-            <layer name="Nets" color="2" number="91" visible="yes" active="yes" fill="1"/>
-            <layer name="Busses" color="1" number="92" visible="yes" active="yes" fill="1"/>
-            <layer name="Pins" color="2" number="93" visible="yes" active="yes" fill="1"/>
-            <layer name="Symbols" color="4" number="94" visible="yes" active="yes" fill="1"/>
-            <layer name="Names" color="7" number="95" visible="yes" active="yes" fill="1"/>
-            <layer name="Values" color="7" number="96" visible="yes" active="yes" fill="1"/>
-            <layer name="Info" color="7" number="97" visible="yes" active="yes" fill="1"/>
-            <layer name="Guide" color="6" number="98" visible="yes" active="yes" fill="1"/>
-        </layers>
-        <library name="Upverter Library">
-            <description>Upverter Parts Library
+<eagle version="9.3.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="0" fill="1" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="0" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<description>Upverter Parts Library
 
 Created by Upverter.com</description>
-            <packages>
-                <package name="E-SWITCH_TL3315NF100Q_0">
-                    <description>SWITCH TACTILE SPST</description>
-                    <wire layer="51" y2="2.25" width="0.15" x2="-2.25" y1="-2.25" x1="-2.25"/>
-                    <wire layer="51" y2="2.25" width="0.15" x2="2.25" y1="2.25" x1="-2.25"/>
-                    <wire layer="51" y2="-2.25" width="0.15" x2="2.25" y1="2.25" x1="2.25"/>
-                    <wire layer="51" y2="-2.25" width="0.15" x2="-2.25" y1="-2.25" x1="2.25"/>
-                    <wire layer="21" y2="2.25" width="0.15" x2="1.4" y1="2.25" x1="-1.4"/>
-                    <wire layer="21" y2="-2.25" width="0.15" x2="1.4" y1="-2.25" x1="-1.4"/>
-                    <wire layer="21" y2="-0.8" width="0.15" x2="-2.25" y1="0.8" x1="-2.25"/>
-                    <wire layer="21" y2="0.8" width="0.15" x2="2.25" y1="-0.8" x1="2.25"/>
-                    <wire layer="39" y2="2.475" width="0.1" x2="-2.675" y1="-2.475" x1="-2.675"/>
-                    <wire layer="39" y2="2.475" width="0.1" x2="2.675" y1="2.475" x1="-2.675"/>
-                    <wire layer="39" y2="-2.475" width="0.1" x2="2.675" y1="2.475" x1="2.675"/>
-                    <wire layer="39" y2="-2.475" width="0.1" x2="-2.675" y1="-2.475" x1="2.675"/>
-                    <text layer="25" align="bottom-left" y="2.875" x="-2.425" rot="R0" size="1.0">&gt;NAME</text>
-                    <circle y="1.75" x="-3.15" layer="21" radius="0.25" width="0.0"/>
-                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="0.5" dy="0.7" y="1.75" x="-2.125" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="0" dx="0.5" dy="0.7" y="1.75" x="2.125" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="0" dx="0.5" dy="0.7" y="-1.75" x="-2.125" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="4" stop="yes" roundness="0" dx="0.5" dy="0.7" y="-1.75" x="2.125" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="1-2" stop="yes" roundness="0" dx="0.2" dy="1.1" y="1.75" x="-2.475" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="2-2" stop="yes" roundness="0" dx="0.2" dy="1.1" y="1.75" x="2.475" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="3-2" stop="yes" roundness="0" dx="0.2" dy="1.1" y="-1.75" x="-2.475" rot="R0" cream="yes"/>
-                    <smd layer="1" thermals="yes" name="4-2" stop="yes" roundness="0" dx="0.2" dy="1.1" y="-1.75" x="2.475" rot="R0" cream="yes"/>
-                </package>
-            </packages>
-            <symbols>
-                <symbol name="E-SWITCH_TL3315NF100Q_0_0">
-                    <description>SWITCH TACTILE SPST</description>
-                    <wire layer="94" y2="-3.81" width="0.508" x2="9.906" y1="-3.81" x1="5.334"/>
-                    <wire layer="94" y2="-2.794" width="0.508" x2="6.858" y1="-3.81" x1="6.858"/>
-                    <wire layer="94" y2="-2.794" width="0.508" x2="8.382" y1="-2.794" x1="6.858"/>
-                    <wire layer="94" y2="-3.556" width="0.508" x2="8.382" y1="-2.794" x1="8.382"/>
-                    <wire layer="94" y2="-5.08" width="0.508" x2="2.794" y1="-5.08" x1="5.334"/>
-                    <wire layer="94" y2="-5.08" width="0.508" x2="12.446" y1="-5.08" x1="9.906"/>
-                    <wire layer="94" y2="-7.62" width="0.508" x2="2.54" y1="-2.54" x1="2.54"/>
-                    <wire layer="94" y2="-7.62" width="0.508" x2="12.7" y1="-2.54" x1="12.7"/>
-                    <wire layer="94" y2="-2.54" width="0.15" x2="2.54" y1="-2.54" x1="2.54"/>
-                    <wire layer="94" y2="-2.54" width="0.15" x2="12.7" y1="-2.54" x1="12.7"/>
-                    <wire layer="94" y2="-7.62" width="0.15" x2="2.54" y1="-7.62" x1="2.54"/>
-                    <wire layer="94" y2="-7.62" width="0.15" x2="12.7" y1="-7.62" x1="12.7"/>
-                    <text layer="95" align="top-left" y="1.016" x="3.302" rot="R0" size="2.54">&gt;NAME</text>
-                    <text layer="95" align="top-left" y="-10.922" x="1.524" rot="R0" size="2.54">TL3315NF100Q</text>
-                    <pin name="1" visible="pad" length="middle" y="-2.54" x="-2.54"/>
-                    <pin name="3" visible="pad" length="middle" y="-2.54" x="17.78" rot="R180"/>
-                    <pin name="2" visible="pad" length="middle" y="-7.62" x="-2.54"/>
-                    <pin name="4" visible="pad" length="middle" y="-7.62" x="17.78" rot="R180"/>
-                    <circle y="-5.08" x="5.842" layer="94" radius="0.508" width="0.254"/>
-                    <circle y="-5.08" x="9.398" layer="94" radius="0.508" width="0.254"/>
-                </symbol>
-            </symbols>
-            <devicesets>
-                <deviceset prefix="SW" name="E-SWITCH_TL3315NF100Q">
-                    <description>SWITCH TACTILE SPST</description>
-                    <gates>
-                        <gate name="G$0" symbol="E-SWITCH_TL3315NF100Q_0_0" x="0"/>
-                    </gates>
-                    <devices>
-                        <device name="E-SWITCH_TL3315NF100Q_0_0" package="E-SWITCH_TL3315NF100Q_0">
-                            <connects>
-                                <connect gate="G$0" pad="1 1-2" pin="1"/>
-                                <connect gate="G$0" pad="2-2 2" pin="2"/>
-                                <connect gate="G$0" pad="3 3-2" pin="3"/>
-                                <connect gate="G$0" pad="4-2 4" pin="4"/>
-                            </connects>
-                            <technologies>
-                                <technology>
-                                    <attribute name="MPN" value="TL3315NF100Q"/>
-                                    <attribute name="mouser_part_number" value="612-TL3315NF100Q"/>
-                                    <attribute name="digikey_description" value="SWITCH Tactile Switch SPST-NO Top Actuated Surface Mount"/>
-                                    <attribute name="centroid_not_specified" value="No"/>
-                                    <attribute name="digikey_part_number" value="EG4620CT-ND"/>
-                                    <attribute name="lead_free" value="yes"/>
-                                    <attribute name="rohs" value="yes"/>
-                                    <attribute name="prefix" value="SW"/>
-                                    <attribute name="MF" value="E-Switch"/>
-                                    <attribute name="Circuit" value="SPST-NO"/>
-                                    <attribute name="package" value="SMT_4POS"/>
-                                    <attribute name="temperature_range_low" value="-20°C"/>
-                                    <attribute name="datasheet" value="http://spec_sheets.e-switch.com/specs/P010336.pdf"/>
-                                    <attribute name="temperature_range_high" value="+70°C"/>
-                                    <attribute name="Contact_Rating_@_Voltage" value="0.05A @ 15VDC"/>
-                                </technology>
-                            </technologies>
-                        </device>
-                    </devices>
-                </deviceset>
-            </devicesets>
-        </library>
-    </drawing>
+<packages>
+<package name="E-SWITCH_TL3315NF100Q_0">
+<description>SWITCH TACTILE SPST</description>
+<wire x1="-2.25" y1="-2.25" x2="-2.25" y2="2.25" width="0.15" layer="51"/>
+<wire x1="-2.25" y1="2.25" x2="2.25" y2="2.25" width="0.15" layer="51"/>
+<wire x1="2.25" y1="2.25" x2="2.25" y2="-2.25" width="0.15" layer="51"/>
+<wire x1="2.25" y1="-2.25" x2="-2.25" y2="-2.25" width="0.15" layer="51"/>
+<wire x1="-1.4" y1="2.25" x2="1.4" y2="2.25" width="0.15" layer="21"/>
+<wire x1="-1.4" y1="-2.25" x2="1.4" y2="-2.25" width="0.15" layer="21"/>
+<wire x1="-2.25" y1="0.8" x2="-2.25" y2="-0.8" width="0.15" layer="21"/>
+<wire x1="2.25" y1="-0.8" x2="2.25" y2="0.8" width="0.15" layer="21"/>
+<wire x1="-2.675" y1="-2.475" x2="-2.675" y2="2.475" width="0.1" layer="39"/>
+<wire x1="-2.675" y1="2.475" x2="2.675" y2="2.475" width="0.1" layer="39"/>
+<wire x1="2.675" y1="2.475" x2="2.675" y2="-2.475" width="0.1" layer="39"/>
+<wire x1="2.675" y1="-2.475" x2="-2.675" y2="-2.475" width="0.1" layer="39"/>
+<text x="-2.425" y="2.875" size="1" layer="25">&gt;NAME</text>
+<circle x="-3.15" y="1.75" radius="0.25" width="0" layer="21"/>
+<smd name="1" x="-2.125" y="1.75" dx="0.5" dy="0.7" layer="1"/>
+<smd name="2" x="2.125" y="1.75" dx="0.5" dy="0.7" layer="1"/>
+<smd name="3" x="-2.125" y="-1.75" dx="0.5" dy="0.7" layer="1"/>
+<smd name="4" x="2.125" y="-1.75" dx="0.5" dy="0.7" layer="1"/>
+<smd name="1-2" x="-2.475" y="1.75" dx="0.2" dy="1.1" layer="1"/>
+<smd name="2-2" x="2.475" y="1.75" dx="0.2" dy="1.1" layer="1"/>
+<smd name="3-2" x="-2.475" y="-1.75" dx="0.2" dy="1.1" layer="1"/>
+<smd name="4-2" x="2.475" y="-1.75" dx="0.2" dy="1.1" layer="1"/>
+</package>
+</packages>
+<symbols>
+<symbol name="E-SWITCH_TL3315NF100Q_0_0">
+<description>SWITCH TACTILE SPST</description>
+<wire x1="5.334" y1="-3.81" x2="9.906" y2="-3.81" width="0.508" layer="94"/>
+<wire x1="6.858" y1="-3.81" x2="6.858" y2="-2.794" width="0.508" layer="94"/>
+<wire x1="6.858" y1="-2.794" x2="8.382" y2="-2.794" width="0.508" layer="94"/>
+<wire x1="8.382" y1="-2.794" x2="8.382" y2="-3.556" width="0.508" layer="94"/>
+<wire x1="5.334" y1="-5.08" x2="2.794" y2="-5.08" width="0.508" layer="94"/>
+<wire x1="9.906" y1="-5.08" x2="12.446" y2="-5.08" width="0.508" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="-7.62" width="0.508" layer="94"/>
+<wire x1="12.7" y1="-2.54" x2="12.7" y2="-7.62" width="0.508" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="-2.54" width="0.15" layer="94"/>
+<wire x1="12.7" y1="-2.54" x2="12.7" y2="-2.54" width="0.15" layer="94"/>
+<wire x1="2.54" y1="-7.62" x2="2.54" y2="-7.62" width="0.15" layer="94"/>
+<wire x1="12.7" y1="-7.62" x2="12.7" y2="-7.62" width="0.15" layer="94"/>
+<text x="3.302" y="1.016" size="2.54" layer="95" align="top-left">&gt;NAME</text>
+<text x="1.524" y="-10.922" size="2.54" layer="95" align="top-left">TL3315NF100Q</text>
+<pin name="1" x="-2.54" y="-2.54" visible="pad" length="middle"/>
+<pin name="3" x="17.78" y="-2.54" visible="pad" length="middle" rot="R180"/>
+<pin name="2" x="-2.54" y="-7.62" visible="pad" length="middle"/>
+<pin name="4" x="17.78" y="-7.62" visible="pad" length="middle" rot="R180"/>
+<circle x="5.842" y="-5.08" radius="0.508" width="0.254" layer="94"/>
+<circle x="9.398" y="-5.08" radius="0.508" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="E-SWITCH_TL3315NF100Q" prefix="SW">
+<description>SWITCH TACTILE SPST</description>
+<gates>
+<gate name="G$0" symbol="E-SWITCH_TL3315NF100Q_0_0" x="0" y="0"/>
+</gates>
+<devices>
+<device name="E-SWITCH_TL3315NF100Q_0_0" package="E-SWITCH_TL3315NF100Q_0">
+<connects>
+<connect gate="G$0" pin="1" pad="1 1-2" route="any"/>
+<connect gate="G$0" pin="2" pad="2 2-2" route="any"/>
+<connect gate="G$0" pin="3" pad="3 3-2" route="any"/>
+<connect gate="G$0" pin="4" pad="4 4-2" route="any"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CENTROID_NOT_SPECIFIED" value="No"/>
+<attribute name="CIRCUIT" value="SPST-NO"/>
+<attribute name="CONTACT_RATING_@_VOLTAGE" value="0.05A @ 15VDC"/>
+<attribute name="DATASHEET" value="http://spec_sheets.e-switch.com/specs/P010336.pdf"/>
+<attribute name="DIGIKEY_DESCRIPTION" value="SWITCH Tactile Switch SPST-NO Top Actuated Surface Mount"/>
+<attribute name="DIGIKEY_PART_NUMBER" value="EG4620CT-ND"/>
+<attribute name="LEAD_FREE" value="yes"/>
+<attribute name="MF" value="E-Switch"/>
+<attribute name="MOUSER_PART_NUMBER" value="612-TL3315NF100Q"/>
+<attribute name="MPN" value="TL3315NF100Q"/>
+<attribute name="PACKAGE" value="SMT_4POS"/>
+<attribute name="PREFIX" value="SW"/>
+<attribute name="ROHS" value="yes"/>
+<attribute name="TEMPERATURE_RANGE_HIGH" value="+70°C"/>
+<attribute name="TEMPERATURE_RANGE_LOW" value="-20°C"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
 </eagle>
