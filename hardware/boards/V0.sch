@@ -21028,10 +21028,10 @@ Created by Upverter.com</description>
 <devices>
 <device name="E-SWITCH_TL3315NF160Q_0_0" package="E-SWITCH_TL3315NF160Q_0">
 <connects>
-<connect gate="G$0" pin="1" pad="1 1-2"/>
-<connect gate="G$0" pin="2" pad="2 2-2"/>
-<connect gate="G$0" pin="3" pad="3 3-2"/>
-<connect gate="G$0" pin="4" pad="4 4-2"/>
+<connect gate="G$0" pin="1" pad="1 1-2" route="any"/>
+<connect gate="G$0" pin="2" pad="2 2-2" route="any"/>
+<connect gate="G$0" pin="3" pad="3 3-2" route="any"/>
+<connect gate="G$0" pin="4" pad="4 4-2" route="any"/>
 </connects>
 <technologies>
 <technology name="">
@@ -22388,10 +22388,10 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <smd name="IN/OUT" x="1.82" y="1.12" dx="1.6" dy="1.25" layer="1" rot="R180"/>
 <smd name="IN/OUT2" x="-1.83" y="-1.11" dx="1.6" dy="1.25" layer="1" rot="R180"/>
 <smd name="GND2" x="1.84" y="-1.11" dx="1.6" dy="1.25" layer="1" rot="R180"/>
-<text x="-6.35" y="-3.81" size="1.27" layer="21">In/Out</text>
-<text x="1.27" y="2.54" size="1.27" layer="21">In/Out</text>
-<text x="-5.08" y="2.54" size="1.27" layer="21">GND</text>
-<text x="1.27" y="-3.81" size="1.27" layer="21">GND</text>
+<text x="-6.35" y="-3.81" size="1.27" layer="51">In/Out</text>
+<text x="1.27" y="2.54" size="1.27" layer="51">In/Out</text>
+<text x="-5.08" y="2.54" size="1.27" layer="51">GND</text>
+<text x="1.27" y="-3.81" size="1.27" layer="51">GND</text>
 </package>
 </packages>
 <symbols>
@@ -22957,10 +22957,10 @@ Created by Upverter.com</description>
 <devices>
 <device name="E-SWITCH_TL3315NF100Q_0_0" package="E-SWITCH_TL3315NF100Q_0">
 <connects>
-<connect gate="G$0" pin="1" pad="1 1-2"/>
-<connect gate="G$0" pin="2" pad="2 2-2"/>
-<connect gate="G$0" pin="3" pad="3 3-2"/>
-<connect gate="G$0" pin="4" pad="4 4-2"/>
+<connect gate="G$0" pin="1" pad="1 1-2" route="any"/>
+<connect gate="G$0" pin="2" pad="2 2-2" route="any"/>
+<connect gate="G$0" pin="3" pad="3 3-2" route="any"/>
+<connect gate="G$0" pin="4" pad="4 4-2" route="any"/>
 </connects>
 <technologies>
 <technology name="">
@@ -23034,27 +23034,27 @@ Created by Upverter.com</description>
 <part name="GND22" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="X3" library="con-hirose" library_urn="urn:adsk.eagle:library:152" deviceset="FH12-45S-0.5S" device="H" package3d_urn="urn:adsk.eagle:package:7301/1"/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1M"/>
+<part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="1M"/>
 <part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="33pF"/>
 <part name="C9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="33pF"/>
-<part name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10"/>
-<part name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="20"/>
-<part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="20"/>
-<part name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0201" package3d_urn="urn:adsk.eagle:package:23690/2" value="10nF"/>
-<part name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0201" package3d_urn="urn:adsk.eagle:package:23690/2" value="10nF"/>
-<part name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0201" package3d_urn="urn:adsk.eagle:package:23690/2" value="47nF"/>
-<part name="C14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0201" package3d_urn="urn:adsk.eagle:package:23690/2" value="1uF"/>
+<part name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10"/>
+<part name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="20"/>
+<part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="20"/>
+<part name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="10nF"/>
+<part name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="10nF"/>
+<part name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="47nF"/>
+<part name="C14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="1uF"/>
 <part name="U1" library="vlsi-web-e7" deviceset="VS1053" device="-L"/>
-<part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="100K"/>
+<part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100K"/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0504" package3d_urn="urn:adsk.eagle:package:23624/2" value="100nF"/>
-<part name="C16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0504" package3d_urn="urn:adsk.eagle:package:23624/2" value="100nF"/>
-<part name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0504" package3d_urn="urn:adsk.eagle:package:23624/2" value="100nF"/>
-<part name="C18" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0504" package3d_urn="urn:adsk.eagle:package:23624/2" value="100nF"/>
-<part name="C19" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0504" package3d_urn="urn:adsk.eagle:package:23624/2" value="100nF"/>
-<part name="C20" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0504" package3d_urn="urn:adsk.eagle:package:23624/2" value="100nF"/>
-<part name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="100k"/>
-<part name="R18" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="100k"/>
+<part name="C15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF"/>
+<part name="C16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF"/>
+<part name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF"/>
+<part name="C18" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF"/>
+<part name="C19" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF"/>
+<part name="C20" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF"/>
+<part name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100k"/>
+<part name="R18" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100k"/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="J3" library="USB-C_Molex-105450-0101" deviceset="MOLEX_105450-0101" device="MOLEX_105450-0101_0_0"/>
@@ -23141,10 +23141,10 @@ Created by Upverter.com</description>
 <part name="R41" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
 <part name="R42" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
 <part name="R43" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
-<part name="C28" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="C/6032-28R" package3d_urn="urn:adsk.eagle:package:23415/2" value="10uF"/>
-<part name="C29" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="C/6032-28R" package3d_urn="urn:adsk.eagle:package:23415/2" value="10uF"/>
+<part name="C28" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="10uF"/>
+<part name="C29" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="10uF"/>
 <part name="R44" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10K"/>
-<part name="R45" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="50k"/>
+<part name="R45" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="50k"/>
 <part name="GND35" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U$4" library="Crystal" deviceset="ECS12P88MHZ" device=""/>
 <part name="GND36" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -25230,11 +25230,11 @@ Fixed at 500 mA for now..</text>
 <wire x1="-38.1" y1="43.18" x2="-25.4" y2="43.18" width="0.1524" layer="91"/>
 <junction x="-38.1" y="43.18"/>
 <junction x="-25.4" y="43.18"/>
-<pinref part="C28" gate="G$1" pin="-"/>
+<pinref part="C28" gate="G$1" pin="2"/>
 <wire x1="-66.04" y1="71.12" x2="-66.04" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="-66.04" y1="66.04" x2="-58.42" y2="66.04" width="0.1524" layer="91"/>
 <junction x="-58.42" y="66.04"/>
-<pinref part="C29" gate="G$1" pin="-"/>
+<pinref part="C29" gate="G$1" pin="2"/>
 <wire x1="-66.04" y1="45.72" x2="-66.04" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="-66.04" y1="43.18" x2="-58.42" y2="43.18" width="0.1524" layer="91"/>
 <junction x="-58.42" y="43.18"/>
@@ -25383,7 +25383,7 @@ Fixed at 500 mA for now..</text>
 <wire x1="-15.24" y1="88.9" x2="-71.12" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="-71.12" y1="88.9" x2="-71.12" y2="58.42" width="0.1524" layer="91"/>
 <junction x="-71.12" y="58.42"/>
-<pinref part="C29" gate="G$1" pin="+"/>
+<pinref part="C29" gate="G$1" pin="1"/>
 <wire x1="-66.04" y1="58.42" x2="-66.04" y2="53.34" width="0.1524" layer="91"/>
 <junction x="-66.04" y="58.42"/>
 </segment>
@@ -25498,7 +25498,7 @@ Fixed at 500 mA for now..</text>
 <junction x="-15.24" y="66.04"/>
 <wire x1="-15.24" y1="66.04" x2="-15.24" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="-20.32" y1="63.5" x2="-15.24" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="C28" gate="G$1" pin="+"/>
+<pinref part="C28" gate="G$1" pin="1"/>
 <wire x1="-66.04" y1="81.28" x2="-66.04" y2="78.74" width="0.1524" layer="91"/>
 <junction x="-66.04" y="81.28"/>
 </segment>
@@ -26209,6 +26209,18 @@ It's not optimal but it's a lot less risky than hooking up the
 <pinref part="UP_SW" gate="G$0" pin="2"/>
 <wire x1="-25.4" y1="25.4" x2="-20.32" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="25.4" x2="45.72" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="UP_SW" gate="G$0" pin="1"/>
+<wire x1="-25.4" y1="25.4" x2="-30.48" y2="25.4" width="0.1524" layer="91"/>
+<junction x="-25.4" y="25.4"/>
+<pinref part="LEFT_SW" gate="G$0" pin="1"/>
+<wire x1="-58.42" y1="25.4" x2="-63.5" y2="25.4" width="0.1524" layer="91"/>
+<junction x="-58.42" y="25.4"/>
+<pinref part="RIGHT_SW" gate="G$0" pin="1"/>
+<wire x1="7.62" y1="25.4" x2="2.54" y2="25.4" width="0.1524" layer="91"/>
+<junction x="7.62" y="25.4"/>
+<pinref part="DOWN_SW" gate="G$0" pin="1"/>
+<wire x1="40.64" y1="25.4" x2="35.56" y2="25.4" width="0.1524" layer="91"/>
+<junction x="40.64" y="25.4"/>
 </segment>
 </net>
 <net name="N$32" class="0">
@@ -26324,6 +26336,9 @@ It's not optimal but it's a lot less risky than hooking up the
 <wire x1="-53.34" y1="15.24" x2="-53.34" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="-55.88" y1="12.7" x2="-55.88" y2="15.24" width="0.1524" layer="91"/>
 <junction x="-55.88" y="15.24"/>
+<pinref part="LEFT_SW" gate="G$0" pin="3"/>
+<wire x1="-58.42" y1="15.24" x2="-63.5" y2="15.24" width="0.1524" layer="91"/>
+<junction x="-58.42" y="15.24"/>
 </segment>
 </net>
 <net name="N$16" class="0">
@@ -26338,6 +26353,9 @@ It's not optimal but it's a lot less risky than hooking up the
 <wire x1="-20.32" y1="15.24" x2="-20.32" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="-22.86" y1="12.7" x2="-22.86" y2="15.24" width="0.1524" layer="91"/>
 <junction x="-22.86" y="15.24"/>
+<pinref part="UP_SW" gate="G$0" pin="3"/>
+<wire x1="-25.4" y1="15.24" x2="-30.48" y2="15.24" width="0.1524" layer="91"/>
+<junction x="-25.4" y="15.24"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -26352,6 +26370,9 @@ It's not optimal but it's a lot less risky than hooking up the
 <wire x1="12.7" y1="15.24" x2="12.7" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="12.7" x2="10.16" y2="15.24" width="0.1524" layer="91"/>
 <junction x="10.16" y="15.24"/>
+<pinref part="RIGHT_SW" gate="G$0" pin="3"/>
+<wire x1="7.62" y1="15.24" x2="2.54" y2="15.24" width="0.1524" layer="91"/>
+<junction x="7.62" y="15.24"/>
 </segment>
 </net>
 <net name="N$28" class="0">
@@ -26366,6 +26387,9 @@ It's not optimal but it's a lot less risky than hooking up the
 <wire x1="45.72" y1="15.24" x2="45.72" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="12.7" x2="43.18" y2="15.24" width="0.1524" layer="91"/>
 <junction x="43.18" y="15.24"/>
+<pinref part="DOWN_SW" gate="G$0" pin="3"/>
+<wire x1="40.64" y1="15.24" x2="35.56" y2="15.24" width="0.1524" layer="91"/>
+<junction x="40.64" y="15.24"/>
 </segment>
 </net>
 <net name="N$29" class="0">
