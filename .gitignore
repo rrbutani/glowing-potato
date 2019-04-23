@@ -85,6 +85,8 @@
 *.s#*
 *.b#*
 *.l#*
+*.job
+*.pro
 
 # LTSpice
 *.raw

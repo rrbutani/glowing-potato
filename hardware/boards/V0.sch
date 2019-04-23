@@ -23068,16 +23068,16 @@ Created by Upverter.com</description>
 <part name="LEFT_SW" library="E-Switch-TL3315NF160Q" deviceset="E-SWITCH_TL3315NF160Q" device="E-SWITCH_TL3315NF160Q_0_0">
 <attribute name="SPICEPREFIX" value="E"/>
 </part>
-<part name="R19" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="155k"/>
-<part name="R20" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="75k"/>
-<part name="R21" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="35k"/>
-<part name="R22" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="15k"/>
-<part name="R23" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5k"/>
-<part name="R26" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
+<part name="R19" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="155k"/>
+<part name="R20" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="75k"/>
+<part name="R21" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="35k"/>
+<part name="R22" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="15k"/>
+<part name="R23" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="5k"/>
+<part name="R26" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10k"/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R24" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="50k"/>
-<part name="C21" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="0.1uF"/>
-<part name="R25" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5k"/>
+<part name="R24" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="50k"/>
+<part name="C21" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="0.1uF"/>
+<part name="R25" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="5k"/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="D3" library="adafruit" deviceset="DIODE" device="SOD-523"/>
 <part name="D4" library="adafruit" deviceset="DIODE" device="SOD-523"/>
@@ -23112,8 +23112,8 @@ Created by Upverter.com</description>
 <part name="GND24" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND25" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND26" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R32" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
-<part name="R33" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5k"/>
+<part name="R32" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10k"/>
+<part name="R33" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="5k"/>
 <part name="U2" library="Microchip-MCP73831T-2ATI" deviceset="MICROCHIP_MCP73831T-2ATI-OT" device="MICROCHIP_MCP73831T-2ATI-OT_0_1"/>
 <part name="C26" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="4.7uF"/>
 <part name="GND27" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -23122,8 +23122,8 @@ Created by Upverter.com</description>
 <part name="R34" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="2k"/>
 <part name="C27" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="4.7uF"/>
 <part name="GND30" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R35" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100"/>
-<part name="R36" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="50"/>
+<part name="R35" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100"/>
+<part name="R36" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="50"/>
 <part name="CENTER_SW_PWR" library="E-Switch-TL3315NF100Q" deviceset="E-SWITCH_TL3315NF100Q" device="E-SWITCH_TL3315NF100Q_0_0"/>
 <part name="GND31" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND32" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -23134,16 +23134,16 @@ Created by Upverter.com</description>
 <part name="GUARD" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
 <part name="GND19" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND34" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R37" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="4.7k"/>
-<part name="R38" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="4.7k"/>
-<part name="R39" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="4.7k"/>
-<part name="R40" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
-<part name="R41" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
-<part name="R42" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
-<part name="R43" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
+<part name="R37" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="4.7k"/>
+<part name="R38" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="4.7k"/>
+<part name="R39" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="4.7k"/>
+<part name="R40" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10k"/>
+<part name="R41" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10k"/>
+<part name="R42" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10k"/>
+<part name="R43" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10k"/>
 <part name="C28" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="10uF"/>
 <part name="C29" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="10uF"/>
-<part name="R44" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10K"/>
+<part name="R44" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10K"/>
 <part name="R45" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="50k"/>
 <part name="GND35" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U$4" library="Crystal" deviceset="ECS12P88MHZ" device=""/>
@@ -23185,14 +23185,19 @@ Created by Upverter.com</description>
 <part name="GND47" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C36" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF"/>
 <part name="GND48" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R53" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
-<part name="R54" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="315k"/>
+<part name="R53" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10k"/>
+<part name="R54" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="315k"/>
 <part name="R55" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="25"/>
 <part name="C37" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="10uF"/>
 <part name="C38" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="0.1uF"/>
 <part name="GND49" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="VIB-" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
 <part name="VIB+" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="TP20SQ" package3d_urn="urn:adsk.eagle:package:27980/1"/>
+<part name="C39" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF"/>
+<part name="C40" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF"/>
+<part name="C41" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF"/>
+<part name="C42" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF"/>
+<part name="C43" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="10uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -25122,6 +25127,26 @@ Fixed at 500 mA for now..</text>
 <attribute name="NAME" x="103.505" y="45.72" size="1.778" layer="95" rot="R90"/>
 <attribute name="TP_SIGNAL_NAME" x="100.33" y="50.8" size="1.778" layer="97" rot="R90"/>
 </instance>
+<instance part="C39" gate="G$1" x="-27.94" y="76.2" smashed="yes">
+<attribute name="NAME" x="-26.924" y="76.835" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-26.924" y="72.009" size="1.778" layer="96"/>
+</instance>
+<instance part="C40" gate="G$1" x="-58.42" y="93.98" smashed="yes">
+<attribute name="NAME" x="-57.404" y="94.615" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-57.404" y="89.789" size="1.778" layer="96"/>
+</instance>
+<instance part="C41" gate="G$1" x="-48.26" y="93.98" smashed="yes">
+<attribute name="NAME" x="-47.244" y="94.615" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-47.244" y="89.789" size="1.778" layer="96"/>
+</instance>
+<instance part="C42" gate="G$1" x="-38.1" y="93.98" smashed="yes">
+<attribute name="NAME" x="-37.084" y="94.615" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-37.084" y="89.789" size="1.778" layer="96"/>
+</instance>
+<instance part="C43" gate="G$1" x="-66.04" y="93.98" smashed="yes">
+<attribute name="NAME" x="-65.024" y="94.615" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-65.024" y="89.789" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -25212,13 +25237,15 @@ Fixed at 500 mA for now..</text>
 <wire x1="-48.26" y1="66.04" x2="-38.1" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="-38.1" y1="66.04" x2="-38.1" y2="71.12" width="0.1524" layer="91"/>
 <junction x="-48.26" y="66.04"/>
-<wire x1="-38.1" y1="66.04" x2="-25.4" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="-38.1" y1="66.04" x2="-27.94" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="66.04" x2="-25.4" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="-25.4" y1="66.04" x2="-25.4" y2="43.18" width="0.1524" layer="91"/>
 <junction x="-38.1" y="66.04"/>
 <wire x1="-25.4" y1="43.18" x2="-25.4" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="-25.4" y1="40.64" x2="-2.54" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="-25.4" y1="40.64" x2="-20.32" y2="40.64" width="0.1524" layer="91"/>
 <junction x="-2.54" y="40.64"/>
 <pinref part="C15" gate="G$1" pin="2"/>
+<wire x1="-17.78" y1="40.64" x2="-2.54" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="-58.42" y1="45.72" x2="-58.42" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="C16" gate="G$1" pin="2"/>
 <wire x1="-58.42" y1="43.18" x2="-48.26" y2="43.18" width="0.1524" layer="91"/>
@@ -25238,6 +25265,26 @@ Fixed at 500 mA for now..</text>
 <wire x1="-66.04" y1="45.72" x2="-66.04" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="-66.04" y1="43.18" x2="-58.42" y2="43.18" width="0.1524" layer="91"/>
 <junction x="-58.42" y="43.18"/>
+<pinref part="C39" gate="G$1" pin="2"/>
+<wire x1="-27.94" y1="71.12" x2="-27.94" y2="66.04" width="0.1524" layer="91"/>
+<junction x="-27.94" y="66.04"/>
+<pinref part="C40" gate="G$1" pin="2"/>
+<wire x1="-58.42" y1="88.9" x2="-58.42" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="C41" gate="G$1" pin="2"/>
+<wire x1="-58.42" y1="86.36" x2="-48.26" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="-48.26" y1="86.36" x2="-48.26" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="C42" gate="G$1" pin="2"/>
+<wire x1="-48.26" y1="86.36" x2="-38.1" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="-38.1" y1="86.36" x2="-38.1" y2="88.9" width="0.1524" layer="91"/>
+<junction x="-48.26" y="86.36"/>
+<wire x1="-38.1" y1="86.36" x2="-17.78" y2="86.36" width="0.1524" layer="91"/>
+<junction x="-38.1" y="86.36"/>
+<pinref part="C43" gate="G$1" pin="2"/>
+<wire x1="-66.04" y1="88.9" x2="-66.04" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="-66.04" y1="86.36" x2="-58.42" y2="86.36" width="0.1524" layer="91"/>
+<junction x="-58.42" y="86.36"/>
+<wire x1="-17.78" y1="86.36" x2="-17.78" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="40.64" x2="-20.32" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R18" gate="G$1" pin="1"/>
@@ -25342,8 +25389,7 @@ Fixed at 500 mA for now..</text>
 </net>
 <net name="V3P3" class="0">
 <segment>
-<wire x1="-83.82" y1="58.42" x2="-71.12" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="-71.12" y1="58.42" x2="-66.04" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="-83.82" y1="58.42" x2="-66.04" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="-66.04" y1="58.42" x2="-58.42" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="-58.42" y1="58.42" x2="-48.26" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="-48.26" y1="58.42" x2="-38.1" y2="58.42" width="0.1524" layer="91"/>
@@ -25370,19 +25416,6 @@ Fixed at 500 mA for now..</text>
 <wire x1="-38.1" y1="53.34" x2="-38.1" y2="58.42" width="0.1524" layer="91"/>
 <junction x="-38.1" y="58.42"/>
 <label x="-83.82" y="60.96" size="1.778" layer="95" rot="R180"/>
-<pinref part="U1" gate="P" pin="IOVDD"/>
-<wire x1="-15.24" y1="81.28" x2="-12.7" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="U1" gate="P" pin="IOVDD@1"/>
-<wire x1="-12.7" y1="78.74" x2="-15.24" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="-15.24" y1="78.74" x2="-15.24" y2="81.28" width="0.1524" layer="91"/>
-<junction x="-15.24" y="78.74"/>
-<pinref part="U1" gate="P" pin="IOVDD@2"/>
-<wire x1="-12.7" y1="76.2" x2="-15.24" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="-15.24" y1="76.2" x2="-15.24" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="-15.24" y1="78.74" x2="-15.24" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="-15.24" y1="88.9" x2="-71.12" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="-71.12" y1="88.9" x2="-71.12" y2="58.42" width="0.1524" layer="91"/>
-<junction x="-71.12" y="58.42"/>
 <pinref part="C29" gate="G$1" pin="1"/>
 <wire x1="-66.04" y1="58.42" x2="-66.04" y2="53.34" width="0.1524" layer="91"/>
 <junction x="-66.04" y="58.42"/>
@@ -25397,6 +25430,36 @@ Fixed at 500 mA for now..</text>
 <wire x1="43.18" y1="43.18" x2="43.18" y2="68.58" width="0.1524" layer="91"/>
 <junction x="43.18" y="43.18"/>
 <label x="43.18" y="68.58" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="-83.82" y1="101.6" x2="-66.04" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="-66.04" y1="101.6" x2="-58.42" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="-58.42" y1="101.6" x2="-48.26" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="-48.26" y1="101.6" x2="-38.1" y2="101.6" width="0.1524" layer="91"/>
+<pinref part="C40" gate="G$1" pin="1"/>
+<wire x1="-58.42" y1="96.52" x2="-58.42" y2="101.6" width="0.1524" layer="91"/>
+<junction x="-58.42" y="101.6"/>
+<pinref part="C41" gate="G$1" pin="1"/>
+<wire x1="-48.26" y1="96.52" x2="-48.26" y2="101.6" width="0.1524" layer="91"/>
+<junction x="-48.26" y="101.6"/>
+<pinref part="C42" gate="G$1" pin="1"/>
+<wire x1="-38.1" y1="96.52" x2="-38.1" y2="101.6" width="0.1524" layer="91"/>
+<junction x="-38.1" y="101.6"/>
+<label x="-83.82" y="104.14" size="1.778" layer="95" rot="R180"/>
+<pinref part="C43" gate="G$1" pin="1"/>
+<wire x1="-66.04" y1="101.6" x2="-66.04" y2="96.52" width="0.1524" layer="91"/>
+<junction x="-66.04" y="101.6"/>
+<pinref part="U1" gate="P" pin="IOVDD"/>
+<wire x1="-15.24" y1="81.28" x2="-12.7" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="U1" gate="P" pin="IOVDD@1"/>
+<wire x1="-12.7" y1="78.74" x2="-15.24" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="78.74" x2="-15.24" y2="81.28" width="0.1524" layer="91"/>
+<junction x="-15.24" y="78.74"/>
+<pinref part="U1" gate="P" pin="IOVDD@2"/>
+<wire x1="-12.7" y1="76.2" x2="-15.24" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="76.2" x2="-15.24" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="-38.1" y1="101.6" x2="-15.24" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="101.6" x2="-15.24" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$41" class="0">
@@ -25468,8 +25531,9 @@ Fixed at 500 mA for now..</text>
 </net>
 <net name="V1P8" class="0">
 <segment>
-<wire x1="-38.1" y1="81.28" x2="-20.32" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="-38.1" y1="81.28" x2="-27.94" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="C20" gate="G$1" pin="1"/>
+<wire x1="-27.94" y1="81.28" x2="-20.32" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="-38.1" y1="78.74" x2="-38.1" y2="81.28" width="0.1524" layer="91"/>
 <junction x="-38.1" y="81.28"/>
 <wire x1="-48.26" y1="81.28" x2="-38.1" y2="81.28" width="0.1524" layer="91"/>
@@ -25501,6 +25565,9 @@ Fixed at 500 mA for now..</text>
 <pinref part="C28" gate="G$1" pin="1"/>
 <wire x1="-66.04" y1="81.28" x2="-66.04" y2="78.74" width="0.1524" layer="91"/>
 <junction x="-66.04" y="81.28"/>
+<pinref part="C39" gate="G$1" pin="1"/>
+<wire x1="-27.94" y1="78.74" x2="-27.94" y2="81.28" width="0.1524" layer="91"/>
+<junction x="-27.94" y="81.28"/>
 </segment>
 </net>
 <net name="N$27" class="0">
