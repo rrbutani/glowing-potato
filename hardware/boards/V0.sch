@@ -1754,7 +1754,7 @@ From the &lt;a href="https://www.silabs.com/documents/public/data-sheets/cp2102n
 <vertex x="-1.7" y="-1.7"/>
 <vertex x="-1.7" y="1.3"/>
 </polygon>
-<text x="-1.65" y="3.34" size="0.6" layer="25" ratio="2">&gt; NAME</text>
+<text x="-1.65" y="3.34" size="0.6" layer="25" ratio="2">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -23831,13 +23831,6 @@ IO2.</text>
 <junction x="-45.72" y="-86.36"/>
 </segment>
 </net>
-<net name="IO0" class="0">
-<segment>
-<pinref part="Q3" gate="G$1" pin="C"/>
-<wire x1="-73.66" y1="-93.98" x2="-66.04" y2="-93.98" width="0.1524" layer="91"/>
-<label x="-68.58" y="-93.98" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="V3P3" class="0">
 <segment>
 <wire x1="-121.92" y1="91.44" x2="-104.14" y2="91.44" width="0.1524" layer="91"/>
@@ -23970,6 +23963,11 @@ IO2.</text>
 <pinref part="U$1" gate="G$1" pin="IO0"/>
 <wire x1="22.86" y1="-50.8" x2="22.86" y2="-68.58" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="-68.58" x2="22.86" y2="-68.58" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="Q3" gate="G$1" pin="C"/>
+<wire x1="-73.66" y1="-93.98" x2="-66.04" y2="-93.98" width="0.1524" layer="91"/>
+<label x="-68.58" y="-93.98" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO4" class="0">
