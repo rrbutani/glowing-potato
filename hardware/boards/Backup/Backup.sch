@@ -7186,6 +7186,39 @@ Stereo jack with two switches. Kycon STX3100, CUI SJ1-3555NG and/or 4UCon 05544<
 </deviceset>
 </devicesets>
 </library>
+<library name="supply1" urn="urn:adsk.eagle:library:371">
+<description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
+ GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
+ Please keep in mind, that these devices are necessary for the
+ automatic wiring of the supply signals.&lt;p&gt;
+ The pin name defined in the symbol is identical to the net which is to be wired automatically.&lt;p&gt;
+ In this library the device names are the same as the pin names of the symbols, therefore the correct signal names appear next to the supply symbols in the schematic.&lt;p&gt;
+ &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="GND" urn="urn:adsk.eagle:symbol:26925/1" library_version="1">
+<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
+<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="GND" urn="urn:adsk.eagle:component:26954/1" prefix="GND" library_version="1">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="GND" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -7221,6 +7254,8 @@ Stereo jack with two switches. Kycon STX3100, CUI SJ1-3555NG and/or 4UCon 05544<
 <part name="X1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="STEREOJACK" device="" package3d_urn="urn:adsk.eagle:package:6240705/1"/>
 <part name="R1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="R-US_" device="0204/2V" package3d_urn="urn:adsk.eagle:package:6240630/1" value="100k"/>
 <part name="C2" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="C-US" device="025-024X044" package3d_urn="urn:adsk.eagle:package:6240324/1" value="50uF"/>
+<part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7338,25 +7373,11 @@ Stereo jack with two switches. Kycon STX3100, CUI SJ1-3555NG and/or 4UCon 05544<
 <label x="48.26" y="48.26" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO2" class="0">
-<segment>
-<pinref part="ESP32-1" gate="A" pin="15"/>
-<wire x1="58.42" y1="45.72" x2="48.26" y2="45.72" width="0.1524" layer="91"/>
-<label x="48.26" y="45.72" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="IO4" class="0">
 <segment>
 <pinref part="ESP32-1" gate="A" pin="16"/>
 <wire x1="58.42" y1="43.18" x2="48.26" y2="43.18" width="0.1524" layer="91"/>
 <label x="48.26" y="43.18" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="IO0" class="0">
-<segment>
-<pinref part="ESP32-1" gate="A" pin="17"/>
-<wire x1="58.42" y1="40.64" x2="48.26" y2="40.64" width="0.1524" layer="91"/>
-<label x="48.26" y="40.64" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="3V3" class="0">
@@ -7516,6 +7537,17 @@ Stereo jack with two switches. Kycon STX3100, CUI SJ1-3555NG and/or 4UCon 05544<
 <label x="71.12" y="50.8" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="IO2" class="0">
+<segment>
+<pinref part="ESP32-1" gate="A" pin="17"/>
+<wire x1="58.42" y1="40.64" x2="40.64" y2="40.64" width="0.1524" layer="91"/>
+<label x="48.26" y="40.64" size="1.778" layer="95"/>
+<pinref part="ESP32-1" gate="A" pin="15"/>
+<wire x1="58.42" y1="45.72" x2="40.64" y2="45.72" width="0.1524" layer="91"/>
+<label x="48.26" y="45.72" size="1.778" layer="95"/>
+<wire x1="40.64" y1="40.64" x2="40.64" y2="45.72" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
@@ -7571,6 +7603,9 @@ Stereo jack with two switches. Kycon STX3100, CUI SJ1-3555NG and/or 4UCon 05544<
 <attribute name="NAME" x="110.49" y="64.5414" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="110.49" y="69.342" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="GND1" gate="1" x="53.34" y="38.1" smashed="yes">
+<attribute name="VALUE" x="50.8" y="35.56" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -7607,8 +7642,19 @@ Stereo jack with two switches. Kycon STX3100, CUI SJ1-3555NG and/or 4UCon 05544<
 <label x="86.36" y="45.72" size="1.778" layer="95"/>
 <wire x1="111.76" y1="66.04" x2="114.3" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="66.04" x2="114.3" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="45.72" x2="76.2" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="45.72" x2="91.44" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
+<pinref part="VS1053-2" gate="A" pin="6"/>
+<wire x1="91.44" y1="45.72" x2="76.2" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="43.18" x2="91.44" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="43.18" x2="91.44" y2="45.72" width="0.1524" layer="91"/>
+<junction x="91.44" y="45.72"/>
+</segment>
+<segment>
+<pinref part="VS1053-1" gate="A" pin="13"/>
+<wire x1="68.58" y1="43.18" x2="53.34" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="43.18" x2="53.34" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="GND1" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="SPI_MISO" class="0">
@@ -7642,10 +7688,7 @@ Stereo jack with two switches. Kycon STX3100, CUI SJ1-3555NG and/or 4UCon 05544<
 <net name="N$1" class="0">
 <segment>
 <pinref part="VS1053-1" gate="A" pin="9"/>
-<pinref part="VS1053-2" gate="A" pin="4"/>
 <wire x1="68.58" y1="53.34" x2="58.42" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="38.1" x2="96.52" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="X1" gate="1" pin="5"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -7714,12 +7757,6 @@ Stereo jack with two switches. Kycon STX3100, CUI SJ1-3555NG and/or 4UCon 05544<
 <wire x1="68.58" y1="45.72" x2="58.42" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$13" class="0">
-<segment>
-<pinref part="VS1053-1" gate="A" pin="13"/>
-<wire x1="68.58" y1="43.18" x2="58.42" y2="43.18" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$14" class="0">
 <segment>
 <pinref part="VS1053-1" gate="A" pin="14"/>
@@ -7757,28 +7794,29 @@ Stereo jack with two switches. Kycon STX3100, CUI SJ1-3555NG and/or 4UCon 05544<
 <wire x1="76.2" y1="50.8" x2="86.36" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$29" class="0">
-<segment>
-<pinref part="VS1053-2" gate="A" pin="6"/>
-<wire x1="76.2" y1="43.18" x2="86.36" y2="43.18" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$30" class="0">
-<segment>
-<pinref part="VS1053-2" gate="A" pin="5"/>
-<wire x1="76.2" y1="40.64" x2="88.9" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="40.64" x2="88.9" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="30.48" x2="96.52" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="X1" gate="1" pin="2"/>
-</segment>
-</net>
 <net name="N$17" class="0">
 <segment>
 <pinref part="VS1053-2" gate="A" pin="3"/>
-<wire x1="76.2" y1="35.56" x2="86.36" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="35.56" x2="86.36" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="33.02" x2="96.52" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="X1" gate="1" pin="3"/>
+<wire x1="76.2" y1="35.56" x2="93.98" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="35.56" x2="93.98" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="X1" gate="1" pin="2"/>
+<wire x1="93.98" y1="30.48" x2="96.52" y2="30.48" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$21" class="0">
+<segment>
+<pinref part="VS1053-2" gate="A" pin="5"/>
+<wire x1="76.2" y1="40.64" x2="91.44" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="X1" gate="1" pin="1"/>
+<wire x1="91.44" y1="40.64" x2="91.44" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="27.94" x2="96.52" y2="27.94" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$13" class="0">
+<segment>
+<pinref part="VS1053-2" gate="A" pin="4"/>
+<pinref part="X1" gate="1" pin="5"/>
+<wire x1="76.2" y1="38.1" x2="96.52" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
@@ -7862,117 +7900,57 @@ Stereo jack with two switches. Kycon STX3100, CUI SJ1-3555NG and/or 4UCon 05544<
 <sheet>
 <description>SD CARD</description>
 <plain>
+<text x="-86.36" y="71.12" size="1.778" layer="97" rot="R180">Card Detect A</text>
+<text x="-86.36" y="73.66" size="1.778" layer="97" rot="R180">Card Detect B</text>
+<text x="-86.36" y="76.2" size="1.778" layer="97" rot="R180">1: DAT2</text>
+<text x="-86.36" y="78.74" size="1.778" layer="97" rot="R180">2: CD/DAT3</text>
+<text x="-86.36" y="81.28" size="1.778" layer="97" rot="R180">3: CMD</text>
+<text x="-86.36" y="83.82" size="1.778" layer="97" rot="R180">4: VDD</text>
+<text x="-86.36" y="86.36" size="1.778" layer="97" rot="R180">5: CLK</text>
+<text x="-86.36" y="88.9" size="1.778" layer="97" rot="R180">6: VSS</text>
+<text x="-86.36" y="91.44" size="1.778" layer="97" rot="R180">7: DAT0</text>
+<text x="-86.36" y="93.98" size="1.778" layer="97" rot="R180">8: DAT1</text>
 </plain>
 <instances>
 <instance part="SDCARD" gate="G$1" x="-83.82" y="81.28" smashed="yes" rot="R180">
 <attribute name="NAME" x="-77.47" y="67.945" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-77.47" y="99.06" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R12" gate="G$1" x="-48.26" y="96.52" smashed="yes" rot="R90">
-<attribute name="NAME" x="-49.7586" y="92.71" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-44.958" y="92.71" size="1.778" layer="96" rot="R90"/>
+<instance part="R12" gate="G$1" x="-53.34" y="106.68" smashed="yes">
+<attribute name="NAME" x="-57.15" y="108.1786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-57.15" y="103.378" size="1.778" layer="96"/>
 </instance>
-<instance part="R13" gate="G$1" x="-33.02" y="96.52" smashed="yes" rot="R90">
-<attribute name="NAME" x="-34.5186" y="92.71" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-29.718" y="92.71" size="1.778" layer="96" rot="R90"/>
+<instance part="R13" gate="G$1" x="-38.1" y="101.6" smashed="yes">
+<attribute name="NAME" x="-41.91" y="103.0986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-41.91" y="98.298" size="1.778" layer="96"/>
 </instance>
-<instance part="R14" gate="G$1" x="-20.32" y="96.52" smashed="yes" rot="R90">
-<attribute name="NAME" x="-21.8186" y="92.71" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-17.018" y="92.71" size="1.778" layer="96" rot="R90"/>
+<instance part="R14" gate="G$1" x="-25.4" y="96.52" smashed="yes">
+<attribute name="NAME" x="-29.21" y="98.0186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-29.21" y="93.218" size="1.778" layer="96"/>
 </instance>
-<instance part="R15" gate="G$1" x="-7.62" y="96.52" smashed="yes" rot="R90">
-<attribute name="NAME" x="-9.1186" y="92.71" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-4.318" y="92.71" size="1.778" layer="96" rot="R90"/>
+<instance part="R15" gate="G$1" x="-12.7" y="91.44" smashed="yes">
+<attribute name="NAME" x="-16.51" y="92.9386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-16.51" y="88.138" size="1.778" layer="96"/>
 </instance>
-<instance part="R16" gate="G$1" x="5.08" y="96.52" smashed="yes" rot="R90">
-<attribute name="NAME" x="3.5814" y="92.71" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="8.382" y="92.71" size="1.778" layer="96" rot="R90"/>
+<instance part="R16" gate="G$1" x="0" y="86.36" smashed="yes">
+<attribute name="NAME" x="-3.81" y="87.8586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-3.81" y="83.058" size="1.778" layer="96"/>
 </instance>
-<instance part="R17" gate="G$1" x="20.32" y="96.52" smashed="yes" rot="R90">
-<attribute name="NAME" x="18.8214" y="92.71" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="23.622" y="92.71" size="1.778" layer="96" rot="R90"/>
+<instance part="R17" gate="G$1" x="15.24" y="81.28" smashed="yes">
+<attribute name="NAME" x="11.43" y="82.7786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="11.43" y="77.978" size="1.778" layer="96"/>
 </instance>
 <instance part="C2" gate="G$1" x="40.64" y="76.2" smashed="yes">
 <attribute name="NAME" x="41.656" y="76.835" size="1.778" layer="95"/>
 <attribute name="VALUE" x="41.656" y="72.009" size="1.778" layer="96"/>
 </instance>
+<instance part="GND2" gate="1" x="-68.58" y="88.9" smashed="yes" rot="R90">
+<attribute name="VALUE" x="-66.04" y="86.36" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="IO2" class="0">
-<segment>
-<wire x1="-53.34" y1="101.6" x2="-53.34" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="-53.34" y1="91.44" x2="-48.26" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="-48.26" y1="91.44" x2="-40.64" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="-40.64" y1="91.44" x2="-40.64" y2="96.52" width="0.1524" layer="91"/>
-<label x="-40.64" y="96.52" size="1.778" layer="95"/>
-<wire x1="-53.34" y1="101.6" x2="-68.58" y2="101.6" width="0.1524" layer="91"/>
-<pinref part="SDCARD" gate="G$1" pin="9"/>
-<wire x1="-68.58" y1="101.6" x2="-68.58" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="-68.58" y1="91.44" x2="-81.28" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="R12" gate="G$1" pin="1"/>
-<junction x="-48.26" y="91.44"/>
-</segment>
-</net>
-<net name="IO14" class="0">
-<segment>
-<wire x1="-60.96" y1="76.2" x2="20.32" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="76.2" x2="20.32" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="76.2" x2="30.48" y2="76.2" width="0.1524" layer="91"/>
-<junction x="20.32" y="76.2"/>
-<wire x1="30.48" y1="76.2" x2="30.48" y2="93.98" width="0.1524" layer="91"/>
-<label x="30.48" y="93.98" size="1.778" layer="95"/>
-<pinref part="SDCARD" gate="G$1" pin="4"/>
-<wire x1="-81.28" y1="78.74" x2="-60.96" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="-60.96" y1="78.74" x2="-60.96" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="R17" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="IO13" class="0">
-<segment>
-<wire x1="-81.28" y1="83.82" x2="-7.62" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="-7.62" y1="83.82" x2="-7.62" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="-7.62" y1="83.82" x2="-2.54" y2="83.82" width="0.1524" layer="91"/>
-<junction x="-7.62" y="83.82"/>
-<wire x1="-2.54" y1="83.82" x2="-2.54" y2="99.06" width="0.1524" layer="91"/>
-<label x="-2.54" y="99.06" size="1.778" layer="95"/>
-<pinref part="SDCARD" gate="G$1" pin="6"/>
-<pinref part="R15" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="IO4" class="0">
-<segment>
-<wire x1="-66.04" y1="96.52" x2="-55.88" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="-55.88" y1="96.52" x2="-55.88" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="-55.88" y1="88.9" x2="-33.02" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="-33.02" y1="88.9" x2="-33.02" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="-33.02" y1="88.9" x2="-27.94" y2="88.9" width="0.1524" layer="91"/>
-<junction x="-33.02" y="88.9"/>
-<wire x1="-27.94" y1="88.9" x2="-27.94" y2="96.52" width="0.1524" layer="91"/>
-<label x="-27.94" y="96.52" size="1.778" layer="95"/>
-<wire x1="-66.04" y1="96.52" x2="-66.04" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="SDCARD" gate="G$1" pin="8"/>
-<wire x1="-66.04" y1="88.9" x2="-81.28" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="R13" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="IO12" class="0">
-<segment>
-<wire x1="-58.42" y1="91.44" x2="-58.42" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="-58.42" y1="86.36" x2="-20.32" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="-20.32" y1="86.36" x2="-20.32" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="-20.32" y1="86.36" x2="-15.24" y2="86.36" width="0.1524" layer="91"/>
-<junction x="-20.32" y="86.36"/>
-<wire x1="-15.24" y1="86.36" x2="-15.24" y2="96.52" width="0.1524" layer="91"/>
-<label x="-15.24" y="96.52" size="1.778" layer="95"/>
-<pinref part="SDCARD" gate="G$1" pin="7"/>
-<wire x1="-81.28" y1="86.36" x2="-63.5" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="-63.5" y1="86.36" x2="-63.5" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="-63.5" y1="91.44" x2="-58.42" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="R14" gate="G$1" pin="1"/>
-</segment>
-</net>
 <net name="V3P3" class="0">
 <segment>
 <wire x1="-48.26" y1="106.68" x2="-33.02" y2="106.68" width="0.1524" layer="91"/>
@@ -7982,25 +7960,19 @@ Stereo jack with two switches. Kycon STX3100, CUI SJ1-3555NG and/or 4UCon 05544<
 <wire x1="5.08" y1="106.68" x2="20.32" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="106.68" x2="40.64" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="106.68" x2="40.64" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="-48.26" y1="101.6" x2="-48.26" y2="106.68" width="0.1524" layer="91"/>
-<junction x="-48.26" y="106.68"/>
 <wire x1="-33.02" y1="101.6" x2="-33.02" y2="106.68" width="0.1524" layer="91"/>
 <junction x="-33.02" y="106.68"/>
-<wire x1="-20.32" y1="101.6" x2="-20.32" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="96.52" x2="-20.32" y2="106.68" width="0.1524" layer="91"/>
 <junction x="-20.32" y="106.68"/>
-<wire x1="-7.62" y1="101.6" x2="-7.62" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="91.44" x2="-7.62" y2="106.68" width="0.1524" layer="91"/>
 <junction x="-7.62" y="106.68"/>
-<wire x1="5.08" y1="101.6" x2="5.08" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="86.36" x2="5.08" y2="106.68" width="0.1524" layer="91"/>
 <junction x="5.08" y="106.68"/>
-<wire x1="20.32" y1="101.6" x2="20.32" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="81.28" x2="20.32" y2="106.68" width="0.1524" layer="91"/>
 <junction x="20.32" y="106.68"/>
 <wire x1="40.64" y1="106.68" x2="40.64" y2="111.76" width="0.1524" layer="91"/>
 <junction x="40.64" y="106.68"/>
 <label x="40.64" y="111.76" size="1.778" layer="95"/>
-<wire x1="-48.26" y1="106.68" x2="-73.66" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="-73.66" y1="106.68" x2="-73.66" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="SDCARD" gate="G$1" pin="10"/>
-<wire x1="-73.66" y1="93.98" x2="-81.28" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="R12" gate="G$1" pin="2"/>
 <pinref part="R13" gate="G$1" pin="2"/>
 <pinref part="R14" gate="G$1" pin="2"/>
@@ -8010,44 +7982,87 @@ Stereo jack with two switches. Kycon STX3100, CUI SJ1-3555NG and/or 4UCon 05544<
 <pinref part="C2" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<label x="-58.42" y="63.5" size="1.778" layer="95"/>
-<pinref part="SDCARD" gate="G$1" pin="2"/>
-<wire x1="-81.28" y1="73.66" x2="-68.58" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="-68.58" y1="73.66" x2="-68.58" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="-68.58" y1="63.5" x2="-58.42" y2="63.5" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="IO15" class="0">
-<segment>
-<wire x1="-81.28" y1="81.28" x2="5.08" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="81.28" x2="5.08" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="81.28" x2="12.7" y2="81.28" width="0.1524" layer="91"/>
-<junction x="5.08" y="81.28"/>
-<wire x1="12.7" y1="81.28" x2="12.7" y2="96.52" width="0.1524" layer="91"/>
-<label x="12.7" y="96.52" size="1.778" layer="95"/>
-<pinref part="SDCARD" gate="G$1" pin="5"/>
-<pinref part="R16" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="CARD_DETECT" class="0">
-<segment>
-<label x="-58.42" y="58.42" size="1.778" layer="95"/>
-<pinref part="SDCARD" gate="G$1" pin="1"/>
-<wire x1="-81.28" y1="71.12" x2="-71.12" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="-71.12" y1="71.12" x2="-71.12" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="-71.12" y1="58.42" x2="-58.42" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="SDCARD" gate="G$1" pin="6"/>
+<wire x1="-81.28" y1="83.82" x2="-71.12" y2="83.82" width="0.1524" layer="91"/>
+<label x="-71.12" y="83.82" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<wire x1="-63.5" y1="71.12" x2="40.64" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="SDCARD" gate="G$1" pin="3"/>
-<wire x1="-81.28" y1="76.2" x2="-63.5" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="-63.5" y1="76.2" x2="-63.5" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="2"/>
 <wire x1="40.64" y1="71.12" x2="40.64" y2="66.04" width="0.1524" layer="91"/>
-<junction x="40.64" y="71.12"/>
 <label x="40.64" y="63.5" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SDCARD" gate="G$1" pin="8"/>
+<wire x1="-81.28" y1="88.9" x2="-71.12" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+</segment>
+</net>
+<net name="IO4" class="0">
+<segment>
+<pinref part="SDCARD" gate="G$1" pin="10"/>
+<pinref part="R12" gate="G$1" pin="1"/>
+<wire x1="-81.28" y1="93.98" x2="-58.42" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="-58.42" y1="93.98" x2="-58.42" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="-58.42" y1="106.68" x2="-58.42" y2="114.3" width="0.1524" layer="91"/>
+<junction x="-58.42" y="106.68"/>
+<label x="-58.42" y="114.3" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="IO2" class="0">
+<segment>
+<pinref part="SDCARD" gate="G$1" pin="9"/>
+<pinref part="R13" gate="G$1" pin="1"/>
+<wire x1="-81.28" y1="91.44" x2="-43.18" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="91.44" x2="-43.18" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="101.6" x2="-43.18" y2="114.3" width="0.1524" layer="91"/>
+<junction x="-43.18" y="101.6"/>
+<label x="-43.18" y="114.3" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="IO14" class="0">
+<segment>
+<pinref part="SDCARD" gate="G$1" pin="7"/>
+<pinref part="R14" gate="G$1" pin="1"/>
+<wire x1="-81.28" y1="86.36" x2="-30.48" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="-30.48" y1="86.36" x2="-30.48" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="-30.48" y1="96.52" x2="-30.48" y2="114.3" width="0.1524" layer="91"/>
+<junction x="-30.48" y="96.52"/>
+<label x="-30.48" y="114.3" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="IO15" class="0">
+<segment>
+<pinref part="SDCARD" gate="G$1" pin="5"/>
+<pinref part="R15" gate="G$1" pin="1"/>
+<wire x1="-81.28" y1="81.28" x2="-17.78" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="81.28" x2="-17.78" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="91.44" x2="-17.78" y2="114.3" width="0.1524" layer="91"/>
+<junction x="-17.78" y="91.44"/>
+<label x="-17.78" y="114.3" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="IO13" class="0">
+<segment>
+<pinref part="SDCARD" gate="G$1" pin="4"/>
+<pinref part="R16" gate="G$1" pin="1"/>
+<wire x1="-81.28" y1="78.74" x2="-5.08" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="78.74" x2="-5.08" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="86.36" x2="-5.08" y2="114.3" width="0.1524" layer="91"/>
+<junction x="-5.08" y="86.36"/>
+<label x="-5.08" y="114.3" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="IO12" class="0">
+<segment>
+<pinref part="SDCARD" gate="G$1" pin="3"/>
+<pinref part="R17" gate="G$1" pin="1"/>
+<wire x1="-81.28" y1="76.2" x2="10.16" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="76.2" x2="10.16" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="81.28" x2="10.16" y2="114.3" width="0.1524" layer="91"/>
+<junction x="10.16" y="81.28"/>
+<label x="10.16" y="114.3" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
