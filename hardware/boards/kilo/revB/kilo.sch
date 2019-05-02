@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.0">
+<eagle version="9.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -18731,6 +18731,49 @@ Source: AVX .. aphvc.pdf</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="106,1,58.42,33.02,5V,,,,,"/>
+<approved hash="106,1,58.42,81.28,CLK,,,,,"/>
+<approved hash="106,1,66.04,38.1,EN,,,,,"/>
+<approved hash="106,1,66.04,76.2,FCLK,,,,,"/>
+<approved hash="106,1,66.04,81.28,FSD1,,,,,"/>
+<approved hash="106,1,66.04,78.74,FSD3,,,,,"/>
+<approved hash="106,1,66.04,71.12,I2C_SCL,,,,,"/>
+<approved hash="106,1,66.04,73.66,I2C_SDA,,,,,"/>
+<approved hash="106,1,66.04,45.72,IO34,,,,,"/>
+<approved hash="106,1,66.04,48.26,IO35,,,,,"/>
+<approved hash="106,2,68.58,53.34,N$1,,,,,"/>
+<approved hash="106,2,68.58,73.66,N$2,,,,,"/>
+<approved hash="106,2,68.58,71.12,N$3,,,,,"/>
+<approved hash="106,2,68.58,68.58,N$4,,,,,"/>
+<approved hash="106,2,68.58,66.04,N$5,,,,,"/>
+<approved hash="106,2,68.58,63.5,N$6,,,,,"/>
+<approved hash="106,2,68.58,60.96,N$7,,,,,"/>
+<approved hash="106,2,68.58,58.42,N$8,,,,,"/>
+<approved hash="106,2,68.58,55.88,N$9,,,,,"/>
+<approved hash="106,2,68.58,50.8,N$10,,,,,"/>
+<approved hash="106,2,68.58,48.26,N$11,,,,,"/>
+<approved hash="106,2,68.58,45.72,N$12,,,,,"/>
+<approved hash="106,2,68.58,40.64,N$14,,,,,"/>
+<approved hash="106,2,68.58,38.1,N$15,,,,,"/>
+<approved hash="106,2,68.58,35.56,N$16,,,,,"/>
+<approved hash="106,2,76.2,71.12,N$18,,,,,"/>
+<approved hash="106,2,76.2,50.8,N$26,,,,,"/>
+<approved hash="106,1,66.04,53.34,RX0,,,,,"/>
+<approved hash="106,1,58.42,78.74,SD0,,,,,"/>
+<approved hash="106,1,58.42,76.2,SD2,,,,,"/>
+<approved hash="106,1,58.42,71.12,SVN,,,,,"/>
+<approved hash="106,1,66.04,50.8,TX0,,,,,"/>
+<approved hash="113,1,59.7022,58.6461,ESP32-1,,,,,"/>
+<approved hash="113,1,64.7578,55.6539,ESP32-2,,,,,"/>
+<approved hash="113,2,70.429,53.5661,VS1053-1,,,,,"/>
+<approved hash="113,2,74.351,50.5739,VS1053-2,,,,,"/>
+<approved hash="113,5,-83.5254,116.84,S1,,,,,"/>
+<approved hash="113,5,-55.5854,119.38,S2,,,,,"/>
+<approved hash="113,5,-37.8054,119.38,S3,,,,,"/>
+<approved hash="113,5,-17.4854,119.38,S4,,,,,"/>
+<approved hash="113,5,2.83464,119.38,S5,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
