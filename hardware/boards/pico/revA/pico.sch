@@ -14800,8 +14800,8 @@ Created by Upverter.com</description>
 <part name="GND35" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U$4" library="Crystal" deviceset="ECS12P88MHZ" device=""/>
 <part name="GND36" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C30" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0201" package3d_urn="urn:adsk.eagle:package:23690/2" value="2.7pF"/>
-<part name="C31" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0201" package3d_urn="urn:adsk.eagle:package:23690/2" value="4.7pF"/>
+<part name="C30" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="2.7pF"/>
+<part name="C31" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="4.7pF"/>
 <part name="U$7" library="L-0402" deviceset="L-0402" device="" value="1.6nH"/>
 <part name="GND37" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND38" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -14853,7 +14853,7 @@ Created by Upverter.com</description>
 <part name="JP1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="PINHD-1X8" device="LOCK" package3d_urn="urn:adsk.eagle:package:6240709/1"/>
 <part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100KΩ"/>
 <part name="R18" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100kΩ"/>
-<part name="R56" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="0Ω"/>
+<part name="R56" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="0Ω"/>
 </parts>
 <sheets>
 <sheet>
@@ -18002,6 +18002,9 @@ It's not optimal but it's a lot less risky than hooking up the
 <pinref part="DOWN_SW" gate="G$0" pin="1"/>
 <wire x1="40.64" y1="25.4" x2="35.56" y2="25.4" width="0.1524" layer="91"/>
 <junction x="40.64" y="25.4"/>
+<pinref part="CENTER_SW" gate="G$0" pin="1"/>
+<wire x1="66.04" y1="30.48" x2="71.12" y2="30.48" width="0.1524" layer="91"/>
+<junction x="71.12" y="30.48"/>
 </segment>
 </net>
 <net name="N$32" class="0">
@@ -18082,6 +18085,9 @@ It's not optimal but it's a lot less risky than hooking up the
 <pinref part="CENTER_SW_PWR" gate="G$0" pin="4"/>
 <pinref part="GND31" gate="1" pin="GND"/>
 <wire x1="139.7" y1="12.7" x2="139.7" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="CENTER_SW_PWR" gate="G$0" pin="3"/>
+<wire x1="144.78" y1="12.7" x2="139.7" y2="12.7" width="0.1524" layer="91"/>
+<junction x="139.7" y="12.7"/>
 </segment>
 </net>
 <net name="BUTTON_DIN" class="0">
@@ -18103,6 +18109,9 @@ It's not optimal but it's a lot less risky than hooking up the
 <wire x1="139.7" y1="33.02" x2="139.7" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="35.56" x2="170.18" y2="35.56" width="0.1524" layer="91"/>
 <label x="170.18" y="38.1" size="1.778" layer="95"/>
+<pinref part="CENTER_SW_PWR" gate="G$0" pin="1"/>
+<wire x1="144.78" y1="33.02" x2="139.7" y2="33.02" width="0.1524" layer="91"/>
+<junction x="139.7" y="33.02"/>
 </segment>
 </net>
 <net name="N$46" class="0">
@@ -18185,6 +18194,9 @@ It's not optimal but it's a lot less risky than hooking up the
 <wire x1="73.66" y1="10.16" x2="71.12" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="7.62" x2="73.66" y2="10.16" width="0.1524" layer="91"/>
 <junction x="73.66" y="10.16"/>
+<pinref part="CENTER_SW" gate="G$0" pin="3"/>
+<wire x1="66.04" y1="10.16" x2="71.12" y2="10.16" width="0.1524" layer="91"/>
+<junction x="71.12" y="10.16"/>
 </segment>
 </net>
 <net name="CARD_DETECT" class="0">
