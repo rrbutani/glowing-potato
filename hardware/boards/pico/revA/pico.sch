@@ -14679,7 +14679,7 @@ Created by Upverter.com</description>
 <part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10kΩ"/>
 <part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10kΩ"/>
 <part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10kΩ"/>
-<part name="J2" library="microSD-socket-HIROSE-DM3BT-DSF-PEJS" deviceset="HIROSE_DM3BT-DSF-PEJS" device="HIROSE_DM3BT-DSF-PEJS_0_0"/>
+<part name="MICRO_SD" library="microSD-socket-HIROSE-DM3BT-DSF-PEJS" deviceset="HIROSE_DM3BT-DSF-PEJS" device="HIROSE_DM3BT-DSF-PEJS_0_0"/>
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100kΩ"/>
 <part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100kΩ"/>
 <part name="C6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="1μF"/>
@@ -14687,7 +14687,7 @@ Created by Upverter.com</description>
 <part name="U$2" library="TOSHIBA_NAND-GATE" deviceset="TOSHIBA-NAND-GATE" device=""/>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="10MΩ"/>
 <part name="GND22" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="X3" library="con-hirose" library_urn="urn:adsk.eagle:library:152" deviceset="FH12-45S-0.5S" device="H" package3d_urn="urn:adsk.eagle:package:7301/1"/>
+<part name="DISPLAY_CONN" library="con-hirose" library_urn="urn:adsk.eagle:library:152" deviceset="FH12-45S-0.5S" device="H" package3d_urn="urn:adsk.eagle:package:7301/1"/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="1MΩ"/>
 <part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="33pF"/>
@@ -14802,7 +14802,7 @@ Created by Upverter.com</description>
 <part name="GND36" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C30" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="2.7pF"/>
 <part name="C31" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="4.7pF"/>
-<part name="U$7" library="L-0402" deviceset="L-0402" device="" value="1.6nH"/>
+<part name="L3" library="L-0402" deviceset="L-0402" device="" value="1.6nH"/>
 <part name="GND37" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND38" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="TP1" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TPSQ" device="TP15SQ" package3d_urn="urn:adsk.eagle:package:27975/1"/>
@@ -14998,7 +14998,7 @@ IO2.</text>
 <attribute name="NAME" x="-70.104" y="38.735" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-70.104" y="33.909" size="1.778" layer="96"/>
 </instance>
-<instance part="U$7" gate="G$1" x="-82.296" y="40.64" smashed="yes" rot="R90">
+<instance part="L3" gate="G$1" x="-82.296" y="40.64" smashed="yes" rot="R90">
 <attribute name="NAME" x="-77.216" y="39.37" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-77.216" y="44.45" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -15347,14 +15347,14 @@ IO2.</text>
 <wire x1="-96.52" y1="48.26" x2="-96.52" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="C30" gate="G$1" pin="1"/>
 <wire x1="-96.52" y1="40.64" x2="-91.44" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="U$7" gate="G$1" pin="1"/>
+<pinref part="L3" gate="G$1" pin="1"/>
 <wire x1="-91.44" y1="40.64" x2="-89.916" y2="40.64" width="0.1524" layer="91"/>
 <junction x="-91.44" y="40.64"/>
 </segment>
 </net>
 <net name="N$31" class="0">
 <segment>
-<pinref part="U$7" gate="G$1" pin="2"/>
+<pinref part="L3" gate="G$1" pin="2"/>
 <pinref part="C31" gate="G$1" pin="1"/>
 <wire x1="-74.676" y1="40.64" x2="-71.12" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="-71.12" y1="40.64" x2="-60.96" y2="40.64" width="0.1524" layer="91"/>
@@ -15938,14 +15938,14 @@ Fixed at 500 mA for now..</text>
 <label x="-30.48" y="60.96" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="BATT_CON" gate="G$0" pin="1"/>
-<wire x1="-129.54" y1="55.88" x2="-127" y2="55.88" width="0.1524" layer="91"/>
-<label x="-127" y="55.88" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="R56" gate="G$1" pin="1"/>
 <wire x1="-129.54" y1="-5.08" x2="-137.16" y2="-5.08" width="0.1524" layer="91"/>
 <label x="-137.16" y="-5.08" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="BATT_CON" gate="G$0" pin="3"/>
+<wire x1="-129.54" y1="45.72" x2="-127" y2="45.72" width="0.1524" layer="91"/>
+<label x="-127" y="45.72" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -16007,10 +16007,6 @@ Fixed at 500 mA for now..</text>
 <wire x1="-129.54" y1="35.56" x2="-127" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="-127" y1="35.56" x2="-127" y2="40.64" width="0.1524" layer="91"/>
 <label x="-127" y="38.1" size="1.778" layer="95"/>
-<pinref part="BATT_CON" gate="G$0" pin="3"/>
-<wire x1="-129.54" y1="45.72" x2="-127" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="-127" y1="45.72" x2="-127" y2="40.64" width="0.1524" layer="91"/>
-<junction x="-127" y="40.64"/>
 </segment>
 <segment>
 <pinref part="GND27" gate="1" pin="GND"/>
@@ -16034,6 +16030,11 @@ Fixed at 500 mA for now..</text>
 <segment>
 <pinref part="R51" gate="G$1" pin="1"/>
 <pinref part="GND46" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="BATT_CON" gate="G$0" pin="1"/>
+<wire x1="-129.54" y1="55.88" x2="-127" y2="55.88" width="0.1524" layer="91"/>
+<label x="-127" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V1P8" class="0">
@@ -16153,7 +16154,7 @@ Fixed at 500 mA for now..</text>
 <attribute name="NAME" x="-52.2986" y="82.55" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="-47.498" y="82.55" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="J2" gate="G$0" x="-139.7" y="106.68" smashed="yes">
+<instance part="MICRO_SD" gate="G$0" x="-139.7" y="106.68" smashed="yes">
 <attribute name="NAME" x="-137.16" y="104.14" size="2.54" layer="95" align="top-left"/>
 </instance>
 <instance part="GND45" gate="1" x="-15.24" y="35.56" smashed="yes">
@@ -16165,7 +16166,7 @@ Fixed at 500 mA for now..</text>
 <nets>
 <net name="IO2" class="0">
 <segment>
-<pinref part="J2" gate="G$0" pin="DAT0"/>
+<pinref part="MICRO_SD" gate="G$0" pin="DAT0"/>
 <wire x1="-116.84" y1="91.44" x2="-109.22" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="-109.22" y1="91.44" x2="-109.22" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
@@ -16178,7 +16179,7 @@ Fixed at 500 mA for now..</text>
 </net>
 <net name="IO14" class="0">
 <segment>
-<pinref part="J2" gate="G$0" pin="CLK"/>
+<pinref part="MICRO_SD" gate="G$0" pin="CLK"/>
 <pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="-116.84" y1="66.04" x2="-35.56" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="-35.56" y1="66.04" x2="-35.56" y2="81.28" width="0.1524" layer="91"/>
@@ -16190,7 +16191,7 @@ Fixed at 500 mA for now..</text>
 </net>
 <net name="IO13" class="0">
 <segment>
-<pinref part="J2" gate="G$0" pin="CD/DAT3"/>
+<pinref part="MICRO_SD" gate="G$0" pin="CD/DAT3"/>
 <wire x1="-116.84" y1="76.2" x2="-116.84" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="-116.84" y1="73.66" x2="-63.5" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="1"/>
@@ -16203,7 +16204,7 @@ Fixed at 500 mA for now..</text>
 </net>
 <net name="IO4" class="0">
 <segment>
-<pinref part="J2" gate="G$0" pin="DAT1"/>
+<pinref part="MICRO_SD" gate="G$0" pin="DAT1"/>
 <wire x1="-116.84" y1="86.36" x2="-111.76" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="-111.76" y1="86.36" x2="-111.76" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="-111.76" y1="78.74" x2="-88.9" y2="78.74" width="0.1524" layer="91"/>
@@ -16217,7 +16218,7 @@ Fixed at 500 mA for now..</text>
 </net>
 <net name="IO12" class="0">
 <segment>
-<pinref part="J2" gate="G$0" pin="DAT2"/>
+<pinref part="MICRO_SD" gate="G$0" pin="DAT2"/>
 <wire x1="-116.84" y1="81.28" x2="-114.3" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="-114.3" y1="81.28" x2="-114.3" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="1"/>
@@ -16231,7 +16232,7 @@ Fixed at 500 mA for now..</text>
 </net>
 <net name="V3P3" class="0">
 <segment>
-<pinref part="J2" gate="G$0" pin="VDD"/>
+<pinref part="MICRO_SD" gate="G$0" pin="VDD"/>
 <wire x1="-116.84" y1="96.52" x2="-104.14" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="-104.14" y1="96.52" x2="-88.9" y2="96.52" width="0.1524" layer="91"/>
@@ -16264,7 +16265,7 @@ Fixed at 500 mA for now..</text>
 <label x="-15.24" y="101.6" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="J2" gate="G$0" pin="A"/>
+<pinref part="MICRO_SD" gate="G$0" pin="A"/>
 <wire x1="-116.84" y1="53.34" x2="-114.3" y2="53.34" width="0.1524" layer="91"/>
 <label x="-114.3" y="53.34" size="1.778" layer="95"/>
 </segment>
@@ -16274,21 +16275,21 @@ Fixed at 500 mA for now..</text>
 <pinref part="GND45" gate="1" pin="GND"/>
 <pinref part="C1" gate="G$1" pin="2"/>
 <wire x1="-15.24" y1="60.96" x2="-15.24" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$0" pin="MNT_1"/>
+<pinref part="MICRO_SD" gate="G$0" pin="MNT_1"/>
 <wire x1="-15.24" y1="40.64" x2="-15.24" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="-116.84" y1="40.64" x2="-106.68" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$0" pin="VSS"/>
+<pinref part="MICRO_SD" gate="G$0" pin="VSS"/>
 <wire x1="-116.84" y1="60.96" x2="-106.68" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="-106.68" y1="60.96" x2="-106.68" y2="40.64" width="0.1524" layer="91"/>
 <junction x="-106.68" y="40.64"/>
-<pinref part="J2" gate="G$0" pin="MNT_2"/>
+<pinref part="MICRO_SD" gate="G$0" pin="MNT_2"/>
 <wire x1="-116.84" y1="35.56" x2="-106.68" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="-106.68" y1="35.56" x2="-106.68" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$0" pin="MNT_3"/>
+<pinref part="MICRO_SD" gate="G$0" pin="MNT_3"/>
 <wire x1="-116.84" y1="30.48" x2="-106.68" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="-106.68" y1="30.48" x2="-106.68" y2="35.56" width="0.1524" layer="91"/>
 <junction x="-106.68" y="35.56"/>
-<pinref part="J2" gate="G$0" pin="MNT_4"/>
+<pinref part="MICRO_SD" gate="G$0" pin="MNT_4"/>
 <wire x1="-116.84" y1="25.4" x2="-106.68" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="-106.68" y1="25.4" x2="-106.68" y2="30.48" width="0.1524" layer="91"/>
 <junction x="-106.68" y="30.48"/>
@@ -16298,7 +16299,7 @@ Fixed at 500 mA for now..</text>
 </net>
 <net name="IO15" class="0">
 <segment>
-<pinref part="J2" gate="G$0" pin="CMD"/>
+<pinref part="MICRO_SD" gate="G$0" pin="CMD"/>
 <wire x1="-116.84" y1="71.12" x2="-50.8" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="-50.8" y1="71.12" x2="-50.8" y2="81.28" width="0.1524" layer="91"/>
@@ -16310,7 +16311,7 @@ Fixed at 500 mA for now..</text>
 </net>
 <net name="CARD_DETECT" class="0">
 <segment>
-<pinref part="J2" gate="G$0" pin="B"/>
+<pinref part="MICRO_SD" gate="G$0" pin="B"/>
 <wire x1="-116.84" y1="48.26" x2="-114.3" y2="48.26" width="0.1524" layer="91"/>
 <label x="-114.3" y="48.26" size="1.778" layer="95"/>
 </segment>
@@ -16325,140 +16326,140 @@ Fixed at 500 mA for now..</text>
 <instance part="GND22" gate="1" x="-33.02" y="-45.72" smashed="yes">
 <attribute name="VALUE" x="-35.56" y="-48.26" size="1.778" layer="96"/>
 </instance>
-<instance part="X3" gate="-1" x="17.78" y="63.5" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-1" x="17.78" y="63.5" smashed="yes">
 <attribute name="NAME" x="19.812" y="62.738" size="1.778" layer="95"/>
 <attribute name="VALUE" x="15.24" y="66.04" size="1.778" layer="96"/>
 </instance>
-<instance part="X3" gate="-2" x="17.78" y="60.96" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-2" x="17.78" y="60.96" smashed="yes">
 <attribute name="NAME" x="19.812" y="60.198" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-3" x="17.78" y="58.42" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-3" x="17.78" y="58.42" smashed="yes">
 <attribute name="NAME" x="19.812" y="57.658" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-4" x="17.78" y="55.88" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-4" x="17.78" y="55.88" smashed="yes">
 <attribute name="NAME" x="19.812" y="55.118" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-5" x="17.78" y="53.34" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-5" x="17.78" y="53.34" smashed="yes">
 <attribute name="NAME" x="19.812" y="52.578" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-6" x="17.78" y="50.8" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-6" x="17.78" y="50.8" smashed="yes">
 <attribute name="NAME" x="19.812" y="50.038" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-7" x="17.78" y="48.26" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-7" x="17.78" y="48.26" smashed="yes">
 <attribute name="NAME" x="19.812" y="47.498" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-8" x="17.78" y="45.72" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-8" x="17.78" y="45.72" smashed="yes">
 <attribute name="NAME" x="19.812" y="44.958" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-9" x="17.78" y="43.18" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-9" x="17.78" y="43.18" smashed="yes">
 <attribute name="NAME" x="19.812" y="42.418" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-10" x="17.78" y="40.64" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-10" x="17.78" y="40.64" smashed="yes">
 <attribute name="NAME" x="19.812" y="39.878" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-11" x="17.78" y="38.1" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-11" x="17.78" y="38.1" smashed="yes">
 <attribute name="NAME" x="19.812" y="37.338" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-12" x="17.78" y="35.56" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-12" x="17.78" y="35.56" smashed="yes">
 <attribute name="NAME" x="19.812" y="34.798" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-13" x="17.78" y="33.02" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-13" x="17.78" y="33.02" smashed="yes">
 <attribute name="NAME" x="19.812" y="32.258" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-14" x="17.78" y="30.48" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-14" x="17.78" y="30.48" smashed="yes">
 <attribute name="NAME" x="19.812" y="29.718" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-15" x="17.78" y="27.94" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-15" x="17.78" y="27.94" smashed="yes">
 <attribute name="NAME" x="19.812" y="27.178" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-16" x="17.78" y="25.4" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-16" x="17.78" y="25.4" smashed="yes">
 <attribute name="NAME" x="19.812" y="24.638" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-17" x="17.78" y="22.86" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-17" x="17.78" y="22.86" smashed="yes">
 <attribute name="NAME" x="19.812" y="22.098" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-18" x="17.78" y="20.32" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-18" x="17.78" y="20.32" smashed="yes">
 <attribute name="NAME" x="19.812" y="19.558" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-19" x="17.78" y="17.78" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-19" x="17.78" y="17.78" smashed="yes">
 <attribute name="NAME" x="19.812" y="17.018" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-20" x="17.78" y="15.24" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-20" x="17.78" y="15.24" smashed="yes">
 <attribute name="NAME" x="19.812" y="14.478" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-21" x="17.78" y="12.7" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-21" x="17.78" y="12.7" smashed="yes">
 <attribute name="NAME" x="19.812" y="11.938" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-22" x="17.78" y="10.16" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-22" x="17.78" y="10.16" smashed="yes">
 <attribute name="NAME" x="19.812" y="9.398" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-23" x="17.78" y="7.62" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-23" x="17.78" y="7.62" smashed="yes">
 <attribute name="NAME" x="19.812" y="6.858" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-24" x="17.78" y="5.08" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-24" x="17.78" y="5.08" smashed="yes">
 <attribute name="NAME" x="19.812" y="4.318" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-25" x="17.78" y="2.54" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-25" x="17.78" y="2.54" smashed="yes">
 <attribute name="NAME" x="19.812" y="1.778" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-26" x="17.78" y="0" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-26" x="17.78" y="0" smashed="yes">
 <attribute name="NAME" x="19.812" y="-0.762" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-27" x="17.78" y="-2.54" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-27" x="17.78" y="-2.54" smashed="yes">
 <attribute name="NAME" x="19.812" y="-3.302" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-28" x="17.78" y="-5.08" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-28" x="17.78" y="-5.08" smashed="yes">
 <attribute name="NAME" x="19.812" y="-5.842" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-29" x="17.78" y="-7.62" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-29" x="17.78" y="-7.62" smashed="yes">
 <attribute name="NAME" x="19.812" y="-8.382" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-30" x="17.78" y="-10.16" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-30" x="17.78" y="-10.16" smashed="yes">
 <attribute name="NAME" x="19.812" y="-10.922" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-31" x="17.78" y="-12.7" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-31" x="17.78" y="-12.7" smashed="yes">
 <attribute name="NAME" x="19.812" y="-13.462" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-32" x="17.78" y="-15.24" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-32" x="17.78" y="-15.24" smashed="yes">
 <attribute name="NAME" x="19.812" y="-16.002" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-33" x="17.78" y="-17.78" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-33" x="17.78" y="-17.78" smashed="yes">
 <attribute name="NAME" x="19.812" y="-18.542" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-34" x="17.78" y="-20.32" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-34" x="17.78" y="-20.32" smashed="yes">
 <attribute name="NAME" x="19.812" y="-21.082" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-35" x="17.78" y="-22.86" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-35" x="17.78" y="-22.86" smashed="yes">
 <attribute name="NAME" x="19.812" y="-23.622" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-36" x="17.78" y="-25.4" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-36" x="17.78" y="-25.4" smashed="yes">
 <attribute name="NAME" x="19.812" y="-26.162" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-37" x="17.78" y="-27.94" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-37" x="17.78" y="-27.94" smashed="yes">
 <attribute name="NAME" x="19.812" y="-28.702" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-38" x="17.78" y="-30.48" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-38" x="17.78" y="-30.48" smashed="yes">
 <attribute name="NAME" x="19.812" y="-31.242" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-39" x="17.78" y="-33.02" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-39" x="17.78" y="-33.02" smashed="yes">
 <attribute name="NAME" x="19.812" y="-33.782" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-40" x="17.78" y="-35.56" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-40" x="17.78" y="-35.56" smashed="yes">
 <attribute name="NAME" x="19.812" y="-36.322" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-41" x="17.78" y="-38.1" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-41" x="17.78" y="-38.1" smashed="yes">
 <attribute name="NAME" x="19.812" y="-38.862" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-42" x="17.78" y="-40.64" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-42" x="17.78" y="-40.64" smashed="yes">
 <attribute name="NAME" x="19.812" y="-41.402" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-43" x="17.78" y="-43.18" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-43" x="17.78" y="-43.18" smashed="yes">
 <attribute name="NAME" x="19.812" y="-43.942" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-44" x="17.78" y="-45.72" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-44" x="17.78" y="-45.72" smashed="yes">
 <attribute name="NAME" x="19.812" y="-46.482" size="1.778" layer="95"/>
 </instance>
-<instance part="X3" gate="-45" x="17.78" y="-48.26" smashed="yes">
+<instance part="DISPLAY_CONN" gate="-45" x="17.78" y="-48.26" smashed="yes">
 <attribute name="NAME" x="19.812" y="-49.022" size="1.778" layer="95"/>
 </instance>
 <instance part="C38" gate="G$1" x="-43.18" y="-30.48" smashed="yes">
@@ -16475,22 +16476,22 @@ Fixed at 500 mA for now..</text>
 <net name="GND" class="0">
 <segment>
 <pinref part="GND22" gate="1" pin="GND"/>
-<pinref part="X3" gate="-41" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-41" pin="1"/>
 <wire x1="15.24" y1="-38.1" x2="-33.02" y2="-38.1" width="0.1524" layer="91"/>
 <junction x="-33.02" y="-38.1"/>
 <wire x1="-33.02" y1="-38.1" x2="-33.02" y2="-43.18" width="0.1524" layer="91"/>
 <wire x1="-33.02" y1="-30.48" x2="-33.02" y2="-38.1" width="0.1524" layer="91"/>
-<pinref part="X3" gate="-39" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-39" pin="1"/>
 <wire x1="15.24" y1="-33.02" x2="7.62" y2="-33.02" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="-33.02" x2="7.62" y2="-30.48" width="0.1524" layer="91"/>
 <junction x="7.62" y="-30.48"/>
-<pinref part="X3" gate="-38" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-38" pin="1"/>
 <wire x1="15.24" y1="-30.48" x2="7.62" y2="-30.48" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="-30.48" x2="-10.16" y2="-30.48" width="0.1524" layer="91"/>
 <wire x1="-10.16" y1="-30.48" x2="-33.02" y2="-30.48" width="0.1524" layer="91"/>
 <junction x="-10.16" y="-30.48"/>
 <wire x1="-10.16" y1="-5.08" x2="-10.16" y2="-30.48" width="0.1524" layer="91"/>
-<pinref part="X3" gate="-7" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-7" pin="1"/>
 <wire x1="15.24" y1="48.26" x2="-10.16" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="-10.16" y1="43.18" x2="-10.16" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="-10.16" y1="40.64" x2="-10.16" y2="38.1" width="0.1524" layer="91"/>
@@ -16512,73 +16513,73 @@ Fixed at 500 mA for now..</text>
 <wire x1="-10.16" y1="0" x2="-10.16" y2="-2.54" width="0.1524" layer="91"/>
 <wire x1="-10.16" y1="-2.54" x2="-10.16" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="-10.16" y1="48.26" x2="-10.16" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="X3" gate="-9" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-9" pin="1"/>
 <wire x1="-10.16" y1="45.72" x2="-10.16" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="15.24" y1="43.18" x2="-10.16" y2="43.18" width="0.1524" layer="91"/>
 <junction x="-10.16" y="43.18"/>
-<pinref part="X3" gate="-8" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-8" pin="1"/>
 <wire x1="15.24" y1="45.72" x2="-10.16" y2="45.72" width="0.1524" layer="91"/>
 <junction x="-10.16" y="45.72"/>
-<pinref part="X3" gate="-10" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-10" pin="1"/>
 <wire x1="15.24" y1="40.64" x2="-10.16" y2="40.64" width="0.1524" layer="91"/>
 <junction x="-10.16" y="40.64"/>
-<pinref part="X3" gate="-11" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-11" pin="1"/>
 <wire x1="15.24" y1="38.1" x2="-10.16" y2="38.1" width="0.1524" layer="91"/>
 <junction x="-10.16" y="38.1"/>
-<pinref part="X3" gate="-12" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-12" pin="1"/>
 <wire x1="15.24" y1="35.56" x2="-10.16" y2="35.56" width="0.1524" layer="91"/>
 <junction x="-10.16" y="35.56"/>
-<pinref part="X3" gate="-13" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-13" pin="1"/>
 <wire x1="15.24" y1="33.02" x2="-10.16" y2="33.02" width="0.1524" layer="91"/>
 <junction x="-10.16" y="33.02"/>
-<pinref part="X3" gate="-14" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-14" pin="1"/>
 <wire x1="15.24" y1="30.48" x2="-10.16" y2="30.48" width="0.1524" layer="91"/>
 <junction x="-10.16" y="30.48"/>
-<pinref part="X3" gate="-15" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-15" pin="1"/>
 <wire x1="15.24" y1="27.94" x2="-10.16" y2="27.94" width="0.1524" layer="91"/>
 <junction x="-10.16" y="27.94"/>
-<pinref part="X3" gate="-16" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-16" pin="1"/>
 <wire x1="15.24" y1="25.4" x2="-10.16" y2="25.4" width="0.1524" layer="91"/>
 <junction x="-10.16" y="25.4"/>
-<pinref part="X3" gate="-17" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-17" pin="1"/>
 <wire x1="15.24" y1="22.86" x2="-10.16" y2="22.86" width="0.1524" layer="91"/>
 <junction x="-10.16" y="22.86"/>
-<pinref part="X3" gate="-18" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-18" pin="1"/>
 <wire x1="15.24" y1="20.32" x2="-10.16" y2="20.32" width="0.1524" layer="91"/>
 <junction x="-10.16" y="20.32"/>
-<pinref part="X3" gate="-19" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-19" pin="1"/>
 <wire x1="15.24" y1="17.78" x2="-10.16" y2="17.78" width="0.1524" layer="91"/>
 <junction x="-10.16" y="17.78"/>
-<pinref part="X3" gate="-20" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-20" pin="1"/>
 <wire x1="15.24" y1="15.24" x2="-10.16" y2="15.24" width="0.1524" layer="91"/>
 <junction x="-10.16" y="15.24"/>
-<pinref part="X3" gate="-21" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-21" pin="1"/>
 <wire x1="15.24" y1="12.7" x2="-10.16" y2="12.7" width="0.1524" layer="91"/>
 <junction x="-10.16" y="12.7"/>
-<pinref part="X3" gate="-22" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-22" pin="1"/>
 <wire x1="15.24" y1="10.16" x2="-10.16" y2="10.16" width="0.1524" layer="91"/>
 <junction x="-10.16" y="10.16"/>
-<pinref part="X3" gate="-23" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-23" pin="1"/>
 <wire x1="15.24" y1="7.62" x2="-10.16" y2="7.62" width="0.1524" layer="91"/>
 <junction x="-10.16" y="7.62"/>
-<pinref part="X3" gate="-24" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-24" pin="1"/>
 <wire x1="15.24" y1="5.08" x2="-10.16" y2="5.08" width="0.1524" layer="91"/>
 <junction x="-10.16" y="5.08"/>
-<pinref part="X3" gate="-25" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-25" pin="1"/>
 <wire x1="15.24" y1="2.54" x2="-10.16" y2="2.54" width="0.1524" layer="91"/>
 <junction x="-10.16" y="2.54"/>
-<pinref part="X3" gate="-26" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-26" pin="1"/>
 <wire x1="15.24" y1="0" x2="-10.16" y2="0" width="0.1524" layer="91"/>
 <junction x="-10.16" y="0"/>
-<pinref part="X3" gate="-27" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-27" pin="1"/>
 <wire x1="15.24" y1="-2.54" x2="-10.16" y2="-2.54" width="0.1524" layer="91"/>
 <junction x="-10.16" y="-2.54"/>
-<pinref part="X3" gate="-28" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-28" pin="1"/>
 <wire x1="15.24" y1="-5.08" x2="-10.16" y2="-5.08" width="0.1524" layer="91"/>
 <junction x="-10.16" y="-5.08"/>
 <wire x1="-10.16" y1="48.26" x2="-10.16" y2="58.42" width="0.1524" layer="91"/>
 <junction x="-10.16" y="48.26"/>
-<pinref part="X3" gate="-3" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-3" pin="1"/>
 <wire x1="-10.16" y1="58.42" x2="15.24" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -16589,39 +16590,39 @@ Fixed at 500 mA for now..</text>
 </net>
 <net name="V3P3" class="0">
 <segment>
-<pinref part="X3" gate="-36" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-36" pin="1"/>
 <wire x1="15.24" y1="-25.4" x2="7.62" y2="-25.4" width="0.1524" layer="91"/>
-<pinref part="X3" gate="-37" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-37" pin="1"/>
 <wire x1="7.62" y1="-25.4" x2="2.54" y2="-25.4" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="-25.4" x2="-12.7" y2="-25.4" width="0.1524" layer="91"/>
 <wire x1="15.24" y1="-27.94" x2="7.62" y2="-27.94" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="-27.94" x2="7.62" y2="-25.4" width="0.1524" layer="91"/>
 <junction x="7.62" y="-25.4"/>
-<pinref part="X3" gate="-40" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-40" pin="1"/>
 <wire x1="15.24" y1="-35.56" x2="2.54" y2="-35.56" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="-35.56" x2="2.54" y2="-25.4" width="0.1524" layer="91"/>
 <junction x="2.54" y="-25.4"/>
-<pinref part="X3" gate="-5" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-5" pin="1"/>
 <wire x1="15.24" y1="53.34" x2="-12.7" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="-12.7" y1="53.34" x2="-12.7" y2="-12.7" width="0.1524" layer="91"/>
-<pinref part="X3" gate="-4" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-4" pin="1"/>
 <wire x1="-12.7" y1="-12.7" x2="-12.7" y2="-17.78" width="0.1524" layer="91"/>
 <wire x1="-12.7" y1="-17.78" x2="-12.7" y2="-25.4" width="0.1524" layer="91"/>
 <wire x1="15.24" y1="55.88" x2="-12.7" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="-12.7" y1="55.88" x2="-12.7" y2="53.34" width="0.1524" layer="91"/>
 <junction x="-12.7" y="53.34"/>
-<pinref part="X3" gate="-2" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-2" pin="1"/>
 <wire x1="15.24" y1="60.96" x2="-12.7" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="-12.7" y1="60.96" x2="-12.7" y2="55.88" width="0.1524" layer="91"/>
 <junction x="-12.7" y="55.88"/>
 <wire x1="-12.7" y1="-25.4" x2="-43.18" y2="-25.4" width="0.1524" layer="91"/>
 <junction x="-12.7" y="-25.4"/>
 <label x="-48.26" y="-25.4" size="1.778" layer="255" rot="R180"/>
-<pinref part="X3" gate="-33" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-33" pin="1"/>
 <wire x1="-43.18" y1="-25.4" x2="-45.72" y2="-25.4" width="0.1524" layer="91"/>
 <wire x1="15.24" y1="-17.78" x2="-12.7" y2="-17.78" width="0.1524" layer="91"/>
 <junction x="-12.7" y="-17.78"/>
-<pinref part="X3" gate="-31" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-31" pin="1"/>
 <wire x1="15.24" y1="-12.7" x2="-12.7" y2="-12.7" width="0.1524" layer="91"/>
 <junction x="-12.7" y="-12.7"/>
 <pinref part="C38" gate="G$1" pin="1"/>
@@ -16631,35 +16632,35 @@ Fixed at 500 mA for now..</text>
 </net>
 <net name="DISPLAY_RST" class="0">
 <segment>
-<pinref part="X3" gate="-6" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-6" pin="1"/>
 <wire x1="15.24" y1="50.8" x2="-43.18" y2="50.8" width="0.1524" layer="91"/>
 <label x="-45.72" y="50.8" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="SPI_CLK" class="0">
 <segment>
-<pinref part="X3" gate="-32" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-32" pin="1"/>
 <wire x1="15.24" y1="-15.24" x2="-45.72" y2="-15.24" width="0.1524" layer="91"/>
 <label x="-48.26" y="-15.24" size="1.778" layer="255" rot="R180"/>
 </segment>
 </net>
 <net name="SPI_MOSI" class="0">
 <segment>
-<pinref part="X3" gate="-30" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-30" pin="1"/>
 <wire x1="15.24" y1="-10.16" x2="-45.72" y2="-10.16" width="0.1524" layer="91"/>
 <label x="-48.26" y="-10.16" size="1.778" layer="255" rot="R180"/>
 </segment>
 </net>
 <net name="DISPLAY_CS" class="0">
 <segment>
-<pinref part="X3" gate="-34" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-34" pin="1"/>
 <wire x1="15.24" y1="-20.32" x2="-45.72" y2="-20.32" width="0.1524" layer="91"/>
 <label x="-48.26" y="-20.32" size="1.778" layer="255" rot="R180"/>
 </segment>
 </net>
 <net name="SPI_MISO" class="0">
 <segment>
-<pinref part="X3" gate="-29" pin="1"/>
+<pinref part="DISPLAY_CONN" gate="-29" pin="1"/>
 <wire x1="15.24" y1="-7.62" x2="-45.72" y2="-7.62" width="0.1524" layer="91"/>
 <label x="-48.26" y="-7.62" size="1.778" layer="95" rot="R180"/>
 </segment>
