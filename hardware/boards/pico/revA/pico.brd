@@ -36,7 +36,7 @@
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
@@ -55,7 +55,7 @@
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
@@ -298,14 +298,14 @@
 <vertex x="-21" y="-6.5"/>
 <vertex x="-21" y="-6"/>
 </polygon>
-<circle x="-16.49" y="-67.21" radius="1.5" width="0.1524" layer="21"/>
-<text x="-17.24" y="-66.33" size="0.254" layer="21">Magnet 7</text>
-<circle x="-16.49" y="-67.21" radius="1.5" width="0.1524" layer="22"/>
-<text x="-15.79" y="-66.32" size="0.254" layer="22" rot="MR0">Magnet 7</text>
-<circle x="16.51" y="-34.71" radius="1.5" width="0.1524" layer="21"/>
-<text x="15.76" y="-33.83" size="0.254" layer="21">Magnet 6</text>
-<circle x="16.51" y="-34.71" radius="1.5" width="0.1524" layer="22"/>
-<text x="17.21" y="-33.82" size="0.254" layer="22" rot="MR0">Magnet 6</text>
+<circle x="-16.5" y="-67.5" radius="1.5" width="0.1524" layer="21"/>
+<text x="-17.24" y="-66.73" size="0.254" layer="21">Magnet 7</text>
+<circle x="-16.5" y="-67.5" radius="1.5" width="0.1524" layer="22"/>
+<text x="-15.79" y="-66.72" size="0.254" layer="22" rot="MR0">Magnet 7</text>
+<circle x="16.5" y="-34.5" radius="1.5" width="0.1524" layer="21"/>
+<text x="15.76" y="-33.73" size="0.254" layer="21">Magnet 6</text>
+<circle x="16.5" y="-34.5" radius="1.5" width="0.1524" layer="22"/>
+<text x="17.21" y="-33.72" size="0.254" layer="22" rot="MR0">Magnet 6</text>
 <circle x="20.01" y="-11.21" radius="1.5" width="0.1524" layer="21"/>
 <text x="19.26" y="-10.33" size="0.254" layer="21">Magnet 3</text>
 <polygon width="0.1524" layer="21">
@@ -372,8 +372,7 @@
 <circle x="-7.4" y="22" radius="1" width="0.4064" layer="30"/>
 <circle x="-7.4" y="22" radius="1" width="0.4064" layer="16"/>
 <wire x1="-0.7" y1="21" x2="-0.7" y2="22.9" width="0.4064" layer="30"/>
-<wire x1="-0.7" y1="22.9" x2="-0.7" y2="23.6" width="0.4064" layer="30"/>
-<wire x1="-0.7" y1="25" x2="-0.7" y2="23.6" width="0.4064" layer="30"/>
+<wire x1="-0.7" y1="25" x2="-0.7" y2="22.9" width="0.4064" layer="30"/>
 <wire x1="-0.7" y1="22.9" x2="-1.7" y2="22.9" width="0.4064" layer="30"/>
 <wire x1="-1.7" y1="22.9" x2="-2.7" y2="23.9" width="0.4064" layer="30" curve="-90"/>
 <wire x1="-2.7" y1="23.9" x2="-1.6" y2="25" width="0.4064" layer="30" curve="-90"/>
