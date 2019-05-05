@@ -9,7 +9,7 @@ from typing import Iterable, List, Tuple, Generator
 import tkinter as tk
 
 # Constants:
-SCALE = 14
+SCALE = 10
 
 # Types:
 Radians = float
@@ -534,16 +534,16 @@ def wheel_coords(inner_rad, outer_rad, center_x, center_y, channels) -> Coords:
     return ((inner_circle, outer_circle), polys)
 
 
-OUTER_RAD = 30
-INNER_RAD = 20
+OUTER_RAD = 18
+INNER_RAD = 6.2
 CHANNELS  = 3
 
 def scale(scale: float, *args: float) -> Generator[float, None, None]:
     for i in args:
         yield scale * i
 
-def draw_wheel(canvas):
-    coords = wheel_coords(INNER_RAD, OUTER_RAD, 0, 0, CHANNELS)
+def draw_wheel(canvas, inner_rad = INNER_RAD, outer_rad = OUTER_RAD, center_x = 0, center_y = 0, channels = CHANNELS):
+    coords = wheel_coords(inner_rad, outer_rad, center_x, center_y, channels)
 
     base, polys = coords
 
@@ -561,15 +561,65 @@ def draw_wheel(canvas):
 
         f.write("ratsnest;\n")
 
+        print("Wrote wheel.scr")
 
 def printcoords(event):
     (x, y) = (event.x, event.y)
-    print (x / SCALE, y / SCALE)
+    print(x / SCALE, y / SCALE)
 
+
+from tkinter import *
 if __name__ == "__main__":
     root = Tk()
 
-    #setting up a tkinter canvas with scrollbars
+    m = PanedWindow(orient=HORIZONTAL)
+    m.pack(fill=BOTH, expand=0)
+
+    center_x = tk.DoubleVar()
+    center_x.set(0)
+    center_y = tk.DoubleVar()
+    center_y.set(0)
+
+    m.add(Label(m, text="Center:"))
+    m.add(tk.Entry(textvariable=center_x))
+    m.add(tk.Entry(textvariable=center_y))
+
+    inner_rad = tk.DoubleVar()
+    inner_rad.set(INNER_RAD)
+    outer_rad = tk.DoubleVar()
+    outer_rad.set(OUTER_RAD)
+
+    m.add(Label(m, text="Inner radius:"))
+    m.add(tk.Entry(textvariable=inner_rad))
+    m.add(Label(m, text="Outer radius:"))
+    m.add(tk.Entry(textvariable=outer_rad))
+
+    channels = tk.IntVar()
+    channels.set(CHANNELS)
+
+    m.add(Label(m, text="Channels:"))
+    m.add(tk.Entry(textvariable=channels))
+
+    scale_factor = tk.IntVar()
+    scale_factor.set(SCALE)
+
+    m.add(Label(m, text="Scale factor:"))
+    m.add(tk.Entry(textvariable=scale_factor))
+
+    band_width = tk.IntVar()
+    band_width.set(BAND_WIDTH)
+
+    m.add(Label(m, text="Band width:"))
+    m.add(tk.Entry(textvariable=band_width))
+
+    frill_sep = tk.DoubleVar()
+    frill_sep.set(FRILL_SEP)
+
+    m.add(Label(m, text="Frill sep:"))
+    m.add(tk.Entry(textvariable=frill_sep))
+
+
+    # #setting up a tkinter canvas with scrollbars
     frame = Frame(root, bd=2, relief=tk.SUNKEN)
     frame.grid_rowconfigure(0, weight=1)
     frame.grid_columnconfigure(0, weight=1)
@@ -585,9 +635,21 @@ if __name__ == "__main__":
 
     canvas.create_image(0,0,anchor="sw")
 
-    draw_wheel(canvas)
+    def run():
+        global SCALE, BAND_WIDTH, FRILL_SEP
+        SCALE = scale_factor.get()
+        BAND_WIDTH = band_width.get()
+        FRILL_SEP = frill_sep.get()
+        canvas.delete("all")
+        draw_wheel(canvas, inner_rad.get(), outer_rad.get(), center_x.get(), center_y.get(), channels.get())
+        canvas.config(scrollregion=canvas.bbox(tk.ALL))
 
+    go = tk.Button(m, text="Run!", command=run)
+    m.add(go)
+
+    draw_wheel(canvas)
     canvas.config(scrollregion=canvas.bbox(tk.ALL))
+
     canvas.bind("<Button 1>", printcoords)
 
     root.mainloop()
