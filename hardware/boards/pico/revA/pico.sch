@@ -14658,7 +14658,7 @@ Created by Upverter.com</description>
 <part name="GND21" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="Q2" library="ON_Semi-MMBT5551LT1G" deviceset="ON_SEMI_MMBT5551LT1G" device="ON_SEMI_MMBT5551LT1G_0_0"/>
 <part name="D2" library="ON_Semi-1N914BWS" deviceset="ON_SEMI_1N914BWS" device="ON_SEMI_1N914BWS_0_0"/>
-<part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="1.5KΩ"/>
+<part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="1.5kΩ"/>
 <part name="IC2" library="texas" library_urn="urn:adsk.eagle:library:387" deviceset="TPS6300*" device="" package3d_urn="urn:adsk.eagle:package:7566968/1"/>
 <part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100Ω"/>
 <part name="U$3" library="VLF4012" deviceset="VLS4012" device="" value="2.2uH"/>
@@ -14851,7 +14851,7 @@ Created by Upverter.com</description>
 <part name="C42" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF"/>
 <part name="C43" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="10μF"/>
 <part name="JP1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="PINHD-1X8" device="LOCK" package3d_urn="urn:adsk.eagle:package:6240709/1"/>
-<part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100KΩ"/>
+<part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100kΩ"/>
 <part name="R18" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="100kΩ"/>
 <part name="R56" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="0Ω"/>
 </parts>
