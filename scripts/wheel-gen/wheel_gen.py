@@ -256,9 +256,18 @@ class Arc(Geo):
         end   = self.center + Point.from_polar(self.radius, self.ending)
         return f"arc '{name}' ccw {begin} {diam} {end};"
 
-preamble = """# Creates some wheels.
+def preamble(inner_rad, outer_rad, center_x, center_y, channels) -> str:
+    return f"""
+# Creates some wheels.
 #
-# Warning: This was auto-generated.
+# Warning: This was auto-generated with the following parameters:
+#  - inner_rad: {inner_rad}
+#  - outer_rad: {outer_rad}
+#  - center_x: {center_x}
+#  - center_y: {center_y}
+#  - channels: {channels}
+#  - BAND_WIDTH: {BAND_WIDTH}
+#  - FRILL_SEP: {FRILL_SEP}
 GRID mm 1 1 dots on alt mm 1 mm;
 CHANGE WIDTH 0.02;
 SET wire_bend 2;
@@ -553,7 +562,7 @@ def draw_wheel(canvas, inner_rad = INNER_RAD, outer_rad = OUTER_RAD, center_x = 
     canvas.create_oval(*sc(*base[1]), outline = "red")
 
     with open("wheel.scr", "w") as f:
-        f.write(preamble + "\n")
+        f.write(preamble(inner_rad, outer_rad, center_x, center_y, channels) + "\n")
 
         for p in polys:
             p.draw(canvas, SCALE)
