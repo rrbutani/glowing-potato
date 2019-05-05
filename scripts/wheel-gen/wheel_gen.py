@@ -426,7 +426,7 @@ def channel(name: str, center: Point, angle: Radians, width: Radians, frills: Fr
         # If we're cw we want to subtract; otherwise add.
         war = width_at_radius = lambda l, r: (l / r) * (-1 if cw else 1)
         swar = spine_width_at_radius = lambda r: war((FRILL_SEP / 2), r)
-        ewar = end_width_at_radius = lambda r: war(FRILL_SEP / 2 + BAND_GAP, r)
+        ewar = end_width_at_radius = lambda r: war((FRILL_SEP / 2) + (BAND_GAP / BAND_TOTAL) * BAND_WIDTH, r)
         w = (width / 2) * (-1 if cw else 1)
 
         starting_top: Point = \
