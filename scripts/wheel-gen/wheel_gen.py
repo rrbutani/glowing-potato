@@ -615,7 +615,7 @@ if __name__ == "__main__":
     m.add(Label(m, text="Scale factor:"))
     m.add(tk.Entry(textvariable=scale_factor))
 
-    band_width = tk.IntVar()
+    band_width = tk.DoubleVar()
     band_width.set(BAND_WIDTH)
 
     m.add(Label(m, text="Band width:"))
