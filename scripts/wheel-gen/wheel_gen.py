@@ -518,8 +518,8 @@ colors = ["red", "blue", "green", "yellow", "orange", "pink"]
 # Assumes 3 channels and outer_rad/inner_rad in mm
 def wheel_coords(inner_rad, outer_rad, center_x, center_y, channels) -> Coords:
     i, o, x, y = inner_rad, outer_rad, center_x, center_y
-    outer_circle: Circle = (x - o, y - o, x + o, y + o)
-    inner_circle: Circle = (x - i, y - i, x + i, y + i)
+    outer_circle: Circle = (x - o, -(y - o), x + o, -(y + o))
+    inner_circle: Circle = (x - i, -(y - i), x + i, -(y + i))
 
     frills = calculate_frill_positions(inner_rad, outer_rad)
     center = Point(center_x, center_y)
