@@ -1,3 +1,6 @@
 [submodule "prototypes/st7735-esp32/esp32-tft"]
 	path = prototypes/st7735-esp32/esp32-tft
 	url = https://github.com/loboris/ESP32_TFT_library.git
+[submodule "software/contrib/esp32-tft"]
+	path = software/contrib/esp32-tft
+	url = https://github.com/loboris/ESP32_TFT_library.git
