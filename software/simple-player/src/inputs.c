@@ -17,8 +17,8 @@
 // Very generally, add more ones to PRESSED_THRESHOLD to require that the button
 // be pressed for longer before registering as a press and add more ones to
 // JITTER_THRESHOLD to allow the button's signal more time to settle.
-// Each digit is roughly 10ms.
-#define PRESSED_THRESHOLD 0b0000000000000111
+// The duration corresponding to each digit is determined by DEBOUNCE_TICK.
+#define PRESSED_THRESHOLD 0b000000000000111
 #define JITTER_THRESHOLD 0b0000011111111000
 #define BOUNCE_MASK ((~(JITTER_THRESHOLD)) | (PRESSED_THRESHOLD))
 
@@ -27,10 +27,11 @@
 // after any of those readings.
 #define DEBOUNCE_COUNT 100
 
-// Amount of time to wait between consecutive pin reads.
-#define DEBOUNCE_TICK
+// Amount of time to wait between consecutive pin reads (in MS). 10+ seems to be
+// a requirement.
+#define DEBOUNCE_TICK 10
 
-#define CHECK_PIN(pin) assert((pin) >= 0 && (pin) < GPIO_NUM_MAX);
+#define CHECK_PIN(pin) assert((pin) < GPIO_NUM_MAX);
 
 // Types:
 typedef struct debounce_state_t {
@@ -78,7 +79,6 @@ static inline void (*disable_debounce_state(uint8_t pin_num))(void* arg) {
 }
 
 static inline uint16_t update_pin_history(uint8_t pin_num) {
-  printf("polling %d\n", pin_num);
   CHECK_PIN(pin_num);
   DebounceState* state = &debounce_states[pin_num];
   assert(state->being_debounced);
@@ -87,33 +87,16 @@ static inline uint16_t update_pin_history(uint8_t pin_num) {
   return state->count++;
 }
 
-void print_binary(unsigned int n) {
-  unsigned int mask = 0;
-  /* this grotesque hack creates a bit pattern 1000... */
-  /* regardless of the size of an unsigned int */
-  mask = ~mask ^ (~mask >> 1);
-
-  for (; mask != 0; mask >>= 1) {
-    putchar((n & mask) ? '1' : '0');
-  }
-}
-
 static inline bool debounce_satisfied(uint8_t pin_num) {
   CHECK_PIN(pin_num);
   DebounceState* state = &debounce_states[pin_num];
   assert(state->being_debounced);
 
-  printf("hist: ");
-  print_binary(state->history);
-  printf(" masked: ");
-  print_binary(state->history & BOUNCE_MASK);
-  printf("\n");
-
   return (state->history & BOUNCE_MASK) == PRESSED_THRESHOLD;
 }
 
 static void debounce_tick(TimerHandle_t t) {
-  uint8_t pin_num = (uint8_t)pvTimerGetTimerID(t);
+  uint8_t pin_num = (uint8_t)(int)pvTimerGetTimerID(t);
 
   if (update_pin_history(pin_num) >= DEBOUNCE_COUNT) {
     // If we've hit the max, give up on this signal:
@@ -130,17 +113,17 @@ static void debounce_tick(TimerHandle_t t) {
 }
 
 static void internal_isr_handler(void* arg) {
-  uint8_t pin_num = (uint8_t)arg;
+  int pin_num = (int)arg;
 
   if (!debounce_states[pin_num].being_debounced) {
     enable_debounce_state(pin_num);
 
     // Start a timer for this pin:
-    TimerHandle_t t = xTimerCreate("Debouncer",             /* a short name */
-                                   10 / portTICK_PERIOD_MS, /* run every 10ms */
-                                   pdTRUE,                  /* auto reload */
-                                   arg,                     /* the pin number */
-                                   debounce_tick            /* the callback */
+    TimerHandle_t t = xTimerCreate("Debouncer", /* a short name */
+                                   DEBOUNCE_TICK / portTICK_PERIOD_MS,
+                                   pdTRUE,       /* auto reload */
+                                   arg,          /* the pin number */
+                                   debounce_tick /* the callback */
     );
 
     assert(t != NULL);
@@ -174,8 +157,13 @@ void register_ISRs(void (*handler)(void* pin_num), int num_pins, ...) {
     pin_num = va_arg(pins, int);
 
     pin_mask |= 1ULL << pin_num;
-    gpio_isr_handler_add(pin_num, internal_isr_handler, (void*)((long)pin_num));
+
+#ifdef CONFIG_ENABLE_INPUT_DEBOUNCE
+    gpio_isr_handler_add(pin_num, internal_isr_handler, (void*)(long)pin_num);
     init_debounce_state(pin_num, handler);
+#else
+    gpio_isr_handler_add(pin_num, handler, (void*)(long)pin_num);
+#endif
   }
 
   // Positive edge interrupts!

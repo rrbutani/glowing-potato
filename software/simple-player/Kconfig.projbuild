@@ -1,0 +1,13 @@
+menu "Simple Player"
+
+menu "Inputs"
+
+config ENABLE_INPUT_DEBOUNCE
+    bool "Enable Software Input Debouncing"
+    default y
+    help
+        This is useful for configurations that don't have hardware debounce circuitry, but should probably be disabled for those that do.
+
+endmenu
+
+endmenu
