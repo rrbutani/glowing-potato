@@ -1,6 +1,6 @@
 #include "inputs.h"
 #include <stdarg.h>
-#include <stdint.h>
+
 #include "driver/gpio.h"
 
 // Defines lifted from the GPIO Example in ESP IDF.
@@ -19,7 +19,7 @@ static void internal_config(void) {
   }
 }
 
-void register_ISRs(void (*handler)(void* arg), uint8_t num_pins, ...) {
+void register_ISRs(void (*handler)(void* arg), int num_pins, ...) {
   va_list pins;
   va_start(pins, num_pins);
 
@@ -35,7 +35,8 @@ void register_ISRs(void (*handler)(void* arg), uint8_t num_pins, ...) {
     gpio_isr_handler_add(pin_num, handler, (void*)pin_num);
   }
 
-  io_conf.intr_type = GPIO_PIN_INTR_POSEDGE; /* Positive edge interrupts! */
+  // Positive edge interrupts!
+  io_conf.intr_type = (gpio_int_type_t)GPIO_PIN_INTR_POSEDGE;
   io_conf.mode = GPIO_MODE_INPUT;
   io_conf.pin_bit_mask = pin_mask;
   io_conf.pull_down_en = 1;

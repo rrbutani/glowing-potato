@@ -12,8 +12,6 @@
 #ifndef _SP_INPUTS_
 #define _SP_INPUTS_
 
-#include <stdint.h>
-
 /*
  * Takes a handler and all the pins you wish to trigger the handler for.
  *
@@ -22,6 +20,6 @@
  *
  * The pin numbers should be passed in as ints (varargs).
  */
-void register_ISRs(void (*handler)(void* arg), uint8_t num_pins, ...);
+void register_ISRs(void (*handler)(void* arg), int num_pins, ...);
 
 #endif /* _SP_INPUTS_ */
