@@ -1,0 +1,48 @@
+menu "Pin Map"
+
+config LEFT_PUSH_BUTTON_PIN
+    int "Left Button pin number"
+    range 0 39
+    default 36
+    help
+        GPIO pin number (IOxx) used for the left push button.
+
+        Some GPIO pins are used for other things (like flash) so be careful!
+
+config TOP_PUSH_BUTTON_PIN
+    int "Top (Up) Button pin number"
+    range 0 39
+    default 37
+    help
+        GPIO pin number (IOxx) used for the top (up) push button.
+
+        Some GPIO pins are used for other things (like flash) so be careful!
+
+config RIGHT_PUSH_BUTTON_PIN
+    int "Right Button pin number"
+    range 0 39
+    default 25
+    help
+        GPIO pin number (IOxx) used for the right push button.
+
+        Some GPIO pins are used for other things (like flash) so be careful!
+
+config BOTTOM_PUSH_BUTTON_PIN
+    int "Bottom (Down) Button pin number"
+    range 0 39
+    default 10
+    help
+        GPIO pin number (IOxx) used for the bottom (down) push button.
+
+        Some GPIO pins are used for other things (like flash) so be careful!
+
+config CENTER_PUSH_BUTTON_PIN
+    int "Center Button pin number"
+    range 0 39
+    default 38
+    help
+        GPIO pin number (IOxx) used for the center push button.
+
+        Some GPIO pins are used for other things (like flash) so be careful!
+
+endmenu
