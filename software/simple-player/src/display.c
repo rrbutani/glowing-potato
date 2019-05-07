@@ -38,7 +38,7 @@ void draw_menu_screen(Track tracks[], uint16_t idx) {
 
   for (int i = 0; i < 10; i++) {
     char* name = tracks[idx + i].name;
-    char* art = tracks[idx + i].art_fname;
+    char* art = tracks[idx + i].art_fpath;
 
     TFT_print(name, 17, nameY);
     TFT_jpg_image(0, imageY, 3, art, NULL, 0);
@@ -57,7 +57,7 @@ void draw_menu_screen(Track tracks[], uint16_t idx) {
 void draw_track_screen(Track track, uint16_t idx, bool playing) {
   TFT_fillScreen(TFT_BLACK);
 
-  char* art = track.art_fname;
+  char* art = track.art_fpath;
   char* name = track.name;
 
   TFT_jpg_image(0, 0, 0, art, NULL, 0);

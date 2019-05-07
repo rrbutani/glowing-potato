@@ -3,8 +3,8 @@
 
 typedef struct track_t {
   char* name;
-  char* mp3_fname;
-  char* art_fname;
+  char* audio_fpath;
+  char* art_fpath;
 } Track;
 
 #endif /* _GP_COMMON_TYPES_ */

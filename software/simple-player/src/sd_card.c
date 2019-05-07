@@ -1,10 +1,21 @@
 #include "sd_card.h"
+#include <assert.h>
+#include <dirent.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
 #include "common_types.h"
 #include "driver/sdmmc_host.h"
 #include "esp_vfs_fat.h"
 #include "sdmmc_cmd.h"
+
+#define TRACK_DIR "tracks"
+#define ART_DIR "art"
+
+#define AUDIO_EXT ".MP3"
+#define IMAGE_EXT ".JPG"
 
 static const char* TAG = "sd_card";
 static bool initialized = false;
@@ -32,7 +43,7 @@ bool init_sd_card(void) {
                                              .allocation_unit_size = 16 * 1024};
 
   sdmmc_card_t* card;
-  esp_err_t ret = esp_vfs_fat_sdmmc_mount("/sdcard", &host, &slot_config,
+  esp_err_t ret = esp_vfs_fat_sdmmc_mount(SD_MOUNT_PATH, &host, &slot_config,
                                           &mount_config, &card);
 
   if (ret != ESP_OK) {
@@ -51,4 +62,87 @@ bool init_sd_card(void) {
   return initialized = true;
 }
 
-bool populate_track_list(Track** list, uint16_t* track_count) { return true; }
+bool populate_track_list(Track*** list, uint16_t* track_count) {
+  assert(initialized);
+
+  uint16_t allocated = 10;
+  char buffer[300] = {0};
+  *track_count = 1;
+
+  assert((*list = (Track**)malloc(sizeof(Track*) * allocated)) != NULL);
+
+  DIR* tracks = opendir(SD_MOUNT_PATH "/" TRACK_DIR);
+  assert(strcpy(buffer, SD_MOUNT_PATH "/" TRACK_DIR "/") != NULL);
+  if (tracks == NULL) {
+    ESP_LOGW(TAG, "Unable to open '" SD_MOUNT_PATH "/" TRACK_DIR "'.");
+    return false;
+  }
+
+  struct dirent* entry;
+  while ((entry = readdir(tracks)) != NULL) {
+    printf("yo %d\n", *track_count);
+    // Allocate more memory if we need it:
+    if (allocated == *track_count) {
+      printf("ralloc %d\n", *track_count);
+      allocated += 10;
+      assert((*list = realloc(*list, sizeof(Track*) * allocated)) != NULL);
+    }
+
+    // Ignore directories for now:
+    if (entry->d_type != DT_REG) {
+      ESP_LOGI(TAG, "Skipping non-file entry: '%s'.", entry->d_name);
+    }
+
+    // Check that this is an audio file:
+    char* ext;
+    if ((ext = strrchr(entry->d_name, '.')) != NULL) {
+      if ((strcmp(ext, AUDIO_EXT)) != 0) continue;
+    }
+
+    // Add a new entry:
+    Track* t;
+    printf("%s\n", entry->d_name);
+    assert((t = *list[*track_count] = (Track*)malloc(sizeof(Track))) != NULL);
+    printf("beat\n");
+    assert((t->name = strndup(entry->d_name, strlen(entry->d_name) -
+                                                 strlen(AUDIO_EXT))) != NULL);
+
+    printf("%s\n", t->name);
+
+    printf("beat\n");
+
+    assert((t->audio_fpath =
+                malloc(sizeof(char) * (strlen(SD_MOUNT_PATH "/" TRACK_DIR "/") +
+                                       strlen(entry->d_name) + 1))) != NULL);
+    printf("beat\n");
+    strcpy(t->audio_fpath, SD_MOUNT_PATH "/" TRACK_DIR "/");
+    printf("beat\n");
+    strcat(t->audio_fpath, entry->d_name);
+    printf("%s\n", t->audio_fpath);
+
+    assert((t->art_fpath = malloc(sizeof(char) *
+                                  (strlen(SD_MOUNT_PATH "/" ART_DIR "/") +
+                                   strlen(t->name) + strlen(IMAGE_EXT) + 1))) !=
+           NULL);
+    strcpy(t->art_fpath, SD_MOUNT_PATH "/" ART_DIR "/");
+    strcat(t->art_fpath, t->name);
+    strcat(t->art_fpath, IMAGE_EXT);
+
+    // Check if the corresponding album art actually exists:
+    if (!access(t->art_fpath, F_OK)) {
+      ESP_LOGW(TAG, "No album art for: '%s'", t->name);
+      free(t->art_fpath);
+      t->art_fpath = NULL;
+    }
+
+    // *track_count = *track_count + 1;
+    (*track_count)++;
+    printf("ya %d\n", *track_count);
+  }
+
+  closedir(tracks);
+
+  assert((*list = realloc(*list, sizeof(Track*) * *track_count)) != NULL ||
+         *track_count == 0);
+  return true;
+}

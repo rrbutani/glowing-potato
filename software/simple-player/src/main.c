@@ -23,6 +23,9 @@ static void gpio_event_consumer(void* pin_num) {
   }
 }
 
+Track** list;
+uint16_t track_count = 0;
+
 void app_main() {
   // create a queue to handle gpio event from isr
   gpio_event_queue = xQueueCreate(10, sizeof(uint8_t));
@@ -33,7 +36,14 @@ void app_main() {
                 CONFIG_TOP_PUSH_BUTTON_PIN, CONFIG_RIGHT_PUSH_BUTTON_PIN,
                 CONFIG_BOTTOM_PUSH_BUTTON_PIN, CONFIG_CENTER_PUSH_BUTTON_PIN);
 
-  init_sd_card();
+  if (init_sd_card()) {
+    populate_track_list(&list, &track_count);
+
+    for (int i = 0; i < track_count; i++) {
+      printf("Entry %d: %s (%s; %s)\n", i, list[i]->name, list[i]->audio_fpath,
+             list[i]->art_fpath);
+    }
+  }
 
   int cnt = 0;
   while (1) {

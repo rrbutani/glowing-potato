@@ -16,8 +16,10 @@
 #include <stdint.h>
 #include "common_types.h"
 
+#define SD_MOUNT_PATH "/sdcard"
+
 bool init_sd_card(void);
 
-bool populate_track_list(Track** list, uint16_t* track_count);
+bool populate_track_list(Track*** list, uint16_t* track_count);
 
 #endif /* _SP_SD_CARD_ */
