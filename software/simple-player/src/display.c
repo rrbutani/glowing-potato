@@ -1,8 +1,8 @@
 #include "display.h"
 #include <stdbool.h>
 #include <stdint.h>
+#include "common_types.h"
 #include "tft.h"
-#include "types.h"
 
 void draw_menu_screen(Track tracks[], uint16_t idx) {
   TFT_fillScreen(TFT_BLACK);

@@ -11,7 +11,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-#include "types.h"
+#include "common_types.h"
 
 /*
  * Displays ten tracks starting from the index given.
