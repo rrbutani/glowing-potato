@@ -20,6 +20,6 @@
 
 bool init_sd_card(void);
 
-bool populate_track_list(Track*** list, uint16_t* track_count);
+bool populate_track_list(Track** list, uint16_t* track_count);
 
 #endif /* _SP_SD_CARD_ */

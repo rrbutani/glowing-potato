@@ -19,6 +19,9 @@
 
 static const char* TAG = "sd_card";
 static bool initialized = false;
+static const char* default_image = SD_MOUNT_PATH "/" ART_DIR
+                                                 "/"
+                                                 "default" IMAGE_EXT;
 
 bool init_sd_card(void) {
   if (initialized) return true;
@@ -62,17 +65,16 @@ bool init_sd_card(void) {
   return initialized = true;
 }
 
-bool populate_track_list(Track*** list, uint16_t* track_count) {
+bool populate_track_list(Track** list_ptr, uint16_t* track_count_ptr) {
   assert(initialized);
 
-  uint16_t allocated = 10;
-  char buffer[300] = {0};
-  *track_count = 1;
+  Track* list;
+  uint16_t track_count = 0;
+  uint16_t allocated = 8;
 
-  assert((*list = (Track**)malloc(sizeof(Track*) * allocated)) != NULL);
+  assert((list = (Track*)malloc(sizeof(Track) * allocated)) != NULL);
 
   DIR* tracks = opendir(SD_MOUNT_PATH "/" TRACK_DIR);
-  assert(strcpy(buffer, SD_MOUNT_PATH "/" TRACK_DIR "/") != NULL);
   if (tracks == NULL) {
     ESP_LOGW(TAG, "Unable to open '" SD_MOUNT_PATH "/" TRACK_DIR "'.");
     return false;
@@ -80,12 +82,10 @@ bool populate_track_list(Track*** list, uint16_t* track_count) {
 
   struct dirent* entry;
   while ((entry = readdir(tracks)) != NULL) {
-    printf("yo %d\n", *track_count);
     // Allocate more memory if we need it:
-    if (allocated == *track_count) {
-      printf("ralloc %d\n", *track_count);
-      allocated += 10;
-      assert((*list = realloc(*list, sizeof(Track*) * allocated)) != NULL);
+    if (allocated == track_count) {
+      allocated += 8;
+      assert((list = realloc(list, sizeof(Track) * allocated)) != NULL);
     }
 
     // Ignore directories for now:
@@ -100,25 +100,15 @@ bool populate_track_list(Track*** list, uint16_t* track_count) {
     }
 
     // Add a new entry:
-    Track* t;
-    printf("%s\n", entry->d_name);
-    assert((t = *list[*track_count] = (Track*)malloc(sizeof(Track))) != NULL);
-    printf("beat\n");
+    Track* t = &list[track_count];
     assert((t->name = strndup(entry->d_name, strlen(entry->d_name) -
                                                  strlen(AUDIO_EXT))) != NULL);
-
-    printf("%s\n", t->name);
-
-    printf("beat\n");
 
     assert((t->audio_fpath =
                 malloc(sizeof(char) * (strlen(SD_MOUNT_PATH "/" TRACK_DIR "/") +
                                        strlen(entry->d_name) + 1))) != NULL);
-    printf("beat\n");
     strcpy(t->audio_fpath, SD_MOUNT_PATH "/" TRACK_DIR "/");
-    printf("beat\n");
     strcat(t->audio_fpath, entry->d_name);
-    printf("%s\n", t->audio_fpath);
 
     assert((t->art_fpath = malloc(sizeof(char) *
                                   (strlen(SD_MOUNT_PATH "/" ART_DIR "/") +
@@ -129,20 +119,20 @@ bool populate_track_list(Track*** list, uint16_t* track_count) {
     strcat(t->art_fpath, IMAGE_EXT);
 
     // Check if the corresponding album art actually exists:
-    if (!access(t->art_fpath, F_OK)) {
+    if (access(t->art_fpath, F_OK) != 0) {
       ESP_LOGW(TAG, "No album art for: '%s'", t->name);
       free(t->art_fpath);
-      t->art_fpath = NULL;
+      t->art_fpath = (char*)default_image;
     }
 
-    // *track_count = *track_count + 1;
-    (*track_count)++;
-    printf("ya %d\n", *track_count);
+    track_count++;
   }
 
   closedir(tracks);
 
-  assert((*list = realloc(*list, sizeof(Track*) * *track_count)) != NULL ||
-         *track_count == 0);
+  assert((list = realloc(list, sizeof(Track) * track_count)) != NULL ||
+         track_count == 0);
+  *list_ptr = list;
+  *track_count_ptr = track_count;
   return true;
 }

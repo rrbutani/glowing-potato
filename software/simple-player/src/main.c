@@ -23,7 +23,7 @@ static void gpio_event_consumer(void* pin_num) {
   }
 }
 
-Track** list;
+Track* list;
 uint16_t track_count = 0;
 
 void app_main() {
@@ -40,8 +40,9 @@ void app_main() {
     populate_track_list(&list, &track_count);
 
     for (int i = 0; i < track_count; i++) {
-      printf("Entry %d: %s (%s; %s)\n", i, list[i]->name, list[i]->audio_fpath,
-             list[i]->art_fpath);
+      printf("ready\n");
+      printf("Entry %d: %s (%s; %s)\n", i, list[i].name, list[i].audio_fpath,
+             list[i].art_fpath);
     }
   }
 
