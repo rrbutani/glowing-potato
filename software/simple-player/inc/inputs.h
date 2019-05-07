@@ -6,7 +6,7 @@
  * has a strict convention it follows for what args the ISR handler is passed
  * in. This module has no configuration options.
  *
- * (TODO) Eventually this will debounce inputs as well, if so configured.
+ * This will also debounce inputs as well, if so configured (menuconfig).
  */
 
 #ifndef _SP_INPUTS_

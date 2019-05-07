@@ -5,6 +5,7 @@
 #include "freertos/queue.h"
 #include "freertos/task.h"
 #include "inputs.h"
+#include "sd_card.h"
 
 static xQueueHandle gpio_event_queue = NULL;
 
@@ -31,6 +32,8 @@ void app_main() {
   register_ISRs(gpio_isr_handler, 5, CONFIG_LEFT_PUSH_BUTTON_PIN,
                 CONFIG_TOP_PUSH_BUTTON_PIN, CONFIG_RIGHT_PUSH_BUTTON_PIN,
                 CONFIG_BOTTOM_PUSH_BUTTON_PIN, CONFIG_CENTER_PUSH_BUTTON_PIN);
+
+  init_sd_card();
 
   int cnt = 0;
   while (1) {
