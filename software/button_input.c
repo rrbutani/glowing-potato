@@ -21,7 +21,6 @@
  * GPIO 36 = left button
  * GPIO 25 = right button
  * GPIO 38 = center button
- *
  */
 
 enum in{
@@ -114,12 +113,12 @@ static state_data;
 union data{
     struct menu{
         int32_t idx;
-    }
+    }menu;
     struct play{
         int32_t idx;
         bool play_pause;    //1 for playing, 0 for pause
-    }
-}
+    }play;
+}data;
 
 enum state_machine{
     menu,
@@ -150,9 +149,9 @@ void app_main()
     //hook isr handler for specific gpio pin
     gpio_isr_handler_add(GPIO_INPUT_IO_0, gpio_isr_handler, (void*) up);
     gpio_isr_handler_add(GPIO_INPUT_IO_1, gpio_isr_handler, (void*) down);
-    gpio_isr_handler_add(GPIO_INPUT_IO_1, gpio_isr_handler, (void*) left);
-    gpio_isr_handler_add(GPIO_INPUT_IO_1, gpio_isr_handler, (void*) right);
-    gpio_isr_handler_add(GPIO_INPUT_IO_1, gpio_isr_handler, (void*) center);
+    gpio_isr_handler_add(GPIO_INPUT_IO_2, gpio_isr_handler, (void*) left);
+    gpio_isr_handler_add(GPIO_INPUT_IO_3, gpio_isr_handler, (void*) right);
+    gpio_isr_handler_add(GPIO_INPUT_IO_4, gpio_isr_handler, (void*) center);
 
     while(1) {
         vTaskDelay(1000 / portTICK_RATE_MS);        //just to slow it down
