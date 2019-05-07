@@ -1,0 +1,14 @@
+#!/bin/bash
+
+files=()
+for file in `git diff --cached --name-only --diff-filter=ACMRT | grep -E "\.(c|h)$"`; do
+  if ! cmp -s <(git show ":${file}") <(git show ":${file}" | clang-format --assume-filename="${file}"); then
+    files+=("${file}")
+  fi
+done
+
+if [ -n "${files}" ]; then
+echo Format error within the following files:
+printf "%s\n" "${files[@]}"
+exit 1
+fi
