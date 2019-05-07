@@ -6,8 +6,10 @@
 #include <string.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include "ID3.h"
 #include "common_types.h"
 #include "driver/sdmmc_host.h"
+#include "esp_log.h"
 #include "esp_vfs_fat.h"
 #include "sdmmc_cmd.h"
 
@@ -123,6 +125,13 @@ bool populate_track_list(Track** list_ptr, uint16_t* track_count_ptr) {
       ESP_LOGW(TAG, "No album art for: '%s'", t->name);
       free(t->art_fpath);
       t->art_fpath = (char*)default_image;
+    }
+
+    char* buffer;
+    if (get_ID3_field(t->audio_fpath, TRACK_TITLE, &buffer)) {
+      printf("name: %s\n", buffer);
+      free(t->name);
+      t->name = buffer;
     }
 
     track_count++;
