@@ -14,6 +14,13 @@
 #include "common_types.h"
 
 /*
+ * Initializes the display. Pins and SPI Frequency are determined by menuconfig.
+ *
+ * Returns true for a successful initialization and false otherwise.
+ */
+bool init_display(void);
+
+/*
  * Displays ten tracks starting from the index given.
  *
  * Inputs: tracks, idx
