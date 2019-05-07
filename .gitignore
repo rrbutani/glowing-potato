@@ -91,3 +91,7 @@
 # LTSpice
 *.raw
 *.log
+
+# ESP-IDF
+build/
+sdkconfig
