@@ -20,6 +20,6 @@
  *
  * The pin numbers should be passed in as ints (varargs).
  */
-void register_ISRs(void (*handler)(void* arg), int num_pins, ...);
+void register_ISRs(void (*handler)(void* pin_num), int num_pins, ...);
 
 #endif /* _SP_INPUTS_ */
