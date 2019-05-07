@@ -9,12 +9,12 @@
 static xQueueHandle gpio_event_queue = NULL;
 
 static void IRAM_ATTR gpio_isr_handler(void* arg) {
-  uint32_t gpio_num = (uint32_t)arg;
+  uint8_t gpio_num = (uint8_t)(int)arg;
   xQueueSendFromISR(gpio_event_queue, &gpio_num, NULL);
 }
 
 static void gpio_event_consumer(void* pin_num) {
-  uint32_t io_num;
+  uint8_t io_num;
   while (true) {
     if (xQueueReceive(gpio_event_queue, &io_num, portMAX_DELAY)) {
       printf("GPIO[%d] intr, val: %d\n", io_num, gpio_get_level(io_num));
@@ -24,7 +24,7 @@ static void gpio_event_consumer(void* pin_num) {
 
 void app_main() {
   // create a queue to handle gpio event from isr
-  gpio_event_queue = xQueueCreate(10, sizeof(uint32_t));
+  gpio_event_queue = xQueueCreate(10, sizeof(uint8_t));
   // start gpio task
   xTaskCreate(gpio_event_consumer, "gpio_event_consumer", 2048, NULL, 10, NULL);
 

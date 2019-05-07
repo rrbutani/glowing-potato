@@ -4,6 +4,7 @@
 
 #include "inputs.h"
 #include <stdarg.h>
+#include <stdbool.h>
 #include <stdint.h>
 #include "assert.h"
 #include "driver/gpio.h"
