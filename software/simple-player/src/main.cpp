@@ -25,6 +25,8 @@ static uint8_t buffer_position = 0;
 Track* list;
 uint16_t track_count = 0;
 
+VS1053 player(27, 5, 26);
+
 static void IRAM_ATTR gpio_isr_handler(void* arg) {
   uint8_t gpio_num = (uint8_t)(unsigned long long)arg;
   xQueueSendFromISR(gpio_event_queue, &gpio_num, NULL);
@@ -32,8 +34,17 @@ static void IRAM_ATTR gpio_isr_handler(void* arg) {
 
 static void gpio_event_consumer(void* pin_num) {
   uint8_t io_num;
+
+  static auto volume = 50;
   while (true) {
     if (xQueueReceive(gpio_event_queue, &io_num, portMAX_DELAY)) {
+      if (io_num == CONFIG_RIGHT_PUSH_BUTTON_PIN) {
+        volume++;
+      } else if (io_num == CONFIG_LEFT_PUSH_BUTTON_PIN) {
+        volume--;
+      }
+      player.setVolume(volume);
+      printf("volume: %d\n", volume);
       printf("GPIO[%d] intr, val: %d\n", io_num, gpio_get_level((gpio_num_t)io_num));
     }
   }
@@ -53,7 +64,7 @@ static void sd_io_event_consumer(void* tranche_number) {
         track_num = (track_num + 1) % track_count;
         file = fopen(list[track_num].audio_fpath, "r");
       }
-      printf("Read in tranche %d\n", count);
+      //printf("Read in tranche %d\n", count);
       count = (count + 1) % NUM_TRANCHES(buff);
     }
   }
@@ -63,7 +74,7 @@ extern "C"
 void app_main() {
   initArduino();
 
-  VS1053 player(27, 5, 26);
+  // player = ;
 
   Serial.begin(115200);
   SPI.begin();
@@ -102,7 +113,7 @@ void app_main() {
 
   int cnt = 0;
   while (1) {
-    printf("cnt: %d\n", cnt++);
+    //printf("cnt: %d\n", cnt++);
     // vTaskDelay(1000 / portTICK_RATE_MS);
 
     player.playChunk(buff.buffer[track_count], TRANCHE_SIZE(buff));
