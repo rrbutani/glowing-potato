@@ -8,9 +8,22 @@
 #include "sd_card.h"
 #include "Arduino.h"
 #include "VS1053.h"
-#include "athletic.h"
 
 static xQueueHandle gpio_event_queue = NULL;
+static xQueueHandle sd_io_event_queue = NULL;
+
+template<unsigned int size, unsigned int tranches> struct buffer {
+  uint8_t buffer[tranches][size];
+};
+
+#define NUM_TRANCHES(b) (sizeof(b.buffer) / sizeof(b.buffer[0]))
+#define TRANCHE_SIZE(b) (sizeof(b.buffer[0]))
+
+static struct buffer<1024, 24> buff;
+static uint8_t buffer_position = 0;
+
+Track* list;
+uint16_t track_count = 0;
 
 static void IRAM_ATTR gpio_isr_handler(void* arg) {
   uint8_t gpio_num = (uint8_t)(unsigned long long)arg;
@@ -26,8 +39,25 @@ static void gpio_event_consumer(void* pin_num) {
   }
 }
 
-Track* list;
-uint16_t track_count = 0;
+static void sd_io_event_consumer(void* tranche_number) {
+  static auto count = 0;
+  static auto track_num = 10;
+  static auto file = fopen(list[track_num].audio_fpath, "r");
+
+  static auto num = 0;
+
+  while (true) {
+    if (xQueueReceive(sd_io_event_queue, &num, portMAX_DELAY)) {
+      if (TRANCHE_SIZE(buff) != fread(&buff.buffer[count], 1, TRANCHE_SIZE(buff), file)) {
+        fclose(file);
+        track_num = (track_num + 1) % track_count;
+        file = fopen(list[track_num].audio_fpath, "r");
+      }
+      printf("Read in tranche %d\n", count);
+      count = (count + 1) % NUM_TRANCHES(buff);
+    }
+  }
+}
 
 extern "C"
 void app_main() {
@@ -61,11 +91,22 @@ void app_main() {
     }
   }
 
+  // create a queue to tell the i/o task to go get the next chunk.
+  sd_io_event_queue = xQueueCreate(NUM_TRANCHES(buff), sizeof(uint8_t));
+
+  xTaskCreate(sd_io_event_consumer, "sd_io_event_consumer", 2048, NULL, 9, NULL);
+
+
+  for (auto i = 0; i < NUM_TRANCHES(buff); i++)
+    xQueueGenericSend(sd_io_event_queue, &i, 10, 10);
+
   int cnt = 0;
   while (1) {
     printf("cnt: %d\n", cnt++);
     // vTaskDelay(1000 / portTICK_RATE_MS);
 
-    player.playChunk(Athletic_Theme___Super_Mario_World_Super_Smash_Bros__Ultimate_mp3, sizeof(Athletic_Theme___Super_Mario_World_Super_Smash_Bros__Ultimate_mp3));
+    player.playChunk(buff.buffer[track_count], TRANCHE_SIZE(buff));
+    track_count = (track_count + 1) % NUM_TRANCHES(buff);
+    xQueueGenericSend(sd_io_event_queue, &track_count, 10, 10);
   }
 }
