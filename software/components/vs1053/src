@@ -1,0 +1,97 @@
+
+#include "VS1053_idf.h"
+
+struct *VS1053 VS1053_create (uint8_t cs_pin, uint8_t dcs_pin; uint8_t dreq_pin,
+        spi_lobo_config_t d_spi_config, spi_lobo_config_t c_spi_config) {
+    struct VS1053 *device = malloc(sizeof(VS1053));
+    if(device == 0) {
+        return NULL;
+    }
+    device->cs_pin = cs_pin;
+    device->dcs_pin = dcs_pin;
+    device->dreq_pin = dreq_pin;
+    device->curvol = curvol;
+    device->chunk_size = 32;
+    device->SCI_MODE = 0x0;
+    device->SCI_STATUS = 0x1;
+    device->SCI_BASS = 0x2;
+    device->SCI_CLOCKF = 0x3;
+    device->SCI_AUDATA = 0x5;
+    device->SCI_WRAM = 0x6;
+    device->SCI_WRAMADDR = 0x7;
+    device->SCI_AIADDR = 0xA;
+    device->SCI_VOL = 0xB;
+    device->SCI_AICTRL0 = 0xC;
+    device->SCI_AICTRL1 = 0xD;
+    device->SCI_num_registers = 0xF;
+    device->SM_SDINEW = 11;
+    device->SM_RESET = 2;
+    device->SM_CANCEL = 3;
+    device->SM_TESTS = 5;
+    device->SM_LINE1 = 14;
+    c_spi_config = c_spi_config
+    d_spi_config = d_spi_config;
+    return *device;
+}
+
+ uint8_t data_req(struct *VS1053 device) {
+    return gpio_get_Level(device->dreq_pin);
+}
+
+ void control_on(struct *VS1053 device) {
+    //lock type thing
+    gpio_set_level(device->dcs_pin, 1);
+    gpio_set_level(device->cs_pin, 0);
+}
+
+void control_off(struct *VS1053 device) {
+    gpio_set_level(device->cs_pin, 1); //maybe issues with this
+    //release lock thing
+}
+
+void data_on(struct *VS1053 device) {
+    //lock thing
+    gpio_set_level(device->cs_pin, 1);
+    gpio_set_level(devices->dcs_pin, 0);
+}
+
+void data_off(sturct *VS1053 device) {
+    gpio_set_level(device->dcs_pin, 1); //again, some issues
+    //release lock
+}
+
+uint16_t read_register(uint8_t _reg);
+
+void write_register(uint8_t _reg, uint16_t _value);
+
+void spi_send_buffe(uint8_t *data, size_t len);
+
+void sdi_send_fillers(size_t length);
+
+void wram_write(uint16_t address, uint16_t data);
+
+uint16_t wram_read(uint16_t address);
+
+
+
+//
+
+void begin();
+
+void startSong();
+
+void playChunk(uint8_t *data, size_t len);
+
+void stopSong();
+
+void setVolume(uint8_t vol);
+
+void setTone(uint8_t *rtone);
+
+uint8_t getVolume();
+
+void printDetails(const char *header);
+
+void softReset();
+
+void switchToMp3Mode();
