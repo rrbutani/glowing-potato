@@ -3,11 +3,22 @@
 #include <stdint.h>
 #include "common_types.h"
 #include "tft.h"
+#include "tftspi.h"
+
+#define PIN_NUM_MISO 19
+#define PIN_NUM_MOSI 23
+#define PIN_NUM_CLK 18
+#define PIN_NUM_CS 32
+#define PIN_NUM_DC 9
+#define PIN_NUM_RST 33
+
+#define SPI_BUS TFT_HSPI_HOST
 
 bool init_display() {
   uint16_t width = 128;
   uint16_t height = 160;
 
+  TFT_PinsInit();
   spi_lobo_device_handle_t spi;
 
   spi_lobo_bus_config_t buscfg = {
@@ -26,6 +37,18 @@ bool init_display() {
       .flags = LB_SPI_DEVICE_HALFDUPLEX,  // ALWAYS SET  to HALF DUPLEX MODE!!
                                           // for display spi
   };
+
+  assert(ESP_OK == spi_lobo_bus_add_device(SPI_BUS, &buscfg, &devcfg, &spi));
+
+  TFT_display_init();
+
+  spi_lobo_set_speed(spi, DEFAULT_SPI_CLOCK);
+  TFT_setGammaCurve(DEFAULT_GAMMA_CURVE);
+  TFT_setRotation(PORTRAIT);
+  TFT_setFont(DEFAULT_FONT, NULL);
+  TFT_resetclipwin();
+
+  TFT_print("Time is not set yet", CENTER, CENTER);
 
   return true;
 }

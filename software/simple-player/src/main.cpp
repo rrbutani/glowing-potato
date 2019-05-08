@@ -5,9 +5,12 @@
 #include "freertos/queue.h"
 #include "freertos/task.h"
 #include "inputs.h"
+// #include "display.h"
 #include "sd_card.h"
 #include "Arduino.h"
 #include "VS1053.h"
+#include "TFT_eSPI.h"
+#include "JPEGDecoder.h"
 
 static xQueueHandle gpio_event_queue = NULL;
 static xQueueHandle sd_io_event_queue = NULL;
@@ -78,7 +81,36 @@ void app_main() {
 
   Serial.begin(115200);
   SPI.begin();
+
+  TFT_eSPI tft = TFT_eSPI();
+  tft.init();
+  tft.setRotation(1);
+  tft.fillScreen(0x00F7);
+
+  tft.setCursor(0, 0);
+  tft.setTextColor(TFT_WHITE, TFT_BLACK); tft.setTextSize(10);
+  tft.println("yo!! HELLLLLOO");
+  tft.setCursor(120, 120);
+
+  for (int i = 0; i < 100; i++) {
+    // tft.setCursor(random(160), random(160));
+    tft.drawString("yo!! HELLLLLOO", random(160), random(160));
+  }
+
+  delay(5000);
+  for (int i = 0; i < 20; i++) {
+    int rx = random(40);
+    int ry = random(40);
+    int x = rx + random(160 - rx - rx);
+    int y = ry + random(160 - ry - ry);
+    tft.fillEllipse(x, y, rx, ry, random(0xFFFF));
+  }
+
+  tft.fillScreen(TFT_BLACK);
+
   player.begin();
+
+  // init_display();
 
   player.switchToMp3Mode();
   player.setVolume(100);
@@ -101,6 +133,17 @@ void app_main() {
              list[i].art_fpath);
     }
   }
+
+  FILE* image = fopen("/sdcard/art/art.jpg", "r");
+  fseek(image, 0, SEEK_END);
+  auto fsize = ftell(image);
+  uint8_t image_arr = malloc(fsize);
+  fseek(image, 0, SEEK_SET);
+
+  fread((void*)image_arr, 1, fsize, image);
+  fclose(image);
+
+  drawArrayJpeg(image_arr, fsize, 0, 0);
 
   // create a queue to tell the i/o task to go get the next chunk.
   sd_io_event_queue = xQueueCreate(NUM_TRANCHES(buff), sizeof(uint8_t));
