@@ -12,6 +12,10 @@
 #ifndef _SP_SD_CARD_
 #define _SP_SD_CARD_
 
+#if defined(__cplusplus)
+extern "C" {
+#endif
+
 #include <stdbool.h>
 #include <stdint.h>
 #include "common_types.h"
@@ -21,5 +25,9 @@
 bool init_sd_card(void);
 
 bool populate_track_list(Track** list, uint16_t* track_count);
+
+#if defined(__cplusplus)
+}
+#endif
 
 #endif /* _SP_SD_CARD_ */

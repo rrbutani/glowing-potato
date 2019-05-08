@@ -1,0 +1,155 @@
+
+#include "VS1053.h"
+#include <assert.h>
+#include "esp_err.h"
+#include "esp_log.h"
+#include "driver/gpio.h"
+
+// TODO: make a Kconfig thing!!
+#define SPI_BUS TFT_HSPI_HOST
+
+#define TAG "VS1053"
+
+static void pins_init(spi_lobo_host_device_t spi_bus, uint8_t ccs_pin,
+                      uint8_t dcs_pin, uint8_t dreq_pin) {
+  switch (spi_bus) {
+    case TFT_HSPI_HOST: {
+      // TODO: we think this is initialized for us in `spicommon_bus_initialize_io` or lobo's version of it
+    }
+    default: {
+      assert(false);
+      // TODO: handle later, maybe
+    }
+  }
+
+  gpio_pad_select_gpio(ccs_pin);
+  gpio_pad_select_gpio(dcs_pin);
+  gpio_pad_select_gpio(dreq_pin);
+
+  gpio_set_direction(ccs_pin, GPIO_MODE_OUTPUT);
+  gpio_set_direction(dcs_pin, GPIO_MODE_OUTPUT);
+  gpio_set_direction(dreq_pin, GPIO_MODE_INPUT);
+}
+
+static void device_select_deselect_test(spi_lobo_device_handle_t spi) {
+  assert(spi_lobo_device_select(spi, 1) == ESP_OK);
+  assert(spi_lobo_device_deselect(spi) == ESP_OK);
+};
+
+static void test_comm(uint8_t dreq_pin) {
+  if (gpio_get_level(dreq_pin) != 1) {
+    ESP_LOGE(TAG, "VS1053 DREQ issue (?)");
+    gpio_set_pull_mode(dreq_pin, GPIO_PULLUP_ONLY);
+    // return false;
+  }
+
+  uint8_t delta = 3; // Fast mode or bust
+  uint16_t r1, r2, cnt = 0;
+
+  for (int i = 0; (i < 0xFFFF) && (cnt < 20); i += delta) {
+
+  }
+}
+
+VS1053 *VS1053_create(spi_lobo_bus_config_t bus_config, uint8_t ccs_pin,
+                      uint8_t dcs_pin, uint8_t dreq_pin) {
+  VS1053 *device;
+  assert((device = malloc(sizeof(VS1053))) != NULL);
+
+  pins_init(SPI_BUS, ccs_pin, dcs_pin, dreq_pin);
+
+  spi_lobo_device_interface_config_t data_dev = {
+      .clock_speed_hz = 200000,  // Initial clock: 0.2 MHz
+      .mode = 0,                 // SPI mode 0
+      .spics_io_num = dcs_pin,   // Hardware CS
+      .spics_ext_io_num = -1,    // Disable Software CS
+      .flags = LB_SPI_DEVICE_HALFDUPLEX,
+  };
+
+  spi_lobo_device_interface_config_t cmd_dev = {
+      .clock_speed_hz = 200000,  // Initial clock: 0.2 MHz
+      .mode = 0,                 // SPI mode 0
+      .spics_io_num = ccs_pin,   // Hardware CS
+      .spics_ext_io_num = -1,    // Disable Software CS
+      .flags = LB_SPI_DEVICE_HALFDUPLEX,
+  };
+
+  assert(spi_lobo_bus_add_device(SPI_BUS, &bus_config, &data_dev,
+                                 &device->data_spi) == ESP_OK);
+  assert(spi_lobo_bus_add_device(SPI_BUS, &bus_config, &cmd_dev,
+                                 &device->command_spi) == ESP_OK);
+
+  ESP_LOGI(TAG, "using native pins? %s",
+           spi_lobo_uses_native_pins(device->data_spi) ? "true" : "false");
+  ESP_LOGI(TAG, "using native pins? %s",
+           spi_lobo_uses_native_pins(device->command_spi) ? "true" : "false");
+
+  device_select_deselect_test(device->data_spi);
+  device_select_deselect_test(device->command_spi);
+
+  // device->dreq_pin = dreq_pin;
+  device->volume = 100;
+  return device;
+}
+
+
+
+uint8_t data_req(struct *VS1053 device) {
+  return gpio_get_Level(device->dreq_pin);
+}
+
+void control_on(struct *VS1053 device) {
+  // lock type thing
+  gpio_set_level(device->dcs_pin, 1);
+  gpio_set_level(device->cs_pin, 0);
+}
+
+void control_off(struct *VS1053 device) {
+  gpio_set_level(device->cs_pin, 1);  // maybe issues with this
+  // release lock thing
+}
+
+void data_on(struct *VS1053 device) {
+  // lock thing
+  gpio_set_level(device->cs_pin, 1);
+  gpio_set_level(devices->dcs_pin, 0);
+}
+
+void data_off(sturct *VS1053 device) {
+  gpio_set_level(device->dcs_pin, 1);  // again, some issues
+  // release lock
+}
+
+uint16_t read_register(uint8_t _reg);
+
+void write_register(uint8_t _reg, uint16_t _value);
+
+void spi_send_buffe(uint8_t *data, size_t len);
+
+void sdi_send_fillers(size_t length);
+
+void wram_write(uint16_t address, uint16_t data);
+
+uint16_t wram_read(uint16_t address);
+
+//
+
+void begin();
+
+void startSong();
+
+void playChunk(uint8_t *data, size_t len);
+
+void stopSong();
+
+void setVolume(uint8_t vol);
+
+void setTone(uint8_t *rtone);
+
+uint8_t getVolume();
+
+void printDetails(const char *header);
+
+void softReset();
+
+void switchToMp3Mode();

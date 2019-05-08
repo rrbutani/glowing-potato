@@ -1,0 +1,42 @@
+// used for creating an abstraction of the VS1053 in cdo
+
+#ifndef _GP_VS1053_
+#define _GP_VS1053_
+
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include "driver/gpio.h"
+#include "driver/spi_master.h"
+#include "esp_system.h"
+#include "freertos/FreeRTOS.h"
+#include "soc/gpio_struct.h"
+#include "spi_master_lobo.h"
+
+#define CHUNK_SIZE = 32;
+#define SCI_MODE = 0x0;
+#define SCI_STATUS = 0x1;
+#define SCI_BASS = 0x2;
+#define SCI_CLOCKF = 0x3;
+#define SCI_AUDATA = 0x5;
+#define SCI_WRAM = 0x6;
+#define SCI_WRAMADDR = 0x7;
+#define SCI_AIADDR = 0xA;
+#define SCI_VOL = 0xB;
+#define SCI_AICTRL0 = 0xC;
+#define SCI_AICTRL1 = 0xD;
+#define SCI_NUM_REGISTERS = 0xF;
+#define SM_SDINEW = 11;
+#define SM_RESET = 2;
+#define SM_CANCEL = 3;
+#define SM_TESTS = 5;
+#define SM_LINE1 = 14;
+
+typedef struct VS1053_t {
+  spi_lobo_device_handle_t data_spi;
+  spi_lobo_device_handle_t command_spi;
+  uint8_t volume;
+  uint8_t end_fill_byte; // Byte to send when stopping song
+} VS1053;
+
+#endif /* _GP_VS1053_ */

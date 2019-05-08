@@ -9,6 +9,10 @@
 #ifndef _SP_DISPLAY_
 #define _SP_DISPLAY_
 
+#if defined(__cplusplus)
+extern "C" {
+#endif
+
 #include <stdbool.h>
 #include <stdint.h>
 #include "common_types.h"
@@ -38,5 +42,9 @@ void draw_menu_screen(Track tracks[], uint16_t idx);
  *  playing -> indicates if song is playing/paused
  */
 void draw_track_screen(Track track, uint16_t idx, bool playing);
+
+#if defined(__cplusplus)
+}
+#endif
 
 #endif /* _SP_DISPLAY_ */

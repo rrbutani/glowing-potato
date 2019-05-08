@@ -12,6 +12,10 @@
 #ifndef _SP_INPUTS_
 #define _SP_INPUTS_
 
+#if defined(__cplusplus)
+extern "C" {
+#endif
+
 /*
  * Takes a handler and all the pins you wish to trigger the handler for.
  *
@@ -21,5 +25,9 @@
  * The pin numbers should be passed in as ints (varargs).
  */
 void register_ISRs(void (*handler)(void* pin_num), int num_pins, ...);
+
+#if defined(__cplusplus)
+}
+#endif
 
 #endif /* _SP_INPUTS_ */

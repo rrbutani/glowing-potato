@@ -4,3 +4,6 @@
 [submodule "software/contrib/esp32-tft"]
 	path = software/contrib/esp32-tft
 	url = https://github.com/loboris/ESP32_TFT_library.git
+[submodule "software/contrib/arduino"]
+	path = software/contrib/arduino
+	url = https://github.com/espressif/arduino-esp32.git

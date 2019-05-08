@@ -7,6 +7,10 @@
 #ifndef _SP_ID3_
 #define _SP_ID3_
 
+#if defined(__cplusplus)
+extern "C" {
+#endif
+
 #include <stdbool.h>
 #include "common_types.h"
 
@@ -23,5 +27,9 @@ typedef enum ID3_field_t {
  * This will dynamically allocate memory (call free on buffer when finished).
  */
 bool get_ID3_field(const char* fpath, ID3Field field, char** buffer);
+
+#if defined(__cplusplus)
+}
+#endif
 
 #endif /* _SP_ID3_ */
