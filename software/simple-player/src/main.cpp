@@ -32,8 +32,13 @@ uint16_t track_count = 0;
 
 VS1053 player(27, 5, 26);
 
+TFT_eSPI tft;
+
+static auto volume = 82;
+static auto track_num = 0;
+
 static bool stopped = false;
-static auto change_the_track = false;
+static auto change_the_track_dir = 0;
 
 static void IRAM_ATTR gpio_isr_handler(void* arg) {
   uint8_t gpio_num = (uint8_t)(unsigned long long)arg;
@@ -43,23 +48,26 @@ static void IRAM_ATTR gpio_isr_handler(void* arg) {
 static void gpio_event_consumer(void* pin_num) {
   uint8_t io_num;
 
-  static auto volume = 86;
   static const int negative = -1;
   while (true) {
     if (xQueueReceive(gpio_event_queue, &io_num, portMAX_DELAY)) {
       if (io_num == CONFIG_TOP_PUSH_BUTTON_PIN) {
-        volume++;
+        volume++; //goto set_vol;
       } else if (io_num == CONFIG_LEFT_PUSH_BUTTON_PIN) {
-        volume--;
+        volume--; //goto set_vol;
       } else if (io_num == CONFIG_RIGHT_PUSH_BUTTON_PIN) {
         stopped = !stopped;
       } else if (io_num == CONFIG_BOTTOM_PUSH_BUTTON_PIN) {
         xQueueGenericSend(sd_io_event_queue, &negative, 10, 10);
-        change_the_track = true;
+        change_the_track_dir = -1;
       } else if (io_num == CONFIG_CENTER_PUSH_BUTTON_PIN) {
         xQueueGenericSend(sd_io_event_queue, &negative, 10, 10);
-        change_the_track = true;
+        change_the_track_dir = 1;
       }
+
+//       continue;
+
+// set_vol:
       player.setVolume(volume);
       printf("volume: %d\n", volume);
       printf("GPIO[%d] intr, val: %d\n", io_num,
@@ -69,25 +77,35 @@ static void gpio_event_consumer(void* pin_num) {
 }
 
 static void sd_io_event_consumer(void* tranche_number) {
-  static int triggers = 0;
+  static int step = 0;
   static auto count = 0;
-  static auto track_num = (random(0, track_count));
+  track_num = (random(0, track_count));
   static auto file = fopen(list[track_num].audio_fpath, "r");
 
   static int num = 0;
+
+  static int tcount = 0;
+
+  step = random(3, 10);
+  tcount = track_count;
+
+  printf("picked %d for step\n", step);
 
   while (true) {
     if (xQueueReceive(sd_io_event_queue, &num, portMAX_DELAY)) {
       if ((TRANCHE_SIZE(buff) !=
            fread(&buff.buffer[count], 1, TRANCHE_SIZE(buff), file)) ||
-          num < 0 || change_the_track) {
+          num < 0 || change_the_track_dir != 0) {
         fclose(file);
-        track_num = (random(0, track_count * (triggers % 4)) + triggers) %
-                    track_count;
-        triggers++;
+        track_num = (track_num + 1 + (change_the_track_dir * step)) % tcount;
+
+        step++;
+
         file = fopen(list[track_num].audio_fpath, "r");
-        if (num < 0 || change_the_track) {
-          change_the_track = false;
+
+        printf("track changed! now playing %s (%s)", list[track_num].name, list[track_num].audio_fpath);
+        if (num < 0 || change_the_track_dir != 0) {
+          change_the_track_dir = 0;
           continue;
         }
       }
@@ -105,9 +123,9 @@ extern "C" void app_main() {
   Serial.begin(115200);
   SPI.begin();
 
-  TFT_eSPI tft = TFT_eSPI();
+  tft = TFT_eSPI();
   tft.init();
-  tft.setRotation(0);
+  tft.setRotation(1);
   tft.fillScreen(0x00F7);
 
   tft.setCursor(0, 0);
@@ -130,14 +148,14 @@ extern "C" void app_main() {
   //   tft.drawString("yo!! HELLLLLOO", x, y, 1);
   // }
 
-  delay(500000);
-  for (int i = 0; i < 20; i++) {
-    int rx = random(40);
-    int ry = random(40);
-    int x = rx + random(160 - rx - rx);
-    int y = ry + random(160 - ry - ry);
-    tft.fillEllipse(x, y, rx, ry, random(0xFFFF));
-  }
+  // delay(500000);
+  // for (int i = 0; i < 20; i++) {
+  //   int rx = random(40);
+  //   int ry = random(40);
+  //   int x = rx + random(160 - rx - rx);
+  //   int y = ry + random(160 - ry - ry);
+  //   tft.fillEllipse(x, y, rx, ry, random(0xFFFF));
+  // }
 
   tft.fillScreen(TFT_BLACK);
 
@@ -146,7 +164,7 @@ extern "C" void app_main() {
   // init_display();
 
   player.switchToMp3Mode();
-  player.setVolume(86);
+  player.setVolume(volume);
 
   // create a queue to handle gpio event from isr
   gpio_event_queue = xQueueCreate(10, sizeof(uint8_t));
@@ -160,6 +178,8 @@ extern "C" void app_main() {
                 CONFIG_BOTTOM_PUSH_BUTTON_PIN, CONFIG_CENTER_PUSH_BUTTON_PIN);
 
   if (init_sd_card()) {
+    tft.setCursor(0, 0);
+    tft.println("Searching...");
     populate_track_list(&list, &track_count);
 
     for (int i = 0; i < track_count; i++) {
@@ -202,10 +222,22 @@ extern "C" void app_main() {
     track_count = (track_count + 1) % NUM_TRANCHES(buff);
     xQueueGenericSend(sd_io_event_queue, &track_count, 10, 10);
 
-    int rx = random(40);
-    int ry = random(40);
-    int x = rx + random(160 - rx - rx);
-    int y = ry + random(160 - ry - ry);
-    tft.fillEllipse(x, y, rx, ry, random(0xFFFF));
+    if (cnt++ % 10 == 0) {
+      int rx = random(40);
+      int ry = random(40);
+      int x = rx + random(160 - rx - rx);
+      int y = ry + random(160 - ry - ry);
+      tft.fillEllipse(x, y, rx, ry, random(0xFFFF));
+
+      tft.setTextSize(1);
+      tft.setCursor(0, 0);
+      tft.println("                                     ");
+      tft.setCursor(0, 0);
+      tft.drawCentreString(list[track_num].name, 0, 0, 1);
+
+      tft.setCursor(0, 20);
+      tft.print("Vol: ");
+      tft.println(volume);
+    }
   }
 }
