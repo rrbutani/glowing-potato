@@ -38,7 +38,9 @@ bool init_sd_card(void) {
   gpio_set_pull_mode(15,
                      GPIO_PULLUP_ONLY);  // CMD, needed in 4- and 1- line modes
   gpio_set_pull_mode(2, GPIO_PULLUP_ONLY);  // D0, needed in 4- and 1-line modes
-  gpio_set_pull_mode(4, GPIO_PULLUP_ONLY);  // D1, needed in 4-line mode only
+  gpio_set_pull_mode(4,
+
+                     GPIO_PULLUP_ONLY);      // D1, needed in 4-line mode only
   gpio_set_pull_mode(12, GPIO_PULLUP_ONLY);  // D2, needed in 4-line mode only
   gpio_set_pull_mode(13,
                      GPIO_PULLUP_ONLY);  // D3, needed in 4- and 1-line modes
@@ -129,9 +131,10 @@ bool populate_track_list(Track** list_ptr, uint16_t* track_count_ptr) {
 
     char* buffer;
     if (get_ID3_field(t->audio_fpath, TRACK_TITLE, &buffer)) {
-      printf("name: %s\n", buffer);
+      ESP_LOGI(TAG, "Got ID3; %s -> %s\n", t->name, buffer);
       free(t->name);
       t->name = buffer;
+      get_ID3_field(t->audio_fpath, TRACK_ARTIST, &t->artist);
     }
 
     track_count++;
