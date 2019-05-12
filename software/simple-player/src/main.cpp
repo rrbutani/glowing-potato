@@ -52,8 +52,10 @@ static void gpio_event_consumer(void* pin_num) {
   while (true) {
     if (xQueueReceive(gpio_event_queue, &io_num, portMAX_DELAY)) {
       if (io_num == CONFIG_TOP_PUSH_BUTTON_PIN) {
+        if (volume == 100) continue;
         volume++; //goto set_vol;
       } else if (io_num == CONFIG_LEFT_PUSH_BUTTON_PIN) {
+        if (volume == 0) continue;
         volume--; //goto set_vol;
       } else if (io_num == CONFIG_RIGHT_PUSH_BUTTON_PIN) {
         stopped = !stopped;
@@ -97,7 +99,22 @@ static void sd_io_event_consumer(void* tranche_number) {
            fread(&buff.buffer[count], 1, TRANCHE_SIZE(buff), file)) ||
           num < 0 || change_the_track_dir != 0) {
         fclose(file);
-        track_num = (track_num + 1 + (change_the_track_dir * step)) % tcount;
+        // track_num = (track_num + 1 + (change_the_track_dir * step)) % tcount;
+        if (change_the_track_dir == -1) {
+          if (track_num == 0) {
+            track_num = tcount - 1;
+          } else {
+            track_num = (track_num - 1);
+          }
+        } else {
+          if (track_num + 1 == tcount) {
+            track_num = 0;
+          } else {
+            track_num = track_num + 1;
+          }
+          // track_num = (track_num + 1) % (tcount);
+        }
+        printf("new track num: %d\n", track_num);
 
         step++;
 
@@ -183,7 +200,6 @@ extern "C" void app_main() {
     populate_track_list(&list, &track_count);
 
     for (int i = 0; i < track_count; i++) {
-      printf("ready\n");
       printf("Entry %d: %s (%s; %s)\n", i, list[i].name, list[i].audio_fpath,
              list[i].art_fpath);
     }
@@ -236,6 +252,13 @@ extern "C" void app_main() {
       tft.drawCentreString(list[track_num].name, 0, 0, 1);
 
       tft.setCursor(0, 20);
+      tft.println("                                     ");
+      tft.setCursor(0, 20);
+      tft.drawCentreString(list[track_num].artist, 0, 20, 1);
+
+      tft.setCursor(0, 40);
+      tft.println("        ");
+      tft.setCursor(0, 40);
       tft.print("Vol: ");
       tft.println(volume);
     }

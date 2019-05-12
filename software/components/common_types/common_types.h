@@ -3,6 +3,7 @@
 
 typedef struct track_t {
   char* name;
+  char* artist;
   char* audio_fpath;
   char* art_fpath;
 } Track;

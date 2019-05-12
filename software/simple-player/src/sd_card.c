@@ -134,6 +134,7 @@ bool populate_track_list(Track** list_ptr, uint16_t* track_count_ptr) {
       ESP_LOGI(TAG, "Got ID3; %s -> %s\n", t->name, buffer);
       free(t->name);
       t->name = buffer;
+      get_ID3_field(t->audio_fpath, TRACK_ARTIST, &t->artist);
     }
 
     track_count++;
